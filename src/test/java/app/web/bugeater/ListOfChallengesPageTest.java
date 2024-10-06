@@ -9,6 +9,8 @@ public class ListOfChallengesPageTest extends TestMethods{
     @DisplayName("Number Addition Challenge Test (as a guest)")
     @Tag("Challenge_Test")
     void numberAdditionChallengeTest(){
-        numberAdditionPageTest();
+        navigateToNumberAdditionPageTest();
+        NumberAdditionChallengePage numberAdditionChallengePage = new NumberAdditionChallengePage(driver);
+        solveNumberAdditionChallenge1Test(numberAdditionChallengePage);
     }
 }
