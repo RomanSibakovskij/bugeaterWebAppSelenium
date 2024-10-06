@@ -6,6 +6,6 @@ public class TestMethods extends BaseTest{
 
     protected static final Logger logger = LoggerFactory.getLogger(TestMethods.class);
 
-    
+
 
 }
