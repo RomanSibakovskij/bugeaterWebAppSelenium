@@ -24,6 +24,13 @@ public class TestMethods extends BaseTest {
         listOfChallengesPage.clickLearnModeChallengeLink1();
         //general page web element assert (elements that all pages have)
         isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        NumberAdditionChallengePage numberAdditionChallengePage = new NumberAdditionChallengePage(driver);
+        //assert the challenge text is displayed as expected
+        assertEquals("Follow the six step-by-step appearing instructions, entering values into the form. This way, you conduct a basic check of the form's proper functioning. You are practically applying the Scripted Testing.", numberAdditionChallengePage.getCurrentChallengeText(), "The text of the challenge doesn't match the expected text");
+        //assert tutorial description text is displayed as expected
+        assertEquals("This description explains the challenge and what you need to do. Read it carefully before starting the challenge.", numberAdditionChallengePage.getTutorialDescriptionText(), "The tutorial text doesn't match the expected text");
+        //click tutorial 'skip' button
+        numberAdditionChallengePage.clickSkipTutorialButton();
     }
 
     //general page web element assert (repeating web elements on all app pages)
