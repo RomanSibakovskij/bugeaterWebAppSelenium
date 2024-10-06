@@ -2,10 +2,17 @@ package app.web.bugeater;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.*;
 
 public class ListOfChallengesPage extends BasePage{
+
+    //'List of Challenges' cookies popup accept button web element
+    @FindBy(xpath = "//div[@class='modal-content']//button")
+    private WebElement cookiesAcceptButton;
 
     //'List of Challenges' page navbar web elements
     //'List of Challenges' page header dropdown menu web element
@@ -20,11 +27,11 @@ public class ListOfChallengesPage extends BasePage{
     //'List of Challenges' page title web element
     @FindBy(xpath = "//div[@class='col']/h1")
     private WebElement listOfChallengesTitle;
-    //'List of Challenges' learn more section title web element
+    //'List of Challenges' learn mode section title web element
     @FindBy(xpath = "//div[@class='col']/h2[1]")
-    private WebElement listOfChallengesLearnMoreTitle;
-    //'List of Challenges' learn more section challenge links list web element
-    private List<WebElement> listOfChallengesLearnMoreChallengeLinkElements = driver.findElements(By.xpath("//div[@class='col']/ul[1]/li/a"));
+    private WebElement listOfChallengesLearnModeTitle;
+    //'List of Challenges' learn mode section challenge links list web element
+    private List<WebElement> listOfChallengesLearnModeChallengeLinkElements = driver.findElements(By.xpath("//div[@class='col']/ul[1]/li/a"));
     //'List of Challenges' scripted testing section title web element
     @FindBy(xpath = "//div[@class='col']/h2[2]")
     private WebElement listOfChallengesScriptedTestingTitle;
@@ -64,15 +71,36 @@ public class ListOfChallengesPage extends BasePage{
         super(driver);
     }
 
+    //click accept cookies button method
+    public void clickAcceptCookiesButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(600));
+        wait.until(ExpectedConditions.elementToBeClickable(cookiesAcceptButton));
+        cookiesAcceptButton.click();
+    }
+
+    //click challenge link list method
+    public void clickListOfChallengesChallengeLink(int linkIndex){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(600));
+        wait.until(ExpectedConditions.elementToBeClickable(listOfChallengesLearnModeChallengeLinkElements.get(linkIndex)));
+        listOfChallengesLearnModeChallengeLinkElements.get(linkIndex).click();
+    }
+    //click number addition challenge link method
+    public void clickLearnModeChallengeLink1(){clickListOfChallengesChallengeLink(0);}
+
+    //list of challenges page title getter
+    public String getListOfChallengesPageTitle(){return listOfChallengesTitle.getText();}
+    //learn more section title getter
+    public String getLearnModeSectionTitle(){return listOfChallengesLearnModeTitle.getText();}
+
     //'List of Challenges' page web element assert methods
     public boolean isListOfChallengesDropdownMenuDisplayed(){return listOfChallengesDropdownMenu.isDisplayed();}
     public boolean isListOfChallengesAccountDropdownMenuDisplayed(){return listOfChallengesAccountDropdownMenu.isDisplayed();}
     public boolean isListOfChallengesLanguageDropdownMenuDisplayed(){return listOfChallengesUILanguageDropdownMenu.isDisplayed();}
     public boolean isListOfChallengesTitleDisplayed(){return listOfChallengesTitle.isDisplayed();}
 
-    public boolean isListOfChallengesLearnMoreTitleDisplayed(){return listOfChallengesLearnMoreTitle.isDisplayed();}
-    public boolean isListOfChallengesLearnMoreChallengeLinkDisplayed(){
-        for(WebElement link : listOfChallengesLearnMoreChallengeLinkElements){
+    public boolean isListOfChallengesLearnModeTitleDisplayed(){return listOfChallengesLearnModeTitle.isDisplayed();}
+    public boolean isListOfChallengesLearnModeChallengeLinkDisplayed(){
+        for(WebElement link : listOfChallengesLearnModeChallengeLinkElements){
             if (!link.isDisplayed()) {
                 return false;
             }
