@@ -12,7 +12,9 @@ public class TestMethods extends BaseTest {
         ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
         //click 'accept' cookies modal button
         listOfChallengesPage.clickAcceptCookiesButton();
-        //web element assert
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //'List of Challenges' page web element assert
         isListOfChallengesWebElementDisplayed(listOfChallengesPage);
         //assert the 'list of challenges' page title is as expected
         assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
@@ -20,16 +22,36 @@ public class TestMethods extends BaseTest {
         assertEquals("Learn Mode", listOfChallengesPage.getLearnModeSectionTitle(), "The learn more section title doesn't match expectations");
         //click 'number addition' challenge link
         listOfChallengesPage.clickLearnModeChallengeLink1();
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
     }
 
-    //'List of Challenges' page web element assert
-    protected void isListOfChallengesWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){
+    //general page web element assert (repeating web elements on all app pages)
+    protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){
         //assert 'list of challenges' navbar dropdown menu is displayed
         assertTrue(listOfChallengesPage.isListOfChallengesDropdownMenuDisplayed(), "The dropdown menu is not displayed");
         //assert 'list of challenges' navbar account dropdown menu is displayed
         assertTrue(listOfChallengesPage.isListOfChallengesAccountDropdownMenuDisplayed(), "The account dropdown menu is not displayed");
         //assert 'list of challenges' navbar language dropdown menu is displayed
         assertTrue(listOfChallengesPage.isListOfChallengesLanguageDropdownMenuDisplayed(), "The language dropdown menu is not displayed");
+        //assert 'list of challenges' terms and conditions link is displayed
+        assertTrue(listOfChallengesPage.isListOfChallengesTermsConditionsLinkDisplayed(), "The 'Terms and Conditions' link is not displayed");
+        //assert 'list of challenges' privacy policy link is displayed
+        assertTrue(listOfChallengesPage.isListOfChallengesPrivacyPolicyLinkDisplayed(), "The 'Privacy Policy' link is not displayed");
+        //assert 'list of challenges' leave feedback link is displayed
+        assertTrue(listOfChallengesPage.isListOfChallengesLeaveFeedbackLinkDisplayed(), "The 'Leave Feedback' link is not displayed");
+        //assert 'list of challenges' linked-in icon button is displayed
+        assertTrue(listOfChallengesPage.isListOfChallengesLinkedInIconButtonDisplayed(), "The 'LinkedIn' icon button is not displayed");
+        //assert 'list of challenges' facebook icon button is displayed
+        assertTrue(listOfChallengesPage.isListOfChallengesFacebookIconButtonDisplayed(), "The 'Facebook' icon button is not displayed");
+        //assert 'list of challenges' instagram icon button is displayed
+        assertTrue(listOfChallengesPage.isListOfChallengesInstagramIconButtonDisplayed(), "The 'Instagram' icon button is not displayed");
+        //assert 'list of challenges' copyright element is displayed
+        assertTrue(listOfChallengesPage.isListOfChallengesCopyrightElementDisplayed(), "The copyright element is not displayed");
+    }
+
+    //'List of Challenges' specific page web element assert
+    protected void isListOfChallengesWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){
         //assert 'list of challenges' page title is displayed
         assertTrue(listOfChallengesPage.isListOfChallengesTitleDisplayed(), "The 'List of Challenges' page title is not displayed");
         //assert 'list of challenges' learn more section title is displayed
@@ -48,20 +70,5 @@ public class TestMethods extends BaseTest {
         assertTrue(listOfChallengesPage.isListOfChallengesExploratoryTestingChallengeTitleDisplayed(), "The 'exploratory testing' section title is not displayed");
         //assert 'list of challenges' exploratory testing challenge menu link list is displayed
         assertTrue(listOfChallengesPage.isListOfChallengesExploratoryTestingChallengeLinkDisplayed(), "The 'exploratory testing' section challenge link is not displayed");
-        //assert 'list of challenges' terms and conditions link is displayed
-        assertTrue(listOfChallengesPage.isListOfChallengesTermsConditionsLinkDisplayed(), "The 'Terms and Conditions' link is not displayed");
-        //assert 'list of challenges' privacy policy link is displayed
-        assertTrue(listOfChallengesPage.isListOfChallengesPrivacyPolicyLinkDisplayed(), "The 'Privacy Policy' link is not displayed");
-        //assert 'list of challenges' leave feedback link is displayed
-        assertTrue(listOfChallengesPage.isListOfChallengesLeaveFeedbackLinkDisplayed(), "The 'Leave Feedback' link is not displayed");
-        //assert 'list of challenges' linked-in icon button is displayed
-        assertTrue(listOfChallengesPage.isListOfChallengesLinkedInIconButtonDisplayed(), "The 'LinkedIn' icon button is not displayed");
-        //assert 'list of challenges' facebook icon button is displayed
-        assertTrue(listOfChallengesPage.isListOfChallengesFacebookIconButtonDisplayed(), "The 'Facebook' icon button is not displayed");
-        //assert 'list of challenges' instagram icon button is displayed
-        assertTrue(listOfChallengesPage.isListOfChallengesInstagramIconButtonDisplayed(), "The 'Instagram' icon button is not displayed");
-        //assert 'list of challenges' copyright element is displayed
-        assertTrue(listOfChallengesPage.isListOfChallengesCopyrightElementDisplayed(), "The copyright element is not displayed");
     }
-
 }
