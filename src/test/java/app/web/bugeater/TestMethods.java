@@ -45,10 +45,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Entered Values:", individualChallengePage.getEnteredValuesText(), "The input form entered values doesn't match expected result");
         //assert calculation has the expected result (before operation)
         assertEquals("Result:", individualChallengePage.getCalculationResult() , "The calculation result doesn't match expected result");
-        //loggers before challenge completion
-        logger.info("Displayed character counter(before challenge 1): " + individualChallengePage.getChallengesCounterText());
-        logger.info("Displayed entered values(before challenge 1): " + individualChallengePage.getEnteredValuesText());
-        logger.info("Displayed result(before challenge 1): " + individualChallengePage.getCalculationResult());
+        //logger before challenge completion
+        logPreChallenge1Result(individualChallengePage);
         //input numbers into input field
         individualChallengePage.inputChallenge1Number1();
         individualChallengePage.inputChallenge1Number2();
@@ -71,10 +69,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Result: 3", individualChallengePage.getCalculationResult(), "The calculation result before calculation doesn't match expected result");
         //assert challenges counter gets updated after first challenge completion
         assertEquals("1 instruction(s) out of 6", individualChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
-        //loggers before challenge completion
-        logger.info("Displayed character counter(before challenge 2): " + individualChallengePage.getChallengesCounterText());
-        logger.info("Displayed entered values(before challenge 2): " + individualChallengePage.getEnteredValuesText());
-        logger.info("Displayed result(before challenge 2): " + individualChallengePage.getCalculationResult());
+        //logger before challenge completion
+        logPreChallenge2Result(individualChallengePage);
         //input numbers into input field
         individualChallengePage.inputChallenge2Number1();
         individualChallengePage.inputChallenge2Number2();
@@ -96,10 +92,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Result: 2", individualChallengePage.getCalculationResult(), "The calculation result doesn't match expected result");
         //assert challenges counter gets updated after second challenge completion
         assertEquals("2 instruction(s) out of 6", individualChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
-        //loggers before challenge completion
-        logger.info("Displayed character counter(before challenge 3): " + individualChallengePage.getChallengesCounterText());
-        logger.info("Displayed entered values(before challenge 3): " + individualChallengePage.getEnteredValuesText());
-        logger.info("Displayed result(before challenge 3): " + individualChallengePage.getCalculationResult());
+        //logger before challenge completion
+        logPreChallenge3Result(individualChallengePage);
         //input numbers into input field
         individualChallengePage.inputChallenge3Number1();
         individualChallengePage.inputChallenge3Number2();
@@ -123,10 +117,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Result: 4.0", individualChallengePage.getCalculationResult(), "The calculation result doesn't match expected result");
         //assert challenges counter gets updated after third challenge completion
         assertEquals("3 instruction(s) out of 6", individualChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
-        //loggers before challenge completion
-        logger.info("Displayed character counter(before challenge 4): " + individualChallengePage.getChallengesCounterText());
-        logger.info("Displayed entered values(before challenge 4): " + individualChallengePage.getEnteredValuesText());
-        logger.info("Displayed result(before challenge 4): " + individualChallengePage.getCalculationResult());
+        //logger before challenge completion
+        logPreChallenge4Result(individualChallengePage);
         //input numbers into input field (number 1 is a string)
         individualChallengePage.inputChallenge4Number1();
         individualChallengePage.inputChallenge4Number2();
@@ -148,10 +140,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Result: User input error", individualChallengePage.getCalculationResult(), "The calculation result doesn't match expected result");
         //assert challenges counter gets updated after fourth challenge completion
         assertEquals("4 instruction(s) out of 6", individualChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
-        //loggers before challenge completion
-        logger.info("Displayed character counter(before challenge 5): " + individualChallengePage.getChallengesCounterText());
-        logger.info("Displayed entered values(before challenge 5): " + individualChallengePage.getEnteredValuesText());
-        logger.info("Displayed result(before challenge 5): " + individualChallengePage.getCalculationResult());
+        //logger before challenge completion
+        logPreChallenge5Result(individualChallengePage);
         //input numbers into input field (both inputs are blank)
         individualChallengePage.inputChallenge5Number1();
         individualChallengePage.inputChallenge5Number2();
@@ -173,10 +163,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Result: User input error", individualChallengePage.getCalculationResult(), "The calculation result doesn't match expected result");
         //assert challenges counter gets updated after fifth challenge completion
         assertEquals("5 instruction(s) out of 6", individualChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
-        //loggers before challenge completion
-        logger.info("Displayed character counter(before challenge 6): " + individualChallengePage.getChallengesCounterText());
-        logger.info("Displayed entered values(before challenge 6): " + individualChallengePage.getEnteredValuesText());
-        logger.info("Displayed result(before challenge 6): " + individualChallengePage.getCalculationResult());
+        //logger before challenge completion
+        logPreChallenge6Result(individualChallengePage);
         //input numbers into input field (both inputs are blank)
         individualChallengePage.inputChallenge6Number1();
         individualChallengePage.inputChallenge6Number2();
@@ -228,22 +216,20 @@ public class TestMethods extends BaseTest {
         //assert challenge counter has no challenges completed yet
         assertEquals("0 instruction(s) out of 6", individualChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
         //assert the challenge one has correct text
-        assertEquals("Enter \"1\" and \"2\" into the input fields, then click on the \"Calculate\" button. Expected Result: \"3\".", individualChallengePage.getChallengeOne(), "The challenge description doesn't match expected result");
+        assertEquals("Enter \"4\" and \"2\" into the input fields, then click on the \"Calculate\" button. Expected Result: \"2\".", individualChallengePage.getChallengeOne(), "The challenge description doesn't match expected result");
         //assert input form entered has the expected display
         assertEquals("Entered Values:", individualChallengePage.getEnteredValuesText(), "The input form entered values doesn't match expected result");
         //assert calculation has the expected result (before operation)
         assertEquals("Result:", individualChallengePage.getCalculationResult() , "The calculation result doesn't match expected result");
-        //loggers before challenge completion
-        logger.info("Displayed character counter(before challenge 1): " + individualChallengePage.getChallengesCounterText());
-        logger.info("Displayed entered values(before challenge 1): " + individualChallengePage.getEnteredValuesText());
-        logger.info("Displayed result(before challenge 1): " + individualChallengePage.getCalculationResult());
+        //logger before challenge completion
+        logPreChallenge1Result(individualChallengePage);
         //input numbers into input field
         individualChallengePage.inputChallenge1Number1();
         individualChallengePage.inputChallenge1Number2();
         //click 'calculate' button
         individualChallengePage.clickCalculateButton();
         //assert entered values are displayed
-        assertEquals("Entered Values: First Number: 1, Second Number: 2", individualChallengePage.getEnteredValuesText(), "The input form entered values doesn't match expected result");
+        assertEquals("Entered Values: First Number: 4, Second Number: 2", individualChallengePage.getEnteredValuesText(), "The input form entered values doesn't match expected result");
     }
 
 
@@ -293,8 +279,8 @@ public class TestMethods extends BaseTest {
         assertTrue(listOfChallengesPage.isListOfChallengesExploratoryTestingChallengeLinkDisplayed(), "The 'exploratory testing' section challenge link is not displayed");
     }
 
-    //'Number Addition' page specific web element assert
-    protected void isNumberAdditionChallengeWebElementDisplayed(IndividualChallengePage individualChallengePage){
+    //Individual challenge page specific web element assert
+    protected void isIndividualChallengePageWebElementDisplayed(IndividualChallengePage individualChallengePage){
         //assert 'number addition' challenge page title is displayed
         assertTrue(individualChallengePage.isNumberAdditionChallengePageTitleDisplayed(), "The 'Number Addition' challenge page title is not displayed");
         //assert 'number addition' challenge guide icon is displayed
@@ -327,18 +313,48 @@ public class TestMethods extends BaseTest {
         assertTrue(individualChallengePage.isCalculateButtonDisplayed(), "The 'Number Addition' challenge calculate button is not displayed");
     }
 
-    //individual challenge page assert setter (for repeatable asserts)
+    //individual challenge page assert (for repeatable asserts)
     protected void isIndividualChallengePageTextMatchesExpectations(IndividualChallengePage individualChallengePage){
         //assert the page title is as expected
         assertEquals("Number Addition", individualChallengePage.getNumberAdditionChallengeTitle(), "The challenge page title doesn't match the expected title");
-        //web element assert
-        isNumberAdditionChallengeWebElementDisplayed(individualChallengePage);
         //assert the instructions title is as expected
         assertEquals("Instruction(s) You Follow", individualChallengePage.getNumberAdditionInstructionsTitle(), "The instructions title doesn't match the expected title");
         //assert input form has the correct title
         assertEquals("Form You Test", individualChallengePage.getInputFormTitle(), "The input form title doesn't match expected result");
         //assert challenge hint has the expected text
         assertEquals("Add two numbers", individualChallengePage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
+    }
+
+    //pre-challenges loggers (for debug validation)
+    protected void logPreChallenge1Result(IndividualChallengePage individualChallengePage){
+        logger.info("Displayed character counter(before challenge 1): " + individualChallengePage.getChallengesCounterText());
+        logger.info("Displayed entered values(before challenge 1): " + individualChallengePage.getEnteredValuesText());
+        logger.info("Displayed result(before challenge 1): " + individualChallengePage.getCalculationResult()+"\n");
+    }
+    protected void logPreChallenge2Result(IndividualChallengePage individualChallengePage){
+        logger.info("Displayed character counter(before challenge 2): " + individualChallengePage.getChallengesCounterText());
+        logger.info("Displayed entered values(before challenge 2): " + individualChallengePage.getEnteredValuesText());
+        logger.info("Displayed result(before challenge 2): " + individualChallengePage.getCalculationResult()+"\n");
+    }
+    protected void logPreChallenge3Result(IndividualChallengePage individualChallengePage){
+        logger.info("Displayed character counter(before challenge 3): " + individualChallengePage.getChallengesCounterText());
+        logger.info("Displayed entered values(before challenge 3): " + individualChallengePage.getEnteredValuesText());
+        logger.info("Displayed result(before challenge 3): " + individualChallengePage.getCalculationResult()+"\n");
+    }
+    protected void logPreChallenge4Result(IndividualChallengePage individualChallengePage){
+        logger.info("Displayed character counter(before challenge 4): " + individualChallengePage.getChallengesCounterText());
+        logger.info("Displayed entered values(before challenge 4): " + individualChallengePage.getEnteredValuesText());
+        logger.info("Displayed result(before challenge 4): " + individualChallengePage.getCalculationResult()+"\n");
+    }
+    protected void logPreChallenge5Result(IndividualChallengePage individualChallengePage){
+        logger.info("Displayed character counter(before challenge 5): " + individualChallengePage.getChallengesCounterText());
+        logger.info("Displayed entered values(before challenge 5): " + individualChallengePage.getEnteredValuesText());
+        logger.info("Displayed result(before challenge 5): " + individualChallengePage.getCalculationResult()+"\n");
+    }
+    protected void logPreChallenge6Result(IndividualChallengePage individualChallengePage){
+        logger.info("Displayed character counter(before challenge 6): " + individualChallengePage.getChallengesCounterText());
+        logger.info("Displayed entered values(before challenge 6): " + individualChallengePage.getEnteredValuesText());
+        logger.info("Displayed result(before challenge 6): " + individualChallengePage.getCalculationResult() +"\n");
     }
 
 }
