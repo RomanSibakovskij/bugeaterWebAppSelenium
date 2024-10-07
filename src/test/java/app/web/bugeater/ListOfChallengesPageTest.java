@@ -10,19 +10,19 @@ public class ListOfChallengesPageTest extends TestMethods{
     @Tag("Learn_Mode_Challenge_Test")
     void numberAdditionChallengeTest(){
         navigateToNumberAdditionPageTest();
-        NumberAdditionChallengePage numberAdditionChallengePage = new NumberAdditionChallengePage(driver);
+        IndividualChallengePage individualChallengePage = new IndividualChallengePage(driver);
         //challenge 1 test
-        solveNumberAdditionChallenge1Test(numberAdditionChallengePage);
+        solveNumberAdditionChallenge1Test(individualChallengePage);
         //challenge 2 test
-        solveNumberAdditionChallenge2Test(numberAdditionChallengePage);
+        solveNumberAdditionChallenge2Test(individualChallengePage);
         //challenge 3 test
-        solveNumberAdditionChallenge3Test(numberAdditionChallengePage);
+        solveNumberAdditionChallenge3Test(individualChallengePage);
         //challenge 4 test
-        solveNumberAdditionChallenge4Test(numberAdditionChallengePage);
+        solveNumberAdditionChallenge4Test(individualChallengePage);
         //challenge 5 test
-        solveNumberAdditionChallenge5Test(numberAdditionChallengePage);
+        solveNumberAdditionChallenge5Test(individualChallengePage);
         //challenge 6 test
-        solveNumberAdditionChallenge6Test(numberAdditionChallengePage);
+        solveNumberAdditionChallenge6Test(individualChallengePage);
     }
 
     //Test 002 -> number division challenge test (as a guest)

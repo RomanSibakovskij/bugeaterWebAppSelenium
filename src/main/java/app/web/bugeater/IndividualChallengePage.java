@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class NumberAdditionChallengePage extends BasePage{
+public class IndividualChallengePage extends BasePage{
 
     //tutorial modal web elements
     @FindBy(xpath = "(//div[.='This description explains the challenge and what you need to do. Read it carefully before starting the challenge.'])[1]")
@@ -92,7 +92,7 @@ public class NumberAdditionChallengePage extends BasePage{
     private String challenge6Number1 = "10000000000";
     private int challenge6Number2 = 1;
 
-    public NumberAdditionChallengePage(WebDriver driver) {
+    public IndividualChallengePage(WebDriver driver) {
         super(driver);
     }
 
