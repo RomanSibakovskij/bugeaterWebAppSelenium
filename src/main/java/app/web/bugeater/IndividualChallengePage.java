@@ -206,6 +206,17 @@ public class IndividualChallengePage extends BasePage{
         wait.until(ExpectedConditions.visibilityOf(number2InputField));
         number2InputField.sendKeys("");
     }
+    //number division input methods (for challenge 3)
+    public void inputDivisionChallenge6Number1(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(number1InputField));
+        number1InputField.sendKeys(String.valueOf(10));
+    }
+    public void inputDivisionChallenge6Number2(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(number2InputField));
+        number2InputField.sendKeys(String.valueOf(0));
+    }
 
     //tutorial modal 'skip' button click method
     public void clickSkipTutorialButton(){tutorialSkipButton.click();}

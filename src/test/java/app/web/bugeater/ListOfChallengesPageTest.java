@@ -42,5 +42,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveNumberDivisionChallenge4Test(individualChallengePage);
         //challenge 5 test
         solveNumberDivisionChallenge5Test(individualChallengePage);
+        //challenge 6 test
+        solveNumberDivisionChallenge6Test(individualChallengePage);
     }
 }
