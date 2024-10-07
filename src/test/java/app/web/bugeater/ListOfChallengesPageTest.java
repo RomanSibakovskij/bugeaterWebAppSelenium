@@ -31,5 +31,8 @@ public class ListOfChallengesPageTest extends TestMethods{
     @Tag("Learn_Mode_Challenge_Test")
     void numberDivisionChallengeTest(){
         navigateToNumberDivisionPageTest();
+        IndividualChallengePage individualChallengePage = new IndividualChallengePage(driver);
+        //challenge 1 test
+        solveNumberDivisionChallenge1Test(individualChallengePage);
     }
 }

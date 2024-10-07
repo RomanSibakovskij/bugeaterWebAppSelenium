@@ -73,94 +73,75 @@ public class IndividualChallengePage extends BasePage{
     @FindBy(xpath = "//button[@class='btn-close']")
     private WebElement closeModalButton;
 
-    //number addition input data (for challenge 1)
-    private int challenge1Number1 = 1;
-    private int challenge1Number2 = 2;
-    //number addition input data (for challenge 2)
-    private int challenge2Number1 = -2;
-    private int challenge2Number2 = 4;
-    //number addition input data (for challenge 3)
-    private double challenge3Number1 = 1.5;
-    private double challenge3Number2 = 2.5;
-    //number addition input data (for challenge 4)
-    private String challenge4Number1 = "abc";
-    private int challenge4Number2 = 1;
-    //number addition input data (for challenge 5)
-    private String challenge5Number1 = "";
-    private String challenge5Number2 = "";
-    //number addition input data (for challenge 6)
-    private String challenge6Number1 = "10000000000";
-    private int challenge6Number2 = 1;
-
     public IndividualChallengePage(WebDriver driver) {
         super(driver);
     }
 
     //number addition input methods (for challenge 1)
-    public void inputChallenge1Number1(){
+    public void inputAdditionChallenge1Number1(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(number1InputField));
-        number1InputField.sendKeys(String.valueOf(challenge1Number1));
+        number1InputField.sendKeys(String.valueOf(1));
     }
-    public void inputChallenge1Number2(){
+    public void inputAdditionChallenge1Number2(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(number2InputField));
-        number2InputField.sendKeys(String.valueOf(challenge1Number2));
+        number2InputField.sendKeys(String.valueOf(2));
     }
     //number addition input methods (for challenge 2)
-    public void inputChallenge2Number1(){
+    public void inputAdditionChallenge2Number1(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(number1InputField));
-        number1InputField.sendKeys(String.valueOf(challenge2Number1));
+        number1InputField.sendKeys(String.valueOf(-2));
     }
-    public void inputChallenge2Number2(){
+    public void inputAdditionChallenge2Number2(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(number2InputField));
-        number2InputField.sendKeys(String.valueOf(challenge2Number2));
+        number2InputField.sendKeys(String.valueOf(4));
     }
     //number addition input methods (for challenge 3)
-    public void inputChallenge3Number1(){
+    public void inputAdditionChallenge3Number1(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(number1InputField));
-        number1InputField.sendKeys(String.valueOf(challenge3Number1));
+        number1InputField.sendKeys(String.valueOf(1.5));
     }
-    public void inputChallenge3Number2(){
+    public void inputAdditionChallenge3Number2(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(number2InputField));
-        number2InputField.sendKeys(String.valueOf(challenge3Number2));
+        number2InputField.sendKeys(String.valueOf(2.5));
     }
     //number addition input methods (for challenge 4)
-    public void inputChallenge4Number1(){
+    public void inputAdditionChallenge4Number1(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(number1InputField));
-        number1InputField.sendKeys(challenge4Number1);
+        number1InputField.sendKeys("abc");
     }
-    public void inputChallenge4Number2(){
+    public void inputAdditionChallenge4Number2(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(number2InputField));
-        number2InputField.sendKeys(String.valueOf(challenge4Number2));
+        number2InputField.sendKeys(String.valueOf(1));
     }
     //number addition input methods (for challenge 5) (both inputs are blank)
-    public void inputChallenge5Number1(){
+    public void inputAdditionChallenge5Number1(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(number1InputField));
-        number1InputField.sendKeys(challenge5Number1);
+        number1InputField.sendKeys("");
     }
     public void inputChallenge5Number2(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(number2InputField));
-        number2InputField.sendKeys(challenge5Number2);
+        number2InputField.sendKeys("");
     }
     //number addition input methods (for challenge 6) (one is above limit, second is 1)
-    public void inputChallenge6Number1(){
+    public void inputAdditionChallenge6Number1(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(number1InputField));
-        number1InputField.sendKeys(challenge6Number1);
+        number1InputField.sendKeys("10000000000");
     }
-    public void inputChallenge6Number2(){
+    public void inputAdditionChallenge6Number2(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(number2InputField));
-        number2InputField.sendKeys(String.valueOf(challenge6Number2));
+        number2InputField.sendKeys(String.valueOf(1));
     }
 
     //click 'calculate' button method
@@ -168,6 +149,18 @@ public class IndividualChallengePage extends BasePage{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.elementToBeClickable(calculateButton));
         calculateButton.click();
+    }
+
+    //number division input methods (for challenge 1)
+    public void inputDivisionChallenge1Number1(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(number1InputField));
+        number1InputField.sendKeys(String.valueOf(4));
+    }
+    public void inputDivisionChallenge1Number2(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(number2InputField));
+        number2InputField.sendKeys(String.valueOf(2));
     }
 
     //tutorial modal 'skip' button click method
