@@ -7,7 +7,7 @@ public class ListOfChallengesPageTest extends TestMethods{
     // Test 001 -> number addition challenge test (as a guest)
     @Test
     @DisplayName("Number Addition Challenge Test (as a guest)")
-    @Tag("Challenge_Test")
+    @Tag("Learn_Mode_Challenge_Test")
     void numberAdditionChallengeTest(){
         navigateToNumberAdditionPageTest();
         NumberAdditionChallengePage numberAdditionChallengePage = new NumberAdditionChallengePage(driver);
@@ -23,5 +23,13 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveNumberAdditionChallenge5Test(numberAdditionChallengePage);
         //challenge 6 test
         solveNumberAdditionChallenge6Test(numberAdditionChallengePage);
+    }
+
+    //Test 002 -> number division challenge test (as a guest)
+    @Test
+    @DisplayName("Number Division Challenge Test (as a guest)")
+    @Tag("Learn_Mode_Challenge_Test")
+    void numberDivisionChallengeTest(){
+        navigateToNumberDivisionPageTest();
     }
 }
