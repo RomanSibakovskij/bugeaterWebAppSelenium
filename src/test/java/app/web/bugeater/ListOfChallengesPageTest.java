@@ -11,6 +11,9 @@ public class ListOfChallengesPageTest extends TestMethods{
     void numberAdditionChallengeTest(){
         navigateToNumberAdditionPageTest();
         NumberAdditionChallengePage numberAdditionChallengePage = new NumberAdditionChallengePage(driver);
+        //challenge 1 test
         solveNumberAdditionChallenge1Test(numberAdditionChallengePage);
+        //challenge 2 test
+        solveNumberAdditionChallenge2Test(numberAdditionChallengePage);
     }
 }
