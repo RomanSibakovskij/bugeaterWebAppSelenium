@@ -38,5 +38,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveNumberDivisionChallenge2Test(individualChallengePage);
         //challenge 3 test
         solveNumberDivisionChallenge3Test(individualChallengePage);
+        //challenge 4 test
+        solveNumberDivisionChallenge4Test(individualChallengePage);
     }
 }

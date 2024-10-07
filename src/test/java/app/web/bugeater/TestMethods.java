@@ -270,11 +270,11 @@ public class TestMethods extends BaseTest {
         isIndividualChallengePageTextMatchesExpectations(individualChallengePage);
         //assert challenges counter gets updated after first challenge completion
         assertEquals("1 instruction(s) out of 6", individualChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
-        //assert the challenge one has correct text
+        //assert the challenge two has correct text
         assertEquals("Input \"-10\" and \"2\" into the input fields where one number is negative, then click on the \"Calculate\" button. Expected Result: \"-5\".", individualChallengePage.getChallengeTwo(), "The challenge description doesn't match expected result");
         //assert input form entered has the expected display
         assertEquals("Entered Values: First Number: 4, Second Number: 2", individualChallengePage.getEnteredValuesText(), "The input form entered values doesn't match expected result");
-        //assert calculation has the expected result (before operation)
+        //assert calculation has the expected result (before challenge two completion)
         assertEquals("Result: 2", individualChallengePage.getCalculationResult() , "The calculation result doesn't match expected result");
         //assert challenge hint has the expected text
         assertEquals("Divide two numbers", individualChallengePage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
@@ -297,11 +297,11 @@ public class TestMethods extends BaseTest {
         isIndividualChallengePageTextMatchesExpectations(individualChallengePage);
         //assert challenges counter gets updated after second challenge completion
         assertEquals("2 instruction(s) out of 6", individualChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
-        //assert the challenge one has correct text
+        //assert the challenge three has correct text
         assertEquals("Enter \"5\" and \"2\" into the input fields, then click on the \"Calculate\" button. Expected Result: \"2.5\" (decimal fraction).", individualChallengePage.getChallengeThree(), "The challenge description doesn't match expected result");
-        //assert input form entered has the expected display
+        //assert input form entered has the expected display (before challenge three completion)
         assertEquals("Entered Values: First Number: -10, Second Number: 2", individualChallengePage.getEnteredValuesText(), "The input form entered values doesn't match expected result");
-        //assert calculation has the expected result (before operation)
+        //assert calculation has the expected result (before challenge three completion)
         assertEquals("Result: -5", individualChallengePage.getCalculationResult() , "The calculation result doesn't match expected result");
         //assert challenge hint has the expected text
         assertEquals("Divide two numbers", individualChallengePage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
@@ -314,6 +314,33 @@ public class TestMethods extends BaseTest {
         individualChallengePage.clickCalculateButton();
         //assert 'halfway there' message is displayed
         //assertEquals("Halfway there!", numberAdditionChallengePage.getHalfwayThereMessage(), "The 'halfway there' message isn't displayed"); //NoSuchElementException with valid selector
+    }
+    //number division challenge test method (challenge 4) (number 1 is a string)
+    protected void solveNumberDivisionChallenge4Test(IndividualChallengePage individualChallengePage){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the page title is as expected
+        assertEquals("Number Division", individualChallengePage.getNumberAdditionChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method
+        isIndividualChallengePageTextMatchesExpectations(individualChallengePage);
+        //assert challenges counter gets updated after third challenge completion
+        assertEquals("3 instruction(s) out of 6", individualChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the challenge four has correct text
+        assertEquals("Enter \"abc\" in the First Number input field and \"1\" in the Second Number input field, then click on the \"Calculate\" button. Expected Result: \"User input error\".", individualChallengePage.getChallengeFour(), "The challenge description doesn't match expected result");
+        //assert input form entered has the expected display (before challenge four completion)
+        assertEquals("Entered Values: First Number: 5, Second Number: 2", individualChallengePage.getEnteredValuesText(), "The input form entered values doesn't match expected result");
+        //assert calculation has the expected result (before challenge four completion)
+        assertEquals("Result: 2.5", individualChallengePage.getCalculationResult() , "The calculation result doesn't match expected result");
+        //assert challenge hint has the expected text
+        assertEquals("Divide two numbers", individualChallengePage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
+        //logger before challenge completion
+        logPreChallenge4Result(individualChallengePage);
+        //input numbers into input field (number 1 is a string)
+        individualChallengePage.inputDivisionChallenge4Number1();
+        individualChallengePage.inputDivisionChallenge4Number2();
+        //click 'calculate' button
+        individualChallengePage.clickCalculateButton();
     }
 
 
