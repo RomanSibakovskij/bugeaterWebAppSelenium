@@ -36,7 +36,7 @@ public class TestMethods extends BaseTest {
         //click tutorial 'skip' button
         numberAdditionChallengePage.clickSkipTutorialButton();
         //repeatable assert method
-        isNumberAdditionTextMatchesExpectations(numberAdditionChallengePage);
+        isIndividualChallengePageTextMatchesExpectations(numberAdditionChallengePage);
         //assert challenge counter has no challenges completed yet
         assertEquals("0 instruction(s) out of 6", numberAdditionChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
         //assert the challenge one has correct text
@@ -64,7 +64,7 @@ public class TestMethods extends BaseTest {
         //general page web element assert (elements that all pages have)
         isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
         //repeatable assert method
-        isNumberAdditionTextMatchesExpectations(numberAdditionChallengePage);
+        isIndividualChallengePageTextMatchesExpectations(numberAdditionChallengePage);
         //assert the challenge two has correct text
         assertEquals("Input \"-2\" and \"4\" into the input fields where one number is negative, then click on the \"Calculate\" button. Expected Result: \"2\".", numberAdditionChallengePage.getChallengeTwo(), "The challenge description doesn't match expected result");
        //assert calculation has the expected result (before challenge two completion)
@@ -87,7 +87,7 @@ public class TestMethods extends BaseTest {
         //general page web element assert (elements that all pages have)
         isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
         //repeatable assert method
-        isNumberAdditionTextMatchesExpectations(numberAdditionChallengePage);
+        isIndividualChallengePageTextMatchesExpectations(numberAdditionChallengePage);
         //assert the challenge three has correct text
         assertEquals("Enter \"1.5\" and \"2.5\" into the input fields; both are decimal fractions, then click on the \"Calculate\" button. Expected Result: \"4.0\".", numberAdditionChallengePage.getChallengeThree(), "The challenge description doesn't match expected result");
         //assert input form entered has the expected display (before challenge three completion)
@@ -114,7 +114,7 @@ public class TestMethods extends BaseTest {
         //general page web element assert (elements that all pages have)
         isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
         //repeatable assert method
-        isNumberAdditionTextMatchesExpectations(numberAdditionChallengePage);
+        isIndividualChallengePageTextMatchesExpectations(numberAdditionChallengePage);
         //assert the challenge three has correct text
         assertEquals("Enter \"abc\" in the First Number input field and \"1\" in the Second Number input field, then click on the \"Calculate\" button. Expected Result: \"User input error\".", numberAdditionChallengePage.getChallengeFour(), "The challenge description doesn't match expected result");
         //assert input form entered has the expected display (before challenge four completion)
@@ -139,7 +139,7 @@ public class TestMethods extends BaseTest {
         //general page web element assert (elements that all pages have)
         isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
         //repeatable assert method
-        isNumberAdditionTextMatchesExpectations(numberAdditionChallengePage);
+        isIndividualChallengePageTextMatchesExpectations(numberAdditionChallengePage);
         //assert the challenge three has correct text
         assertEquals("Leave both input fields blank and then click on the \"Calculate\" button. Expected Result: \"User input error\".", numberAdditionChallengePage.getChallengeFive(), "The challenge description doesn't match expected result");
         //assert input form entered has the expected display (before challenge five completion)
@@ -164,7 +164,7 @@ public class TestMethods extends BaseTest {
         //general page web element assert (elements that all pages have)
         isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
         //repeatable assert method
-        isNumberAdditionTextMatchesExpectations(numberAdditionChallengePage);
+        isIndividualChallengePageTextMatchesExpectations(numberAdditionChallengePage);
         //assert the challenge three has correct text
         assertEquals("Input \"10000000000\" into the first input field, which is too large, and set the second value to \"1\", then click on the \"Calculate\" button. Expected Result: \"Application Error\".", numberAdditionChallengePage.getChallengeSix(), "The challenge description doesn't match expected result");
         //assert input form entered has the expected display (before challenge six completion)
@@ -212,6 +212,40 @@ public class TestMethods extends BaseTest {
         //click 'number addition' challenge link
         listOfChallengesPage.clickLearnModeChallengeLink2();
     }
+    //number division challenge test method (challenge 1) (valid number inputs)
+    protected void solveNumberDivisionChallenge1Test(NumberAdditionChallengePage numberAdditionChallengePage){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the challenge text is displayed as expected
+        assertEquals("Follow the six step-by-step appearing instructions, entering values into the form. This way, you conduct a basic check of the form's proper functioning. You are practically applying the Scripted Testing.", numberAdditionChallengePage.getCurrentChallengeText(), "The text of the challenge doesn't match the expected text");
+        //assert tutorial description text is displayed as expected
+        assertEquals("This description explains the challenge and what you need to do. Read it carefully before starting the challenge.", numberAdditionChallengePage.getTutorialDescriptionText(), "The tutorial text doesn't match the expected text");
+        //click tutorial 'skip' button
+        numberAdditionChallengePage.clickSkipTutorialButton();
+        //repeatable assert method
+        isIndividualChallengePageTextMatchesExpectations(numberAdditionChallengePage);
+        //assert challenge counter has no challenges completed yet
+        assertEquals("0 instruction(s) out of 6", numberAdditionChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the challenge one has correct text
+        assertEquals("Enter \"1\" and \"2\" into the input fields, then click on the \"Calculate\" button. Expected Result: \"3\".", numberAdditionChallengePage.getChallengeOne(), "The challenge description doesn't match expected result");
+        //assert input form entered has the expected display
+        assertEquals("Entered Values:", numberAdditionChallengePage.getEnteredValuesText(), "The input form entered values doesn't match expected result");
+        //assert calculation has the expected result (before operation)
+        assertEquals("Result:", numberAdditionChallengePage.getCalculationResult() , "The calculation result doesn't match expected result");
+        //loggers before challenge completion
+        logger.info("Displayed character counter(before challenge 1): " + numberAdditionChallengePage.getChallengesCounterText());
+        logger.info("Displayed entered values(before challenge 1): " + numberAdditionChallengePage.getEnteredValuesText());
+        logger.info("Displayed result(before challenge 1): " + numberAdditionChallengePage.getCalculationResult());
+        //input numbers into input field
+        numberAdditionChallengePage.inputChallenge1Number1();
+        numberAdditionChallengePage.inputChallenge1Number2();
+        //click 'calculate' button
+        numberAdditionChallengePage.clickCalculateButton();
+        //assert entered values are displayed
+        assertEquals("Entered Values: First Number: 1, Second Number: 2", numberAdditionChallengePage.getEnteredValuesText(), "The input form entered values doesn't match expected result");
+    }
+
 
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){
@@ -293,8 +327,8 @@ public class TestMethods extends BaseTest {
         assertTrue(numberAdditionChallengePage.isCalculateButtonDisplayed(), "The 'Number Addition' challenge calculate button is not displayed");
     }
 
-    //number addition challenge page assert setter (for repeatable asserts
-    protected void isNumberAdditionTextMatchesExpectations(NumberAdditionChallengePage numberAdditionChallengePage){
+    //individual challenge page assert setter (for repeatable asserts)
+    protected void isIndividualChallengePageTextMatchesExpectations(NumberAdditionChallengePage numberAdditionChallengePage){
         //assert the page title is as expected
         assertEquals("Number Addition", numberAdditionChallengePage.getNumberAdditionChallengeTitle(), "The challenge page title doesn't match the expected title");
         //web element assert
