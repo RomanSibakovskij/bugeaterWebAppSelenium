@@ -33,10 +33,6 @@ public class NumberAdditionChallengePage extends BasePage{
     private WebElement instructionsTitle;
     @FindBy(xpath = "//div[@class='_challengePanelResultsHeading_1a4cy_60']/p[@class='_challengePanelResultsCaption_1a4cy_71']")
     private WebElement challengesCompletedCounter;
-    @FindBy(xpath = "//div[@class='_challengePanelResultsHeading_1a4cy_60']/p[@class='_challengePanelResultsCaption_1a4cy_71']")
-    private WebElement challengesCompletedCounterBeforeChallengeTwo;
-    @FindBy(xpath = "//div[@class='_challengePanelResultsHeading_1a4cy_60']/p[@class='_challengePanelResultsCaption_1a4cy_71']")
-    private WebElement challengesCompletedCounterBeforeChallengeThree;
     //'Number Addition' challenge web elements
     @FindBy(xpath = "//ol[@class='_learnChallengeList_1erpu_1']/li")
     private WebElement challengeOne;
@@ -44,6 +40,8 @@ public class NumberAdditionChallengePage extends BasePage{
     private WebElement challengeTwo;
     @FindBy(xpath = "//ol[@class='_learnChallengeList_1erpu_1']/li[3]")
     private WebElement challengeThree;
+    @FindBy(xpath = "//ol[@class='_learnChallengeList_1erpu_1']/li[4]")
+    private WebElement challengeFour;
     //'Number Addition' input form web elements
     @FindBy(xpath = "//div[@id='testForm']/h2")
     private WebElement inputFormTitle;
@@ -77,6 +75,9 @@ public class NumberAdditionChallengePage extends BasePage{
     //number addition input data (for challenge 3)
     private double challenge3Number1 = 1.5;
     private double challenge3Number2 = 2.5;
+    //number addition input data (for challenge 4)
+    private String challenge4Number1 = "abc";
+    private int challenge4Number2 = 1;
 
     public NumberAdditionChallengePage(WebDriver driver) {
         super(driver);
@@ -104,7 +105,7 @@ public class NumberAdditionChallengePage extends BasePage{
         wait.until(ExpectedConditions.visibilityOf(number2InputField));
         number2InputField.sendKeys(String.valueOf(challenge2Number2));
     }
-    //number addition input methods (for challenge 2)
+    //number addition input methods (for challenge 3)
     public void inputChallenge3Number1(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(number1InputField));
@@ -114,6 +115,17 @@ public class NumberAdditionChallengePage extends BasePage{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(number2InputField));
         number2InputField.sendKeys(String.valueOf(challenge3Number2));
+    }
+    //number addition input methods (for challenge 4)
+    public void inputChallenge4Number1(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(number1InputField));
+        number1InputField.sendKeys(challenge4Number1);
+    }
+    public void inputChallenge4Number2(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(number2InputField));
+        number2InputField.sendKeys(String.valueOf(challenge4Number2));
     }
 
     //click 'calculate' button method
@@ -142,6 +154,8 @@ public class NumberAdditionChallengePage extends BasePage{
     public String getChallengeTwo(){return challengeTwo.getText();}
     //challenge three text getter
     public String getChallengeThree(){return challengeThree.getText();}
+    //challenge three text getter
+    public String getChallengeFour(){return challengeFour.getText();}
     //input form title getter
     public String getInputFormTitle() {return inputFormTitle.getText();}
     //input form 'entered values' text getter

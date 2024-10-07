@@ -111,6 +111,32 @@ public class TestMethods extends BaseTest {
         //assert 'halfway there' message is displayed
         //assertEquals("Halfway there!", numberAdditionChallengePage.getHalfwayThereMessage(), "The 'halfway there' message isn't displayed"); //NoSuchElementException with valid selector
     }
+    //number addition challenge test method (challenge 4)
+    protected void solveNumberAdditionChallenge4Test(NumberAdditionChallengePage numberAdditionChallengePage){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //repeatable assert method
+        isNumberAdditionTextMatchesExpectations(numberAdditionChallengePage);
+        //assert the challenge three has correct text
+        assertEquals("Enter \"abc\" in the First Number input field and \"1\" in the Second Number input field, then click on the \"Calculate\" button. Expected Result: \"User input error\".", numberAdditionChallengePage.getChallengeFour(), "The challenge description doesn't match expected result");
+        //assert input form entered has the expected display (before challenge four completion)
+        assertEquals("Entered Values: First Number: 1.5, Second Number: 2.5", numberAdditionChallengePage.getEnteredValuesText(), "The input form entered values doesn't match expected result");
+        //assert challenge hint has the expected text
+        assertEquals("Add two numbers", numberAdditionChallengePage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
+        //assert calculation has the expected result (before challenge four completion)
+        assertEquals("Result: 4.0", numberAdditionChallengePage.getCalculationResult(), "The calculation result doesn't match expected result");
+        //assert challenges counter gets updated after third challenge completion
+        assertEquals("3 instruction(s) out of 6", numberAdditionChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result"); //text somehow doesn't get updated
+        //loggers before challenge completion
+        logger.info("Displayed challenges counter(before challenge 3): " + numberAdditionChallengePage.getEnteredValuesText());
+        logger.info("Displayed result(before challenge 3): " + numberAdditionChallengePage.getCalculationResult());
+        //input numbers into input field
+        numberAdditionChallengePage.inputChallenge4Number1();
+        numberAdditionChallengePage.inputChallenge4Number2();
+        //click 'calculate' button
+        numberAdditionChallengePage.clickCalculateButton();
+    }
 
 
     //general page web element assert (repeating web elements on all app pages)

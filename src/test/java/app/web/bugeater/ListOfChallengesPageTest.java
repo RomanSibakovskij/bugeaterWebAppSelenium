@@ -17,5 +17,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveNumberAdditionChallenge2Test(numberAdditionChallengePage);
         //challenge 3 test
         solveNumberAdditionChallenge3Test(numberAdditionChallengePage);
+        //challenge 4 test
+        solveNumberAdditionChallenge4Test(numberAdditionChallengePage);
     }
 }
