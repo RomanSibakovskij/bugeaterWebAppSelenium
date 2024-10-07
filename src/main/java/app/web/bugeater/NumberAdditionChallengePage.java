@@ -42,6 +42,8 @@ public class NumberAdditionChallengePage extends BasePage{
     private WebElement challengeThree;
     @FindBy(xpath = "//ol[@class='_learnChallengeList_1erpu_1']/li[4]")
     private WebElement challengeFour;
+    @FindBy(xpath = "//ol[@class='_learnChallengeList_1erpu_1']/li[5]")
+    private WebElement challengeFive;
     //'Number Addition' input form web elements
     @FindBy(xpath = "//div[@id='testForm']/h2")
     private WebElement inputFormTitle;
@@ -78,6 +80,9 @@ public class NumberAdditionChallengePage extends BasePage{
     //number addition input data (for challenge 4)
     private String challenge4Number1 = "abc";
     private int challenge4Number2 = 1;
+    //number addition input data (for challenge 5)
+    private String challenge5Number1 = "";
+    private String challenge5Number2 = "";
 
     public NumberAdditionChallengePage(WebDriver driver) {
         super(driver);
@@ -127,6 +132,17 @@ public class NumberAdditionChallengePage extends BasePage{
         wait.until(ExpectedConditions.visibilityOf(number2InputField));
         number2InputField.sendKeys(String.valueOf(challenge4Number2));
     }
+    //number addition input methods (for challenge 5) (both inputs are blank)
+    public void inputChallenge5Number1(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(number1InputField));
+        number1InputField.sendKeys(challenge5Number1);
+    }
+    public void inputChallenge5Number2(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(number2InputField));
+        number2InputField.sendKeys(challenge5Number2);
+    }
 
     //click 'calculate' button method
     public void clickCalculateButton(){
@@ -154,8 +170,10 @@ public class NumberAdditionChallengePage extends BasePage{
     public String getChallengeTwo(){return challengeTwo.getText();}
     //challenge three text getter
     public String getChallengeThree(){return challengeThree.getText();}
-    //challenge three text getter
+    //challenge four text getter
     public String getChallengeFour(){return challengeFour.getText();}
+    //challenge five text getter
+    public String getChallengeFive(){return challengeFive.getText();}
     //input form title getter
     public String getInputFormTitle() {return inputFormTitle.getText();}
     //input form 'entered values' text getter
