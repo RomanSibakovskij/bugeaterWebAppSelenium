@@ -34,5 +34,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         IndividualChallengePage individualChallengePage = new IndividualChallengePage(driver);
         //challenge 1 test
         solveNumberDivisionChallenge1Test(individualChallengePage);
+        //challenge 2 test
+        solveNumberDivisionChallenge2Test(individualChallengePage);
     }
 }

@@ -259,6 +259,33 @@ public class TestMethods extends BaseTest {
         //assert entered values are displayed
         assertEquals("Entered Values: First Number: 4, Second Number: 2", individualChallengePage.getEnteredValuesText(), "The input form entered values doesn't match expected result");
     }
+    //number division challenge test method (challenge 2) (valid number inputs)
+    protected void solveNumberDivisionChallenge2Test(IndividualChallengePage individualChallengePage){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the page title is as expected
+        assertEquals("Number Division", individualChallengePage.getNumberAdditionChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method
+        isIndividualChallengePageTextMatchesExpectations(individualChallengePage);
+        //assert challenges counter gets updated after first challenge completion
+        assertEquals("1 instruction(s) out of 6", individualChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the challenge one has correct text
+        assertEquals("Input \"-10\" and \"2\" into the input fields where one number is negative, then click on the \"Calculate\" button. Expected Result: \"-5\".", individualChallengePage.getChallengeTwo(), "The challenge description doesn't match expected result");
+        //assert input form entered has the expected display
+        assertEquals("Entered Values: First Number: 4, Second Number: 2", individualChallengePage.getEnteredValuesText(), "The input form entered values doesn't match expected result");
+        //assert calculation has the expected result (before operation)
+        assertEquals("Result: 2", individualChallengePage.getCalculationResult() , "The calculation result doesn't match expected result");
+        //assert challenge hint has the expected text
+        assertEquals("Divide two numbers", individualChallengePage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
+        //logger before challenge completion
+        logPreChallenge2Result(individualChallengePage);
+        //input numbers into input field
+        individualChallengePage.inputDivisionChallenge2Number1();
+        individualChallengePage.inputDivisionChallenge2Number2();
+        //click 'calculate' button
+        individualChallengePage.clickCalculateButton();
+    }
 
 
     //general page web element assert (repeating web elements on all app pages)
