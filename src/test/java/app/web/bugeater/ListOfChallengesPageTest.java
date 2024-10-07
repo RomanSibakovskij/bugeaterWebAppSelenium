@@ -10,19 +10,19 @@ public class ListOfChallengesPageTest extends TestMethods{
     @Tag("Learn_Mode_Challenge_Test")
     void numberAdditionChallengeTest(){
         navigateToNumberAdditionPageTest();
-        IndividualChallengePage individualChallengePage = new IndividualChallengePage(driver);
+        IndividualLearnModeChallengePage individualLearnModeChallengePage = new IndividualLearnModeChallengePage(driver);
         //challenge 1 test
-        solveNumberAdditionChallenge1Test(individualChallengePage);
+        solveNumberAdditionChallenge1Test(individualLearnModeChallengePage);
         //challenge 2 test
-        solveNumberAdditionChallenge2Test(individualChallengePage);
+        solveNumberAdditionChallenge2Test(individualLearnModeChallengePage);
         //challenge 3 test
-        solveNumberAdditionChallenge3Test(individualChallengePage);
+        solveNumberAdditionChallenge3Test(individualLearnModeChallengePage);
         //challenge 4 test
-        solveNumberAdditionChallenge4Test(individualChallengePage);
+        solveNumberAdditionChallenge4Test(individualLearnModeChallengePage);
         //challenge 5 test
-        solveNumberAdditionChallenge5Test(individualChallengePage);
+        solveNumberAdditionChallenge5Test(individualLearnModeChallengePage);
         //challenge 6 test
-        solveNumberAdditionChallenge6Test(individualChallengePage);
+        solveNumberAdditionChallenge6Test(individualLearnModeChallengePage);
     }
 
     //Test 002 -> number division challenge test (as a guest)
@@ -31,18 +31,18 @@ public class ListOfChallengesPageTest extends TestMethods{
     @Tag("Learn_Mode_Challenge_Test")
     void numberDivisionChallengeTest(){
         navigateToNumberDivisionPageTest();
-        IndividualChallengePage individualChallengePage = new IndividualChallengePage(driver);
+        IndividualLearnModeChallengePage individualLearnModeChallengePage = new IndividualLearnModeChallengePage(driver);
         //challenge 1 test
-        solveNumberDivisionChallenge1Test(individualChallengePage);
+        solveNumberDivisionChallenge1Test(individualLearnModeChallengePage);
         //challenge 2 test
-        solveNumberDivisionChallenge2Test(individualChallengePage);
+        solveNumberDivisionChallenge2Test(individualLearnModeChallengePage);
         //challenge 3 test
-        solveNumberDivisionChallenge3Test(individualChallengePage);
+        solveNumberDivisionChallenge3Test(individualLearnModeChallengePage);
         //challenge 4 test
-        solveNumberDivisionChallenge4Test(individualChallengePage);
+        solveNumberDivisionChallenge4Test(individualLearnModeChallengePage);
         //challenge 5 test
-        solveNumberDivisionChallenge5Test(individualChallengePage);
+        solveNumberDivisionChallenge5Test(individualLearnModeChallengePage);
         //challenge 6 test
-        solveNumberDivisionChallenge6Test(individualChallengePage);
+        solveNumberDivisionChallenge6Test(individualLearnModeChallengePage);
     }
 }

@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class IndividualChallengePage extends BasePage{
+public class IndividualLearnModeChallengePage extends BasePage{
 
     //tutorial modal web elements
     @FindBy(xpath = "(//div[.='This description explains the challenge and what you need to do. Read it carefully before starting the challenge.'])[1]")
@@ -73,7 +73,7 @@ public class IndividualChallengePage extends BasePage{
     @FindBy(xpath = "//button[@class='btn-close']")
     private WebElement closeModalButton;
 
-    public IndividualChallengePage(WebDriver driver) {
+    public IndividualLearnModeChallengePage(WebDriver driver) {
         super(driver);
     }
 
