@@ -26,6 +26,8 @@ public class ListOfChallengesPage extends BasePage{
     //'List of Challenges' page title web element
     @FindBy(xpath = "//div[@class='col']/h1")
     private WebElement listOfChallengesTitle;
+    @FindBy(xpath = "//ul[@class='_menuList_1pmjj_10']/li[2]")
+    private WebElement returnToListOfChallengesLink;
     //'List of Challenges' learn mode section title web element
     @FindBy(xpath = "//div[@class='col']/h2[1]")
     private WebElement listOfChallengesLearnModeTitle;
@@ -76,6 +78,15 @@ public class ListOfChallengesPage extends BasePage{
         wait.until(ExpectedConditions.elementToBeClickable(cookiesAcceptButton));
         cookiesAcceptButton.click();
     }
+
+    //click navbar dropdown menu button method
+    public void clickNavbarDropdownMenu(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(600));
+        wait.until(ExpectedConditions.elementToBeClickable(listOfChallengesDropdownMenu));
+        listOfChallengesDropdownMenu.click();
+    }
+    //(return to 'List of Challenges' after each challenge completion) link click method
+    public void clickReturnToListOfChallengesLink(){returnToListOfChallengesLink.click();}
 
     //click challenge link list method
     public void clickListOfChallengesChallengeLink(int linkIndex){

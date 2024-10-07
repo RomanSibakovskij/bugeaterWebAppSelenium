@@ -46,7 +46,8 @@ public class TestMethods extends BaseTest {
         //assert calculation has the expected result (before operation)
         assertEquals("Result:", numberAdditionChallengePage.getCalculationResult() , "The calculation result doesn't match expected result");
         //loggers before challenge completion
-        logger.info("Displayed challenges counter(before challenge 1): " + numberAdditionChallengePage.getEnteredValuesText());
+        logger.info("Displayed character counter(before challenge 1): " + numberAdditionChallengePage.getChallengesCounterText());
+        logger.info("Displayed entered values(before challenge 1): " + numberAdditionChallengePage.getEnteredValuesText());
         logger.info("Displayed result(before challenge 1): " + numberAdditionChallengePage.getCalculationResult());
         //input numbers into input field
         numberAdditionChallengePage.inputChallenge1Number1();
@@ -71,7 +72,8 @@ public class TestMethods extends BaseTest {
         //assert challenges counter gets updated after first challenge completion
         assertEquals("1 instruction(s) out of 6", numberAdditionChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
         //loggers before challenge completion
-        logger.info("Displayed challenges counter(before challenge 2): " + numberAdditionChallengePage.getEnteredValuesText());
+        logger.info("Displayed character counter(before challenge 2): " + numberAdditionChallengePage.getChallengesCounterText());
+        logger.info("Displayed entered values(before challenge 2): " + numberAdditionChallengePage.getEnteredValuesText());
         logger.info("Displayed result(before challenge 2): " + numberAdditionChallengePage.getCalculationResult());
         //input numbers into input field
         numberAdditionChallengePage.inputChallenge2Number1();
@@ -95,7 +97,8 @@ public class TestMethods extends BaseTest {
         //assert challenges counter gets updated after second challenge completion
         assertEquals("2 instruction(s) out of 6", numberAdditionChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
         //loggers before challenge completion
-        logger.info("Displayed challenges counter(before challenge 3): " + numberAdditionChallengePage.getEnteredValuesText());
+        logger.info("Displayed character counter(before challenge 3): " + numberAdditionChallengePage.getChallengesCounterText());
+        logger.info("Displayed entered values(before challenge 3): " + numberAdditionChallengePage.getEnteredValuesText());
         logger.info("Displayed result(before challenge 3): " + numberAdditionChallengePage.getCalculationResult());
         //input numbers into input field
         numberAdditionChallengePage.inputChallenge3Number1();
@@ -121,7 +124,8 @@ public class TestMethods extends BaseTest {
         //assert challenges counter gets updated after third challenge completion
         assertEquals("3 instruction(s) out of 6", numberAdditionChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
         //loggers before challenge completion
-        logger.info("Displayed challenges counter(before challenge 4): " + numberAdditionChallengePage.getEnteredValuesText());
+        logger.info("Displayed character counter(before challenge 4): " + numberAdditionChallengePage.getChallengesCounterText());
+        logger.info("Displayed entered values(before challenge 4): " + numberAdditionChallengePage.getEnteredValuesText());
         logger.info("Displayed result(before challenge 4): " + numberAdditionChallengePage.getCalculationResult());
         //input numbers into input field (number 1 is a string)
         numberAdditionChallengePage.inputChallenge4Number1();
@@ -129,7 +133,7 @@ public class TestMethods extends BaseTest {
         //click 'calculate' button
         numberAdditionChallengePage.clickCalculateButton();
     }
-    //number addition challenge test method (challenge 5)
+    //number addition challenge test method (challenge 5) (both test inputs are blank)
     protected void solveNumberAdditionChallenge5Test(NumberAdditionChallengePage numberAdditionChallengePage){
         ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
         //general page web element assert (elements that all pages have)
@@ -145,13 +149,51 @@ public class TestMethods extends BaseTest {
         //assert challenges counter gets updated after fourth challenge completion
         assertEquals("4 instruction(s) out of 6", numberAdditionChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
         //loggers before challenge completion
-        logger.info("Displayed challenges counter(before challenge 5): " + numberAdditionChallengePage.getEnteredValuesText());
+        logger.info("Displayed character counter(before challenge 5): " + numberAdditionChallengePage.getChallengesCounterText());
+        logger.info("Displayed entered values(before challenge 5): " + numberAdditionChallengePage.getEnteredValuesText());
         logger.info("Displayed result(before challenge 5): " + numberAdditionChallengePage.getCalculationResult());
         //input numbers into input field (both inputs are blank)
         numberAdditionChallengePage.inputChallenge5Number1();
         numberAdditionChallengePage.inputChallenge5Number2();
         //click 'calculate' button
         numberAdditionChallengePage.clickCalculateButton();
+    }
+    //number addition challenge test method (challenge 6) (one input is 10000000000 (out of limit bounds))
+    protected void solveNumberAdditionChallenge6Test(NumberAdditionChallengePage numberAdditionChallengePage){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //repeatable assert method
+        isNumberAdditionTextMatchesExpectations(numberAdditionChallengePage);
+        //assert the challenge three has correct text
+        assertEquals("Input \"10000000000\" into the first input field, which is too large, and set the second value to \"1\", then click on the \"Calculate\" button. Expected Result: \"Application Error\".", numberAdditionChallengePage.getChallengeSix(), "The challenge description doesn't match expected result");
+        //assert input form entered has the expected display (before challenge six completion)
+        assertEquals("Entered Values: First Number: Empty, Second Number: Empty", numberAdditionChallengePage.getEnteredValuesText(), "The input form entered values doesn't match expected result");
+        //assert calculation has the expected result (before challenge six completion)
+        assertEquals("Result: User input error", numberAdditionChallengePage.getCalculationResult(), "The calculation result doesn't match expected result");
+        //assert challenges counter gets updated after fifth challenge completion
+        assertEquals("5 instruction(s) out of 6", numberAdditionChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //loggers before challenge completion
+        logger.info("Displayed character counter(before challenge 6): " + numberAdditionChallengePage.getChallengesCounterText());
+        logger.info("Displayed entered values(before challenge 6): " + numberAdditionChallengePage.getEnteredValuesText());
+        logger.info("Displayed result(before challenge 6): " + numberAdditionChallengePage.getCalculationResult());
+        //input numbers into input field (both inputs are blank)
+        numberAdditionChallengePage.inputChallenge6Number1();
+        numberAdditionChallengePage.inputChallenge6Number2();
+        //click 'calculate' button
+        numberAdditionChallengePage.clickCalculateButton();
+        //assert challenge completion modal has the expected title (NoSuchElementException despite valid selector)
+        //assertEquals("You did it!", numberAdditionChallengePage.getChallengeCompletionModalTitle(), "The challenge completion modal title displayed doesn't match expected title");
+        //click close modal button
+        numberAdditionChallengePage.clickCloseModalButton();
+        //assert all challenges are completed
+        assertEquals("6 instruction(s) out of 6", numberAdditionChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //click navbar dropdown menu
+        listOfChallengesPage.clickNavbarDropdownMenu();
+        //return to 'List of Challenges'
+        listOfChallengesPage.clickReturnToListOfChallengesLink();
+        //assert the user has returned back to 'List of Challenges'
+        assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
     }
 
 

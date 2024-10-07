@@ -44,6 +44,8 @@ public class NumberAdditionChallengePage extends BasePage{
     private WebElement challengeFour;
     @FindBy(xpath = "//ol[@class='_learnChallengeList_1erpu_1']/li[5]")
     private WebElement challengeFive;
+    @FindBy(xpath = "//ol[@class='_learnChallengeList_1erpu_1']/li[6]")
+    private WebElement challengeSix;
     //'Number Addition' input form web elements
     @FindBy(xpath = "//div[@id='testForm']/h2")
     private WebElement inputFormTitle;
@@ -67,6 +69,11 @@ public class NumberAdditionChallengePage extends BasePage{
     //halfway there congratulation web element
     @FindBy(xpath = "//div[@id='root']/div[4]")
     private WebElement halfwayThereMessage;
+    //'Number Addition' challenge completion modal web elements
+    @FindBy(xpath = "//div[@class='modal-header']/div[.='You did it!']")
+    private WebElement challengeCompletionModalTitle;
+    @FindBy(xpath = "//button[@class='btn-close']")
+    private WebElement closeModalButton;
 
     //number addition input data (for challenge 1)
     private int challenge1Number1 = 1;
@@ -83,6 +90,9 @@ public class NumberAdditionChallengePage extends BasePage{
     //number addition input data (for challenge 5)
     private String challenge5Number1 = "";
     private String challenge5Number2 = "";
+    //number addition input data (for challenge 6)
+    private String challenge6Number1 = "10000000000";
+    private int challenge6Number2 = 1;
 
     public NumberAdditionChallengePage(WebDriver driver) {
         super(driver);
@@ -143,6 +153,17 @@ public class NumberAdditionChallengePage extends BasePage{
         wait.until(ExpectedConditions.visibilityOf(number2InputField));
         number2InputField.sendKeys(challenge5Number2);
     }
+    //number addition input methods (for challenge 6) (one is above limit, second is 1)
+    public void inputChallenge6Number1(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(number1InputField));
+        number1InputField.sendKeys(challenge6Number1);
+    }
+    public void inputChallenge6Number2(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(number2InputField));
+        number2InputField.sendKeys(String.valueOf(challenge6Number2));
+    }
 
     //click 'calculate' button method
     public void clickCalculateButton(){
@@ -153,6 +174,13 @@ public class NumberAdditionChallengePage extends BasePage{
 
     //tutorial modal 'skip' button click method
     public void clickSkipTutorialButton(){tutorialSkipButton.click();}
+
+    //click 'close' button method
+    public void clickCloseModalButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.elementToBeClickable(closeModalButton));
+        closeModalButton.click();
+    }
 
     //tutorial modal description text getter
     public String getTutorialDescriptionText() {return tutorialDescriptionText.getText();}
@@ -174,6 +202,8 @@ public class NumberAdditionChallengePage extends BasePage{
     public String getChallengeFour(){return challengeFour.getText();}
     //challenge five text getter
     public String getChallengeFive(){return challengeFive.getText();}
+    //challenge six text getter
+    public String getChallengeSix(){return challengeSix.getText();}
     //input form title getter
     public String getInputFormTitle() {return inputFormTitle.getText();}
     //input form 'entered values' text getter
@@ -184,6 +214,8 @@ public class NumberAdditionChallengePage extends BasePage{
     public String getCalculationResult() {return challengeCalculationResult.getText();}
     //'halfway there' message getter
     public String getHalfwayThereMessage(){return halfwayThereMessage.getText();}
+    //challenge completion modal title getter
+    public String getChallengeCompletionModalTitle() {return challengeCompletionModalTitle.getText();}
 
     //'Number Addition challenge' web element assert methods
     public boolean isNumberAdditionChallengePageTitleDisplayed(){return numberAdditionChallengeTitle.isDisplayed();}
