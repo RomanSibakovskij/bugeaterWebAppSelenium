@@ -102,6 +102,8 @@ public class ListOfChallengesPage extends BasePage{
     public void clickLearnModeChallengeLink3(){clickListOfChallengesChallengeLink(2);}
     //click update profile challenge link method
     public void clickLearnModeChallengeLink4(){clickListOfChallengesChallengeLink(3);}
+    //click update profile challenge link method
+    public void clickLearnModeChallengeLink5(){clickListOfChallengesChallengeLink(4);}
 
     //list of challenges page title getter
     public String getListOfChallengesPageTitle(){return listOfChallengesTitle.getText();}

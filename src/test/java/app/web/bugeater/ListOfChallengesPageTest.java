@@ -97,4 +97,12 @@ public class ListOfChallengesPageTest extends TestMethods{
         //challenge 6 test (non-allowed (nickname only) characters input scenario)
         solveUpdateProfileChallenge6Test(learnModeUpdateProfilePage);
     }
+
+    // Test 005 -> number multiplication challenge test (as a guest)
+    @Test
+    @DisplayName("Number Multiplication Challenge Test (as a guest)")
+    @Tag("Learn_Mode_Challenge_Test")
+    void numberMultiplicationChallengeTest(){
+        navigateToNumberMultiplicationPageTest();
+    }
 }
