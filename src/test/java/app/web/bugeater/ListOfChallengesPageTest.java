@@ -17,11 +17,11 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveNumberAdditionChallenge2Test(learnModeNumAddDivisionChallengePage);
         //challenge 3 test
         solveNumberAdditionChallenge3Test(learnModeNumAddDivisionChallengePage);
-        //challenge 4 test
+        //challenge 4 test (invalid user input error scenario)
         solveNumberAdditionChallenge4Test(learnModeNumAddDivisionChallengePage);
-        //challenge 5 test
+        //challenge 5 test (invalid user input error scenario)
         solveNumberAdditionChallenge5Test(learnModeNumAddDivisionChallengePage);
-        //challenge 6 test
+        //challenge 6 test (application error scenario)
         solveNumberAdditionChallenge6Test(learnModeNumAddDivisionChallengePage);
     }
 
@@ -38,11 +38,11 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveNumberDivisionChallenge2Test(learnModeNumAddDivisionChallengePage);
         //challenge 3 test
         solveNumberDivisionChallenge3Test(learnModeNumAddDivisionChallengePage);
-        //challenge 4 test
+        //challenge 4 test (invalid user input error scenario)
         solveNumberDivisionChallenge4Test(learnModeNumAddDivisionChallengePage);
-        //challenge 5 test
+        //challenge 5 test (invalid user input error scenario)
         solveNumberDivisionChallenge5Test(learnModeNumAddDivisionChallengePage);
-        //challenge 6 test
+        //challenge 6 test (division by zero scenario)
         solveNumberDivisionChallenge6Test(learnModeNumAddDivisionChallengePage);
     }
 
