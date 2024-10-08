@@ -922,6 +922,35 @@ public class TestMethods extends BaseTest {
         //assert 'halfway there' message is displayed
         //assertEquals("Halfway there!", learnModeUpdateProfilePage.getHalfwayThereMessage(), "The 'halfway there' message isn't displayed"); //NoSuchElementException with valid selector
     }
+    //update profile challenge test method (challenge 4) (invalid inputs - empty inputs)
+    protected void solveUpdateProfileChallenge4Test(LearnModeUpdateProfilePage learnModeUpdateProfilePage){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the page title is as expected
+        assertEquals("Update Profile", learnModeUpdateProfilePage.getUpdateProfileChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method
+        isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //update profile page web assert
+        isLearnModeUpdateProfileChallengePageWebElementDisplayed(learnModeUpdateProfilePage);
+        //assert challenge counter has registered challenge three completion
+        assertEquals("3 instruction(s) out of 6", learnModeUpdateProfilePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the challenge four has correct text
+        assertEquals("Leave Nickname, First Name, and Last Name fields empty, and press \"Submit\". Expected Result: \"User input error\".", learnModeUpdateProfilePage.getChallengeFour(), "The challenge description doesn't match expected result");
+        //assert input form entered value has the expected display (after third challenge completion)
+        assertEquals("Entered Values: Nickname: longnick9_, First Name: MaximilianaElizabethMontgomery, Last Name: AlexanderHamiltonJeffersonSmith", learnModeUpdateProfilePage.getEnteredValuesText(), "The input form entered values doesn't match expected result");
+        //assert update profile has the expected result (after challenge three)
+        assertEquals("Result: User input error", learnModeUpdateProfilePage.getUpdateProfileResult() , "The calculation result doesn't match expected result");
+        //logger after challenge completion
+        logPreChallenge4Result(learnModeNumAddDivisionChallengePage);
+        //input update profile data into input fields (empty inputs)
+        learnModeUpdateProfilePage.inputUpdateProfileChallenge4Nickname4();
+        learnModeUpdateProfilePage.inputUpdateProfileChallenge4FirstName4();
+        learnModeUpdateProfilePage.inputUpdateProfileChallenge4LastName4();
+        //click 'calculate' button
+        learnModeUpdateProfilePage.clickSubmitButton();
+    }
 
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){
