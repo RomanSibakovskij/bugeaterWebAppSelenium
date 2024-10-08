@@ -135,7 +135,13 @@ public class LearnModePasswordChallengePage extends BasePage{
     public void inputPasswordRestoreChallenge9(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
-        passwordInputField.sendKeys(String.valueOf(001122));
+        passwordInputField.sendKeys("001122");
+    }
+    //password restore input method (for challenge 10) (invalid password input - special symbols only)
+    public void inputPasswordRestoreChallenge10(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(passwordInputField));
+        passwordInputField.sendKeys("@@@@@");
     }
 
     //click 'submit' button method
@@ -181,6 +187,8 @@ public class LearnModePasswordChallengePage extends BasePage{
     public String getChallengeEight(){return challengeEight.getText();}
     //challenge nine text getter
     public String getChallengeNine(){return challengeNine.getText();}
+    //challenge ten text getter
+    public String getChallengeTen(){return challengeTen.getText();}
     //input form 'entered value' text getter
     public String getEnteredValueText() {return enteredValueText.getText();}
     //calculation result getter

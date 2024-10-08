@@ -726,6 +726,35 @@ public class TestMethods extends BaseTest {
         //click 'calculate' button
         learnModePasswordChallengePage.clickSubmitButton();
     }
+    //password restore challenge test method (challenge 10) (invalid password scenario - special symbols only)
+    protected void solvePasswordRestoreChallenge10Test(LearnModePasswordChallengePage learnModePasswordChallengePage){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the challenge text is displayed as expected
+        assertEquals("Follow the eleven step-by-step appearing instructions, entering an appropriate value into the \"New Password\" field. This way you conduct a basic check of the form proper functioning. You are practically applying the Scripted Testing approach and checking the Basic Password criteria match.", learnModePasswordChallengePage.getCurrentChallengeText(), "The text of the challenge doesn't match the expected text");
+        //assert the page title is as expected
+        assertEquals("Password Restore", learnModePasswordChallengePage.getPasswordRestoreChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method
+        isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //password restore page web assert
+        isLearnModePasswordRestoreChallengePageWebElementDisplayed(learnModePasswordChallengePage);
+        //assert challenge counter has registered challenge nine completion
+        assertEquals("9 instruction(s) out of 11", learnModePasswordChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the challenge ten has correct text
+        assertEquals("Enter \"@@@@@\" as the password, which contains only special characters, and then click on the \"Submit\" button. Expected result: \"Invalid Password\".", learnModePasswordChallengePage.getChallengeTen(), "The challenge description doesn't match expected result");
+        //assert input form entered value has the expected display (after ninth challenge)
+        assertEquals("Entered Value: 001122", learnModePasswordChallengePage.getEnteredValueText(), "The input form entered values doesn't match expected result");
+        //assert password restore has the expected result (after challenge nine)
+        assertEquals("Result: Invalid Password", learnModePasswordChallengePage.getPasswordRestoreResult() , "The calculation result doesn't match expected result");
+        //logger before challenge completion
+        logPreChallenge10Result(learnModePasswordChallengePage);
+        //input password into input field
+        learnModePasswordChallengePage.inputPasswordRestoreChallenge10();
+        //click 'calculate' button
+        learnModePasswordChallengePage.clickSubmitButton();
+    }
 
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){

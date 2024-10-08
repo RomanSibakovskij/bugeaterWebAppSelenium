@@ -71,5 +71,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solvePasswordRestoreChallenge8Test(learnModePasswordChallengePage);
         //challenge 9 test (invalid password input - digits only)
         solvePasswordRestoreChallenge9Test(learnModePasswordChallengePage);
+        //challenge 10 test (invalid password input - special symbols only)
+        solvePasswordRestoreChallenge10Test(learnModePasswordChallengePage);
     }
 }
