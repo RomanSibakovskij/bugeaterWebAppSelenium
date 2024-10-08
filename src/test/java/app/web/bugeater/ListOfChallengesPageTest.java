@@ -10,19 +10,19 @@ public class ListOfChallengesPageTest extends TestMethods{
     @Tag("Learn_Mode_Challenge_Test")
     void numberAdditionChallengeTest(){
         navigateToNumberAdditionPageTest();
-        IndividualLearnModeChallengePage individualLearnModeChallengePage = new IndividualLearnModeChallengePage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
         //challenge 1 test
-        solveNumberAdditionChallenge1Test(individualLearnModeChallengePage);
+        solveNumberAdditionChallenge1Test(learnModeNumAddDivisionChallengePage);
         //challenge 2 test
-        solveNumberAdditionChallenge2Test(individualLearnModeChallengePage);
+        solveNumberAdditionChallenge2Test(learnModeNumAddDivisionChallengePage);
         //challenge 3 test
-        solveNumberAdditionChallenge3Test(individualLearnModeChallengePage);
+        solveNumberAdditionChallenge3Test(learnModeNumAddDivisionChallengePage);
         //challenge 4 test
-        solveNumberAdditionChallenge4Test(individualLearnModeChallengePage);
+        solveNumberAdditionChallenge4Test(learnModeNumAddDivisionChallengePage);
         //challenge 5 test
-        solveNumberAdditionChallenge5Test(individualLearnModeChallengePage);
+        solveNumberAdditionChallenge5Test(learnModeNumAddDivisionChallengePage);
         //challenge 6 test
-        solveNumberAdditionChallenge6Test(individualLearnModeChallengePage);
+        solveNumberAdditionChallenge6Test(learnModeNumAddDivisionChallengePage);
     }
 
     //Test 002 -> number division challenge test (as a guest)
@@ -31,18 +31,18 @@ public class ListOfChallengesPageTest extends TestMethods{
     @Tag("Learn_Mode_Challenge_Test")
     void numberDivisionChallengeTest(){
         navigateToNumberDivisionPageTest();
-        IndividualLearnModeChallengePage individualLearnModeChallengePage = new IndividualLearnModeChallengePage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
         //challenge 1 test
-        solveNumberDivisionChallenge1Test(individualLearnModeChallengePage);
+        solveNumberDivisionChallenge1Test(learnModeNumAddDivisionChallengePage);
         //challenge 2 test
-        solveNumberDivisionChallenge2Test(individualLearnModeChallengePage);
+        solveNumberDivisionChallenge2Test(learnModeNumAddDivisionChallengePage);
         //challenge 3 test
-        solveNumberDivisionChallenge3Test(individualLearnModeChallengePage);
+        solveNumberDivisionChallenge3Test(learnModeNumAddDivisionChallengePage);
         //challenge 4 test
-        solveNumberDivisionChallenge4Test(individualLearnModeChallengePage);
+        solveNumberDivisionChallenge4Test(learnModeNumAddDivisionChallengePage);
         //challenge 5 test
-        solveNumberDivisionChallenge5Test(individualLearnModeChallengePage);
+        solveNumberDivisionChallenge5Test(learnModeNumAddDivisionChallengePage);
         //challenge 6 test
-        solveNumberDivisionChallenge6Test(individualLearnModeChallengePage);
+        solveNumberDivisionChallenge6Test(learnModeNumAddDivisionChallengePage);
     }
 }
