@@ -1029,6 +1029,38 @@ public class TestMethods extends BaseTest {
         assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
     }
 
+    //number multiplication challenge test method (challenge 1) (valid number inputs) (ignore null entered values input since this method uses logger methods other tests use)
+    protected void solveNumberMultiplicationChallenge1Test(LearnModeNumMultiplicationPage learnModeNumMultiplicationPage){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the challenge text is displayed as expected
+        assertEquals("Read the first task in the Instruction list. Following the instructions, select the appropriate options in the three dropdowns. After validating a Test Case, the next instruction appears if you have chosen everything correctly. A Test Case, created by selecting the appropriate options, will be captured and used in further testing.", learnModeNumMultiplicationPage.getCurrentChallengeText(), "The text of the challenge doesn't match the expected text");
+        //assert tutorial description text is displayed as expected
+        assertEquals("This description explains the challenge and what you need to do. Read it carefully before starting the challenge.", learnModeNumMultiplicationPage.getTutorialDescriptionText(), "The tutorial text doesn't match the expected text");
+        //click tutorial 'skip' button
+        learnModeNumMultiplicationPage.clickSkipTutorialButton();
+        //assert the page title is as expected
+        assertEquals("Number Multiplication", learnModeNumMultiplicationPage.getNumberMultiplicationChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method
+        isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //number multiplication page web element assert
+        isLearnModeNumMultiplicationChallengePageWebElementDisplayed(learnModeNumMultiplicationPage);
+        //assert challenge counter has no challenges completed yet
+        assertEquals("0 out of 6", learnModeNumMultiplicationPage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the challenge one has correct text
+        assertEquals("Choose from the dropdowns Option 1: \"2\", Option 2: \"2\", Result: \"Number\". Click on the \"Validate Test Case\" button. Expected Result: \"4\" in the Form You Test.", learnModeNumAddDivisionChallengePage.getChallengeOne(), "The challenge description doesn't match expected result");
+        //assert input form entered has the expected display
+        //assertEquals("Entered Values:", learnModeNumMultiplicationPage.getEnteredValuesText(), "The input form entered values doesn't match expected result");
+        //assert calculation has the expected result (before operation)
+        assertEquals("Result:", learnModeNumMultiplicationPage.getCalculationResult() , "The calculation result doesn't match expected result");
+        //assert challenge hint has the expected text
+        assertEquals("Multiply two numbers", learnModeNumMultiplicationPage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
+        //logger before challenge completion
+        logPreChallenge1Result(learnModeNumAddDivisionChallengePage);
+    }
+
     //navigate to number multiplication challenge test method
     protected void navigateToNumberMultiplicationPageTest(){
         ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
@@ -1191,6 +1223,37 @@ public class TestMethods extends BaseTest {
         assertTrue(learnModeUpdateProfilePage.isClearButtonDisplayed(), "The 'Update Profile' challenge clear button is not displayed");
         //assert 'update profile' challenge calculate button is displayed
         assertTrue(learnModeUpdateProfilePage.isSubmitButtonDisplayed(), "The 'Update Profile' challenge submit button is not displayed");
+    }
+    //'Learn more' number multiplication challenge page specific web element assert
+    protected void isLearnModeNumMultiplicationChallengePageWebElementDisplayed(LearnModeNumMultiplicationPage learnModeNumMultiplicationPage){
+        //assert 'number multiplication' challenge page title is displayed
+        assertTrue(learnModeNumMultiplicationPage.isNumberMultiplicationPageTitleDisplayed(), "The 'Number Addition' challenge page title is not displayed");
+        //assert 'number multiplication' challenge guide icon is displayed
+        assertTrue(learnModeNumMultiplicationPage.isNumberMultiplicationGuideIconDisplayed(), "The 'Number Addition' challenge guide icon is not displayed");
+        //assert 'number multiplication' challenge video guide link is displayed
+        assertTrue(learnModeNumMultiplicationPage.isVideoGuideLinkDisplayed(), "The 'Number Addition' challenge video guide link is not displayed");
+        //assert 'number multiplication' challenge instructions title is displayed
+        assertTrue(learnModeNumMultiplicationPage.isInstructionsTitleDisplayed(), "The 'Number Addition' challenge instructions title is not displayed");
+        //assert 'number multiplication' challenges completed counter is displayed
+        assertTrue(learnModeNumMultiplicationPage.isChallengesCompletedCounterDisplayed(), "The 'Number Multiplication' challenges completed counter is not displayed");
+        //assert 'number multiplication' challenge list is displayed
+        assertTrue(learnModeNumMultiplicationPage.isNumberMultiplicationChallengeOneDisplayed(), "The 'Number Multiplication' challenge list is not displayed");
+        //assert 'number multiplication' challenge input form title is displayed
+        assertTrue(learnModeNumMultiplicationPage.isInputFormTitleDisplayed(), "The 'Number Multiplication' challenge input form title is not displayed");
+        //assert 'number multiplication' challenge input form 'entered values' are displayed
+        //assertTrue(learnModeNumMultiplicationPage.isInputFormEnteredValuesDisplayed(), "The 'Number Multiplication' challenge input form entered values are not displayed");
+        //assert 'number multiplication' challenge number 1 input field is displayed
+        assertTrue(learnModeNumMultiplicationPage.isNumber1InputFieldDisplayed(), "The 'Number Multiplication' challenge number 1 input field is not displayed");
+        //assert 'number multiplication' challenge hint is displayed
+        assertTrue(learnModeNumMultiplicationPage.isChallengeHintDisplayed(), "The 'Number Multiplication' challenge hint is not displayed");
+        //assert 'number multiplication' challenge number 2 input field is displayed
+        assertTrue(learnModeNumMultiplicationPage.isNumber2InputFieldDisplayed(), "The 'Number Multiplication' challenge number 2 input field is not displayed");
+        //assert 'number multiplication' challenge calculation result is displayed
+        assertTrue(learnModeNumMultiplicationPage.isCalculationResultDisplayed(), "The 'Number Multiplication' challenge calculation result is not displayed");
+        //assert 'number multiplication' challenge start over button is displayed
+        assertTrue(learnModeNumMultiplicationPage.isStartOverButtonDisplayed(), "The 'Number Multiplication' challenge start over button is not displayed");
+        //assert 'number multiplication' challenge calculate button is displayed
+        assertTrue(learnModeNumMultiplicationPage.isCalculateButtonDisplayed(), "The 'Number Multiplication' challenge calculate button is not displayed");
     }
 
     //pre-challenges loggers (for debug validation)

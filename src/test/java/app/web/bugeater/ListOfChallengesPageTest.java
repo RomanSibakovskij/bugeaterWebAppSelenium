@@ -104,5 +104,8 @@ public class ListOfChallengesPageTest extends TestMethods{
     @Tag("Learn_Mode_Challenge_Test")
     void numberMultiplicationChallengeTest(){
         navigateToNumberMultiplicationPageTest();
+        LearnModeNumMultiplicationPage learnModeNumMultiplicationPage = new LearnModeNumMultiplicationPage(driver);
+        //challenge 1 test
+        solveNumberMultiplicationChallenge1Test(learnModeNumMultiplicationPage);
     }
 }

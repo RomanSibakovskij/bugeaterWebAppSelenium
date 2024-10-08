@@ -19,7 +19,7 @@ public class LearnModePasswordChallengePage extends BasePage{
     //current challenge text web element
     @FindBy(xpath = "//div[@class='container']/p[@id='challengeDescription']")
     private WebElement currentChallengeText;
-    //'Number Addition' challenge page web elements
+    //'Password restore' challenge page web elements
     @FindBy(xpath = "//div[@class='_challengeHeadingBlock_1a4cy_184']/h1")
     private WebElement passwordRestoreChallengeTitle;
     @FindBy(css = "svg#questionMark")
@@ -28,7 +28,7 @@ public class LearnModePasswordChallengePage extends BasePage{
     private WebElement instructionsTitle;
     @FindBy(xpath = "//div[@class='_challengePanelResultsHeading_1a4cy_60']/p[@class='_challengePanelResultsCaption_1a4cy_71']")
     private WebElement challengesCompletedCounter;
-    //'Number Addition' challenge web elements
+    //'Password restore' challenge web elements
     @FindBy(xpath = "//ol[@class='_learnChallengeList_1erpu_1']/li")
     private WebElement challengeOne;
     @FindBy(xpath = "//ol[@class='_learnChallengeList_1erpu_1']/li[2]")
@@ -51,7 +51,7 @@ public class LearnModePasswordChallengePage extends BasePage{
     private WebElement challengeTen;
     @FindBy(xpath = "//ol[@class='_learnChallengeList_1erpu_1']/li[11]")
     private WebElement challengeEleven;
-    //'Number Addition' input form web elements
+    //'Password restore' input form web elements
     @FindBy(xpath = "//div[@id='testForm']/h2")
     private WebElement inputFormTitle;
     @FindBy(xpath = "//div[@id='testForm']/p[2]")
@@ -72,7 +72,7 @@ public class LearnModePasswordChallengePage extends BasePage{
     //halfway there congratulation web element
     @FindBy(xpath = "//div[@id='root']/div[4]")
     private WebElement halfwayThereMessage;
-    //'Number Addition' challenge completion modal web elements
+    //'Password restore' challenge completion modal web elements
     @FindBy(xpath = "//div[@class='modal-header']/div[.='You did it!']")
     private WebElement challengeCompletionModalTitle;
     @FindBy(xpath = "//button[@class='btn-close']")
@@ -171,7 +171,7 @@ public class LearnModePasswordChallengePage extends BasePage{
     public String getTutorialDescriptionText() {return tutorialDescriptionText.getText();}
     //current challenge text getter
     public String getCurrentChallengeText() {return currentChallengeText.getText();}
-    //number addition challenge page title getter
+    //password restore challenge page title getter
     public String getPasswordRestoreChallengeTitle() {return passwordRestoreChallengeTitle.getText();}
     //challenges counter getter (before challenge one completion)
     public String getChallengesCounterText() {return challengesCompletedCounter.getText();}
@@ -199,7 +199,7 @@ public class LearnModePasswordChallengePage extends BasePage{
     public String getChallengeEleven(){return challengeEleven.getText();}
     //input form 'entered value' text getter
     public String getEnteredValueText() {return enteredValueText.getText();}
-    //calculation result getter
+    //password restore result getter
     public String getPasswordRestoreResult() {return challengePasswordRestoreResult.getText();}
     //'halfway there' message getter
     public String getHalfwayThereMessage(){return halfwayThereMessage.getText();}
