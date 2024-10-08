@@ -39,6 +39,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Number Addition", learnModeNumAddDivisionChallengePage.getNumberAdditionChallengeTitle(), "The challenge page title doesn't match the expected title");
         //repeatable assert method
         isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //number addition/division page web element assert
+        isLearnModeNumAddDivChallengePageWebElementDisplayed(learnModeNumAddDivisionChallengePage);
         //assert challenge counter has no challenges completed yet
         assertEquals("0 instruction(s) out of 6", learnModeNumAddDivisionChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
         //assert the challenge one has correct text
@@ -69,6 +71,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Number Addition", learnModeNumAddDivisionChallengePage.getNumberAdditionChallengeTitle(), "The challenge page title doesn't match the expected title");
         //repeatable assert method
         isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //number addition/division page web element assert
+        isLearnModeNumAddDivChallengePageWebElementDisplayed(learnModeNumAddDivisionChallengePage);
         //assert the challenge two has correct text
         assertEquals("Input \"-2\" and \"4\" into the input fields where one number is negative, then click on the \"Calculate\" button. Expected Result: \"2\".", learnModeNumAddDivisionChallengePage.getChallengeTwo(), "The challenge description doesn't match expected result");
        //assert calculation has the expected result (before challenge two completion)
@@ -94,6 +98,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Number Addition", learnModeNumAddDivisionChallengePage.getNumberAdditionChallengeTitle(), "The challenge page title doesn't match the expected title");
         //repeatable assert method
         isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //number addition/division page web element assert
+        isLearnModeNumAddDivChallengePageWebElementDisplayed(learnModeNumAddDivisionChallengePage);
         //assert the challenge three has correct text
         assertEquals("Enter \"1.5\" and \"2.5\" into the input fields; both are decimal fractions, then click on the \"Calculate\" button. Expected Result: \"4.0\".", learnModeNumAddDivisionChallengePage.getChallengeThree(), "The challenge description doesn't match expected result");
         //assert input form entered has the expected display (before challenge three completion)
@@ -123,6 +129,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Number Addition", learnModeNumAddDivisionChallengePage.getNumberAdditionChallengeTitle(), "The challenge page title doesn't match the expected title");
         //repeatable assert method
         isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //number addition/division page web element assert
+        isLearnModeNumAddDivChallengePageWebElementDisplayed(learnModeNumAddDivisionChallengePage);
         //assert the challenge three has correct text
         assertEquals("Enter \"abc\" in the First Number input field and \"1\" in the Second Number input field, then click on the \"Calculate\" button. Expected Result: \"User input error\".", learnModeNumAddDivisionChallengePage.getChallengeFour(), "The challenge description doesn't match expected result");
         //assert input form entered has the expected display (before challenge four completion)
@@ -150,6 +158,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Number Addition", learnModeNumAddDivisionChallengePage.getNumberAdditionChallengeTitle(), "The challenge page title doesn't match the expected title");
         //repeatable assert method
         isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //number addition/division page web element assert
+        isLearnModeNumAddDivChallengePageWebElementDisplayed(learnModeNumAddDivisionChallengePage);
         //assert the challenge three has correct text
         assertEquals("Leave both input fields blank and then click on the \"Calculate\" button. Expected Result: \"User input error\".", learnModeNumAddDivisionChallengePage.getChallengeFive(), "The challenge description doesn't match expected result");
         //assert input form entered has the expected display (before challenge five completion)
@@ -177,6 +187,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Number Addition", learnModeNumAddDivisionChallengePage.getNumberAdditionChallengeTitle(), "The challenge page title doesn't match the expected title");
         //repeatable assert method
         isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //number addition/division page web element assert
+        isLearnModeNumAddDivChallengePageWebElementDisplayed(learnModeNumAddDivisionChallengePage);
         //assert the challenge three has correct text
         assertEquals("Input \"10000000000\" into the first input field, which is too large, and set the second value to \"1\", then click on the \"Calculate\" button. Expected Result: \"Application Error\".", learnModeNumAddDivisionChallengePage.getChallengeSix(), "The challenge description doesn't match expected result");
         //assert input form entered has the expected display (before challenge six completion)
@@ -243,6 +255,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Number Division", learnModeNumAddDivisionChallengePage.getNumberAdditionChallengeTitle(), "The challenge page title doesn't match the expected title");
         //repeatable assert method
         isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //number addition/division page web element assert
+        isLearnModeNumAddDivChallengePageWebElementDisplayed(learnModeNumAddDivisionChallengePage);
         //assert challenge counter has no challenges completed yet
         assertEquals("0 instruction(s) out of 6", learnModeNumAddDivisionChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
         //assert the challenge one has correct text
@@ -272,6 +286,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Number Division", learnModeNumAddDivisionChallengePage.getNumberAdditionChallengeTitle(), "The challenge page title doesn't match the expected title");
         //repeatable assert method
         isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //number addition/division page web element assert
+        isLearnModeNumAddDivChallengePageWebElementDisplayed(learnModeNumAddDivisionChallengePage);
         //assert challenges counter gets updated after first challenge completion
         assertEquals("1 instruction(s) out of 6", learnModeNumAddDivisionChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
         //assert the challenge two has correct text
@@ -299,6 +315,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Number Division", learnModeNumAddDivisionChallengePage.getNumberAdditionChallengeTitle(), "The challenge page title doesn't match the expected title");
         //repeatable assert method
         isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //number addition/division page web element assert
+        isLearnModeNumAddDivChallengePageWebElementDisplayed(learnModeNumAddDivisionChallengePage);
         //assert challenges counter gets updated after second challenge completion
         assertEquals("2 instruction(s) out of 6", learnModeNumAddDivisionChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
         //assert the challenge three has correct text
@@ -328,6 +346,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Number Division", learnModeNumAddDivisionChallengePage.getNumberAdditionChallengeTitle(), "The challenge page title doesn't match the expected title");
         //repeatable assert method
         isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //number addition/division page web element assert
+        isLearnModeNumAddDivChallengePageWebElementDisplayed(learnModeNumAddDivisionChallengePage);
         //assert challenges counter gets updated after third challenge completion
         assertEquals("3 instruction(s) out of 6", learnModeNumAddDivisionChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
         //assert the challenge four has correct text
@@ -355,6 +375,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Number Division", learnModeNumAddDivisionChallengePage.getNumberAdditionChallengeTitle(), "The challenge page title doesn't match the expected title");
         //repeatable assert method
         isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //number addition/division page web element assert
+        isLearnModeNumAddDivChallengePageWebElementDisplayed(learnModeNumAddDivisionChallengePage);
         //assert challenges counter gets updated after fourth challenge completion
         assertEquals("4 instruction(s) out of 6", learnModeNumAddDivisionChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
         //assert the challenge five has correct text
@@ -382,6 +404,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Number Division", learnModeNumAddDivisionChallengePage.getNumberAdditionChallengeTitle(), "The challenge page title doesn't match the expected title");
         //repeatable assert method
         isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //number addition/division page web element assert
+        isLearnModeNumAddDivChallengePageWebElementDisplayed(learnModeNumAddDivisionChallengePage);
         //assert challenges counter gets updated after fifth challenge completion
         assertEquals("5 instruction(s) out of 6", learnModeNumAddDivisionChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
         //assert the challenge six has correct text
@@ -449,22 +473,53 @@ public class TestMethods extends BaseTest {
         assertEquals("Password Restore", learnModePasswordChallengePage.getPasswordRestoreChallengeTitle(), "The challenge page title doesn't match the expected title");
         //repeatable assert method
         isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //password restore page web assert
+        isLearnModePasswordRestoreChallengePageWebElementDisplayed(learnModePasswordChallengePage);
         //assert challenge counter has no challenges completed yet
         assertEquals("0 instruction(s) out of 11", learnModePasswordChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
         //assert the challenge one has correct text
         assertEquals("Enter \"P@ssw0rD\" as the password, which meets all the requirements, and then click on the \"Submit\" button. Expected result: \"Valid Password\".", learnModePasswordChallengePage.getChallengeOne(), "The challenge description doesn't match expected result");
-        //assert input form entered has the expected display
+        //assert input form entered value has the expected display
         assertEquals("Entered Value:", learnModePasswordChallengePage.getEnteredValueText(), "The input form entered values doesn't match expected result");
         //assert password restore has the expected result (before operation)
         assertEquals("Result:", learnModePasswordChallengePage.getPasswordRestoreResult() , "The calculation result doesn't match expected result");
         //logger before challenge completion
         logPreChallenge1Result(learnModeNumAddDivisionChallengePage);
-        //input numbers into input field
+        //input password into input field
         learnModePasswordChallengePage.inputPasswordRestoreChallenge1();
         //click 'calculate' button
         learnModePasswordChallengePage.clickSubmitButton();
         //assert entered value is displayed (after challenge one completion)
         assertEquals("Entered Value: P@ssw0rD", learnModePasswordChallengePage.getEnteredValueText(), "The input form entered values doesn't match expected result");
+    }
+    //password restore challenge test method (challenge 2)
+    protected void solvePasswordRestoreChallenge2Test(LearnModePasswordChallengePage learnModePasswordChallengePage){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the challenge text is displayed as expected
+        assertEquals("Follow the eleven step-by-step appearing instructions, entering an appropriate value into the \"New Password\" field. This way you conduct a basic check of the form proper functioning. You are practically applying the Scripted Testing approach and checking the Basic Password criteria match.", learnModePasswordChallengePage.getCurrentChallengeText(), "The text of the challenge doesn't match the expected text");
+        //assert the page title is as expected
+        assertEquals("Password Restore", learnModePasswordChallengePage.getPasswordRestoreChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method
+        isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //password restore page web assert
+        isLearnModePasswordRestoreChallengePageWebElementDisplayed(learnModePasswordChallengePage);
+        //assert challenge counter has registered challenge one completion
+        assertEquals("1 instruction(s) out of 11", learnModePasswordChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the challenge one has correct text
+        assertEquals("Enter \"P@ssw0rD\" as the password, which meets all the requirements, and then click on the \"Submit\" button. Expected result: \"Valid Password\".", learnModePasswordChallengePage.getChallengeOne(), "The challenge description doesn't match expected result");
+        //assert input form entered value has the expected display (after first challenge)
+        assertEquals("Entered Value: P@ssw0rD", learnModePasswordChallengePage.getEnteredValueText(), "The input form entered values doesn't match expected result");
+        //assert password restore has the expected result (after challenge one)
+        assertEquals("Result: Valid Password", learnModePasswordChallengePage.getPasswordRestoreResult() , "The calculation result doesn't match expected result");
+        //logger before challenge completion
+        logPreChallenge2Result(learnModeNumAddDivisionChallengePage);
+        //input password into input field
+        learnModePasswordChallengePage.inputPasswordRestoreChallenge2();
+        //click 'calculate' button
+        learnModePasswordChallengePage.clickSubmitButton();
     }
 
 
@@ -614,6 +669,31 @@ public class TestMethods extends BaseTest {
         logger.info("Displayed character counter(before challenge 6): " + learnModeNumAddDivisionChallengePage.getChallengesCounterText());
         logger.info("Displayed entered values(before challenge 6): " + learnModeNumAddDivisionChallengePage.getEnteredValuesText());
         logger.info("Displayed result(before challenge 6): " + learnModeNumAddDivisionChallengePage.getCalculationResult() +"\n");
+    }
+    protected void logPreChallenge7Result(LearnModePasswordChallengePage learnModePasswordChallengePage){
+        logger.info("Displayed character counter(before challenge 7): " + learnModePasswordChallengePage.getChallengesCounterText());
+        logger.info("Displayed entered values(before challenge 7): " + learnModePasswordChallengePage.getEnteredValueText());
+        logger.info("Displayed result(before challenge 7): " + learnModePasswordChallengePage.getPasswordRestoreResult() +"\n");
+    }
+    protected void logPreChallenge8Result(LearnModePasswordChallengePage learnModePasswordChallengePage){
+        logger.info("Displayed character counter(before challenge 8): " + learnModePasswordChallengePage.getChallengesCounterText());
+        logger.info("Displayed entered values(before challenge 8): " + learnModePasswordChallengePage.getEnteredValueText());
+        logger.info("Displayed result(before challenge 8): " + learnModePasswordChallengePage.getPasswordRestoreResult() +"\n");
+    }
+    protected void logPreChallenge9Result(LearnModePasswordChallengePage learnModePasswordChallengePage){
+        logger.info("Displayed character counter(before challenge 9): " + learnModePasswordChallengePage.getChallengesCounterText());
+        logger.info("Displayed entered values(before challenge 9): " + learnModePasswordChallengePage.getEnteredValueText());
+        logger.info("Displayed result(before challenge 9): " + learnModePasswordChallengePage.getPasswordRestoreResult() +"\n");
+    }
+    protected void logPreChallenge10Result(LearnModePasswordChallengePage learnModePasswordChallengePage){
+        logger.info("Displayed character counter(before challenge 10): " + learnModePasswordChallengePage.getChallengesCounterText());
+        logger.info("Displayed entered values(before challenge 10): " + learnModePasswordChallengePage.getEnteredValueText());
+        logger.info("Displayed result(before challenge 10): " + learnModePasswordChallengePage.getPasswordRestoreResult() +"\n");
+    }
+    protected void logPreChallenge11Result(LearnModePasswordChallengePage learnModePasswordChallengePage){
+        logger.info("Displayed character counter(before challenge 11): " + learnModePasswordChallengePage.getChallengesCounterText());
+        logger.info("Displayed entered values(before challenge 11): " + learnModePasswordChallengePage.getEnteredValueText());
+        logger.info("Displayed result(before challenge 11): " + learnModePasswordChallengePage.getPasswordRestoreResult() +"\n");
     }
 
 }

@@ -79,6 +79,12 @@ public class LearnModePasswordChallengePage extends BasePage{
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
         passwordInputField.sendKeys("P@ssw0rD");
     }
+    //password restore input method (for challenge 2)
+    public void inputPasswordRestoreChallenge2(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(passwordInputField));
+        passwordInputField.sendKeys("hElloW0rld");
+    }
 
     //click 'submit' button method
     public void clickSubmitButton(){
@@ -109,8 +115,6 @@ public class LearnModePasswordChallengePage extends BasePage{
     public String getChallengeOne(){return challengeOne.getText();}
     //input form 'entered value' text getter
     public String getEnteredValueText() {return enteredValueText.getText();}
-    //challenge hint text getter
-    public String getChallengeHintText() {return challengeHintText.getText();}
     //calculation result getter
     public String getPasswordRestoreResult() {return challengePasswordRestoreResult.getText();}
     //'halfway there' message getter

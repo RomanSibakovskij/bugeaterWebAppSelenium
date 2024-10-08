@@ -55,5 +55,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         LearnModePasswordChallengePage learnModePasswordChallengePage = new LearnModePasswordChallengePage(driver);
         //challenge 1 test
         solvePasswordRestoreChallenge1Test(learnModePasswordChallengePage);
+        //challenge 2 test
+        solvePasswordRestoreChallenge2Test(learnModePasswordChallengePage);
     }
 }
