@@ -125,6 +125,12 @@ public class LearnModePasswordChallengePage extends BasePage{
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
         passwordInputField.sendKeys("ONLYCAPITAL");
     }
+    //password restore input method (for challenge 8) (invalid password input - lowercase letters only)
+    public void inputPasswordRestoreChallenge8(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(passwordInputField));
+        passwordInputField.sendKeys("onlylower");
+    }
 
     //click 'submit' button method
     public void clickSubmitButton(){
@@ -165,6 +171,8 @@ public class LearnModePasswordChallengePage extends BasePage{
     public String getChallengeSix(){return challengeSix.getText();}
     //challenge seven text getter
     public String getChallengeSeven(){return challengeSeven.getText();}
+    //challenge eight text getter
+    public String getChallengeEight(){return challengeEight.getText();}
     //input form 'entered value' text getter
     public String getEnteredValueText() {return enteredValueText.getText();}
     //calculation result getter
