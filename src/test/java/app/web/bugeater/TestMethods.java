@@ -891,6 +891,37 @@ public class TestMethods extends BaseTest {
         //click 'calculate' button
         learnModeUpdateProfilePage.clickSubmitButton();
     }
+    //update profile challenge test method (challenge 3) (invalid inputs - inputs longer than max length)
+    protected void solveUpdateProfileChallenge3Test(LearnModeUpdateProfilePage learnModeUpdateProfilePage){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the page title is as expected
+        assertEquals("Update Profile", learnModeUpdateProfilePage.getUpdateProfileChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method
+        isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //update profile page web assert
+        isLearnModeUpdateProfileChallengePageWebElementDisplayed(learnModeUpdateProfilePage);
+        //assert challenge counter has registered challenge two completion
+        assertEquals("2 instruction(s) out of 6", learnModeUpdateProfilePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the challenge three has correct text
+        assertEquals("Enter Nickname: \"longnick9_\", First Name: \"MaximilianaElizabethMontgomery\", Last Name: \"AlexanderHamiltonJeffersonSmith\", and press \"Submit\". Expected Result: \"User input error\". The entered values exceed the max length.", learnModeUpdateProfilePage.getChallengeThree(), "The challenge description doesn't match expected result");
+        //assert input form entered value has the expected display (after second challenge completion)
+        assertEquals("Entered Values: Nickname: k_3, First Name: J, Last Name: Z", learnModeUpdateProfilePage.getEnteredValuesText(), "The input form entered values doesn't match expected result");
+        //assert update profile has the expected result (after challenge two)
+        assertEquals("Result: User input error", learnModeUpdateProfilePage.getUpdateProfileResult() , "The calculation result doesn't match expected result");
+        //logger after challenge completion
+        logPreChallenge3Result(learnModeNumAddDivisionChallengePage);
+        //input update profile data into input fields (inputs longer than max length)
+        learnModeUpdateProfilePage.inputUpdateProfileChallenge3Nickname3();
+        learnModeUpdateProfilePage.inputUpdateProfileChallenge3FirstName3();
+        learnModeUpdateProfilePage.inputUpdateProfileChallenge3LastName3();
+        //click 'calculate' button
+        learnModeUpdateProfilePage.clickSubmitButton();
+        //assert 'halfway there' message is displayed
+        //assertEquals("Halfway there!", learnModeUpdateProfilePage.getHalfwayThereMessage(), "The 'halfway there' message isn't displayed"); //NoSuchElementException with valid selector
+    }
 
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){

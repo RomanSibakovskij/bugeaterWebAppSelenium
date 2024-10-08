@@ -88,5 +88,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveUpdateProfileChallenge1Test(learnModeUpdateProfilePage);
         //challenge 2 test (inputs shorter than the limit scenario)
         solveUpdateProfileChallenge2Test(learnModeUpdateProfilePage);
+        //challenge 3 test (inputs longer than the limit scenario)
+        solveUpdateProfileChallenge3Test(learnModeUpdateProfilePage);
     }
 }
