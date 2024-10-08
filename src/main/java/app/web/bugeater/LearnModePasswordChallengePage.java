@@ -79,13 +79,13 @@ public class LearnModePasswordChallengePage extends BasePage{
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
         passwordInputField.sendKeys("P@ssw0rD");
     }
-    //password restore input method (for challenge 2)
+    //password restore input method (for challenge 2) (invalid password input)
     public void inputPasswordRestoreChallenge2(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
         passwordInputField.sendKeys("hElloW0rld");
     }
-    //password restore input method (for challenge 3)
+    //password restore input method (for challenge 3) (invalid password input)
     public void inputPasswordRestoreChallenge3(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
@@ -96,6 +96,12 @@ public class LearnModePasswordChallengePage extends BasePage{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
         passwordInputField.sendKeys("");
+    }
+    //password restore input method (for challenge 5) (invalid password input)
+    public void inputPasswordRestoreChallenge5(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(passwordInputField));
+        passwordInputField.sendKeys("Mo7%");
     }
 
     //click 'submit' button method
@@ -131,6 +137,8 @@ public class LearnModePasswordChallengePage extends BasePage{
     public String getChallengeThree(){return challengeThree.getText();}
     //challenge four text getter
     public String getChallengeFour(){return challengeFour.getText();}
+    //challenge five text getter
+    public String getChallengeFive(){return challengeFive.getText();}
     //input form 'entered value' text getter
     public String getEnteredValueText() {return enteredValueText.getText();}
     //calculation result getter
