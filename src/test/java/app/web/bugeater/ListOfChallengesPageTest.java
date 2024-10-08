@@ -76,4 +76,15 @@ public class ListOfChallengesPageTest extends TestMethods{
         //challenge 11 test (invalid password input - not-allowed symbols only)
         solvePasswordRestoreChallenge11Test(learnModePasswordChallengePage);
     }
+
+    // Test 004 -> update profile challenge test (as a guest)
+    @Test
+    @DisplayName("Update Profile Challenge Test (as a guest)")
+    @Tag("Learn_Mode_Challenge_Test")
+    void updateProfileChallengeTest(){
+        navigateToUpdateProfilePageTest();
+        LearnModeUpdateProfilePage learnModeUpdateProfilePage = new LearnModeUpdateProfilePage(driver);
+        //challenge 1 test
+        solveUpdateProfileChallenge1Test(learnModeUpdateProfilePage);
+    }
 }

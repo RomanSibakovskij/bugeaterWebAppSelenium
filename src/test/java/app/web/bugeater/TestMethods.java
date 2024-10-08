@@ -460,7 +460,7 @@ public class TestMethods extends BaseTest {
         assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
         //assert the learn mode section title is as expected
         assertEquals("Learn Mode", listOfChallengesPage.getLearnModeSectionTitle(), "The learn more section title doesn't match expectations");
-        //click 'number addition' challenge link
+        //click 'password restore' challenge link
         listOfChallengesPage.clickLearnModeChallengeLink3();
     }
     //password restore challenge test method (challenge 1)
@@ -809,6 +809,60 @@ public class TestMethods extends BaseTest {
         assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
     }
 
+    //navigate to update profile challenge test method
+    protected void navigateToUpdateProfilePageTest(){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        //click 'accept' cookies modal button
+        listOfChallengesPage.clickAcceptCookiesButton();
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //'List of Challenges' page web element assert
+        isListOfChallengesWebElementDisplayed(listOfChallengesPage);
+        //assert the 'list of challenges' page title is as expected
+        assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
+        //assert the learn mode section title is as expected
+        assertEquals("Learn Mode", listOfChallengesPage.getLearnModeSectionTitle(), "The learn more section title doesn't match expectations");
+        //click 'update profile' challenge link
+        listOfChallengesPage.clickLearnModeChallengeLink4();
+    }
+    //update profile challenge test method (challenge 1)
+    protected void solveUpdateProfileChallenge1Test(LearnModeUpdateProfilePage learnModeUpdateProfilePage){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the challenge text is displayed as expected
+        assertEquals("Follow the five step-by-step appearing instructions, entering an appropriate value into the \"Nickname\", \"First Name\", and \"Last Name\" fields. This way you conduct a basic check of the form proper functioning. You are practically applying the Scripted Testing approach and checking the Basic Profile criteria match.", learnModeUpdateProfilePage.getCurrentChallengeText(), "The text of the challenge doesn't match the expected text");
+        //assert tutorial description text is displayed as expected
+        assertEquals("This description explains the challenge and what you need to do. Read it carefully before starting the challenge.", learnModeUpdateProfilePage.getTutorialDescriptionText(), "The tutorial text doesn't match the expected text");
+        //click tutorial 'skip' button
+        learnModeUpdateProfilePage.clickSkipTutorialButton();
+        //assert the page title is as expected
+        assertEquals("Update Profile", learnModeUpdateProfilePage.getUpdateProfileChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method
+        isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //update profile page web assert
+        isLearnModeUpdateProfileChallengePageWebElementDisplayed(learnModeUpdateProfilePage);
+        //assert challenge counter has no challenges completed yet
+        assertEquals("0 instruction(s) out of 6", learnModeUpdateProfilePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the challenge one has correct text
+        assertEquals("Enter Nickname: \"skyline7\", First Name: \"Michael\", Last Name: \"Henderson\", and press \"Submit\". Expected Result: \"Your profile updated\".", learnModeUpdateProfilePage.getChallengeOne(), "The challenge description doesn't match expected result");
+        //assert input form entered value has the expected display
+        assertEquals("Entered Values:", learnModeUpdateProfilePage.getEnteredValuesText(), "The input form entered values doesn't match expected result");
+        //assert update profile has the expected result (before operation)
+        assertEquals("Result:", learnModeUpdateProfilePage.getUpdateProfileResult() , "The calculation result doesn't match expected result");
+        //logger before challenge completion
+        logPreChallenge1Result(learnModeNumAddDivisionChallengePage);
+        //input update profile data into input fields
+        learnModeUpdateProfilePage.inputUpdateProfileChallenge1Nickname1();
+        learnModeUpdateProfilePage.inputUpdateProfileChallenge1FirstName1();
+        learnModeUpdateProfilePage.inputUpdateProfileChallenge1LastName1();
+        //click 'calculate' button
+        learnModeUpdateProfilePage.clickSubmitButton();
+        //assert entered value is displayed (after challenge one completion)
+        assertEquals("Entered Values: Nickname: skyline7, First Name: Michael, Last Name: Henderson", learnModeUpdateProfilePage.getEnteredValuesText(), "The input form entered values doesn't match expected result");
+    }
+
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){
         //assert 'list of challenges' navbar dropdown menu is displayed
@@ -900,22 +954,22 @@ public class TestMethods extends BaseTest {
     //'Learn more' password restore challenge page specific web element assert
     protected void isLearnModePasswordRestoreChallengePageWebElementDisplayed(LearnModePasswordChallengePage learnModePasswordChallengePage){
         //assert 'password restore' challenge page title is displayed
-        assertTrue(learnModePasswordChallengePage.isNumberAdditionChallengePageTitleDisplayed(), "The 'Password Restore' challenge page title is not displayed");
+        assertTrue(learnModePasswordChallengePage.isPasswordRestorePageTitleDisplayed(), "The 'Password Restore' challenge page title is not displayed");
         //assert 'password restore' challenge guide icon is displayed
-        assertTrue(learnModePasswordChallengePage.isNumberAdditionChallengeGuideIconDisplayed(), "The 'Password Restore' challenge guide icon is not displayed");
+        assertTrue(learnModePasswordChallengePage.isPasswordRestoreChallengeGuideIconDisplayed(), "The 'Password Restore' challenge guide icon is not displayed");
         //assert 'password restore' challenge instructions title is displayed
         assertTrue(learnModePasswordChallengePage.isInstructionsTitleDisplayed(), "The 'Password Restore' challenge instructions title is not displayed");
         //assert 'password restore' challenges completed counter is displayed
         assertTrue(learnModePasswordChallengePage.isChallengesCompletedCounterDisplayed(), "The 'Password Restore' challenges completed counter is not displayed");
         //assert 'password restore' challenge list is displayed
-        assertTrue(learnModePasswordChallengePage.isNumberAdditionChallengeOneDisplayed(), "The 'Password Restore' challenge list is not displayed");
+        assertTrue(learnModePasswordChallengePage.isPasswordRestoreChallengeOneDisplayed(), "The 'Password Restore' challenge list is not displayed");
         //assert 'password restore' challenge input form title is displayed
         assertTrue(learnModePasswordChallengePage.isInputFormTitleDisplayed(), "The 'Password Restore' challenge input form title is not displayed");
-        //assert 'password restore' challenge input form 'entered values' are displayed
+        //assert 'password restore' challenge input form 'entered value' are displayed
         assertTrue(learnModePasswordChallengePage.isInputFormEnteredValueDisplayed(), "The 'Password Restore' challenge input form entered value are not displayed");
-        //assert 'password restore' challenge number 1 input field is displayed
+        //assert 'password restore' challenge input field is displayed
         assertTrue(learnModePasswordChallengePage.isPasswordInputFieldDisplayed(), "The 'Password Restore' challenge password input field is not displayed");
-        //assert 'password restore' challenge calculation result is displayed
+        //assert 'password restore' challenge password update result is displayed
         assertTrue(learnModePasswordChallengePage.isPasswordRestoreResultDisplayed(), "The 'Password Restore' challenge password restore result is not displayed");
         //assert 'password restore' challenge start over button is displayed
         assertTrue(learnModePasswordChallengePage.isStartOverButtonDisplayed(), "The 'Password Restore' challenge start over button is not displayed");
@@ -923,6 +977,37 @@ public class TestMethods extends BaseTest {
         assertTrue(learnModePasswordChallengePage.isClearButtonDisplayed(), "The 'Password Restore' challenge clear button is not displayed");
         //assert 'password restore' challenge calculate button is displayed
         assertTrue(learnModePasswordChallengePage.isSubmitButtonDisplayed(), "The 'Password Restore' challenge submit button is not displayed");
+    }
+    //'Learn more' update profile challenge page specific web element assert
+    protected void isLearnModeUpdateProfileChallengePageWebElementDisplayed(LearnModeUpdateProfilePage learnModeUpdateProfilePage){
+        //assert 'update profile' challenge page title is displayed
+        assertTrue(learnModeUpdateProfilePage.isUpdateProfileChallengePageTitleDisplayed(), "The 'Update Profile' challenge page title is not displayed");
+        //assert 'update profile' challenge guide icon is displayed
+        assertTrue(learnModeUpdateProfilePage.isUpdateProfileChallengeGuideIconDisplayed(), "The 'Update Profile' challenge guide icon is not displayed");
+        //assert 'update profile' challenge instructions title is displayed
+        assertTrue(learnModeUpdateProfilePage.isInstructionsTitleDisplayed(), "The 'Update Profile' challenge instructions title is not displayed");
+        //assert 'update profile' challenges completed counter is displayed
+        assertTrue(learnModeUpdateProfilePage.isChallengesCompletedCounterDisplayed(), "The 'Update Profile' challenges completed counter is not displayed");
+        //assert 'update profile' challenge list is displayed
+        assertTrue(learnModeUpdateProfilePage.isUpdateProfileChallengeOneDisplayed(), "The 'Update Profile' challenge list is not displayed");
+        //assert 'update profile' challenge input form title is displayed
+        assertTrue(learnModeUpdateProfilePage.isInputFormTitleDisplayed(), "The 'Update Profile' challenge input form title is not displayed");
+        //assert 'update profile' challenge input form 'entered values' are displayed
+        assertTrue(learnModeUpdateProfilePage.isInputFormEnteredValuesDisplayed(), "The 'Update Profile' challenge input form entered values are not displayed");
+        //assert 'update profile' challenge nickname input field is displayed
+        assertTrue(learnModeUpdateProfilePage.isNicknameInputFieldDisplayed(), "The 'Update Profile' challenge nickname input field is not displayed");
+        //assert 'update profile' challenge first name input field is displayed
+        assertTrue(learnModeUpdateProfilePage.isFirstNameInputFieldDisplayed(), "The 'Update Profile' challenge first name input field is not displayed");
+        //assert 'update profile' challenge last name input field is displayed
+        assertTrue(learnModeUpdateProfilePage.isLastNameInputFieldDisplayed(), "The 'Update Profile' challenge last name input field is not displayed");
+        //assert 'update profile' challenge update profile result is displayed
+        assertTrue(learnModeUpdateProfilePage.isUpdateProfileResultDisplayed(), "The 'Update Profile' challenge password restore result is not displayed");
+        //assert 'update profile' challenge start over button is displayed
+        assertTrue(learnModeUpdateProfilePage.isStartOverButtonDisplayed(), "The 'Update Profile' challenge start over button is not displayed");
+        //assert 'update profile' challenge clear form button is displayed
+        assertTrue(learnModeUpdateProfilePage.isClearButtonDisplayed(), "The 'Update Profile' challenge clear button is not displayed");
+        //assert 'update profile' challenge calculate button is displayed
+        assertTrue(learnModeUpdateProfilePage.isSubmitButtonDisplayed(), "The 'Update Profile' challenge submit button is not displayed");
     }
 
     //pre-challenges loggers (for debug validation)

@@ -206,22 +206,19 @@ public class LearnModePasswordChallengePage extends BasePage{
     //challenge completion modal title getter
     public String getChallengeCompletionModalTitle() {return challengeCompletionModalTitle.getText();}
 
-    //'Number Addition challenge' web element assert methods
-    public boolean isNumberAdditionChallengePageTitleDisplayed(){return passwordRestoreChallengeTitle.isDisplayed();}
-    public boolean isNumberAdditionChallengeGuideIconDisplayed(){return passwordRestoreGuideButton.isDisplayed();}
+    //'Password restore challenge' web element assert methods
+    public boolean isPasswordRestorePageTitleDisplayed(){return passwordRestoreChallengeTitle.isDisplayed();}
+    public boolean isPasswordRestoreChallengeGuideIconDisplayed(){return passwordRestoreGuideButton.isDisplayed();}
     public boolean isInstructionsTitleDisplayed(){return instructionsTitle.isDisplayed();}
     public boolean isChallengesCompletedCounterDisplayed() {return challengesCompletedCounter.isDisplayed();}
 
-    public boolean isNumberAdditionChallengeOneDisplayed(){return challengeOne.isDisplayed();}
+    public boolean isPasswordRestoreChallengeOneDisplayed(){return challengeOne.isDisplayed();}
 
     public boolean isInputFormTitleDisplayed() {return inputFormTitle.isDisplayed();}
     public boolean isInputFormEnteredValueDisplayed() {return enteredValueText.isDisplayed();}
     public boolean isPasswordInputFieldDisplayed() {return passwordInputField.isDisplayed();}
-    public boolean isChallengeHintDisplayed() {return challengeHintText.isDisplayed();}
     public boolean isPasswordRestoreResultDisplayed() {return challengePasswordRestoreResult.isDisplayed();}
     public boolean isStartOverButtonDisplayed() {return startOverButton.isDisplayed();}
     public boolean isClearButtonDisplayed() {return clearFormButton.isDisplayed();}
     public boolean isSubmitButtonDisplayed() {return submitButton.isDisplayed();}
-
-
 }
