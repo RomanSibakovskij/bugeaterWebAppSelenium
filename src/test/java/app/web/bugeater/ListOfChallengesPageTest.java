@@ -65,5 +65,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solvePasswordRestoreChallenge5Test(learnModePasswordChallengePage);
         //challenge 6 test (invalid password input - too long)
         solvePasswordRestoreChallenge6Test(learnModePasswordChallengePage);
+        //challenge 7 test (invalid password input - uppercase only)
+        solvePasswordRestoreChallenge7Test(learnModePasswordChallengePage);
     }
 }
