@@ -143,6 +143,12 @@ public class LearnModePasswordChallengePage extends BasePage{
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
         passwordInputField.sendKeys("@@@@@");
     }
+    //password restore input method (for challenge 11) (invalid password input - not-allowed symbols only)
+    public void inputPasswordRestoreChallenge11(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(passwordInputField));
+        passwordInputField.sendKeys("Κωδικός");
+    }
 
     //click 'submit' button method
     public void clickSubmitButton(){
@@ -189,6 +195,8 @@ public class LearnModePasswordChallengePage extends BasePage{
     public String getChallengeNine(){return challengeNine.getText();}
     //challenge ten text getter
     public String getChallengeTen(){return challengeTen.getText();}
+    //challenge eleven text getter
+    public String getChallengeEleven(){return challengeEleven.getText();}
     //input form 'entered value' text getter
     public String getEnteredValueText() {return enteredValueText.getText();}
     //calculation result getter

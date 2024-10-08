@@ -210,6 +210,9 @@ public class TestMethods extends BaseTest {
         //assertEquals("You did it!", numberAdditionChallengePage.getChallengeCompletionModalTitle(), "The challenge completion modal title displayed doesn't match expected title");
         //click close modal button
         learnModeNumAddDivisionChallengePage.clickCloseModalButton();
+        LearnModePasswordChallengePage learnModePasswordChallengePage = new LearnModePasswordChallengePage(driver);
+        //logger after challenge six completion
+        logPreChallenge7Result(learnModePasswordChallengePage);
         //assert all challenges are completed
         assertEquals("6 instruction(s) out of 6", learnModeNumAddDivisionChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
         //assert input form entered has the expected display (after challenge six completion)
@@ -424,9 +427,12 @@ public class TestMethods extends BaseTest {
         //click 'calculate' button
         learnModeNumAddDivisionChallengePage.clickCalculateButton();
         //assert challenge completion modal has the expected title (NoSuchElementException despite valid selector)
-        //assertEquals("You did it!", numberAdditionChallengePage.getChallengeCompletionModalTitle(), "The challenge completion modal title displayed doesn't match expected title");
+        //assertEquals("You did it!", learnModeNumAddDivisionChallengePage.getChallengeCompletionModalTitle(), "The challenge completion modal title displayed doesn't match expected title");
         //click close modal button
         learnModeNumAddDivisionChallengePage.clickCloseModalButton();
+        LearnModePasswordChallengePage learnModePasswordChallengePage = new LearnModePasswordChallengePage(driver);
+        //logger after challenge six completion
+        logPreChallenge7Result(learnModePasswordChallengePage);
         //assert all challenges are completed
         assertEquals("6 instruction(s) out of 6", learnModeNumAddDivisionChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
         //assert input form entered has the expected display (after challenge six completion)
@@ -754,6 +760,53 @@ public class TestMethods extends BaseTest {
         learnModePasswordChallengePage.inputPasswordRestoreChallenge10();
         //click 'calculate' button
         learnModePasswordChallengePage.clickSubmitButton();
+    }
+    //password restore challenge test method (challenge 11) (invalid password scenario - not-allowed symbols only)
+    protected void solvePasswordRestoreChallenge11Test(LearnModePasswordChallengePage learnModePasswordChallengePage){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the challenge text is displayed as expected
+        assertEquals("Follow the eleven step-by-step appearing instructions, entering an appropriate value into the \"New Password\" field. This way you conduct a basic check of the form proper functioning. You are practically applying the Scripted Testing approach and checking the Basic Password criteria match.", learnModePasswordChallengePage.getCurrentChallengeText(), "The text of the challenge doesn't match the expected text");
+        //assert the page title is as expected
+        assertEquals("Password Restore", learnModePasswordChallengePage.getPasswordRestoreChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method
+        isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //password restore page web assert
+        isLearnModePasswordRestoreChallengePageWebElementDisplayed(learnModePasswordChallengePage);
+        //assert challenge counter has registered challenge ten completion
+        assertEquals("10 instruction(s) out of 11", learnModePasswordChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the challenge eleven has correct text
+        assertEquals("Enter \"Κωδικός\" as the password, which contains the not-allowed symbol, and then click on the \"Submit\" button. Expected result: \"Invalid Password\".", learnModePasswordChallengePage.getChallengeEleven(), "The challenge description doesn't match expected result");
+        //assert input form entered value has the expected display (after tenth challenge)
+        assertEquals("Entered Value: @@@@@", learnModePasswordChallengePage.getEnteredValueText(), "The input form entered values doesn't match expected result");
+        //assert password restore has the expected result (after challenge ten)
+        assertEquals("Result: Invalid Password", learnModePasswordChallengePage.getPasswordRestoreResult() , "The calculation result doesn't match expected result");
+        //logger before challenge completion
+        logPreChallenge10Result(learnModePasswordChallengePage);
+        //input password into input field
+        learnModePasswordChallengePage.inputPasswordRestoreChallenge11();
+        //click 'calculate' button
+        learnModePasswordChallengePage.clickSubmitButton();
+        //assert challenge completion modal has the expected title (NoSuchElementException despite valid selector)
+        //assertEquals("You did it!", learnModeNumAddDivisionChallengePage.getChallengeCompletionModalTitle(), "The challenge completion modal title displayed doesn't match expected title");
+        //click close modal button
+        learnModePasswordChallengePage.clickCloseModalButton();
+        //assert the completion of challenge eleven has been displayed
+        assertEquals("11 instruction(s) out of 11", learnModePasswordChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert input form entered value has the expected display (after eleventh challenge)
+        assertEquals("Entered Value: Κωδικός", learnModePasswordChallengePage.getEnteredValueText(), "The input form entered values doesn't match expected result");
+        //assert password restore has the expected result (after challenge eleven)
+        assertEquals("Result: Invalid Password", learnModePasswordChallengePage.getPasswordRestoreResult() , "The calculation result doesn't match expected result");
+        //logger after challenge completion
+        logPreChallenge11Result(learnModePasswordChallengePage);
+        //click navbar dropdown menu
+        listOfChallengesPage.clickNavbarDropdownMenu();
+        //return to 'List of Challenges'
+        listOfChallengesPage.clickReturnToListOfChallengesLink();
+        //assert the user has returned back to 'List of Challenges'
+        assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
     }
 
     //general page web element assert (repeating web elements on all app pages)
