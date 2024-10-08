@@ -59,5 +59,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solvePasswordRestoreChallenge2Test(learnModePasswordChallengePage);
         //challenge 3 test
         solvePasswordRestoreChallenge3Test(learnModePasswordChallengePage);
+        //challenge 4 test
+        solvePasswordRestoreChallenge4Test(learnModePasswordChallengePage);
     }
 }

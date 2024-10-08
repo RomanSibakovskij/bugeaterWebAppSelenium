@@ -91,6 +91,12 @@ public class LearnModePasswordChallengePage extends BasePage{
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
         passwordInputField.sendKeys("Passw0rd!7");
     }
+    //password restore input method (for challenge 4) (empty password input)
+    public void inputPasswordRestoreChallenge4(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(passwordInputField));
+        passwordInputField.sendKeys("");
+    }
 
     //click 'submit' button method
     public void clickSubmitButton(){
@@ -123,6 +129,8 @@ public class LearnModePasswordChallengePage extends BasePage{
     public String getChallengeTwo(){return challengeTwo.getText();}
     //challenge three text getter
     public String getChallengeThree(){return challengeThree.getText();}
+    //challenge four text getter
+    public String getChallengeFour(){return challengeFour.getText();}
     //input form 'entered value' text getter
     public String getEnteredValueText() {return enteredValueText.getText();}
     //calculation result getter
