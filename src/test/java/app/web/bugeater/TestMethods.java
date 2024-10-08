@@ -508,8 +508,8 @@ public class TestMethods extends BaseTest {
         isLearnModePasswordRestoreChallengePageWebElementDisplayed(learnModePasswordChallengePage);
         //assert challenge counter has registered challenge one completion
         assertEquals("1 instruction(s) out of 11", learnModePasswordChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
-        //assert the challenge one has correct text
-        assertEquals("Enter \"P@ssw0rD\" as the password, which meets all the requirements, and then click on the \"Submit\" button. Expected result: \"Valid Password\".", learnModePasswordChallengePage.getChallengeOne(), "The challenge description doesn't match expected result");
+        //assert the challenge two has correct text
+        assertEquals("Enter \"hElloW0rld\" as the password, which does not meet all the requirements, and click the \"Submit\" button. Expected result: \"Invalid Password\".", learnModePasswordChallengePage.getChallengeTwo(), "The challenge description doesn't match expected result");
         //assert input form entered value has the expected display (after first challenge)
         assertEquals("Entered Value: P@ssw0rD", learnModePasswordChallengePage.getEnteredValueText(), "The input form entered values doesn't match expected result");
         //assert password restore has the expected result (after challenge one)
@@ -521,7 +521,35 @@ public class TestMethods extends BaseTest {
         //click 'calculate' button
         learnModePasswordChallengePage.clickSubmitButton();
     }
-
+    //password restore challenge test method (challenge 3)
+    protected void solvePasswordRestoreChallenge3Test(LearnModePasswordChallengePage learnModePasswordChallengePage){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the challenge text is displayed as expected
+        assertEquals("Follow the eleven step-by-step appearing instructions, entering an appropriate value into the \"New Password\" field. This way you conduct a basic check of the form proper functioning. You are practically applying the Scripted Testing approach and checking the Basic Password criteria match.", learnModePasswordChallengePage.getCurrentChallengeText(), "The text of the challenge doesn't match the expected text");
+        //assert the page title is as expected
+        assertEquals("Password Restore", learnModePasswordChallengePage.getPasswordRestoreChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method
+        isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //password restore page web assert
+        isLearnModePasswordRestoreChallengePageWebElementDisplayed(learnModePasswordChallengePage);
+        //assert challenge counter has registered challenge two completion
+        assertEquals("2 instruction(s) out of 11", learnModePasswordChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the challenge three has correct text
+        assertEquals("Enter the same password as the saved one - \"Passw0rd!7\" and click the \"Submit\" button. Expected result: \"Invalid Password\".", learnModePasswordChallengePage.getChallengeThree(), "The challenge description doesn't match expected result");
+        //assert input form entered value has the expected display (after second challenge)
+        assertEquals("Entered Value: hElloW0rld", learnModePasswordChallengePage.getEnteredValueText(), "The input form entered values doesn't match expected result");
+        //assert password restore has the expected result (after challenge two)
+        assertEquals("Result: Invalid Password", learnModePasswordChallengePage.getPasswordRestoreResult() , "The calculation result doesn't match expected result");
+        //logger before challenge completion
+        logPreChallenge3Result(learnModeNumAddDivisionChallengePage);
+        //input password into input field
+        learnModePasswordChallengePage.inputPasswordRestoreChallenge3();
+        //click 'calculate' button
+        learnModePasswordChallengePage.clickSubmitButton();
+    }
 
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){
