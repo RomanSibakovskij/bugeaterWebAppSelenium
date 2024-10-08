@@ -98,6 +98,8 @@ public class ListOfChallengesPage extends BasePage{
     public void clickLearnModeChallengeLink1(){clickListOfChallengesChallengeLink(0);}
     //click number division challenge link method
     public void clickLearnModeChallengeLink2(){clickListOfChallengesChallengeLink(1);}
+    //click password restore challenge link method
+    public void clickLearnModeChallengeLink3(){clickListOfChallengesChallengeLink(2);}
 
     //list of challenges page title getter
     public String getListOfChallengesPageTitle(){return listOfChallengesTitle.getText();}

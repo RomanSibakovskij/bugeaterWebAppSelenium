@@ -45,4 +45,15 @@ public class ListOfChallengesPageTest extends TestMethods{
         //challenge 6 test
         solveNumberDivisionChallenge6Test(learnModeNumAddDivisionChallengePage);
     }
+
+    // Test 003 -> password restore challenge test (as a guest)
+    @Test
+    @DisplayName("Password Restore Challenge Test (as a guest)")
+    @Tag("Learn_Mode_Challenge_Test")
+    void passwordRestoreChallengeTest(){
+        navigateToPasswordRestorePageTest();
+        LearnModePasswordChallengePage learnModePasswordChallengePage = new LearnModePasswordChallengePage(driver);
+        //challenge 1 test
+        solvePasswordRestoreChallenge1Test(learnModePasswordChallengePage);
+    }
 }

@@ -417,6 +417,56 @@ public class TestMethods extends BaseTest {
         assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
     }
 
+    //navigate to password restore challenge test method
+    protected void navigateToPasswordRestorePageTest(){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        //click 'accept' cookies modal button
+        listOfChallengesPage.clickAcceptCookiesButton();
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //'List of Challenges' page web element assert
+        isListOfChallengesWebElementDisplayed(listOfChallengesPage);
+        //assert the 'list of challenges' page title is as expected
+        assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
+        //assert the learn mode section title is as expected
+        assertEquals("Learn Mode", listOfChallengesPage.getLearnModeSectionTitle(), "The learn more section title doesn't match expectations");
+        //click 'number addition' challenge link
+        listOfChallengesPage.clickLearnModeChallengeLink3();
+    }
+    //password restore challenge test method (challenge 1)
+    protected void solvePasswordRestoreChallenge1Test(LearnModePasswordChallengePage learnModePasswordChallengePage){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the challenge text is displayed as expected
+        assertEquals("Follow the eleven step-by-step appearing instructions, entering an appropriate value into the \"New Password\" field. This way you conduct a basic check of the form proper functioning. You are practically applying the Scripted Testing approach and checking the Basic Password criteria match.", learnModePasswordChallengePage.getCurrentChallengeText(), "The text of the challenge doesn't match the expected text");
+        //assert tutorial description text is displayed as expected
+        assertEquals("This description explains the challenge and what you need to do. Read it carefully before starting the challenge.", learnModePasswordChallengePage.getTutorialDescriptionText(), "The tutorial text doesn't match the expected text");
+        //click tutorial 'skip' button
+        learnModePasswordChallengePage.clickSkipTutorialButton();
+        //assert the page title is as expected
+        assertEquals("Password Restore", learnModePasswordChallengePage.getPasswordRestoreChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method
+        isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //assert challenge counter has no challenges completed yet
+        assertEquals("0 instruction(s) out of 11", learnModePasswordChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the challenge one has correct text
+        assertEquals("Enter \"P@ssw0rD\" as the password, which meets all the requirements, and then click on the \"Submit\" button. Expected result: \"Valid Password\".", learnModePasswordChallengePage.getChallengeOne(), "The challenge description doesn't match expected result");
+        //assert input form entered has the expected display
+        assertEquals("Entered Value:", learnModePasswordChallengePage.getEnteredValueText(), "The input form entered values doesn't match expected result");
+        //assert password restore has the expected result (before operation)
+        assertEquals("Result:", learnModePasswordChallengePage.getPasswordRestoreResult() , "The calculation result doesn't match expected result");
+        //logger before challenge completion
+        logPreChallenge1Result(learnModeNumAddDivisionChallengePage);
+        //input numbers into input field
+        learnModePasswordChallengePage.inputPasswordRestoreChallenge1();
+        //click 'calculate' button
+        learnModePasswordChallengePage.clickSubmitButton();
+        //assert entered value is displayed (after challenge one completion)
+        assertEquals("Entered Value: P@ssw0rD", learnModePasswordChallengePage.getEnteredValueText(), "The input form entered values doesn't match expected result");
+    }
+
 
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){
@@ -464,8 +514,8 @@ public class TestMethods extends BaseTest {
         assertTrue(listOfChallengesPage.isListOfChallengesExploratoryTestingChallengeLinkDisplayed(), "The 'exploratory testing' section challenge link is not displayed");
     }
 
-    //Individual challenge page specific web element assert
-    protected void isIndividualChallengePageWebElementDisplayed(LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage){
+    //'Learn more' number addition/division challenge page specific web element assert
+    protected void isLearnModeNumAddDivChallengePageWebElementDisplayed(LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage){
         //assert 'number addition' challenge page title is displayed
         assertTrue(learnModeNumAddDivisionChallengePage.isNumberAdditionChallengePageTitleDisplayed(), "The 'Number Addition' challenge page title is not displayed");
         //assert 'number addition' challenge guide icon is displayed
@@ -504,6 +554,34 @@ public class TestMethods extends BaseTest {
         assertEquals("Instruction(s) You Follow", learnModeNumAddDivisionChallengePage.getNumberAdditionInstructionsTitle(), "The instructions title doesn't match the expected title");
         //assert input form has the correct title
         assertEquals("Form You Test", learnModeNumAddDivisionChallengePage.getInputFormTitle(), "The input form title doesn't match expected result");
+    }
+
+    //'Learn more' password restore challenge page specific web element assert
+    protected void isLearnModePasswordRestoreChallengePageWebElementDisplayed(LearnModePasswordChallengePage learnModePasswordChallengePage){
+        //assert 'password restore' challenge page title is displayed
+        assertTrue(learnModePasswordChallengePage.isNumberAdditionChallengePageTitleDisplayed(), "The 'Password Restore' challenge page title is not displayed");
+        //assert 'password restore' challenge guide icon is displayed
+        assertTrue(learnModePasswordChallengePage.isNumberAdditionChallengeGuideIconDisplayed(), "The 'Password Restore' challenge guide icon is not displayed");
+        //assert 'password restore' challenge instructions title is displayed
+        assertTrue(learnModePasswordChallengePage.isInstructionsTitleDisplayed(), "The 'Password Restore' challenge instructions title is not displayed");
+        //assert 'password restore' challenges completed counter is displayed
+        assertTrue(learnModePasswordChallengePage.isChallengesCompletedCounterDisplayed(), "The 'Password Restore' challenges completed counter is not displayed");
+        //assert 'password restore' challenge list is displayed
+        assertTrue(learnModePasswordChallengePage.isNumberAdditionChallengeOneDisplayed(), "The 'Password Restore' challenge list is not displayed");
+        //assert 'password restore' challenge input form title is displayed
+        assertTrue(learnModePasswordChallengePage.isInputFormTitleDisplayed(), "The 'Password Restore' challenge input form title is not displayed");
+        //assert 'password restore' challenge input form 'entered values' are displayed
+        assertTrue(learnModePasswordChallengePage.isInputFormEnteredValueDisplayed(), "The 'Password Restore' challenge input form entered value are not displayed");
+        //assert 'password restore' challenge number 1 input field is displayed
+        assertTrue(learnModePasswordChallengePage.isPasswordInputFieldDisplayed(), "The 'Password Restore' challenge password input field is not displayed");
+        //assert 'password restore' challenge calculation result is displayed
+        assertTrue(learnModePasswordChallengePage.isPasswordRestoreResultDisplayed(), "The 'Password Restore' challenge password restore result is not displayed");
+        //assert 'password restore' challenge start over button is displayed
+        assertTrue(learnModePasswordChallengePage.isStartOverButtonDisplayed(), "The 'Password Restore' challenge start over button is not displayed");
+        //assert 'password restore' challenge clear form button is displayed
+        assertTrue(learnModePasswordChallengePage.isClearButtonDisplayed(), "The 'Password Restore' challenge clear button is not displayed");
+        //assert 'password restore' challenge calculate button is displayed
+        assertTrue(learnModePasswordChallengePage.isSubmitButtonDisplayed(), "The 'Password Restore' challenge submit button is not displayed");
     }
 
     //pre-challenges loggers (for debug validation)
