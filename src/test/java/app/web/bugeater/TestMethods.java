@@ -951,6 +951,35 @@ public class TestMethods extends BaseTest {
         //click 'calculate' button
         learnModeUpdateProfilePage.clickSubmitButton();
     }
+    //update profile challenge test method (challenge 5) (invalid inputs - non-allowed character inputs)
+    protected void solveUpdateProfileChallenge5Test(LearnModeUpdateProfilePage learnModeUpdateProfilePage){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the page title is as expected
+        assertEquals("Update Profile", learnModeUpdateProfilePage.getUpdateProfileChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method
+        isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //update profile page web assert
+        isLearnModeUpdateProfileChallengePageWebElementDisplayed(learnModeUpdateProfilePage);
+        //assert challenge counter has registered challenge four completion
+        assertEquals("4 instruction(s) out of 6", learnModeUpdateProfilePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the challenge five has correct text
+        assertEquals("Enter Nickname: \"123-AA\", First Name \"X Æ A-12\", Last Name \"X Æ A-12\", and press \"Submit\". Expected Result: \"User input error\". Nickname, First Name and Last Name contain not allowed characters.", learnModeUpdateProfilePage.getChallengeFive(), "The challenge description doesn't match expected result");
+        //assert input form entered value has the expected display (after fourth challenge completion)
+        assertEquals("Entered Values: Nickname: Empty, First Name: Empty, Last Name: Empty", learnModeUpdateProfilePage.getEnteredValuesText(), "The input form entered values doesn't match expected result");
+        //assert update profile has the expected result (after challenge four)
+        assertEquals("Result: User input error", learnModeUpdateProfilePage.getUpdateProfileResult() , "The calculation result doesn't match expected result");
+        //logger after challenge completion
+        logPreChallenge5Result(learnModeNumAddDivisionChallengePage);
+        //input update profile data into input fields (non-allowed character inputs)
+        learnModeUpdateProfilePage.inputUpdateProfileChallenge5Nickname5();
+        learnModeUpdateProfilePage.inputUpdateProfileChallenge5FirstName5();
+        learnModeUpdateProfilePage.inputUpdateProfileChallenge5LastName5();
+        //click 'calculate' button
+        learnModeUpdateProfilePage.clickSubmitButton();
+    }
 
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){

@@ -141,6 +141,22 @@ public class LearnModeUpdateProfilePage extends BasePage{
         wait.until(ExpectedConditions.visibilityOf(lastNameInputField));
         lastNameInputField.sendKeys("");
     }
+    //update profile input methods (for challenge 5) (non-allowed characters inputs)
+    public void inputUpdateProfileChallenge5Nickname5(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(nicknameInputField));
+        nicknameInputField.sendKeys("123-AA");
+    }
+    public void inputUpdateProfileChallenge5FirstName5(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(firstNameInputField));
+        firstNameInputField.sendKeys("X Æ A-12");
+    }
+    public void inputUpdateProfileChallenge5LastName5(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(lastNameInputField));
+        lastNameInputField.sendKeys("X Æ A-12");
+    }
 
     //tutorial modal 'skip' button click method
     public void clickSkipTutorialButton(){tutorialSkipButton.click();}
