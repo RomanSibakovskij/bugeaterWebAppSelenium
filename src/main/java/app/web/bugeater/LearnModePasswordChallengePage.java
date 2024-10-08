@@ -41,6 +41,16 @@ public class LearnModePasswordChallengePage extends BasePage{
     private WebElement challengeFive;
     @FindBy(xpath = "//ol[@class='_learnChallengeList_1erpu_1']/li[6]")
     private WebElement challengeSix;
+    @FindBy(xpath = "//ol[@class='_learnChallengeList_1erpu_1']/li[7]")
+    private WebElement challengeSeven;
+    @FindBy(xpath = "//ol[@class='_learnChallengeList_1erpu_1']/li[8]")
+    private WebElement challengeEight;
+    @FindBy(xpath = "//ol[@class='_learnChallengeList_1erpu_1']/li[9]")
+    private WebElement challengeNine;
+    @FindBy(xpath = "//ol[@class='_learnChallengeList_1erpu_1']/li[10]")
+    private WebElement challengeTen;
+    @FindBy(xpath = "//ol[@class='_learnChallengeList_1erpu_1']/li[11]")
+    private WebElement challengeEleven;
     //'Number Addition' input form web elements
     @FindBy(xpath = "//div[@id='testForm']/h2")
     private WebElement inputFormTitle;
@@ -79,13 +89,13 @@ public class LearnModePasswordChallengePage extends BasePage{
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
         passwordInputField.sendKeys("P@ssw0rD");
     }
-    //password restore input method (for challenge 2) (invalid password input)
+    //password restore input method (for challenge 2) (invalid password input - doesn't meet requirements)
     public void inputPasswordRestoreChallenge2(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
         passwordInputField.sendKeys("hElloW0rld");
     }
-    //password restore input method (for challenge 3) (invalid password input)
+    //password restore input method (for challenge 3) (invalid password input - pre-existing)
     public void inputPasswordRestoreChallenge3(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
@@ -97,11 +107,17 @@ public class LearnModePasswordChallengePage extends BasePage{
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
         passwordInputField.sendKeys("");
     }
-    //password restore input method (for challenge 5) (invalid password input)
+    //password restore input method (for challenge 5) (invalid password input - too short)
     public void inputPasswordRestoreChallenge5(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
         passwordInputField.sendKeys("Mo7%");
+    }
+    //password restore input method (for challenge 6) (invalid password input - too long)
+    public void inputPasswordRestoreChallenge6(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(passwordInputField));
+        passwordInputField.sendKeys("asdfghjklpoiuytrewq");
     }
 
     //click 'submit' button method
@@ -139,6 +155,8 @@ public class LearnModePasswordChallengePage extends BasePage{
     public String getChallengeFour(){return challengeFour.getText();}
     //challenge five text getter
     public String getChallengeFive(){return challengeFive.getText();}
+    //challenge six text getter
+    public String getChallengeSix(){return challengeSix.getText();}
     //input form 'entered value' text getter
     public String getEnteredValueText() {return enteredValueText.getText();}
     //calculation result getter
