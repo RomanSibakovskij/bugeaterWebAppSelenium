@@ -86,5 +86,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         LearnModeUpdateProfilePage learnModeUpdateProfilePage = new LearnModeUpdateProfilePage(driver);
         //challenge 1 test
         solveUpdateProfileChallenge1Test(learnModeUpdateProfilePage);
+        //challenge 2 test (inputs shorter than the limit scenario)
+        solveUpdateProfileChallenge2Test(learnModeUpdateProfilePage);
     }
 }

@@ -862,6 +862,35 @@ public class TestMethods extends BaseTest {
         //assert entered value is displayed (after challenge one completion)
         assertEquals("Entered Values: Nickname: skyline7, First Name: Michael, Last Name: Henderson", learnModeUpdateProfilePage.getEnteredValuesText(), "The input form entered values doesn't match expected result");
     }
+    //update profile challenge test method (challenge 2) (invalid inputs - inputs shorter than min length)
+    protected void solveUpdateProfileChallenge2Test(LearnModeUpdateProfilePage learnModeUpdateProfilePage){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the page title is as expected
+        assertEquals("Update Profile", learnModeUpdateProfilePage.getUpdateProfileChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method
+        isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //update profile page web assert
+        isLearnModeUpdateProfileChallengePageWebElementDisplayed(learnModeUpdateProfilePage);
+        //assert challenge counter has registered challenge one completion
+        assertEquals("1 instruction(s) out of 6", learnModeUpdateProfilePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the challenge two has correct text
+        assertEquals("Enter Nickname: \"k_3\", First Name: \"J\", Last Name: \"Z\", and press \"Submit\". Expected Result: \"User input error\". The entered values are shorter than the min length.", learnModeUpdateProfilePage.getChallengeTwo(), "The challenge description doesn't match expected result");
+        //assert input form entered value has the expected display (after first challenge completion)
+        assertEquals("Entered Values: Nickname: skyline7, First Name: Michael, Last Name: Henderson", learnModeUpdateProfilePage.getEnteredValuesText(), "The input form entered values doesn't match expected result");
+        //assert update profile has the expected result (after challenge one)
+        assertEquals("Result: Your profile updated", learnModeUpdateProfilePage.getUpdateProfileResult() , "The calculation result doesn't match expected result");
+        //logger after challenge completion
+        logPreChallenge2Result(learnModeNumAddDivisionChallengePage);
+        //input update profile data into input fields (inputs shorter than min length)
+        learnModeUpdateProfilePage.inputUpdateProfileChallenge2Nickname2();
+        learnModeUpdateProfilePage.inputUpdateProfileChallenge2FirstName2();
+        learnModeUpdateProfilePage.inputUpdateProfileChallenge2LastName2();
+        //click 'calculate' button
+        learnModeUpdateProfilePage.clickSubmitButton();
+    }
 
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){
