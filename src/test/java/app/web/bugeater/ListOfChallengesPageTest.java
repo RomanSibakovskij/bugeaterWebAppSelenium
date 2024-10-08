@@ -94,5 +94,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveUpdateProfileChallenge4Test(learnModeUpdateProfilePage);
         //challenge 5 test (non-allowed characters input scenario)
         solveUpdateProfileChallenge5Test(learnModeUpdateProfilePage);
+        //challenge 6 test (non-allowed (nickname only) characters input scenario)
+        solveUpdateProfileChallenge6Test(learnModeUpdateProfilePage);
     }
 }

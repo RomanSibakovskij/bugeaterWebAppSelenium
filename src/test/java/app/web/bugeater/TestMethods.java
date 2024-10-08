@@ -980,6 +980,54 @@ public class TestMethods extends BaseTest {
         //click 'calculate' button
         learnModeUpdateProfilePage.clickSubmitButton();
     }
+    //update profile challenge test method (challenge 6) (invalid inputs - non-allowed nickname character input)
+    protected void solveUpdateProfileChallenge6Test(LearnModeUpdateProfilePage learnModeUpdateProfilePage){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the page title is as expected
+        assertEquals("Update Profile", learnModeUpdateProfilePage.getUpdateProfileChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method
+        isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //update profile page web assert
+        isLearnModeUpdateProfileChallengePageWebElementDisplayed(learnModeUpdateProfilePage);
+        //assert challenge counter has registered challenge five completion
+        assertEquals("5 instruction(s) out of 6", learnModeUpdateProfilePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the challenge six has correct text
+        assertEquals("Enter Nickname: \"@@@@@\", First Name \"Christopher\", Last Name \"Williams\", and press \"Submit\". Expected Result: \"User input error\". Nickname contains not allowed characters.", learnModeUpdateProfilePage.getChallengeSix(), "The challenge description doesn't match expected result");
+        //assert input form entered value has the expected display (after fifth challenge completion)
+        assertEquals("Entered Values: Nickname: 123-AA, First Name: X Æ A-12, Last Name: X Æ A-12", learnModeUpdateProfilePage.getEnteredValuesText(), "The input form entered values doesn't match expected result");
+        //assert update profile has the expected result (after challenge five)
+        assertEquals("Result: User input error", learnModeUpdateProfilePage.getUpdateProfileResult() , "The calculation result doesn't match expected result");
+        //logger after challenge completion
+        logPreChallenge5Result(learnModeNumAddDivisionChallengePage);
+        //input update profile data into input fields (non-allowed nickname character input)
+        learnModeUpdateProfilePage.inputUpdateProfileChallenge6Nickname6();
+        learnModeUpdateProfilePage.inputUpdateProfileChallenge6FirstName6();
+        learnModeUpdateProfilePage.inputUpdateProfileChallenge6LastName6();
+        //click 'calculate' button
+        learnModeUpdateProfilePage.clickSubmitButton();
+        //assert challenge completion modal has the expected title (NoSuchElementException despite valid selector)
+        //assertEquals("You did it!", learnModeUpdateProfilePage.getChallengeCompletionModalTitle(), "The challenge completion modal title displayed doesn't match expected title");
+        //click close modal button
+        learnModeUpdateProfilePage.clickCloseModalButton();
+        //assert the completion of challenge six has been displayed
+        assertEquals("6 instruction(s) out of 6", learnModeUpdateProfilePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert input form entered value has the expected display (after sixth challenge)
+        assertEquals("Entered Values: Nickname: @@@@@, First Name: Christopher, Last Name: Williams", learnModeUpdateProfilePage.getEnteredValuesText(), "The input form entered values doesn't match expected result");
+        //assert password restore has the expected result (after challenge six)
+        assertEquals("Result: User input error", learnModeUpdateProfilePage.getUpdateProfileResult() , "The calculation result doesn't match expected result");
+        LearnModePasswordChallengePage learnModePasswordChallengePage = new LearnModePasswordChallengePage(driver);
+        //logger after challenge completion
+        logPreChallenge7Result(learnModePasswordChallengePage);
+        //click navbar dropdown menu
+        listOfChallengesPage.clickNavbarDropdownMenu();
+        //return to 'List of Challenges'
+        listOfChallengesPage.clickReturnToListOfChallengesLink();
+        //assert the user has returned back to 'List of Challenges'
+        assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
+    }
 
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){
