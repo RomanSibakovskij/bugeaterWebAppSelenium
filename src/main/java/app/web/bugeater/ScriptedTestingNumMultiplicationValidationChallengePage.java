@@ -122,6 +122,17 @@ public class ScriptedTestingNumMultiplicationValidationChallengePage extends Bas
         wait.until(ExpectedConditions.visibilityOf(numberTwoInputField));
         numberTwoInputField.sendKeys(String.valueOf(8));
     }
+    //number multiplication input methods (for challenge 5) (valid input)
+    public void inputTCValidationMultiplicationChallenge5Number1(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(numberOneInputField));
+        numberOneInputField.sendKeys(String.valueOf(3.5));
+    }
+    public void inputTCValidationMultiplicationChallenge5Number2(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(numberTwoInputField));
+        numberTwoInputField.sendKeys(String.valueOf(2.7));
+    }
 
     //click 'submit' button method
     public void clickCalculateButton(){
@@ -211,6 +222,24 @@ public class ScriptedTestingNumMultiplicationValidationChallengePage extends Bas
             logger.info("Test case 4 has been verified successfully (tick icon present)." + "\n");
         } else {
             logger.error("Test case 4 hasn't been verified. No tick icon detected." + "\n");
+        }
+    }
+    public void verifyTestCase5Validation(){
+        //assert the test case 5 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseFive, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseFive
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 5 has been verified successfully (tick icon present)." + "\n");
+        } else {
+            logger.error("Test case 5 hasn't been verified. No tick icon detected." + "\n");
         }
     }
 
