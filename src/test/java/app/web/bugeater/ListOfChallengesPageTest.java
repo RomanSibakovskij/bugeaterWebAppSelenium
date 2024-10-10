@@ -139,4 +139,15 @@ public class ListOfChallengesPageTest extends TestMethods{
         //test case validation challenge 6 test (valid tc validation)
         solveNumberMultiplicationTCValidationChallenge6Test(scriptedTestingNumMultiplicationValidationChallengePage);
     }
+
+    //Test 007 -> scripted testing number division test case validation test (as a guest)
+    @Test
+    @DisplayName("Number Division Test Case Validation Challenge Test (as a guest)")
+    @Tag("Scripted_Testing_Challenge_Test")
+    void scriptedTestingNumberDivisionTCValidationChallengeTest(){
+        navigateToNumberDivisionTCValidationPageTest();
+        ScriptedTestingNumDivisionValidationChallengePage scriptedTestingNumDivisionValidationChallengePage = new ScriptedTestingNumDivisionValidationChallengePage(driver);
+        //test case validation challenge 1 test (valid tc validation)
+        solveNumberDivisionTCValidationChallenge1Test(scriptedTestingNumDivisionValidationChallengePage);
+    }
 }

@@ -1585,8 +1585,30 @@ public class TestMethods extends BaseTest {
         //click 'number division' challenge link
         listOfChallengesPage.clickScriptedTestingChallengeLink2();
     }
+    //number division test case validation challenge test method (challenge 1) (valid tc validation)
+    protected void solveNumberDivisionTCValidationChallenge1Test(ScriptedTestingNumDivisionValidationChallengePage scriptedTestingNumDivisionValidationChallengePage) {
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        ScriptedTestingNumMultiplicationValidationChallengePage scriptedTestingNumMultiplicationValidationChallengePage = new ScriptedTestingNumMultiplicationValidationChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the challenge text is displayed as expected
+        assertEquals("Check seven Test Cases in any order, entering corresponding values into the form for dividing two numbers. In this case, you perform Scripted Testing of the form's functionality, training your basic testing skills.", scriptedTestingNumMultiplicationValidationChallengePage.getCurrentChallengeText(), "The text of the challenge doesn't match the expected text");
+        //assert tutorial description text is displayed as expected
+        assertEquals("This description explains the challenge and what you need to do. Read it carefully before starting the challenge.", scriptedTestingNumMultiplicationValidationChallengePage.getTutorialDescriptionText(), "The tutorial text doesn't match the expected text");
+        //click tutorial 'skip' button
+        scriptedTestingNumDivisionValidationChallengePage.clickSkipTutorialButton();
+        //assert the page title is as expected
+        assertEquals("Number Division", scriptedTestingNumDivisionValidationChallengePage.getNumberDivisionChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method (for scripted testing page elements)
+        isIndividualScriptedTestingChallengePageTextMatchesExpectations(scriptedTestingNumMultiplicationValidationChallengePage);
+        //scripted testing number multiplication challenge page web element assert
+        isScriptedTestingNumDivisionChallengePageWebElementDisplayed(scriptedTestingNumDivisionValidationChallengePage);
+        //assert challenge counter has no challenges completed yet
+        assertEquals("0 case(s) out of 7", scriptedTestingNumMultiplicationValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+    }
 
-    //general page web element assert (repeating web elements on all app pages)
+        //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){
         //assert 'list of challenges' navbar dropdown menu is displayed
         assertTrue(listOfChallengesPage.isListOfChallengesDropdownMenuDisplayed(), "The dropdown menu is not displayed");
