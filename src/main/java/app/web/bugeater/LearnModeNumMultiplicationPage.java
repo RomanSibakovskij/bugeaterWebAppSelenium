@@ -29,21 +29,33 @@ public class LearnModeNumMultiplicationPage extends BasePage{
     //'Number multiplication test case section web elements
     @FindBy(xpath = "//div[@class='_challengePanelGeneratorList_go1ll_1']/h2")
     private WebElement testCaseTitle;
+
+    //test case dropdown menu 1 web elements
     @FindBy(xpath = "//div[@class='_challengePanelGeneratorList_go1ll_1']/span[1]/div[@class='dropdown'][1]/button[@id='dropdown-basic']")
     private WebElement testCaseDropdownValue1Menu;
-    //value 1 menu select options web element
+    //value 1 menu select options web elements
     @FindBy(xpath = "//span[1]/div[@class='show dropdown']/div/a[1]")
     private WebElement testCaseValue1MenuOptionTwo;
+    //value 1 menu select options web elements
+    @FindBy(xpath = "//span[1]/div[@class='show dropdown']/div/a[4]")
+    private WebElement testCaseValue1MenuOptionManualQA;
+
+    //test case dropdown menu 2 web elements
     @FindBy(xpath = "//div[@class='_challengePanelGeneratorList_go1ll_1']/span[2]/div[@class='dropdown'][1]/button[@id='dropdown-basic']")
     private WebElement testCaseDropdownValue2Menu;
-    //value 2 menu select options web element
+    //value 2 menu select options web elements
     @FindBy(xpath = "//span[2]/div[@class='show dropdown']/div/a[1]")
     private WebElement testCaseValue2MenuOptionTwo;
+
+    //test case dropdown result menu web elements
     @FindBy(xpath = "//div[@class='_challengePanelGeneratorList_go1ll_1']/div[@class='dropdown']")
     private WebElement testCaseDropdownResultMenu;
-    //result menu select options web element
+    //result menu select options web elements
     @FindBy(xpath = "//div[@class='show dropdown']/div/a[1]")
     private WebElement testCaseResultMenuOptionResult;
+    @FindBy(xpath = "//div[@class='show dropdown']/div/a[3]")
+    private WebElement testCaseResultMenuOptionErrorInput;
+
     @FindBy(xpath = "//div[@class='_challengePanelGeneratorList_go1ll_1']/div/button[@class='_challengeButtons_1a4cy_115 btn btn-primary']")
     private WebElement testCaseValidationButton;
 
@@ -100,13 +112,6 @@ public class LearnModeNumMultiplicationPage extends BasePage{
     //tutorial modal 'skip' button click method
     public void clickSkipTutorialButton(){tutorialSkipButton.click();}
 
-    //click 'submit' button method
-    public void clickSubmitButton(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
-        wait.until(ExpectedConditions.elementToBeClickable(submitButton));
-        submitButton.click();
-    }
-
     //click 'close' button method
     public void clickCloseModalButton(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
@@ -139,10 +144,14 @@ public class LearnModeNumMultiplicationPage extends BasePage{
 
     //test case 'value 1' dropdown menu select method (option two)
     public void selectDropdownValueMenu1OptionTwo(){testCaseValue1MenuOptionTwo.click();}
+    //test case 'value 1' dropdown menu select method (option 'Manual QA')
+    public void selectDropdownValueMenu1OptionManualQA(){testCaseValue1MenuOptionManualQA.click();}
     //test case 'value 2' dropdown menu select method (option two)
     public void selectDropdownValueMenu2OptionTwo(){testCaseValue2MenuOptionTwo.click();}
     //test case 'result' dropdown menu select method (option result)
-    public void selectDropdownValueMenu1OptionResult(){testCaseResultMenuOptionResult.click();}
+    public void selectDropdownValueResultMenuOptionResult(){testCaseResultMenuOptionResult.click();}
+    //test case 'result' dropdown menu select method (option result 'User input error')
+    public void selectDropdownValueResultMenuOptionErrorInput(){testCaseResultMenuOptionErrorInput.click();}
 
     //tutorial modal description text getter
     public String getTutorialDescriptionText() {return tutorialDescriptionText.getText();}

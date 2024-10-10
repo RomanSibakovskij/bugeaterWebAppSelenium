@@ -107,5 +107,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         LearnModeNumMultiplicationPage learnModeNumMultiplicationPage = new LearnModeNumMultiplicationPage(driver);
         //challenge 1 test
         solveNumberMultiplicationChallenge1Test(learnModeNumMultiplicationPage);
+        //challenge 2 test (invalid option choice - test case menu one option as a string)
+        solveNumberMultiplicationChallenge2Test(learnModeNumMultiplicationPage);
     }
 }

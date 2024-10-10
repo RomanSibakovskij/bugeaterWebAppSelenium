@@ -1067,8 +1067,6 @@ public class TestMethods extends BaseTest {
         assertEquals("0 out of 6", learnModeNumMultiplicationPage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
         //assert the challenge one has correct text
         assertEquals("Choose from the dropdowns Option 1: \"2\", Option 2: \"2\", Result: \"Number\". Click on the \"Validate Test Case\" button. Expected Result: \"4\" in the Form You Test.", learnModeNumAddDivisionChallengePage.getChallengeOne(), "The challenge description doesn't match expected result");
-        //assert input form entered has the expected display
-        //assertEquals("Entered Values:", learnModeNumMultiplicationPage.getEnteredValuesText(), "The input form entered values doesn't match expected result");
         //assert calculation has the expected result (before operation)
         assertEquals("Result:", learnModeNumMultiplicationPage.getCalculationResult() , "The calculation result doesn't match expected result");
         //assert challenge hint has the expected text
@@ -1086,7 +1084,44 @@ public class TestMethods extends BaseTest {
         //click dropdown result menu
         learnModeNumMultiplicationPage.clickTestCaseDropdownResultMenu();
         //select 'result' from result dropdown menu
-        learnModeNumMultiplicationPage.selectDropdownValueMenu1OptionResult();
+        learnModeNumMultiplicationPage.selectDropdownValueResultMenuOptionResult();
+        //click 'validate test case' button
+        learnModeNumMultiplicationPage.clickTestCaseValidationButton();
+    }
+    //number multiplication challenge test method (challenge 2) (invalid input - menu one option as a string) (ignore null entered values input since this method uses logger methods other tests use)
+    protected void solveNumberMultiplicationChallenge2Test(LearnModeNumMultiplicationPage learnModeNumMultiplicationPage){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the page title is as expected
+        assertEquals("Number Multiplication", learnModeNumMultiplicationPage.getNumberMultiplicationChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method
+        isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //number multiplication page web element assert
+        isLearnModeNumMultiplicationChallengePageWebElementDisplayed(learnModeNumMultiplicationPage);
+        //assert challenge counter has registered challenge one completion
+        assertEquals("1 out of 6", learnModeNumMultiplicationPage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the challenge one has correct text
+        assertEquals("Choose from the dropdowns Option 1: \"ManualQA\", Option 2: \"2\", Result: \"User input error\". Click on the \"Validate Test Case\" button. Expected Result: \"User input error\" in the Form You Test.", learnModeNumAddDivisionChallengePage.getChallengeTwo(), "The challenge description doesn't match expected result");
+        //assert calculation has the expected result (after first challenge completion)
+        assertEquals("Result: 4", learnModeNumMultiplicationPage.getCalculationResult() , "The calculation result doesn't match expected result");
+        //assert challenge hint has the expected text
+        assertEquals("Multiply two numbers", learnModeNumMultiplicationPage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
+        //logger before challenge completion
+        logPreChallenge2Result(learnModeNumAddDivisionChallengePage);
+        //click dropdown menu 1
+        learnModeNumMultiplicationPage.clickTestCaseDropdownMenu1();
+        //select 'Manual QA' from dropdown menu 1
+        learnModeNumMultiplicationPage.selectDropdownValueMenu1OptionManualQA();
+        //click dropdown menu 2
+        learnModeNumMultiplicationPage.clickTestCaseDropdownMenu2();
+        //select '2' from dropdown menu 2
+        learnModeNumMultiplicationPage.selectDropdownValueMenu2OptionTwo();
+        //click dropdown result menu
+        learnModeNumMultiplicationPage.clickTestCaseDropdownResultMenu();
+        //select 'user error input' from result dropdown menu
+        learnModeNumMultiplicationPage.selectDropdownValueResultMenuOptionErrorInput();
         //click 'validate test case' button
         learnModeNumMultiplicationPage.clickTestCaseValidationButton();
     }
