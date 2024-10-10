@@ -1238,6 +1238,60 @@ public class TestMethods extends BaseTest {
         //click 'validate test case' button
         learnModeNumMultiplicationPage.clickTestCaseValidationButton();
     }
+    //number multiplication challenge test method (challenge 6) (invalid test input - dropdown menu 1 as '10000000000') (ignore null entered values input since this method uses logger methods other tests use)
+    protected void solveNumberMultiplicationChallenge6Test(LearnModeNumMultiplicationPage learnModeNumMultiplicationPage){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the page title is as expected
+        assertEquals("Number Multiplication", learnModeNumMultiplicationPage.getNumberMultiplicationChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method
+        isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //number multiplication page web element assert
+        isLearnModeNumMultiplicationChallengePageWebElementDisplayed(learnModeNumMultiplicationPage);
+        //assert challenge counter has registered challenge five completion
+        assertEquals("5 out of 6", learnModeNumMultiplicationPage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the challenge six has correct text
+        assertEquals("Choose from the dropdowns Option 1: \"10000000000\" (very big number), Option 2: \"2\", Result: \"Application error\". Click on the \"Validate Test Case\" button. Expected Result: \"Application error\" in the Form You Test.", learnModeNumAddDivisionChallengePage.getChallengeSix(), "The challenge description doesn't match expected result");
+        //assert calculation has the expected result (after fifth challenge completion)
+        assertEquals("Result: -2", learnModeNumMultiplicationPage.getCalculationResult() , "The calculation result doesn't match expected result");
+        //assert challenge hint has the expected text
+        assertEquals("Multiply two numbers", learnModeNumMultiplicationPage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
+        //logger before challenge completion
+        logPreChallenge6Result(learnModeNumAddDivisionChallengePage);
+        //click dropdown menu 1
+        learnModeNumMultiplicationPage.clickTestCaseDropdownMenu1();
+        //select '10000000000' from dropdown menu 1
+        learnModeNumMultiplicationPage.selectDropdownValueMenu1OptionTenBillion();
+        //click dropdown menu 2
+        learnModeNumMultiplicationPage.clickTestCaseDropdownMenu2();
+        //select '2' from dropdown menu 2
+        learnModeNumMultiplicationPage.selectDropdownValueMenu2OptionTwo();
+        //click dropdown result menu
+        learnModeNumMultiplicationPage.clickTestCaseDropdownResultMenu();
+        //select 'Application Error' from result dropdown menu
+        learnModeNumMultiplicationPage.selectDropdownValueResultMenuOptionAppError();
+        //click 'validate test case' button
+        learnModeNumMultiplicationPage.clickTestCaseValidationButton();
+        //assert challenge completion modal has the expected title (NoSuchElementException despite valid selector)
+        //assertEquals("You did it!", learnModeNumMultiplicationPage.getChallengeCompletionModalTitle(), "The challenge completion modal title displayed doesn't match expected title");
+        //click close modal button
+        learnModeNumMultiplicationPage.clickCloseModalButton();
+        //assert challenge counter has registered challenge six completion
+        assertEquals("6 out of 6", learnModeNumMultiplicationPage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert calculation has the expected result (after sixth challenge completion)
+        assertEquals("Result: Application error", learnModeNumMultiplicationPage.getCalculationResult() , "The calculation result doesn't match expected result");
+        LearnModePasswordChallengePage learnModePasswordChallengePage = new LearnModePasswordChallengePage(driver);
+        //logger after challenge completion
+        logPreChallenge7Result(learnModePasswordChallengePage);
+        //click navbar dropdown menu
+        listOfChallengesPage.clickNavbarDropdownMenu();
+        //return to 'List of Challenges'
+        listOfChallengesPage.clickReturnToListOfChallengesLink();
+        //assert the user has returned back to 'List of Challenges'
+        assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
+    }
 
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){

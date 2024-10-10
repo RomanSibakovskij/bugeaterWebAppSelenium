@@ -42,6 +42,8 @@ public class LearnModeNumMultiplicationPage extends BasePage{
     private WebElement testCaseValue1MenuOptionEmptyValue;
     @FindBy(xpath = "//span[1]/div[@class='show dropdown']/div/a[3]")
     private WebElement testCaseValue1MenuOptionTwoPointFive;
+    @FindBy(xpath = "//span[1]/div[@class='show dropdown']/div/a[5]")
+    private WebElement testCaseValue1MenuOptionTenBillion;
 
     //test case dropdown menu 2 web elements
     @FindBy(xpath = "//div[@class='_challengePanelGeneratorList_go1ll_1']/span[2]/div[@class='dropdown'][1]/button[@id='dropdown-basic']")
@@ -63,6 +65,8 @@ public class LearnModeNumMultiplicationPage extends BasePage{
     private WebElement testCaseResultMenuOptionResultNumber;
     @FindBy(xpath = "//div[@class='show dropdown']/div/a[3]")
     private WebElement testCaseResultMenuOptionErrorInput;
+    @FindBy(xpath = "//div[@class='show dropdown']/div/a[2]")
+    private WebElement testCaseResultMenuOptionAppError;
 
     @FindBy(xpath = "//div[@class='_challengePanelGeneratorList_go1ll_1']/div/button[@class='_challengeButtons_1a4cy_115 btn btn-primary']")
     private WebElement testCaseValidationButton;
@@ -158,6 +162,8 @@ public class LearnModeNumMultiplicationPage extends BasePage{
     public void selectDropdownValueMenu1OptionEmptyValue(){testCaseValue1MenuOptionEmptyValue.click();}
     //test case 'value 1' dropdown menu select method (option '2.5')
     public void selectDropdownValueMenu1OptionTwoPointFive(){testCaseValue1MenuOptionTwoPointFive.click();}
+    //test case 'value 1' dropdown menu select method (option '10000000000')
+    public void selectDropdownValueMenu1OptionTenBillion(){testCaseValue1MenuOptionTenBillion.click();}
 
     //test case 'value 2' dropdown menu select method (option two)
     public void selectDropdownValueMenu2OptionTwo(){testCaseValue2MenuOptionTwo.click();}
@@ -174,6 +180,8 @@ public class LearnModeNumMultiplicationPage extends BasePage{
         testCaseResultMenuOptionResultNumber.click();}
     //test case 'result' dropdown menu select method (option result 'User input error')
     public void selectDropdownValueResultMenuOptionErrorInput(){testCaseResultMenuOptionErrorInput.click();}
+    //test case 'result' dropdown menu select method (option result 'Application error')
+    public void selectDropdownValueResultMenuOptionAppError(){testCaseResultMenuOptionAppError.click();}
 
     //tutorial modal description text getter
     public String getTutorialDescriptionText() {return tutorialDescriptionText.getText();}
