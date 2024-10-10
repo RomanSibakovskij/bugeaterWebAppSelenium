@@ -62,7 +62,7 @@ public class ScriptedTestingNumMultiplicationValidationChallengePage extends Bas
     @FindBy(xpath = "//button[@type='reset']")
     private WebElement clearFormButton;
     @FindBy(xpath = "//div[@id='testForm']/form//button[@type='submit']")
-    private WebElement submitButton;
+    private WebElement calculateButton;
     @FindBy(xpath = "//button[@class='_challengeButtons_1a4cy_115 btn btn-outline-danger']")
     private WebElement startOverButton;
     //Scripted testing halfway there congratulation web element
@@ -78,11 +78,23 @@ public class ScriptedTestingNumMultiplicationValidationChallengePage extends Bas
         super(driver);
     }
 
-    //click 'submit' button method
-    public void clickSubmitButton(){
+    //number multiplication input methods (for challenge 1) (both inputs are blank)
+    public void inputTCValidationMultiplicationChallenge1Number1(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
-        wait.until(ExpectedConditions.elementToBeClickable(submitButton));
-        submitButton.click();
+        wait.until(ExpectedConditions.visibilityOf(numberOneInputField));
+        numberOneInputField.sendKeys("");
+    }
+    public void inputTCValidationMultiplicationChallenge1Number2(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(numberTwoInputField));
+        numberTwoInputField.sendKeys("");
+    }
+
+    //click 'submit' button method
+    public void clickCalculateButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.elementToBeClickable(calculateButton));
+        calculateButton.click();
     }
 
     //tutorial modal 'skip' button click method
@@ -152,6 +164,6 @@ public class ScriptedTestingNumMultiplicationValidationChallengePage extends Bas
     public boolean isNumber2InputFieldDisplayed() {return numberTwoInputField.isDisplayed();}
     public boolean isCalculationResultDisplayed() {return challengeCalculationResult.isDisplayed();}
     public boolean isStartOverButtonDisplayed() {return startOverButton.isDisplayed();}
-    public boolean isCalculateButtonDisplayed() {return submitButton.isDisplayed();}
+    public boolean isCalculateButtonDisplayed() {return calculateButton.isDisplayed();}
 
 }

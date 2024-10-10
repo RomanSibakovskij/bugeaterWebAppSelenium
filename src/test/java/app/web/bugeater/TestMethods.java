@@ -1309,7 +1309,7 @@ public class TestMethods extends BaseTest {
         //click 'number multiplication' challenge link
         listOfChallengesPage.clickScriptedTestingChallengeLink1();
     }
-    //number multiplication test case validation challenge test method (challenge 1) (valid number inputs)
+    //number multiplication test case validation challenge test method (challenge 1) (invalid tc validation - both number inputs are empty)
     protected void solveNumberMultiplicationTCValidationChallenge1Test(ScriptedTestingNumMultiplicationValidationChallengePage scriptedTestingNumMultiplicationValidationChallengePage){
         ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
         LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
@@ -1338,13 +1338,19 @@ public class TestMethods extends BaseTest {
         assertEquals("Input \"3.5\" and \"2.7\" into the input fields where at least one number is a decimal fraction, then click on the \"Calculate\" button. Expected Result: correct multiplication of the numbers.", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
         assertEquals("Input \"-8\" and \"4\" into the input fields where at least one number is negative, then click on the \"Calculate\" button. Expected Result: correct multiplication of the numbers.", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
 
-
         //assert calculation has the expected result (before operation)
         assertEquals("Result:", scriptedTestingNumMultiplicationValidationChallengePage.getCalculationResult() , "The calculation result doesn't match expected result");
         //assert challenge hint has the expected text
         assertEquals("Multiply two numbers", scriptedTestingNumMultiplicationValidationChallengePage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
         //logger before challenge completion
         logPreChallenge1Result(learnModeNumAddDivisionChallengePage);
+        //input numbers provided by test case into input fields
+        scriptedTestingNumMultiplicationValidationChallengePage.inputTCValidationMultiplicationChallenge1Number1();
+        scriptedTestingNumMultiplicationValidationChallengePage.inputTCValidationMultiplicationChallenge1Number2();
+        //click 'calculate' button
+        scriptedTestingNumMultiplicationValidationChallengePage.clickCalculateButton();
+        //assert the test case validation has been completed (tc 1)
+        assertEquals("Entered Values: First Number: Empty, Second Number: Empty", scriptedTestingNumMultiplicationValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
     }
 
     //general page web element assert (repeating web elements on all app pages)
