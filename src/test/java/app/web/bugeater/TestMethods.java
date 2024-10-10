@@ -1029,6 +1029,22 @@ public class TestMethods extends BaseTest {
         assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
     }
 
+    //navigate to number multiplication challenge test method
+    protected void navigateToNumberMultiplicationPageTest(){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        //click 'accept' cookies modal button
+        listOfChallengesPage.clickAcceptCookiesButton();
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //'List of Challenges' page web element assert
+        isListOfChallengesWebElementDisplayed(listOfChallengesPage);
+        //assert the 'list of challenges' page title is as expected
+        assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
+        //assert the learn mode section title is as expected
+        assertEquals("Learn Mode", listOfChallengesPage.getLearnModeSectionTitle(), "The learn more section title doesn't match expectations");
+        //click 'update profile' challenge link
+        listOfChallengesPage.clickLearnModeChallengeLink5();
+    }
     //number multiplication challenge test method (challenge 1) (valid number inputs) (ignore null entered values input since this method uses logger methods other tests use)
     protected void solveNumberMultiplicationChallenge1Test(LearnModeNumMultiplicationPage learnModeNumMultiplicationPage){
         ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
@@ -1059,23 +1075,20 @@ public class TestMethods extends BaseTest {
         assertEquals("Multiply two numbers", learnModeNumMultiplicationPage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
         //logger before challenge completion
         logPreChallenge1Result(learnModeNumAddDivisionChallengePage);
-    }
-
-    //navigate to number multiplication challenge test method
-    protected void navigateToNumberMultiplicationPageTest(){
-        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
-        //click 'accept' cookies modal button
-        listOfChallengesPage.clickAcceptCookiesButton();
-        //general page web element assert (elements that all pages have)
-        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
-        //'List of Challenges' page web element assert
-        isListOfChallengesWebElementDisplayed(listOfChallengesPage);
-        //assert the 'list of challenges' page title is as expected
-        assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
-        //assert the learn mode section title is as expected
-        assertEquals("Learn Mode", listOfChallengesPage.getLearnModeSectionTitle(), "The learn more section title doesn't match expectations");
-        //click 'update profile' challenge link
-        listOfChallengesPage.clickLearnModeChallengeLink5();
+        //click dropdown menu 1
+        learnModeNumMultiplicationPage.clickTestCaseDropdownMenu1();
+        //select '2' from dropdown menu 1
+        learnModeNumMultiplicationPage.selectDropdownValueMenu1OptionTwo();
+        //click dropdown menu 2
+        learnModeNumMultiplicationPage.clickTestCaseDropdownMenu2();
+        //select '2' from dropdown menu 2
+        learnModeNumMultiplicationPage.selectDropdownValueMenu2OptionTwo();
+        //click dropdown result menu
+        learnModeNumMultiplicationPage.clickTestCaseDropdownResultMenu();
+        //select 'result' from result dropdown menu
+        learnModeNumMultiplicationPage.selectDropdownValueMenu1OptionResult();
+        //click 'validate test case' button
+        learnModeNumMultiplicationPage.clickTestCaseValidationButton();
     }
 
     //general page web element assert (repeating web elements on all app pages)
@@ -1230,6 +1243,16 @@ public class TestMethods extends BaseTest {
         assertTrue(learnModeNumMultiplicationPage.isNumberMultiplicationPageTitleDisplayed(), "The 'Number Addition' challenge page title is not displayed");
         //assert 'number multiplication' challenge guide icon is displayed
         assertTrue(learnModeNumMultiplicationPage.isNumberMultiplicationGuideIconDisplayed(), "The 'Number Addition' challenge guide icon is not displayed");
+        //assert 'number multiplication' test case section title is displayed
+        assertTrue(learnModeNumMultiplicationPage.isTestCaseSectionTitleDisplayed(), "The 'Number Addition' test case section title is not displayed");
+        //assert 'number multiplication' test case dropdown value 1 menu is displayed
+        assertTrue(learnModeNumMultiplicationPage.isTestCaseDropdownValue1MenuDisplayed(), "The 'Number Addition' test case dropdown value1 menu is not displayed");
+        //assert 'number multiplication' test case dropdown value 2 menu is displayed
+        assertTrue(learnModeNumMultiplicationPage.isTestCaseDropdownValue2MenuDisplayed(), "The 'Number Addition' test case dropdown value2 menu is not displayed");
+        //assert 'number multiplication' test case dropdown result menu is displayed
+        assertTrue(learnModeNumMultiplicationPage.isTestCaseDropdownResultMenuDisplayed(), "The 'Number Addition' test case dropdown result menu is not displayed");
+        //assert 'number multiplication' test case section title is displayed
+        assertTrue(learnModeNumMultiplicationPage.isTestCaseValidationButtonDisplayed(), "The 'Number Addition' test case validation button is not displayed");
         //assert 'number multiplication' challenge video guide link is displayed
         assertTrue(learnModeNumMultiplicationPage.isVideoGuideLinkDisplayed(), "The 'Number Addition' challenge video guide link is not displayed");
         //assert 'number multiplication' challenge instructions title is displayed

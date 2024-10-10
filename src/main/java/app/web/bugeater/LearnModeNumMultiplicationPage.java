@@ -29,12 +29,21 @@ public class LearnModeNumMultiplicationPage extends BasePage{
     //'Number multiplication test case section web elements
     @FindBy(xpath = "//div[@class='_challengePanelGeneratorList_go1ll_1']/h2")
     private WebElement testCaseTitle;
-    @FindBy(xpath = "//div[@class='_challengePanelGeneratorList_go1ll_1']/span[1]/div")
+    @FindBy(xpath = "//div[@class='_challengePanelGeneratorList_go1ll_1']/span[1]/div[@class='dropdown'][1]/button[@id='dropdown-basic']")
     private WebElement testCaseDropdownValue1Menu;
-    @FindBy(xpath = "//div[@class='_challengePanelGeneratorList_go1ll_1']/span[2]/div")
+    //value 1 menu select options web element
+    @FindBy(xpath = "//span[1]/div[@class='show dropdown']/div/a[1]")
+    private WebElement testCaseValue1MenuOptionTwo;
+    @FindBy(xpath = "//div[@class='_challengePanelGeneratorList_go1ll_1']/span[2]/div[@class='dropdown'][1]/button[@id='dropdown-basic']")
     private WebElement testCaseDropdownValue2Menu;
+    //value 2 menu select options web element
+    @FindBy(xpath = "//span[2]/div[@class='show dropdown']/div/a[1]")
+    private WebElement testCaseValue2MenuOptionTwo;
     @FindBy(xpath = "//div[@class='_challengePanelGeneratorList_go1ll_1']/div[@class='dropdown']")
     private WebElement testCaseDropdownResultMenu;
+    //result menu select options web element
+    @FindBy(xpath = "//div[@class='show dropdown']/div/a[1]")
+    private WebElement testCaseResultMenuOptionResult;
     @FindBy(xpath = "//div[@class='_challengePanelGeneratorList_go1ll_1']/div/button[@class='_challengeButtons_1a4cy_115 btn btn-primary']")
     private WebElement testCaseValidationButton;
 
@@ -104,6 +113,36 @@ public class LearnModeNumMultiplicationPage extends BasePage{
         wait.until(ExpectedConditions.elementToBeClickable(closeModalButton));
         closeModalButton.click();
     }
+    //test case dropdown menu click methods
+    public void clickTestCaseDropdownMenu1(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.elementToBeClickable(testCaseDropdownValue1Menu));
+        testCaseDropdownValue1Menu.click();
+    }
+    public void clickTestCaseDropdownMenu2(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.elementToBeClickable(testCaseDropdownValue2Menu));
+        testCaseDropdownValue2Menu.click();
+    }
+    public void clickTestCaseDropdownResultMenu(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.elementToBeClickable(testCaseDropdownResultMenu));
+        testCaseDropdownResultMenu.click();
+    }
+
+    //click 'validate test case' button method
+    public void clickTestCaseValidationButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.elementToBeClickable(testCaseValidationButton));
+        testCaseValidationButton.click();
+    }
+
+    //test case 'value 1' dropdown menu select method (option two)
+    public void selectDropdownValueMenu1OptionTwo(){testCaseValue1MenuOptionTwo.click();}
+    //test case 'value 2' dropdown menu select method (option two)
+    public void selectDropdownValueMenu2OptionTwo(){testCaseValue2MenuOptionTwo.click();}
+    //test case 'result' dropdown menu select method (option result)
+    public void selectDropdownValueMenu1OptionResult(){testCaseResultMenuOptionResult.click();}
 
     //tutorial modal description text getter
     public String getTutorialDescriptionText() {return tutorialDescriptionText.getText();}
@@ -140,6 +179,11 @@ public class LearnModeNumMultiplicationPage extends BasePage{
     public boolean isNumberMultiplicationPageTitleDisplayed(){return numberMultiplicationChallengeTitle.isDisplayed();}
     public boolean isNumberMultiplicationGuideIconDisplayed(){return numberMultiplicationGuideButton.isDisplayed();}
     public boolean isVideoGuideLinkDisplayed(){return videoGuideLink.isDisplayed();}
+    public boolean isTestCaseSectionTitleDisplayed(){return testCaseTitle.isDisplayed();}
+    public boolean isTestCaseDropdownValue1MenuDisplayed(){return testCaseDropdownValue1Menu.isDisplayed();}
+    public boolean isTestCaseDropdownValue2MenuDisplayed(){return testCaseDropdownValue2Menu.isDisplayed();}
+    public boolean isTestCaseDropdownResultMenuDisplayed(){return testCaseDropdownResultMenu.isDisplayed();}
+    public boolean isTestCaseValidationButtonDisplayed(){return testCaseValidationButton.isDisplayed();}
     public boolean isInstructionsTitleDisplayed(){return instructionsTitle.isDisplayed();}
     public boolean isChallengesCompletedCounterDisplayed() {return challengesCompletedCounter.isDisplayed();}
 
