@@ -116,9 +116,10 @@ public class ListOfChallengesPage extends BasePage{
         wait.until(ExpectedConditions.elementToBeClickable(listOfChallengesScriptedTestingChallengeLinkElements.get(linkIndex)));
         listOfChallengesScriptedTestingChallengeLinkElements.get(linkIndex).click();
     }
-    //click number multiplication testcase validation challenge link method
-    public void clickScriptedTestingChallengeLink1(){
-        clickListOfChallengesScriptedTestingChallengeLink(0);}
+    //click number multiplication test case validation challenge link method
+    public void clickScriptedTestingChallengeLink1(){clickListOfChallengesScriptedTestingChallengeLink(0);}
+    //click number division test case validation challenge link method
+    public void clickScriptedTestingChallengeLink2(){clickListOfChallengesScriptedTestingChallengeLink(1);}
 
     //list of challenges page title getter
     public String getListOfChallengesPageTitle(){return listOfChallengesTitle.getText();}

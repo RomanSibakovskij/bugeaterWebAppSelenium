@@ -281,7 +281,7 @@ public class ScriptedTestingNumMultiplicationValidationChallengePage extends Bas
     public String getInputFormTitle(){return inputFormTitle.getText();}
     //Scripted testing number multiplication challenge page title getter
     public String getNumberMultiplicationChallengeTitle() {return numberMultiplicationChallengeTitle.getText();}
-    //Scripted testing challenges counter getter (before challenge one completion)
+    //Scripted testing challenges counter getter
     public String getChallengesCounterText() {return challengesCompletedCounter.getText();}
     //challenge one text getter
     public String getTestCaseOne(){return testCaseOne.getText();}
@@ -328,6 +328,7 @@ public class ScriptedTestingNumMultiplicationValidationChallengePage extends Bas
     public boolean isNumber2InputFieldDisplayed() {return numberTwoInputField.isDisplayed();}
     public boolean isCalculationResultDisplayed() {return challengeCalculationResult.isDisplayed();}
     public boolean isStartOverButtonDisplayed() {return startOverButton.isDisplayed();}
+    public boolean isClearFormButtonDisplayed(){return clearFormButton.isDisplayed();}
     public boolean isCalculateButtonDisplayed() {return calculateButton.isDisplayed();}
 
 }
