@@ -128,5 +128,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         ScriptedTestingNumMultiplicationValidationChallengePage scriptedTestingNumMultiplicationValidationChallengePage = new ScriptedTestingNumMultiplicationValidationChallengePage(driver);
         //test case validation challenge 1 test (invalid tc validation - both inputs are empty)
         solveNumberMultiplicationTCValidationChallenge1Test(scriptedTestingNumMultiplicationValidationChallengePage);
+        //test case validation challenge 2 test (invalid tc validation - number 1 as String)
+        solveNumberMultiplicationTCValidationChallenge2Test(scriptedTestingNumMultiplicationValidationChallengePage);
     }
 }

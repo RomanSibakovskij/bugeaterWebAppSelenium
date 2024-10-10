@@ -1351,6 +1351,47 @@ public class TestMethods extends BaseTest {
         scriptedTestingNumMultiplicationValidationChallengePage.clickCalculateButton();
         //assert the test case validation has been completed (tc 1)
         assertEquals("Entered Values: First Number: Empty, Second Number: Empty", scriptedTestingNumMultiplicationValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
+        //assert the test case validation has been completed
+        scriptedTestingNumMultiplicationValidationChallengePage.verifyTestCase1Completion();
+    }
+    //number multiplication test case validation challenge test method (challenge 2) (invalid tc validation - number 1 as String)
+    protected void solveNumberMultiplicationTCValidationChallenge2Test(ScriptedTestingNumMultiplicationValidationChallengePage scriptedTestingNumMultiplicationValidationChallengePage){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the page title is as expected
+        assertEquals("Number Multiplication", scriptedTestingNumMultiplicationValidationChallengePage.getNumberMultiplicationChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method (for scripted testing page elements)
+        isIndividualScriptedTestingChallengePageTextMatchesExpectations(scriptedTestingNumMultiplicationValidationChallengePage);
+        //scripted testing number multiplication challenge page web element assert
+        isScriptedTestingNumMultiplicationChallengePageWebElementDisplayed(scriptedTestingNumMultiplicationValidationChallengePage);
+        //assert challenge counter has registered first test case validation
+        assertEquals("1 case(s) out of 6", scriptedTestingNumMultiplicationValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+
+        //assert the number multiplication test cases displayed in test case section list have correct text
+        assertEquals("Leave both input fields blank and then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
+        assertEquals("Input \"abc\" and \"2\" into the input fields where at least one value is not a number, then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
+        assertEquals("Enter \"5\" and \"7\" into the input fields, then click on the \"Calculate\" button. Expected Result: correct multiplication of the numbers.", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
+        assertEquals("Input \"10000000000\" and \"8\" into the input fields where at least one number exceeds the maximum length limit for inputted values, then click on the \"Calculate\" button. Expected Result: \"Application error\".", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
+        assertEquals("Input \"3.5\" and \"2.7\" into the input fields where at least one number is a decimal fraction, then click on the \"Calculate\" button. Expected Result: correct multiplication of the numbers.", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
+        assertEquals("Input \"-8\" and \"4\" into the input fields where at least one number is negative, then click on the \"Calculate\" button. Expected Result: correct multiplication of the numbers.", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
+
+        //assert the test case validation has been completed (tc 1)
+        assertEquals("Entered Values: First Number: Empty, Second Number: Empty", scriptedTestingNumMultiplicationValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
+        //assert calculation has the expected result (before operation)
+        assertEquals("Result: User input error", scriptedTestingNumMultiplicationValidationChallengePage.getCalculationResult() , "The calculation result doesn't match expected result");
+        //assert challenge hint has the expected text
+        assertEquals("Multiply two numbers", scriptedTestingNumMultiplicationValidationChallengePage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
+        //logger before challenge completion
+        logPreChallenge2Result(learnModeNumAddDivisionChallengePage);
+        //input numbers provided by test case into input fields
+        scriptedTestingNumMultiplicationValidationChallengePage.inputTCValidationMultiplicationChallenge2Number1();
+        scriptedTestingNumMultiplicationValidationChallengePage.inputTCValidationMultiplicationChallenge2Number2();
+        //click 'calculate' button
+        scriptedTestingNumMultiplicationValidationChallengePage.clickCalculateButton();
+        //assert the test case validation has been completed
+        scriptedTestingNumMultiplicationValidationChallengePage.verifyTestCase2Completion();
     }
 
     //general page web element assert (repeating web elements on all app pages)
