@@ -136,5 +136,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveNumberMultiplicationTCValidationChallenge4Test(scriptedTestingNumMultiplicationValidationChallengePage);
         //test case validation challenge 5 test (valid tc validation)
         solveNumberMultiplicationTCValidationChallenge5Test(scriptedTestingNumMultiplicationValidationChallengePage);
+        //test case validation challenge 6 test (valid tc validation)
+        solveNumberMultiplicationTCValidationChallenge6Test(scriptedTestingNumMultiplicationValidationChallengePage);
     }
 }
