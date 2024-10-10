@@ -113,5 +113,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveNumberMultiplicationChallenge3Test(learnModeNumMultiplicationPage);
         //challenge 4 test (both test case menu options as '2.5')
         solveNumberMultiplicationChallenge4Test(learnModeNumMultiplicationPage);
+        //challenge 5 test (test case 2 menu option as '-1')
+        solveNumberMultiplicationChallenge5Test(learnModeNumMultiplicationPage);
     }
 }

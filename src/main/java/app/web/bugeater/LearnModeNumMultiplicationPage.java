@@ -52,6 +52,8 @@ public class LearnModeNumMultiplicationPage extends BasePage{
     private WebElement testCaseValue2MenuOptionEmptyValue;
     @FindBy(xpath = "//span[2]/div[@class='show dropdown']/div/a[3]")
     private WebElement testCaseValue2MenuOptionTwoPointFive;
+    @FindBy(xpath = "//span[2]/div[@class='show dropdown']/div/a[2]")
+    private WebElement testCaseValue2MenuOptionMinusOne;
 
     //test case dropdown result menu web elements
     @FindBy(xpath = "//div[@class='_challengePanelGeneratorList_go1ll_1']/div[@class='dropdown']")
@@ -163,6 +165,8 @@ public class LearnModeNumMultiplicationPage extends BasePage{
     public void selectDropdownValueMenu2OptionEmptyValue(){testCaseValue2MenuOptionEmptyValue.click();}
     //test case 'value 2' dropdown menu select method (option '2.5')
     public void selectDropdownValueMenu2OptionTwoPointFive(){testCaseValue2MenuOptionTwoPointFive.click();}
+    //test case 'value 2' dropdown menu select method (option '-1')
+    public void selectDropdownValueMenu2OptionMinusOne(){testCaseValue2MenuOptionMinusOne.click();}
 
 
     //test case 'result' dropdown menu select method (option 'number' result)
