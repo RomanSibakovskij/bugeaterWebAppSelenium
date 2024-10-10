@@ -111,6 +111,17 @@ public class ScriptedTestingNumMultiplicationValidationChallengePage extends Bas
         wait.until(ExpectedConditions.visibilityOf(numberTwoInputField));
         numberTwoInputField.sendKeys(String.valueOf(7));
     }
+    //number multiplication input methods (for challenge 4) (number 1 as '10000000000')
+    public void inputTCValidationMultiplicationChallenge4Number1(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(numberOneInputField));
+        numberOneInputField.sendKeys("10000000000");
+    }
+    public void inputTCValidationMultiplicationChallenge4Number2(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(numberTwoInputField));
+        numberTwoInputField.sendKeys(String.valueOf(8));
+    }
 
     //click 'submit' button method
     public void clickCalculateButton(){
@@ -130,7 +141,7 @@ public class ScriptedTestingNumMultiplicationValidationChallengePage extends Bas
     }
 
     //verify test case validation completion (tick icon) methods
-    public void verifyTestCase1Completion(){
+    public void verifyTestCase1Validation(){
         //assert the test case 1 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
         //wait for the element to be captured
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
@@ -148,7 +159,7 @@ public class ScriptedTestingNumMultiplicationValidationChallengePage extends Bas
             logger.error("Test case 1 hasn't been verified. No tick icon detected." + "\n");
         }
     }
-    public void verifyTestCase2Completion(){
+    public void verifyTestCase2Validation(){
         //assert the test case 2 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
         //wait for the element to be captured
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
@@ -166,7 +177,7 @@ public class ScriptedTestingNumMultiplicationValidationChallengePage extends Bas
             logger.error("Test case 2 hasn't been verified. No tick icon detected." + "\n");
         }
     }
-    public void verifyTestCase3Completion(){
+    public void verifyTestCase3Validation(){
         //assert the test case 3 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
         //wait for the element to be captured
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
@@ -182,6 +193,24 @@ public class ScriptedTestingNumMultiplicationValidationChallengePage extends Bas
             logger.info("Test case 3 has been verified successfully (tick icon present)." + "\n");
         } else {
             logger.error("Test case 3 hasn't been verified. No tick icon detected." + "\n");
+        }
+    }
+    public void verifyTestCase4Validation(){
+        //assert the test case 4 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseFour, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseFour
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 4 has been verified successfully (tick icon present)." + "\n");
+        } else {
+            logger.error("Test case 4 hasn't been verified. No tick icon detected." + "\n");
         }
     }
 

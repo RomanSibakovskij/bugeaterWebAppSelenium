@@ -132,5 +132,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveNumberMultiplicationTCValidationChallenge2Test(scriptedTestingNumMultiplicationValidationChallengePage);
         //test case validation challenge 3 test (valid tc validation)
         solveNumberMultiplicationTCValidationChallenge3Test(scriptedTestingNumMultiplicationValidationChallengePage);
+        //test case validation challenge 4 test (invalid tc validation - number 1 as '10000000000')
+        solveNumberMultiplicationTCValidationChallenge4Test(scriptedTestingNumMultiplicationValidationChallengePage);
     }
 }
