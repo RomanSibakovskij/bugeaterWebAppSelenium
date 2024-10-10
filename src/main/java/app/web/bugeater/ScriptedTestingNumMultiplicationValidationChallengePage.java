@@ -2,6 +2,10 @@ package app.web.bugeater;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class ScriptedTestingNumMultiplicationValidationChallengePage extends BasePage{
 
@@ -24,25 +28,22 @@ public class ScriptedTestingNumMultiplicationValidationChallengePage extends Bas
     @FindBy(xpath = "//a[@id='videoLink']")
     private WebElement videoGuideLink;
     //Scripted testing 'Number multiplication' test case section web elements
-    @FindBy(xpath = "//div[@class='_challengePanelGeneratorList_go1ll_1']/h2")
-    private WebElement testCaseTitle;
-
     @FindBy(xpath = "//div[@class='_challengePanelResultsHeading_1a4cy_60']/h2")
-    private WebElement instructionsTitle;
+    private WebElement testCaseSectionTitle;
     @FindBy(xpath = "//div[@class='_challengePanelResultsHeading_1a4cy_60']/p[@class='_challengePanelResultsCaption_1a4cy_71']")
     private WebElement challengesCompletedCounter;
     //Scripted testing 'Number multiplication' test cases for validation web elements
-    @FindBy(xpath = "//ol[@class='_learnChallengeList_1erpu_1']/li")
+    @FindBy(xpath = "//ol[@class='_challengeList_1a4cy_164']/li")
     private WebElement testCaseOne;
-    @FindBy(xpath = "//ol[@class='_learnChallengeList_1erpu_1']/li[2]")
+    @FindBy(xpath = "//ol[@class='_challengeList_1a4cy_164']/li[2]")
     private WebElement testCaseTwo;
-    @FindBy(xpath = "//ol[@class='_learnChallengeList_1erpu_1']/li[3]")
+    @FindBy(xpath = "//ol[@class='_challengeList_1a4cy_164']/li[3]")
     private WebElement testCaseThree;
-    @FindBy(xpath = "//ol[@class='_learnChallengeList_1erpu_1']/li[4]")
+    @FindBy(xpath = "//ol[@class='_challengeList_1a4cy_164']/li[4]")
     private WebElement testCaseFour;
-    @FindBy(xpath = "//ol[@class='_learnChallengeList_1erpu_1']/li[5]")
+    @FindBy(xpath = "//ol[@class='_challengeList_1a4cy_164']/li[5]")
     private WebElement testCaseFive;
-    @FindBy(xpath = "//ol[@class='_learnChallengeList_1erpu_1']/li[6]")
+    @FindBy(xpath = "//ol[@class='_challengeList_1a4cy_164']/li[6]")
     private WebElement testCaseSix;
     //Scripted testing 'Number Multiplication' input form web elements
     @FindBy(xpath = "//div[@id='testForm']/h2")
@@ -77,10 +78,31 @@ public class ScriptedTestingNumMultiplicationValidationChallengePage extends Bas
         super(driver);
     }
 
+    //click 'submit' button method
+    public void clickSubmitButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.elementToBeClickable(submitButton));
+        submitButton.click();
+    }
+
+    //tutorial modal 'skip' button click method
+    public void clickSkipTutorialButton(){tutorialSkipButton.click();}
+
+    //click 'close' button method
+    public void clickCloseModalButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.elementToBeClickable(closeModalButton));
+        closeModalButton.click();
+    }
+
     //tutorial modal description text getter
     public String getTutorialDescriptionText() {return tutorialDescriptionText.getText();}
     //Scripted testing current challenge text getter
     public String getCurrentChallengeText() {return currentChallengeText.getText();}
+    //Scripted testing test cases validation section title getter
+    public String getScriptedTestingIndividualPageInstructionsChallengeTitle(){return testCaseSectionTitle.getText();}
+    //Scripted testing test cases input form title getter
+    public String getInputFormTitle(){return inputFormTitle.getText();}
     //Scripted testing number multiplication challenge page title getter
     public String getNumberMultiplicationChallengeTitle() {return numberMultiplicationChallengeTitle.getText();}
     //Scripted testing challenges counter getter (before challenge one completion)
@@ -112,7 +134,7 @@ public class ScriptedTestingNumMultiplicationValidationChallengePage extends Bas
     public boolean isNumberMultiplicationPageTitleDisplayed(){return numberMultiplicationChallengeTitle.isDisplayed();}
     public boolean isNumberMultiplicationGuideIconDisplayed(){return numberMultiplicationGuideButton.isDisplayed();}
     public boolean isVideoGuideLinkDisplayed(){return videoGuideLink.isDisplayed();}
-    public boolean isTestCaseSectionTitleDisplayed(){return testCaseTitle.isDisplayed();}
+    public boolean isTestCaseSectionTitleDisplayed(){return testCaseSectionTitle.isDisplayed();}
     public boolean isChallengesCompletedCounterDisplayed() {return challengesCompletedCounter.isDisplayed();}
 
     //test case web element assert methods

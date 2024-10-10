@@ -88,27 +88,44 @@ public class ListOfChallengesPage extends BasePage{
     //(return to 'List of Challenges' after each challenge completion) link click method
     public void clickReturnToListOfChallengesLink(){returnToListOfChallengesLink.click();}
 
-    //click challenge link list method
-    public void clickListOfChallengesChallengeLink(int linkIndex){
+    //click challenge link list method (learn mode)
+    public void clickListOfChallengesLearnModeChallengeLink(int linkIndex){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(600));
         wait.until(ExpectedConditions.elementToBeClickable(listOfChallengesLearnModeChallengeLinkElements.get(linkIndex)));
         listOfChallengesLearnModeChallengeLinkElements.get(linkIndex).click();
     }
     //click number addition challenge link method
-    public void clickLearnModeChallengeLink1(){clickListOfChallengesChallengeLink(0);}
+    public void clickLearnModeChallengeLink1(){
+        clickListOfChallengesLearnModeChallengeLink(0);}
     //click number division challenge link method
-    public void clickLearnModeChallengeLink2(){clickListOfChallengesChallengeLink(1);}
+    public void clickLearnModeChallengeLink2(){
+        clickListOfChallengesLearnModeChallengeLink(1);}
     //click password restore challenge link method
-    public void clickLearnModeChallengeLink3(){clickListOfChallengesChallengeLink(2);}
+    public void clickLearnModeChallengeLink3(){
+        clickListOfChallengesLearnModeChallengeLink(2);}
     //click update profile challenge link method
-    public void clickLearnModeChallengeLink4(){clickListOfChallengesChallengeLink(3);}
+    public void clickLearnModeChallengeLink4(){
+        clickListOfChallengesLearnModeChallengeLink(3);}
     //click update profile challenge link method
-    public void clickLearnModeChallengeLink5(){clickListOfChallengesChallengeLink(4);}
+    public void clickLearnModeChallengeLink5(){
+        clickListOfChallengesLearnModeChallengeLink(4);}
+
+    //click challenge link list method (scripted testing)
+    public void clickListOfChallengesScriptedTestingChallengeLink(int linkIndex){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(600));
+        wait.until(ExpectedConditions.elementToBeClickable(listOfChallengesScriptedTestingChallengeLinkElements.get(linkIndex)));
+        listOfChallengesScriptedTestingChallengeLinkElements.get(linkIndex).click();
+    }
+    //click number multiplication testcase validation challenge link method
+    public void clickScriptedTestingChallengeLink1(){
+        clickListOfChallengesScriptedTestingChallengeLink(0);}
 
     //list of challenges page title getter
     public String getListOfChallengesPageTitle(){return listOfChallengesTitle.getText();}
-    //learn more section title getter
+    //learn mode section title getter
     public String getLearnModeSectionTitle(){return listOfChallengesLearnModeTitle.getText();}
+    //scripted testing section title getter
+    public String getScriptedTestingSectionTitle(){return listOfChallengesScriptedTestingTitle.getText();}
 
     //'List of Challenges' page web element assert methods
     public boolean isListOfChallengesDropdownMenuDisplayed(){return listOfChallengesDropdownMenu.isDisplayed();}

@@ -234,7 +234,7 @@ public class LearnModeNumAddDivisionChallengePage extends BasePage{
     //number addition challenge page title getter
     public String getNumberAdditionChallengeTitle() {return numberAdditionChallengeTitle.getText();}
     //instructions title getter
-    public String getNumberAdditionInstructionsTitle() {return instructionsTitle.getText();}
+    public String getLearnModeIndividualPageInstructionsChallengeTitle() {return instructionsTitle.getText();}
     //challenges counter getter (before challenge one completion)
     public String getChallengesCounterText() {return challengesCompletedCounter.getText();}
     //challenge one text getter

@@ -118,4 +118,15 @@ public class ListOfChallengesPageTest extends TestMethods{
         //challenge 6 test (test case 1 menu option as '10000000000')
         solveNumberMultiplicationChallenge6Test(learnModeNumMultiplicationPage);
     }
+
+    //Test 006 -> scripted testing number multiplication test case validation test (as a guest)
+    @Test
+    @DisplayName("Number Multiplication Test Case Validation Challenge Test (as a guest)")
+    @Tag("Scripted_Testing_Challenge_Test")
+    void scriptedTestingNumberMultiplicationTCValidationChallengeTest(){
+        navigateToNumberMultiplicationTCValidationPageTest();
+        ScriptedTestingNumMultiplicationValidationChallengePage scriptedTestingNumMultiplicationValidationChallengePage = new ScriptedTestingNumMultiplicationValidationChallengePage(driver);
+        //test case validation challenge 1 test
+        solveNumberMultiplicationTCValidationChallenge1Test(scriptedTestingNumMultiplicationValidationChallengePage);
+    }
 }
