@@ -130,5 +130,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveNumberMultiplicationTCValidationChallenge1Test(scriptedTestingNumMultiplicationValidationChallengePage);
         //test case validation challenge 2 test (invalid tc validation - number 1 as String)
         solveNumberMultiplicationTCValidationChallenge2Test(scriptedTestingNumMultiplicationValidationChallengePage);
+        //test case validation challenge 3 test (valid tc validation)
+        solveNumberMultiplicationTCValidationChallenge3Test(scriptedTestingNumMultiplicationValidationChallengePage);
     }
 }
