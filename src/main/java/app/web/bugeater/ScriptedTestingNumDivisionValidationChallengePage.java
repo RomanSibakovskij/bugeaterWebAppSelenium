@@ -134,12 +134,6 @@ public class ScriptedTestingNumDivisionValidationChallengePage extends BasePage{
     public String getChallengeCompletionModalTitle() {return challengeCompletionModalTitle.getText();}
 
     //'Number division challenge' web element assert methods
-    public boolean isNumberMultiplicationPageTitleDisplayed(){return numberDivisionChallengeTitle.isDisplayed();}
-    public boolean isNumberMultiplicationGuideIconDisplayed(){return numberMultiplicationGuideButton.isDisplayed();}
-    public boolean isVideoGuideLinkDisplayed(){return videoGuideLink.isDisplayed();}
-    public boolean isTestCaseSectionTitleDisplayed(){return testCaseSectionTitle.isDisplayed();}
-    public boolean isChallengesCompletedCounterDisplayed() {return challengesCompletedCounter.isDisplayed();}
-
     //test case web element assert methods
     public boolean isNumberMultiplicationTestCaseOneDisplayed(){return testCaseOne.isDisplayed();}
     public boolean isNumberMultiplicationTestCaseTwoDisplayed(){return testCaseTwo.isDisplayed();}
@@ -148,15 +142,5 @@ public class ScriptedTestingNumDivisionValidationChallengePage extends BasePage{
     public boolean isNumberMultiplicationTestCaseFiveDisplayed(){return testCaseFive.isDisplayed();}
     public boolean isNumberMultiplicationTestCaseSixDisplayed(){return testCaseSix.isDisplayed();}
     public boolean isNumberMultiplicationTestCaseSevenDisplayed(){return testCaseSix.isDisplayed();}
-
-    public boolean isInputFormTitleDisplayed() {return inputFormTitle.isDisplayed();}
-    public boolean isInputFormEnteredValuesDisplayed() {return enteredValuesText.isDisplayed();}
-    public boolean isChallengeHintDisplayed() {return challengeHintText.isDisplayed();}
-    public boolean isNumber1InputFieldDisplayed() {return numberOneInputField.isDisplayed();}
-    public boolean isNumber2InputFieldDisplayed() {return numberTwoInputField.isDisplayed();}
-    public boolean isCalculationResultDisplayed() {return challengeCalculationResult.isDisplayed();}
-    public boolean isClearFormButtonDisplayed(){return clearFormButton.isDisplayed();}
-    public boolean isStartOverButtonDisplayed() {return startOverButton.isDisplayed();}
-    public boolean isCalculateButtonDisplayed() {return calculateButton.isDisplayed();}
 
 }
