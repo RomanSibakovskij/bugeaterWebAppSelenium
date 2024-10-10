@@ -109,5 +109,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveNumberMultiplicationChallenge1Test(learnModeNumMultiplicationPage);
         //challenge 2 test (invalid option choice - test case menu one option as a string)
         solveNumberMultiplicationChallenge2Test(learnModeNumMultiplicationPage);
+        //challenge 3 test (invalid option choice - both test case menu options as 'Empty value')
+        solveNumberMultiplicationChallenge3Test(learnModeNumMultiplicationPage);
     }
 }

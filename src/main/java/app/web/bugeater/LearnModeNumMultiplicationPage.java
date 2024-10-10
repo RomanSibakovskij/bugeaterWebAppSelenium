@@ -36,16 +36,18 @@ public class LearnModeNumMultiplicationPage extends BasePage{
     //value 1 menu select options web elements
     @FindBy(xpath = "//span[1]/div[@class='show dropdown']/div/a[1]")
     private WebElement testCaseValue1MenuOptionTwo;
-    //value 1 menu select options web elements
     @FindBy(xpath = "//span[1]/div[@class='show dropdown']/div/a[4]")
     private WebElement testCaseValue1MenuOptionManualQA;
+    @FindBy(xpath = "//span[1]/div[@class='show dropdown']/div/a[6]")
+    private WebElement testCaseValue1MenuOptionEmptyValue;
 
     //test case dropdown menu 2 web elements
     @FindBy(xpath = "//div[@class='_challengePanelGeneratorList_go1ll_1']/span[2]/div[@class='dropdown'][1]/button[@id='dropdown-basic']")
     private WebElement testCaseDropdownValue2Menu;
-    //value 2 menu select options web elements
     @FindBy(xpath = "//span[2]/div[@class='show dropdown']/div/a[1]")
     private WebElement testCaseValue2MenuOptionTwo;
+    @FindBy(xpath = "//span[2]/div[@class='show dropdown']/div/a[6]")
+    private WebElement testCaseValue2MenuOptionEmptyValue;
 
     //test case dropdown result menu web elements
     @FindBy(xpath = "//div[@class='_challengePanelGeneratorList_go1ll_1']/div[@class='dropdown']")
@@ -146,8 +148,15 @@ public class LearnModeNumMultiplicationPage extends BasePage{
     public void selectDropdownValueMenu1OptionTwo(){testCaseValue1MenuOptionTwo.click();}
     //test case 'value 1' dropdown menu select method (option 'Manual QA')
     public void selectDropdownValueMenu1OptionManualQA(){testCaseValue1MenuOptionManualQA.click();}
+    //test case 'value 1' dropdown menu select method (option 'Empty value')
+    public void selectDropdownValueMenu1OptionEmptyValue(){testCaseValue1MenuOptionEmptyValue.click();}
+
     //test case 'value 2' dropdown menu select method (option two)
     public void selectDropdownValueMenu2OptionTwo(){testCaseValue2MenuOptionTwo.click();}
+    //test case 'value 2' dropdown menu select method (option 'Empty value')
+    public void selectDropdownValueMenu2OptionEmptyValue(){testCaseValue2MenuOptionEmptyValue.click();}
+
+
     //test case 'result' dropdown menu select method (option result)
     public void selectDropdownValueResultMenuOptionResult(){testCaseResultMenuOptionResult.click();}
     //test case 'result' dropdown menu select method (option result 'User input error')

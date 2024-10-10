@@ -1102,7 +1102,7 @@ public class TestMethods extends BaseTest {
         isLearnModeNumMultiplicationChallengePageWebElementDisplayed(learnModeNumMultiplicationPage);
         //assert challenge counter has registered challenge one completion
         assertEquals("1 out of 6", learnModeNumMultiplicationPage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
-        //assert the challenge one has correct text
+        //assert the challenge two has correct text
         assertEquals("Choose from the dropdowns Option 1: \"ManualQA\", Option 2: \"2\", Result: \"User input error\". Click on the \"Validate Test Case\" button. Expected Result: \"User input error\" in the Form You Test.", learnModeNumAddDivisionChallengePage.getChallengeTwo(), "The challenge description doesn't match expected result");
         //assert calculation has the expected result (after first challenge completion)
         assertEquals("Result: 4", learnModeNumMultiplicationPage.getCalculationResult() , "The calculation result doesn't match expected result");
@@ -1124,6 +1124,45 @@ public class TestMethods extends BaseTest {
         learnModeNumMultiplicationPage.selectDropdownValueResultMenuOptionErrorInput();
         //click 'validate test case' button
         learnModeNumMultiplicationPage.clickTestCaseValidationButton();
+    }
+    //number multiplication challenge test method (challenge 3) (invalid input - menu one option as a string) (ignore null entered values input since this method uses logger methods other tests use)
+    protected void solveNumberMultiplicationChallenge3Test(LearnModeNumMultiplicationPage learnModeNumMultiplicationPage){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the page title is as expected
+        assertEquals("Number Multiplication", learnModeNumMultiplicationPage.getNumberMultiplicationChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method
+        isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //number multiplication page web element assert
+        isLearnModeNumMultiplicationChallengePageWebElementDisplayed(learnModeNumMultiplicationPage);
+        //assert challenge counter has registered challenge two completion
+        assertEquals("2 out of 6", learnModeNumMultiplicationPage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the challenge three has correct text
+        assertEquals("Select \"Empty value\" for Option 1 and Option 2, set Result to \"User input error\", and click \"Validate Test Case\". Expected Result: \"User input error\" in the Form You Test.", learnModeNumAddDivisionChallengePage.getChallengeThree(), "The challenge description doesn't match expected result");
+        //assert calculation has the expected result (after second challenge completion)
+        assertEquals("Result: User input error", learnModeNumMultiplicationPage.getCalculationResult() , "The calculation result doesn't match expected result");
+        //assert challenge hint has the expected text
+        assertEquals("Multiply two numbers", learnModeNumMultiplicationPage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
+        //logger before challenge completion
+        logPreChallenge3Result(learnModeNumAddDivisionChallengePage);
+        //click dropdown menu 1
+        learnModeNumMultiplicationPage.clickTestCaseDropdownMenu1();
+        //select 'Empty value' from dropdown menu 1
+        learnModeNumMultiplicationPage.selectDropdownValueMenu1OptionEmptyValue();
+        //click dropdown menu 2
+        learnModeNumMultiplicationPage.clickTestCaseDropdownMenu2();
+        //select 'Empty value' from dropdown menu 2
+        learnModeNumMultiplicationPage.selectDropdownValueMenu2OptionEmptyValue();
+        //click dropdown result menu
+        learnModeNumMultiplicationPage.clickTestCaseDropdownResultMenu();
+        //select 'user error input' from result dropdown menu
+        learnModeNumMultiplicationPage.selectDropdownValueResultMenuOptionErrorInput();
+        //click 'validate test case' button
+        learnModeNumMultiplicationPage.clickTestCaseValidationButton();
+        //assert 'halfway there' message is displayed
+        //assertEquals("Halfway there!", learnModeNumMultiplicationPage.getHalfwayThereMessage(), "The 'halfway there' message isn't displayed"); //NoSuchElementException with valid selector
     }
 
     //general page web element assert (repeating web elements on all app pages)
