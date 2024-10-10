@@ -1084,7 +1084,7 @@ public class TestMethods extends BaseTest {
         //click dropdown result menu
         learnModeNumMultiplicationPage.clickTestCaseDropdownResultMenu();
         //select 'result' from result dropdown menu
-        learnModeNumMultiplicationPage.selectDropdownValueResultMenuOptionResult();
+        learnModeNumMultiplicationPage.selectDropdownValueResultMenuOptionNumberResult();
         //click 'validate test case' button
         learnModeNumMultiplicationPage.clickTestCaseValidationButton();
     }
@@ -1125,7 +1125,7 @@ public class TestMethods extends BaseTest {
         //click 'validate test case' button
         learnModeNumMultiplicationPage.clickTestCaseValidationButton();
     }
-    //number multiplication challenge test method (challenge 3) (invalid input - menu one option as a string) (ignore null entered values input since this method uses logger methods other tests use)
+    //number multiplication challenge test method (challenge 3) (invalid input - both menu options as 'Empty value') (ignore null entered values input since this method uses logger methods other tests use)
     protected void solveNumberMultiplicationChallenge3Test(LearnModeNumMultiplicationPage learnModeNumMultiplicationPage){
         ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
         LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
@@ -1163,6 +1163,43 @@ public class TestMethods extends BaseTest {
         learnModeNumMultiplicationPage.clickTestCaseValidationButton();
         //assert 'halfway there' message is displayed
         //assertEquals("Halfway there!", learnModeNumMultiplicationPage.getHalfwayThereMessage(), "The 'halfway there' message isn't displayed"); //NoSuchElementException with valid selector
+    }
+    //number multiplication challenge test method (challenge 4) (both options as '2.5') (ignore null entered values input since this method uses logger methods other tests use)
+    protected void solveNumberMultiplicationChallenge4Test(LearnModeNumMultiplicationPage learnModeNumMultiplicationPage){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the page title is as expected
+        assertEquals("Number Multiplication", learnModeNumMultiplicationPage.getNumberMultiplicationChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method
+        isIndividualChallengePageTextMatchesExpectations(learnModeNumAddDivisionChallengePage);
+        //number multiplication page web element assert
+        isLearnModeNumMultiplicationChallengePageWebElementDisplayed(learnModeNumMultiplicationPage);
+        //assert challenge counter has registered challenge three completion
+        assertEquals("3 out of 6", learnModeNumMultiplicationPage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the challenge four has correct text
+        assertEquals("Select \"2.5\" for Option 1 and Option 2, set Result to \"Number\", and click \"Validate Test Case\". Expected Result: \"6.25\" in the Form You Test.", learnModeNumAddDivisionChallengePage.getChallengeFour(), "The challenge description doesn't match expected result");
+        //assert calculation has the expected result (after third challenge completion)
+        assertEquals("Result: User input error", learnModeNumMultiplicationPage.getCalculationResult() , "The calculation result doesn't match expected result");
+        //assert challenge hint has the expected text
+        assertEquals("Multiply two numbers", learnModeNumMultiplicationPage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
+        //logger before challenge completion
+        logPreChallenge4Result(learnModeNumAddDivisionChallengePage);
+        //click dropdown menu 1
+        learnModeNumMultiplicationPage.clickTestCaseDropdownMenu1();
+        //select '2.5' from dropdown menu 1
+        learnModeNumMultiplicationPage.selectDropdownValueMenu1OptionTwoPointFive();
+        //click dropdown menu 2
+        learnModeNumMultiplicationPage.clickTestCaseDropdownMenu2();
+        //select '2.5' from dropdown menu 2
+        learnModeNumMultiplicationPage.selectDropdownValueMenu2OptionTwoPointFive();
+        //click dropdown result menu
+        learnModeNumMultiplicationPage.clickTestCaseDropdownResultMenu();
+        //select 'Number' from result dropdown menu
+        learnModeNumMultiplicationPage.selectDropdownValueResultMenuOptionNumberResult();
+        //click 'validate test case' button
+        learnModeNumMultiplicationPage.clickTestCaseValidationButton();
     }
 
     //general page web element assert (repeating web elements on all app pages)

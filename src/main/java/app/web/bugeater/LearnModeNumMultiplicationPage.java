@@ -40,6 +40,8 @@ public class LearnModeNumMultiplicationPage extends BasePage{
     private WebElement testCaseValue1MenuOptionManualQA;
     @FindBy(xpath = "//span[1]/div[@class='show dropdown']/div/a[6]")
     private WebElement testCaseValue1MenuOptionEmptyValue;
+    @FindBy(xpath = "//span[1]/div[@class='show dropdown']/div/a[3]")
+    private WebElement testCaseValue1MenuOptionTwoPointFive;
 
     //test case dropdown menu 2 web elements
     @FindBy(xpath = "//div[@class='_challengePanelGeneratorList_go1ll_1']/span[2]/div[@class='dropdown'][1]/button[@id='dropdown-basic']")
@@ -48,13 +50,15 @@ public class LearnModeNumMultiplicationPage extends BasePage{
     private WebElement testCaseValue2MenuOptionTwo;
     @FindBy(xpath = "//span[2]/div[@class='show dropdown']/div/a[6]")
     private WebElement testCaseValue2MenuOptionEmptyValue;
+    @FindBy(xpath = "//span[2]/div[@class='show dropdown']/div/a[3]")
+    private WebElement testCaseValue2MenuOptionTwoPointFive;
 
     //test case dropdown result menu web elements
     @FindBy(xpath = "//div[@class='_challengePanelGeneratorList_go1ll_1']/div[@class='dropdown']")
     private WebElement testCaseDropdownResultMenu;
     //result menu select options web elements
     @FindBy(xpath = "//div[@class='show dropdown']/div/a[1]")
-    private WebElement testCaseResultMenuOptionResult;
+    private WebElement testCaseResultMenuOptionResultNumber;
     @FindBy(xpath = "//div[@class='show dropdown']/div/a[3]")
     private WebElement testCaseResultMenuOptionErrorInput;
 
@@ -150,15 +154,20 @@ public class LearnModeNumMultiplicationPage extends BasePage{
     public void selectDropdownValueMenu1OptionManualQA(){testCaseValue1MenuOptionManualQA.click();}
     //test case 'value 1' dropdown menu select method (option 'Empty value')
     public void selectDropdownValueMenu1OptionEmptyValue(){testCaseValue1MenuOptionEmptyValue.click();}
+    //test case 'value 1' dropdown menu select method (option '2.5')
+    public void selectDropdownValueMenu1OptionTwoPointFive(){testCaseValue1MenuOptionTwoPointFive.click();}
 
     //test case 'value 2' dropdown menu select method (option two)
     public void selectDropdownValueMenu2OptionTwo(){testCaseValue2MenuOptionTwo.click();}
     //test case 'value 2' dropdown menu select method (option 'Empty value')
     public void selectDropdownValueMenu2OptionEmptyValue(){testCaseValue2MenuOptionEmptyValue.click();}
+    //test case 'value 2' dropdown menu select method (option '2.5')
+    public void selectDropdownValueMenu2OptionTwoPointFive(){testCaseValue2MenuOptionTwoPointFive.click();}
 
 
-    //test case 'result' dropdown menu select method (option result)
-    public void selectDropdownValueResultMenuOptionResult(){testCaseResultMenuOptionResult.click();}
+    //test case 'result' dropdown menu select method (option 'number' result)
+    public void selectDropdownValueResultMenuOptionNumberResult(){
+        testCaseResultMenuOptionResultNumber.click();}
     //test case 'result' dropdown menu select method (option result 'User input error')
     public void selectDropdownValueResultMenuOptionErrorInput(){testCaseResultMenuOptionErrorInput.click();}
 
