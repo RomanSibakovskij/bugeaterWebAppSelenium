@@ -26,7 +26,7 @@ public class LearnModeNumMultiplicationPage extends BasePage{
     private WebElement numberMultiplicationGuideButton;
     @FindBy(xpath = "//a[@id='videoLink']")
     private WebElement videoGuideLink;
-    //'Number multiplication test case section web elements
+    //'Number multiplication' test case section web elements
     @FindBy(xpath = "//div[@class='_challengePanelGeneratorList_go1ll_1']/h2")
     private WebElement testCaseTitle;
 
@@ -91,8 +91,6 @@ public class LearnModeNumMultiplicationPage extends BasePage{
     //'Number Multiplication' input form web elements
     @FindBy(xpath = "//div[@id='testForm']/h2")
     private WebElement inputFormTitle;
-    @FindBy(xpath = "//div[@id='testForm']/p[2]")
-    private WebElement enteredValuesText;
     @FindBy(xpath = "//input[@id='first']")
     private WebElement numberOneInputField;
     @FindBy(xpath = "//input[@id='second']")
@@ -100,7 +98,7 @@ public class LearnModeNumMultiplicationPage extends BasePage{
     @FindBy(xpath = "//p[@class='_challengeListHint_1a4cy_179']")
     private WebElement challengeHintText;
     @FindBy(xpath = "//div[@id='testForm']/p[1]")
-    private WebElement challengeUpdateProfileResult;
+    private WebElement challengeCalculationResult;
     //button web elements
     @FindBy(xpath = "//button[@type='reset']")
     private WebElement clearFormButton;
@@ -203,12 +201,10 @@ public class LearnModeNumMultiplicationPage extends BasePage{
     public String getChallengeFive(){return challengeFive.getText();}
     //challenge six text getter
     public String getChallengeSix(){return challengeSix.getText();}
-    //input form 'entered values' text getter
-    public String getEnteredValuesText() {return enteredValuesText.getText();}
     //challenge hint text getter
     public String getChallengeHintText() {return challengeHintText.getText();}
     //calculation result getter
-    public String getCalculationResult() {return challengeUpdateProfileResult.getText();}
+    public String getCalculationResult() {return challengeCalculationResult.getText();}
     //'halfway there' message getter
     public String getHalfwayThereMessage(){return halfwayThereMessage.getText();}
     //challenge completion modal title getter
@@ -229,11 +225,10 @@ public class LearnModeNumMultiplicationPage extends BasePage{
     public boolean isNumberMultiplicationChallengeOneDisplayed(){return challengeOne.isDisplayed();}
 
     public boolean isInputFormTitleDisplayed() {return inputFormTitle.isDisplayed();}
-    public boolean isInputFormEnteredValuesDisplayed() {return enteredValuesText.isDisplayed();}
     public boolean isChallengeHintDisplayed() {return challengeHintText.isDisplayed();}
     public boolean isNumber1InputFieldDisplayed() {return numberOneInputField.isDisplayed();}
     public boolean isNumber2InputFieldDisplayed() {return numberTwoInputField.isDisplayed();}
-    public boolean isCalculationResultDisplayed() {return challengeUpdateProfileResult.isDisplayed();}
+    public boolean isCalculationResultDisplayed() {return challengeCalculationResult.isDisplayed();}
     public boolean isStartOverButtonDisplayed() {return startOverButton.isDisplayed();}
     public boolean isCalculateButtonDisplayed() {return submitButton.isDisplayed();}
 }

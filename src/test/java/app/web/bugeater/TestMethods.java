@@ -1480,6 +1480,42 @@ public class TestMethods extends BaseTest {
         //assert 'number multiplication' challenge calculate button is displayed
         assertTrue(learnModeNumMultiplicationPage.isCalculateButtonDisplayed(), "The 'Number Multiplication' challenge calculate button is not displayed");
     }
+    //'Scripted testing' number multiplication challenge page specific web element assert
+    protected void isScriptedTestingNumMultiplicationChallengePageWebElementDisplayed(ScriptedTestingNumMultiplicationValidationChallengePage scriptedTestingNumMultiplicationValidationChallengePage){
+        //assert 'number multiplication' challenge page title is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isNumberMultiplicationPageTitleDisplayed(), "The 'Number Addition' challenge page title is not displayed");
+        //assert 'number multiplication' challenge guide icon is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isNumberMultiplicationGuideIconDisplayed(), "The 'Number Addition' challenge guide icon is not displayed");
+        //assert 'number multiplication' test case section title is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isTestCaseSectionTitleDisplayed(), "The 'Number Addition' test case section title is not displayed");
+        //assert 'number multiplication' challenge video guide link is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isVideoGuideLinkDisplayed(), "The 'Number Addition' challenge video guide link is not displayed");
+        //assert 'number multiplication' challenges completed counter is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isChallengesCompletedCounterDisplayed(), "The 'Number Multiplication' challenges completed counter is not displayed");
+        //assert 'number multiplication' test case list is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isNumberMultiplicationTestCaseOneDisplayed(), "The 'Number Multiplication' test case one is not displayed");
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isNumberMultiplicationTestCaseTwoDisplayed(), "The 'Number Multiplication' test case two is not displayed");
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isNumberMultiplicationTestCaseThreeDisplayed(), "The 'Number Multiplication' test case three is not displayed");
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isNumberMultiplicationTestCaseFourDisplayed(), "The 'Number Multiplication' test case four is not displayed");
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isNumberMultiplicationTestCaseFiveDisplayed(), "The 'Number Multiplication' test case five is not displayed");
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isNumberMultiplicationTestCaseSixDisplayed(), "The 'Number Multiplication' test case six is not displayed");
+        //assert 'number multiplication' challenge input form title is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isInputFormTitleDisplayed(), "The 'Number Multiplication' challenge input form title is not displayed");
+        //assert 'number multiplication' challenge input form 'entered values' are displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isInputFormEnteredValuesDisplayed(), "The 'Number Multiplication' challenge input form entered values are not displayed");
+        //assert 'number multiplication' challenge number 1 input field is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isNumber1InputFieldDisplayed(), "The 'Number Multiplication' challenge number 1 input field is not displayed");
+        //assert 'number multiplication' challenge hint is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isChallengeHintDisplayed(), "The 'Number Multiplication' challenge hint is not displayed");
+        //assert 'number multiplication' challenge number 2 input field is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isNumber2InputFieldDisplayed(), "The 'Number Multiplication' challenge number 2 input field is not displayed");
+        //assert 'number multiplication' challenge calculation result is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isCalculationResultDisplayed(), "The 'Number Multiplication' challenge calculation result is not displayed");
+        //assert 'number multiplication' challenge start over button is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isStartOverButtonDisplayed(), "The 'Number Multiplication' challenge start over button is not displayed");
+        //assert 'number multiplication' challenge calculate button is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isCalculateButtonDisplayed(), "The 'Number Multiplication' challenge calculate button is not displayed");
+    }
 
     //pre-challenges loggers (for debug validation)
     protected void logPreChallenge1Result(LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage){
