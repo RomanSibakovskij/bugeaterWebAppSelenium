@@ -1331,15 +1331,8 @@ public class TestMethods extends BaseTest {
         isScriptedTestingNumMultiplicationChallengePageWebElementDisplayed(scriptedTestingNumMultiplicationValidationChallengePage);
         //assert challenge counter has no challenges completed yet
         assertEquals("0 case(s) out of 6", scriptedTestingNumMultiplicationValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
-
         //assert the number multiplication test cases displayed in test case section list have correct text
-        assertEquals("Leave both input fields blank and then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
-        assertEquals("Input \"abc\" and \"2\" into the input fields where at least one value is not a number, then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
-        assertEquals("Enter \"5\" and \"7\" into the input fields, then click on the \"Calculate\" button. Expected Result: correct multiplication of the numbers.", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
-        assertEquals("Input \"10000000000\" and \"8\" into the input fields where at least one number exceeds the maximum length limit for inputted values, then click on the \"Calculate\" button. Expected Result: \"Application error\".", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
-        assertEquals("Input \"3.5\" and \"2.7\" into the input fields where at least one number is a decimal fraction, then click on the \"Calculate\" button. Expected Result: correct multiplication of the numbers.", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
-        assertEquals("Input \"-8\" and \"4\" into the input fields where at least one number is negative, then click on the \"Calculate\" button. Expected Result: correct multiplication of the numbers.", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
-
+        isScriptedTestingNumMultiplicationTestCaseAsExpected(scriptedTestingNumMultiplicationValidationChallengePage);
         //assert calculation has the expected result (before operation)
         assertEquals("Result:", scriptedTestingNumMultiplicationValidationChallengePage.getCalculationResult() , "The calculation result doesn't match expected result");
         //assert challenge hint has the expected text
@@ -1372,15 +1365,8 @@ public class TestMethods extends BaseTest {
         isScriptedTestingNumMultiplicationChallengePageWebElementDisplayed(scriptedTestingNumMultiplicationValidationChallengePage);
         //assert challenge counter has registered first test case validation
         assertEquals("1 case(s) out of 6", scriptedTestingNumMultiplicationValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
-
         //assert the number multiplication test cases displayed in test case section list have correct text
-        assertEquals("Leave both input fields blank and then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
-        assertEquals("Input \"abc\" and \"2\" into the input fields where at least one value is not a number, then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
-        assertEquals("Enter \"5\" and \"7\" into the input fields, then click on the \"Calculate\" button. Expected Result: correct multiplication of the numbers.", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
-        assertEquals("Input \"10000000000\" and \"8\" into the input fields where at least one number exceeds the maximum length limit for inputted values, then click on the \"Calculate\" button. Expected Result: \"Application error\".", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
-        assertEquals("Input \"3.5\" and \"2.7\" into the input fields where at least one number is a decimal fraction, then click on the \"Calculate\" button. Expected Result: correct multiplication of the numbers.", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
-        assertEquals("Input \"-8\" and \"4\" into the input fields where at least one number is negative, then click on the \"Calculate\" button. Expected Result: correct multiplication of the numbers.", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
-
+        isScriptedTestingNumMultiplicationTestCaseAsExpected(scriptedTestingNumMultiplicationValidationChallengePage);
         //assert the test case validation has been completed (tc 1)
         assertEquals("Entered Values: First Number: Empty, Second Number: Empty", scriptedTestingNumMultiplicationValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
         //assert calculation has the expected result (before operation)
@@ -1413,15 +1399,8 @@ public class TestMethods extends BaseTest {
         isScriptedTestingNumMultiplicationChallengePageWebElementDisplayed(scriptedTestingNumMultiplicationValidationChallengePage);
         //assert challenge counter has registered second test case validation
         assertEquals("2 case(s) out of 6", scriptedTestingNumMultiplicationValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
-
         //assert the number multiplication test cases displayed in test case section list have correct text
-        assertEquals("Leave both input fields blank and then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
-        assertEquals("Input \"abc\" and \"2\" into the input fields where at least one value is not a number, then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
-        assertEquals("Enter \"5\" and \"7\" into the input fields, then click on the \"Calculate\" button. Expected Result: correct multiplication of the numbers.", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
-        assertEquals("Input \"10000000000\" and \"8\" into the input fields where at least one number exceeds the maximum length limit for inputted values, then click on the \"Calculate\" button. Expected Result: \"Application error\".", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
-        assertEquals("Input \"3.5\" and \"2.7\" into the input fields where at least one number is a decimal fraction, then click on the \"Calculate\" button. Expected Result: correct multiplication of the numbers.", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
-        assertEquals("Input \"-8\" and \"4\" into the input fields where at least one number is negative, then click on the \"Calculate\" button. Expected Result: correct multiplication of the numbers.", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
-
+        isScriptedTestingNumMultiplicationTestCaseAsExpected(scriptedTestingNumMultiplicationValidationChallengePage);
         //assert the test case validation has been completed (tc 2)
         assertEquals("Entered Values: First Number: abc, Second Number: 2", scriptedTestingNumMultiplicationValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
         //assert calculation has the expected result (before operation)
@@ -1456,15 +1435,8 @@ public class TestMethods extends BaseTest {
         isScriptedTestingNumMultiplicationChallengePageWebElementDisplayed(scriptedTestingNumMultiplicationValidationChallengePage);
         //assert challenge counter has registered third test case validation
         assertEquals("3 case(s) out of 6", scriptedTestingNumMultiplicationValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
-
         //assert the number multiplication test cases displayed in test case section list have correct text
-        assertEquals("Leave both input fields blank and then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
-        assertEquals("Input \"abc\" and \"2\" into the input fields where at least one value is not a number, then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
-        assertEquals("Enter \"5\" and \"7\" into the input fields, then click on the \"Calculate\" button. Expected Result: correct multiplication of the numbers.", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
-        assertEquals("Input \"10000000000\" and \"8\" into the input fields where at least one number exceeds the maximum length limit for inputted values, then click on the \"Calculate\" button. Expected Result: \"Application error\".", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
-        assertEquals("Input \"3.5\" and \"2.7\" into the input fields where at least one number is a decimal fraction, then click on the \"Calculate\" button. Expected Result: correct multiplication of the numbers.", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
-        assertEquals("Input \"-8\" and \"4\" into the input fields where at least one number is negative, then click on the \"Calculate\" button. Expected Result: correct multiplication of the numbers.", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
-
+        isScriptedTestingNumMultiplicationTestCaseAsExpected(scriptedTestingNumMultiplicationValidationChallengePage);
         //assert the test case validation has been completed (tc 3)
         assertEquals("Entered Values: First Number: 5, Second Number: 7", scriptedTestingNumMultiplicationValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
         //assert calculation has the expected result (before operation)
@@ -1497,15 +1469,8 @@ public class TestMethods extends BaseTest {
         isScriptedTestingNumMultiplicationChallengePageWebElementDisplayed(scriptedTestingNumMultiplicationValidationChallengePage);
         //assert challenge counter has registered fourth test case validation
         assertEquals("4 case(s) out of 6", scriptedTestingNumMultiplicationValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
-
         //assert the number multiplication test cases displayed in test case section list have correct text
-        assertEquals("Leave both input fields blank and then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
-        assertEquals("Input \"abc\" and \"2\" into the input fields where at least one value is not a number, then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
-        assertEquals("Enter \"5\" and \"7\" into the input fields, then click on the \"Calculate\" button. Expected Result: correct multiplication of the numbers.", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
-        assertEquals("Input \"10000000000\" and \"8\" into the input fields where at least one number exceeds the maximum length limit for inputted values, then click on the \"Calculate\" button. Expected Result: \"Application error\".", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
-        assertEquals("Input \"3.5\" and \"2.7\" into the input fields where at least one number is a decimal fraction, then click on the \"Calculate\" button. Expected Result: correct multiplication of the numbers.", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
-        assertEquals("Input \"-8\" and \"4\" into the input fields where at least one number is negative, then click on the \"Calculate\" button. Expected Result: correct multiplication of the numbers.", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
-
+        isScriptedTestingNumMultiplicationTestCaseAsExpected(scriptedTestingNumMultiplicationValidationChallengePage);
         //assert the test case validation has been completed (tc 4)
         assertEquals("Entered Values: First Number: 10000000000, Second Number: 8", scriptedTestingNumMultiplicationValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
         //assert calculation has the expected result (before operation)
@@ -1538,15 +1503,8 @@ public class TestMethods extends BaseTest {
         isScriptedTestingNumMultiplicationChallengePageWebElementDisplayed(scriptedTestingNumMultiplicationValidationChallengePage);
         //assert challenge counter has registered fifth test case validation
         assertEquals("5 case(s) out of 6", scriptedTestingNumMultiplicationValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
-
         //assert the number multiplication test cases displayed in test case section list have correct text
-        assertEquals("Leave both input fields blank and then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
-        assertEquals("Input \"abc\" and \"2\" into the input fields where at least one value is not a number, then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
-        assertEquals("Enter \"5\" and \"7\" into the input fields, then click on the \"Calculate\" button. Expected Result: correct multiplication of the numbers.", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
-        assertEquals("Input \"10000000000\" and \"8\" into the input fields where at least one number exceeds the maximum length limit for inputted values, then click on the \"Calculate\" button. Expected Result: \"Application error\".", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
-        assertEquals("Input \"3.5\" and \"2.7\" into the input fields where at least one number is a decimal fraction, then click on the \"Calculate\" button. Expected Result: correct multiplication of the numbers.", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
-        assertEquals("Input \"-8\" and \"4\" into the input fields where at least one number is negative, then click on the \"Calculate\" button. Expected Result: correct multiplication of the numbers.", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
-
+        isScriptedTestingNumMultiplicationTestCaseAsExpected(scriptedTestingNumMultiplicationValidationChallengePage);
         //assert the test case validation has been completed (tc 5)
         assertEquals("Entered Values: First Number: 3.5, Second Number: 2.7", scriptedTestingNumMultiplicationValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
         //assert calculation has the expected result (before operation)
@@ -1620,16 +1578,8 @@ public class TestMethods extends BaseTest {
         isScriptedTestingNumDivisionChallengePageWebElementDisplayed(scriptedTestingNumDivisionValidationChallengePage);
         //assert challenge counter has no challenges completed yet
         assertEquals("0 case(s) out of 7", scriptedTestingNumMultiplicationValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
-
-        //assert the number multiplication test cases displayed in test case section list have correct text
-        assertEquals("Enter \"4\" and \"2\" into the input fields, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
-        assertEquals("Input \"-10\" and \"2\" into the input fields where one or both numbers are negative, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
-        assertEquals("Enter \"5\" and \"2\" into the input fields, then click on the \"Calculate\" button. Expected Result: correct division of the numbers with a decimal fraction.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
-        assertEquals("Input \"10000000000\" in the First Number input field and \"8\" in the Second Number input field, where one or both numbers are very big, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
-        assertEquals("Enter \"abc\" in the First Number input field and \"1\" in the Second Number input field, where one or both values are not a number, then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
-        assertEquals("Leave one or both input fields blank and then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
-        assertEquals("Input \"10\" into the first input field and \"0\" into the second input field, then click on the \"Calculate\" button. Expected Result: \"Division by zero is not allowed\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseSeven(), "The test case seven challenge description doesn't match expected result");
-
+        //assert the number division test cases displayed in test case section list have correct text
+        isScriptedTestingNumDivisionTestCaseAsExpected(scriptedTestingNumDivisionValidationChallengePage);
         //logger before challenge completion
         logPreChallenge1Result(learnModeNumAddDivisionChallengePage);
         //input numbers provided by test case into input fields
@@ -1665,16 +1615,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Entered Values: First Number: 4, Second Number: 2", scriptedTestingNumMultiplicationValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
         //assert calculation has the expected result (after first test case validation)
         assertEquals("Result: 2", scriptedTestingNumDivisionValidationChallengePage.getCalculationResult() , "The calculation result doesn't match expected result");
-
-        //assert the number multiplication test cases displayed in test case section list have correct text
-        assertEquals("Enter \"4\" and \"2\" into the input fields, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
-        assertEquals("Input \"-10\" and \"2\" into the input fields where one or both numbers are negative, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
-        assertEquals("Enter \"5\" and \"2\" into the input fields, then click on the \"Calculate\" button. Expected Result: correct division of the numbers with a decimal fraction.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
-        assertEquals("Input \"10000000000\" in the First Number input field and \"8\" in the Second Number input field, where one or both numbers are very big, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
-        assertEquals("Enter \"abc\" in the First Number input field and \"1\" in the Second Number input field, where one or both values are not a number, then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
-        assertEquals("Leave one or both input fields blank and then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
-        assertEquals("Input \"10\" into the first input field and \"0\" into the second input field, then click on the \"Calculate\" button. Expected Result: \"Division by zero is not allowed\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseSeven(), "The test case seven challenge description doesn't match expected result");
-
+        //assert the number division test cases displayed in test case section list have correct text
+        isScriptedTestingNumDivisionTestCaseAsExpected(scriptedTestingNumDivisionValidationChallengePage);
         //logger before challenge completion
         logPreChallenge2Result(learnModeNumAddDivisionChallengePage);
         //input numbers provided by test case into input fields
@@ -1708,16 +1650,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Entered Values: First Number: -10, Second Number: 2", scriptedTestingNumMultiplicationValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
         //assert calculation has the expected result (after second test case validation)
         assertEquals("Result: -5", scriptedTestingNumDivisionValidationChallengePage.getCalculationResult() , "The calculation result doesn't match expected result");
-
-        //assert the number multiplication test cases displayed in test case section list have correct text
-        assertEquals("Enter \"4\" and \"2\" into the input fields, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
-        assertEquals("Input \"-10\" and \"2\" into the input fields where one or both numbers are negative, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
-        assertEquals("Enter \"5\" and \"2\" into the input fields, then click on the \"Calculate\" button. Expected Result: correct division of the numbers with a decimal fraction.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
-        assertEquals("Input \"10000000000\" in the First Number input field and \"8\" in the Second Number input field, where one or both numbers are very big, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
-        assertEquals("Enter \"abc\" in the First Number input field and \"1\" in the Second Number input field, where one or both values are not a number, then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
-        assertEquals("Leave one or both input fields blank and then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
-        assertEquals("Input \"10\" into the first input field and \"0\" into the second input field, then click on the \"Calculate\" button. Expected Result: \"Division by zero is not allowed\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseSeven(), "The test case seven challenge description doesn't match expected result");
-
+        //assert the number division test cases displayed in test case section list have correct text
+        isScriptedTestingNumDivisionTestCaseAsExpected(scriptedTestingNumDivisionValidationChallengePage);
         //logger before challenge completion
         logPreChallenge3Result(learnModeNumAddDivisionChallengePage);
         //input numbers provided by test case into input fields
@@ -1751,16 +1685,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Entered Values: First Number: 5, Second Number: 2", scriptedTestingNumMultiplicationValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
         //assert calculation has the expected result (after third test case validation)
         assertEquals("Result: 2.5", scriptedTestingNumDivisionValidationChallengePage.getCalculationResult() , "The calculation result doesn't match expected result");
-
-        //assert the number multiplication test cases displayed in test case section list have correct text
-        assertEquals("Enter \"4\" and \"2\" into the input fields, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
-        assertEquals("Input \"-10\" and \"2\" into the input fields where one or both numbers are negative, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
-        assertEquals("Enter \"5\" and \"2\" into the input fields, then click on the \"Calculate\" button. Expected Result: correct division of the numbers with a decimal fraction.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
-        assertEquals("Input \"10000000000\" in the First Number input field and \"8\" in the Second Number input field, where one or both numbers are very big, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
-        assertEquals("Enter \"abc\" in the First Number input field and \"1\" in the Second Number input field, where one or both values are not a number, then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
-        assertEquals("Leave one or both input fields blank and then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
-        assertEquals("Input \"10\" into the first input field and \"0\" into the second input field, then click on the \"Calculate\" button. Expected Result: \"Division by zero is not allowed\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseSeven(), "The test case seven challenge description doesn't match expected result");
-
+        //assert the number division test cases displayed in test case section list have correct text
+        isScriptedTestingNumDivisionTestCaseAsExpected(scriptedTestingNumDivisionValidationChallengePage);
         //logger before challenge completion
         logPreChallenge4Result(learnModeNumAddDivisionChallengePage);
         //input numbers provided by test case into input fields
@@ -1796,16 +1722,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Entered Values: First Number: 10000000000, Second Number: 8", scriptedTestingNumMultiplicationValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
         //assert calculation has the expected result (after fourth test case validation)
         assertEquals("Result: 1250000000", scriptedTestingNumDivisionValidationChallengePage.getCalculationResult() , "The calculation result doesn't match expected result");
-
-        //assert the number multiplication test cases displayed in test case section list have correct text
-        assertEquals("Enter \"4\" and \"2\" into the input fields, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
-        assertEquals("Input \"-10\" and \"2\" into the input fields where one or both numbers are negative, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
-        assertEquals("Enter \"5\" and \"2\" into the input fields, then click on the \"Calculate\" button. Expected Result: correct division of the numbers with a decimal fraction.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
-        assertEquals("Input \"10000000000\" in the First Number input field and \"8\" in the Second Number input field, where one or both numbers are very big, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
-        assertEquals("Enter \"abc\" in the First Number input field and \"1\" in the Second Number input field, where one or both values are not a number, then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
-        assertEquals("Leave one or both input fields blank and then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
-        assertEquals("Input \"10\" into the first input field and \"0\" into the second input field, then click on the \"Calculate\" button. Expected Result: \"Division by zero is not allowed\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseSeven(), "The test case seven challenge description doesn't match expected result");
-
+        //assert the number division test cases displayed in test case section list have correct text
+        isScriptedTestingNumDivisionTestCaseAsExpected(scriptedTestingNumDivisionValidationChallengePage);
         //logger before challenge completion
         logPreChallenge5Result(learnModeNumAddDivisionChallengePage);
         //input numbers provided by test case into input fields
@@ -1839,16 +1757,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Entered Values: First Number: abc, Second Number: 1", scriptedTestingNumMultiplicationValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
         //assert calculation has the expected result (after fifth test case validation)
         assertEquals("Result: User input error", scriptedTestingNumDivisionValidationChallengePage.getCalculationResult() , "The calculation result doesn't match expected result");
-
-        //assert the number multiplication test cases displayed in test case section list have correct text
-        assertEquals("Enter \"4\" and \"2\" into the input fields, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
-        assertEquals("Input \"-10\" and \"2\" into the input fields where one or both numbers are negative, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
-        assertEquals("Enter \"5\" and \"2\" into the input fields, then click on the \"Calculate\" button. Expected Result: correct division of the numbers with a decimal fraction.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
-        assertEquals("Input \"10000000000\" in the First Number input field and \"8\" in the Second Number input field, where one or both numbers are very big, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
-        assertEquals("Enter \"abc\" in the First Number input field and \"1\" in the Second Number input field, where one or both values are not a number, then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
-        assertEquals("Leave one or both input fields blank and then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
-        assertEquals("Input \"10\" into the first input field and \"0\" into the second input field, then click on the \"Calculate\" button. Expected Result: \"Division by zero is not allowed\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseSeven(), "The test case seven challenge description doesn't match expected result");
-
+        //assert the number division test cases displayed in test case section list have correct text
+        isScriptedTestingNumDivisionTestCaseAsExpected(scriptedTestingNumDivisionValidationChallengePage);
         //logger before challenge completion
         logPreChallenge6Result(learnModeNumAddDivisionChallengePage);
         //input numbers provided by test case into input fields
@@ -1882,16 +1792,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Entered Values: First Number: Empty, Second Number: Empty", scriptedTestingNumMultiplicationValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
         //assert calculation has the expected result (after sixth test case validation)
         assertEquals("Result: User input error", scriptedTestingNumDivisionValidationChallengePage.getCalculationResult() , "The calculation result doesn't match expected result");
-
-        //assert the number multiplication test cases displayed in test case section list have correct text
-        assertEquals("Enter \"4\" and \"2\" into the input fields, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
-        assertEquals("Input \"-10\" and \"2\" into the input fields where one or both numbers are negative, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
-        assertEquals("Enter \"5\" and \"2\" into the input fields, then click on the \"Calculate\" button. Expected Result: correct division of the numbers with a decimal fraction.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
-        assertEquals("Input \"10000000000\" in the First Number input field and \"8\" in the Second Number input field, where one or both numbers are very big, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
-        assertEquals("Enter \"abc\" in the First Number input field and \"1\" in the Second Number input field, where one or both values are not a number, then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
-        assertEquals("Leave one or both input fields blank and then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
-        assertEquals("Input \"10\" into the first input field and \"0\" into the second input field, then click on the \"Calculate\" button. Expected Result: \"Division by zero is not allowed\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseSeven(), "The test case seven challenge description doesn't match expected result");
-
+        //assert the number division test cases displayed in test case section list have correct text
+        isScriptedTestingNumDivisionTestCaseAsExpected(scriptedTestingNumDivisionValidationChallengePage);
         LearnModePasswordChallengePage learnModePasswordChallengePage = new LearnModePasswordChallengePage(driver);
         //logger before challenge completion
         logPreChallenge7Result(learnModePasswordChallengePage);
@@ -1959,20 +1861,8 @@ public class TestMethods extends BaseTest {
         isScriptedTestingPassValidationChallengePageWebElementDisplayed(scriptedTestingPasswordTCValidationChallengePage);
         //assert challenge counter has no challenges completed yet
         assertEquals("0 case(s) out of 11", scriptedTestingPasswordTCValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
-
         //assert the number multiplication test cases displayed in test case section list have correct text
-        assertEquals("Enter \"PASSWORD\" as the password containing only uppercase letters and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
-        assertEquals("Enter \"123456\" as the password containing only digits and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
-        assertEquals("Enter \"!@#$%\" as the password containing only special characters and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
-        assertEquals("Enter the previously saved password \"Password1@23\" and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
-        assertEquals("Leave the password field empty and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
-        assertEquals("Enter \"abc\" as the password, which is less than 5 characters long, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
-        assertEquals("Enter \"qwertyuiopasdfghjklzxcvbnm\" as the password, which exceeds 15 characters, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseSeven(), "The test case seven challenge description doesn't match expected result");
-        assertEquals("Enter \"P@ssword_1\" as the password, which meets all the requirements, and click the \"Submit\" button. Expected Result: \"Valid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseEight(), "The test case eight challenge description doesn't match expected result");
-        assertEquals("Enter \"Слово\" as the password, which contains the not-allowed symbol, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseNine(), "The test case nine challenge description doesn't match expected result");
-        assertEquals("Enter \"password\" as the password containing only lowercase letters and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseTen(), "The test case ten challenge description doesn't match expected result");
-        assertEquals("Enter \"P@ssw_rd\" as the password, which does not meet all the requirements, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseEleven(), "The test case eleven challenge description doesn't match expected result");
-
+        isScriptedTestingPasswordValidationTestCaseAsExpected(scriptedTestingPasswordTCValidationChallengePage);
         //assert password validation has the expected result (before operation)
         assertEquals("Result:", scriptedTestingPasswordTCValidationChallengePage.getPasswordValidationResult() , "The calculation result doesn't match expected result");
         //assert challenge hint has the expected text
@@ -2011,20 +1901,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Entered Value: PASSWORD", scriptedTestingPasswordTCValidationChallengePage.getEnteredValueText(), "The entered values after completion don't match expected result");
         //assert password validation has the expected result (after first test case validation)
         assertEquals("Result: Invalid Password", scriptedTestingPasswordTCValidationChallengePage.getPasswordValidationResult() , "The calculation result doesn't match expected result");
-
         //assert the number multiplication test cases displayed in test case section list have correct text
-        assertEquals("Enter \"PASSWORD\" as the password containing only uppercase letters and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
-        assertEquals("Enter \"123456\" as the password containing only digits and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
-        assertEquals("Enter \"!@#$%\" as the password containing only special characters and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
-        assertEquals("Enter the previously saved password \"Password1@23\" and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
-        assertEquals("Leave the password field empty and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
-        assertEquals("Enter \"abc\" as the password, which is less than 5 characters long, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
-        assertEquals("Enter \"qwertyuiopasdfghjklzxcvbnm\" as the password, which exceeds 15 characters, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseSeven(), "The test case seven challenge description doesn't match expected result");
-        assertEquals("Enter \"P@ssword_1\" as the password, which meets all the requirements, and click the \"Submit\" button. Expected Result: \"Valid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseEight(), "The test case eight challenge description doesn't match expected result");
-        assertEquals("Enter \"Слово\" as the password, which contains the not-allowed symbol, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseNine(), "The test case nine challenge description doesn't match expected result");
-        assertEquals("Enter \"password\" as the password containing only lowercase letters and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseTen(), "The test case ten challenge description doesn't match expected result");
-        assertEquals("Enter \"P@ssw_rd\" as the password, which does not meet all the requirements, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseEleven(), "The test case eleven challenge description doesn't match expected result");
-
+        isScriptedTestingPasswordValidationTestCaseAsExpected(scriptedTestingPasswordTCValidationChallengePage);
         //assert challenge hint has the expected text
         assertEquals("From 5 to 15 characters, at least one small Latin letter, one capital Latin letter, one symbol, and one number. Not matching the previous password.", scriptedTestingPasswordTCValidationChallengePage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
         //logger before challenge completion
@@ -2059,20 +1937,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Entered Value: 123456", scriptedTestingPasswordTCValidationChallengePage.getEnteredValueText(), "The entered values after completion don't match expected result");
         //assert password validation has the expected result (after second test case validation)
         assertEquals("Result: Invalid Password", scriptedTestingPasswordTCValidationChallengePage.getPasswordValidationResult() , "The calculation result doesn't match expected result");
-
         //assert the number multiplication test cases displayed in test case section list have correct text
-        assertEquals("Enter \"PASSWORD\" as the password containing only uppercase letters and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
-        assertEquals("Enter \"123456\" as the password containing only digits and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
-        assertEquals("Enter \"!@#$%\" as the password containing only special characters and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
-        assertEquals("Enter the previously saved password \"Password1@23\" and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
-        assertEquals("Leave the password field empty and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
-        assertEquals("Enter \"abc\" as the password, which is less than 5 characters long, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
-        assertEquals("Enter \"qwertyuiopasdfghjklzxcvbnm\" as the password, which exceeds 15 characters, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseSeven(), "The test case seven challenge description doesn't match expected result");
-        assertEquals("Enter \"P@ssword_1\" as the password, which meets all the requirements, and click the \"Submit\" button. Expected Result: \"Valid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseEight(), "The test case eight challenge description doesn't match expected result");
-        assertEquals("Enter \"Слово\" as the password, which contains the not-allowed symbol, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseNine(), "The test case nine challenge description doesn't match expected result");
-        assertEquals("Enter \"password\" as the password containing only lowercase letters and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseTen(), "The test case ten challenge description doesn't match expected result");
-        assertEquals("Enter \"P@ssw_rd\" as the password, which does not meet all the requirements, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseEleven(), "The test case eleven challenge description doesn't match expected result");
-
+        isScriptedTestingPasswordValidationTestCaseAsExpected(scriptedTestingPasswordTCValidationChallengePage);
         //assert challenge hint has the expected text
         assertEquals("From 5 to 15 characters, at least one small Latin letter, one capital Latin letter, one symbol, and one number. Not matching the previous password.", scriptedTestingPasswordTCValidationChallengePage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
         //logger before challenge completion
@@ -2107,20 +1973,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Entered Value: !@#$%", scriptedTestingPasswordTCValidationChallengePage.getEnteredValueText(), "The entered values after completion don't match expected result");
         //assert password validation has the expected result (after third test case validation)
         assertEquals("Result: Invalid Password", scriptedTestingPasswordTCValidationChallengePage.getPasswordValidationResult() , "The calculation result doesn't match expected result");
-
         //assert the number multiplication test cases displayed in test case section list have correct text
-        assertEquals("Enter \"PASSWORD\" as the password containing only uppercase letters and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
-        assertEquals("Enter \"123456\" as the password containing only digits and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
-        assertEquals("Enter \"!@#$%\" as the password containing only special characters and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
-        assertEquals("Enter the previously saved password \"Password1@23\" and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
-        assertEquals("Leave the password field empty and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
-        assertEquals("Enter \"abc\" as the password, which is less than 5 characters long, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
-        assertEquals("Enter \"qwertyuiopasdfghjklzxcvbnm\" as the password, which exceeds 15 characters, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseSeven(), "The test case seven challenge description doesn't match expected result");
-        assertEquals("Enter \"P@ssword_1\" as the password, which meets all the requirements, and click the \"Submit\" button. Expected Result: \"Valid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseEight(), "The test case eight challenge description doesn't match expected result");
-        assertEquals("Enter \"Слово\" as the password, which contains the not-allowed symbol, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseNine(), "The test case nine challenge description doesn't match expected result");
-        assertEquals("Enter \"password\" as the password containing only lowercase letters and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseTen(), "The test case ten challenge description doesn't match expected result");
-        assertEquals("Enter \"P@ssw_rd\" as the password, which does not meet all the requirements, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseEleven(), "The test case eleven challenge description doesn't match expected result");
-
+        isScriptedTestingPasswordValidationTestCaseAsExpected(scriptedTestingPasswordTCValidationChallengePage);
         //assert challenge hint has the expected text
         assertEquals("From 5 to 15 characters, at least one small Latin letter, one capital Latin letter, one symbol, and one number. Not matching the previous password.", scriptedTestingPasswordTCValidationChallengePage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
         //logger before challenge completion
@@ -2155,20 +2009,8 @@ public class TestMethods extends BaseTest {
         assertEquals("Entered Value: Password1@23", scriptedTestingPasswordTCValidationChallengePage.getEnteredValueText(), "The entered values after completion don't match expected result");
         //assert password validation has the expected result (after fourth test case validation)
         assertEquals("Result: Invalid Password", scriptedTestingPasswordTCValidationChallengePage.getPasswordValidationResult() , "The calculation result doesn't match expected result");
-
         //assert the number multiplication test cases displayed in test case section list have correct text
-        assertEquals("Enter \"PASSWORD\" as the password containing only uppercase letters and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
-        assertEquals("Enter \"123456\" as the password containing only digits and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
-        assertEquals("Enter \"!@#$%\" as the password containing only special characters and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
-        assertEquals("Enter the previously saved password \"Password1@23\" and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
-        assertEquals("Leave the password field empty and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
-        assertEquals("Enter \"abc\" as the password, which is less than 5 characters long, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
-        assertEquals("Enter \"qwertyuiopasdfghjklzxcvbnm\" as the password, which exceeds 15 characters, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseSeven(), "The test case seven challenge description doesn't match expected result");
-        assertEquals("Enter \"P@ssword_1\" as the password, which meets all the requirements, and click the \"Submit\" button. Expected Result: \"Valid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseEight(), "The test case eight challenge description doesn't match expected result");
-        assertEquals("Enter \"Слово\" as the password, which contains the not-allowed symbol, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseNine(), "The test case nine challenge description doesn't match expected result");
-        assertEquals("Enter \"password\" as the password containing only lowercase letters and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseTen(), "The test case ten challenge description doesn't match expected result");
-        assertEquals("Enter \"P@ssw_rd\" as the password, which does not meet all the requirements, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseEleven(), "The test case eleven challenge description doesn't match expected result");
-
+        isScriptedTestingPasswordValidationTestCaseAsExpected(scriptedTestingPasswordTCValidationChallengePage);
         //assert challenge hint has the expected text
         assertEquals("From 5 to 15 characters, at least one small Latin letter, one capital Latin letter, one symbol, and one number. Not matching the previous password.", scriptedTestingPasswordTCValidationChallengePage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
         //logger before challenge completion
@@ -2419,6 +2261,16 @@ public class TestMethods extends BaseTest {
         //assert scripted testing (number multiplication / division) challenge number 2 input field is displayed
         assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isNumber2InputFieldDisplayed(), "The 'Number Multiplication / Division' challenge number 2 input field is not displayed");
     }
+    //'Scripted Testing' number multiplication test cases list assert
+    protected void isScriptedTestingNumMultiplicationTestCaseAsExpected(ScriptedTestingNumMultiplicationValidationChallengePage scriptedTestingNumMultiplicationValidationChallengePage){
+        //assert the number multiplication test cases displayed in test case section list have correct text
+        assertEquals("Leave both input fields blank and then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
+        assertEquals("Input \"abc\" and \"2\" into the input fields where at least one value is not a number, then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
+        assertEquals("Enter \"5\" and \"7\" into the input fields, then click on the \"Calculate\" button. Expected Result: correct multiplication of the numbers.", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
+        assertEquals("Input \"10000000000\" and \"8\" into the input fields where at least one number exceeds the maximum length limit for inputted values, then click on the \"Calculate\" button. Expected Result: \"Application error\".", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
+        assertEquals("Input \"3.5\" and \"2.7\" into the input fields where at least one number is a decimal fraction, then click on the \"Calculate\" button. Expected Result: correct multiplication of the numbers.", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
+        assertEquals("Input \"-8\" and \"4\" into the input fields where at least one number is negative, then click on the \"Calculate\" button. Expected Result: correct multiplication of the numbers.", scriptedTestingNumMultiplicationValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
+    }
     //'Scripted testing' number division challenge page specific web element assert
     protected void isScriptedTestingNumDivisionChallengePageWebElementDisplayed(ScriptedTestingNumDivisionValidationChallengePage scriptedTestingNumDivisionValidationChallengePage){
         //assert 'number division' test case list is displayed
@@ -2437,7 +2289,17 @@ public class TestMethods extends BaseTest {
         //assert scripted testing (number multiplication / division) challenge number 2 input field is displayed
         assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isNumber2InputFieldDisplayed(), "The 'Number Multiplication / Division' challenge number 2 input field is not displayed");
     }
-
+    //'Scripted Testing' number division test cases list assert
+    protected void isScriptedTestingNumDivisionTestCaseAsExpected(ScriptedTestingNumDivisionValidationChallengePage scriptedTestingNumDivisionValidationChallengePage){
+        //assert the number division test cases displayed in test case section list have correct text
+        assertEquals("Enter \"4\" and \"2\" into the input fields, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
+        assertEquals("Input \"-10\" and \"2\" into the input fields where one or both numbers are negative, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
+        assertEquals("Enter \"5\" and \"2\" into the input fields, then click on the \"Calculate\" button. Expected Result: correct division of the numbers with a decimal fraction.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
+        assertEquals("Input \"10000000000\" in the First Number input field and \"8\" in the Second Number input field, where one or both numbers are very big, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
+        assertEquals("Enter \"abc\" in the First Number input field and \"1\" in the Second Number input field, where one or both values are not a number, then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
+        assertEquals("Leave one or both input fields blank and then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
+        assertEquals("Input \"10\" into the first input field and \"0\" into the second input field, then click on the \"Calculate\" button. Expected Result: \"Division by zero is not allowed\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseSeven(), "The test case seven challenge description doesn't match expected result");
+    }
     //'Scripted testing' password validation challenge page web element assert
     protected void isScriptedTestingPassValidationChallengePageWebElementDisplayed(ScriptedTestingPasswordTCValidationChallengePage scriptedTestingPasswordTCValidationChallengePage){
         //assert 'password validation' test case list is displayed
@@ -2459,6 +2321,21 @@ public class TestMethods extends BaseTest {
         assertTrue(scriptedTestingPasswordTCValidationChallengePage.isPasswordValidationInputFieldDisplayed(), "The 'Password Validation' challenge number 1 input field is not displayed");
         //assert scripted testing password validation challenge submit button is displayed
         assertTrue(scriptedTestingPasswordTCValidationChallengePage.isPasswordSubmitButtonDisplayed(), "The 'Password Validation' challenge calculate button is not displayed");
+    }
+    //'Scripted testing' password validation test case web element assert
+    protected void isScriptedTestingPasswordValidationTestCaseAsExpected(ScriptedTestingPasswordTCValidationChallengePage scriptedTestingPasswordTCValidationChallengePage){
+        //assert the number multiplication test cases displayed in test case section list have correct text
+        assertEquals("Enter \"PASSWORD\" as the password containing only uppercase letters and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
+        assertEquals("Enter \"123456\" as the password containing only digits and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
+        assertEquals("Enter \"!@#$%\" as the password containing only special characters and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
+        assertEquals("Enter the previously saved password \"Password1@23\" and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
+        assertEquals("Leave the password field empty and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
+        assertEquals("Enter \"abc\" as the password, which is less than 5 characters long, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
+        assertEquals("Enter \"qwertyuiopasdfghjklzxcvbnm\" as the password, which exceeds 15 characters, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseSeven(), "The test case seven challenge description doesn't match expected result");
+        assertEquals("Enter \"P@ssword_1\" as the password, which meets all the requirements, and click the \"Submit\" button. Expected Result: \"Valid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseEight(), "The test case eight challenge description doesn't match expected result");
+        assertEquals("Enter \"Слово\" as the password, which contains the not-allowed symbol, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseNine(), "The test case nine challenge description doesn't match expected result");
+        assertEquals("Enter \"password\" as the password containing only lowercase letters and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseTen(), "The test case ten challenge description doesn't match expected result");
+        assertEquals("Enter \"P@ssw_rd\" as the password, which does not meet all the requirements, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseEleven(), "The test case eleven challenge description doesn't match expected result");
     }
 
     //pre-challenges loggers (for debug validation)
