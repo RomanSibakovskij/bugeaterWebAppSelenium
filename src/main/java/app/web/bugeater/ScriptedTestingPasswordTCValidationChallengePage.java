@@ -2,6 +2,10 @@ package app.web.bugeater;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class ScriptedTestingPasswordTCValidationChallengePage extends BasePage {
 
@@ -18,7 +22,7 @@ public class ScriptedTestingPasswordTCValidationChallengePage extends BasePage {
     private WebElement currentChallengeText;
     //Scripted testing 'Password Validation' challenge page web elements
     @FindBy(xpath = "//div[@class='_challengeHeadingBlock_1a4cy_184']/h1")
-    private WebElement numberDivisionChallengeTitle;
+    private WebElement passwordValidationChallengeTitle;
     //Scripted testing 'Password Validation' test case section web elements
     @FindBy(xpath = "//div[@class='_challengePanelResultsHeading_1a4cy_60']/h2")
     private WebElement testCaseSectionTitle;
@@ -74,6 +78,50 @@ public class ScriptedTestingPasswordTCValidationChallengePage extends BasePage {
         super(driver);
     }
 
+    //number division input methods (for challenge 1) (invalid input -  uppercase only)
+    public void inputPasswordTCValidationChallenge1(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(passwordInputField));
+        passwordInputField.sendKeys("PASSWORD");
+    }
+
+    //verify test case validation completion (tick icon) methods
+    public void verifyTestCase1Validation(){
+        //assert the test case 1 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseOne, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseOne
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 1 has been verified successfully(tick icon)." + "\n");
+        } else {
+            logger.error("Test case 1 hasn't been verified. No tick icon detected." + "\n");
+        }
+    }
+
+    //click 'submit' button method
+    public void clickSubmitButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.elementToBeClickable(submitButton));
+        submitButton.click();
+    }
+
+    //tutorial modal 'skip' button click method
+    public void clickSkipTutorialButton(){tutorialSkipButton.click();}
+
+    //click 'close' button method
+    public void clickCloseModalButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.elementToBeClickable(closeModalButton));
+        closeModalButton.click();
+    }
+
     //tutorial modal description text getter
     public String getTutorialDescriptionText() {return tutorialDescriptionText.getText();}
     //Scripted testing current challenge text getter
@@ -82,8 +130,8 @@ public class ScriptedTestingPasswordTCValidationChallengePage extends BasePage {
     public String getScriptedTestingIndividualPageInstructionsChallengeTitle(){return testCaseSectionTitle.getText();}
     //Scripted testing test cases input form title getter
     public String getInputFormTitle(){return inputFormTitle.getText();}
-    //Scripted testing number division challenge page title getter
-    public String getNumberDivisionChallengeTitle() {return numberDivisionChallengeTitle.getText();}
+    //Scripted testing password validation challenge page title getter
+    public String getPasswordChallengeTitle() {return passwordValidationChallengeTitle.getText();}
     //Scripted testing challenges counter getter
     public String getChallengesCounterText() {return challengesCompletedCounter.getText();}
     //challenge one text getter

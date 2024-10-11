@@ -277,7 +277,7 @@ public class ScriptedTestingNumDivisionValidationChallengePage extends BasePage{
         }
     }
 
-    //click 'submit' button method
+    //click 'calculate' button method
     public void clickCalculateButton(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.elementToBeClickable(calculateButton));

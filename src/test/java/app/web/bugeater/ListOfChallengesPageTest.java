@@ -170,6 +170,7 @@ public class ListOfChallengesPageTest extends TestMethods{
     void scriptedTestingPasswordTCValidationChallengeTest(){
         navigateToPasswordTCValidationPageTest();
         ScriptedTestingPasswordTCValidationChallengePage scriptedTestingPasswordTCValidationChallengePage = new ScriptedTestingPasswordTCValidationChallengePage(driver);
-
+        //test case validation challenge 1 test (invalid tc validation - uppercase only)
+        solvePasswordTCValidationChallenge1Test(scriptedTestingPasswordTCValidationChallengePage);
     }
 }
