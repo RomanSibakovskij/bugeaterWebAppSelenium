@@ -22,9 +22,7 @@ public class ScriptedTestingCreateProfileTCValidationChallengePage extends BaseP
     //Scripted testing 'Number Division' challenge page web elements
     @FindBy(xpath = "//div[@class='_challengeHeadingBlock_1a4cy_184']/h1")
     private WebElement createProfileChallengeTitle;
-    //Scripted testing 'Number Division' test case section web elements
-    @FindBy(xpath = "//div[@class='_challengePanelResultsHeading_1a4cy_60']/h2")
-    private WebElement testCaseSectionTitle;
+    //Scripted testing 'Number Division' test case section web element
     @FindBy(xpath = "//div[@class='_challengePanelResultsHeading_1a4cy_60']/p[@class='_challengePanelResultsCaption_1a4cy_71']")
     private WebElement challengesCompletedCounter;
     //Scripted testing 'Number Division' test cases for validation web elements
@@ -41,8 +39,6 @@ public class ScriptedTestingCreateProfileTCValidationChallengePage extends BaseP
     @FindBy(xpath = "//ol[@class='_challengeList_1a4cy_164']/li[6]")
     private WebElement testCaseSix;
     //Scripted testing 'Create Profile' input form web elements
-    @FindBy(xpath = "//div[@id='testForm']/h2")
-    private WebElement inputFormTitle;
     @FindBy(xpath = "//div[@id='testForm']/p[2]")
     private WebElement enteredValuesText;
     @FindBy(xpath = "//input[@id='first']")
@@ -52,8 +48,6 @@ public class ScriptedTestingCreateProfileTCValidationChallengePage extends BaseP
     //'Scripted Testing' birth year dropdown menu web element
     @FindBy(xpath = "//div[@class='_challengeListItem_1a4cy_169']//div")
     private WebElement birthYearDropdownMenu;
-    @FindBy(xpath = "//p[@class='_challengeListHint_1a4cy_179']")
-    private WebElement challengeHintText;
     @FindBy(xpath = "//div[@id='testForm']/p[1]")
     private WebElement challengeCreateProfileResult;
     //button web elements
@@ -93,8 +87,6 @@ public class ScriptedTestingCreateProfileTCValidationChallengePage extends BaseP
     public String getTutorialDescriptionText() {return tutorialDescriptionText.getText();}
     //Scripted testing current challenge text getter
     public String getCurrentChallengeText() {return currentChallengeText.getText();}
-    //Scripted testing test cases input form title getter
-    public String getInputFormTitle(){return inputFormTitle.getText();}
     //Scripted testing change profile challenge page title getter
     public String getCreateProfileChallengeTitle() {return createProfileChallengeTitle.getText();}
     //Scripted testing challenges counter getter
@@ -113,8 +105,6 @@ public class ScriptedTestingCreateProfileTCValidationChallengePage extends BaseP
     public String getTestCaseSix(){return testCaseSix.getText();}
     //Scripted testing input form 'entered values' text getter
     public String getEnteredValuesText() {return enteredValuesText.getText();}
-    //challenge hint text getter
-    public String getChallengeHintText() {return challengeHintText.getText();}
     //Scripted testing calculation result getter
     public String getCreateProfileResult() {return challengeCreateProfileResult.getText();}
     //'halfway there' message getter
@@ -131,7 +121,5 @@ public class ScriptedTestingCreateProfileTCValidationChallengePage extends BaseP
     public boolean isChangeProfileTestCaseFiveDisplayed(){return testCaseFive.isDisplayed();}
     public boolean isChangeProfileTestCaseSixDisplayed(){return testCaseSix.isDisplayed();}
     public boolean isInputFormEnteredValuesDisplayed(){return enteredValuesText.isDisplayed();}
-    public boolean isNicknameInputFieldDisplayed(){return nicknameInputField.isDisplayed();}
-    public boolean isLastNameInputFieldDisplayed(){return lastNameInputField.isDisplayed();}
     public boolean isBirthYearDropdownMenuDisplayed(){return birthYearDropdownMenu.isDisplayed();}
 }
