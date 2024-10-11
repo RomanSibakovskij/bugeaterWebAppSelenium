@@ -22,10 +22,6 @@ public class ScriptedTestingNumDivisionValidationChallengePage extends BasePage{
     //Scripted testing 'Number multiplication' challenge page web elements
     @FindBy(xpath = "//div[@class='_challengeHeadingBlock_1a4cy_184']/h1")
     private WebElement numberDivisionChallengeTitle;
-    @FindBy(css = "svg#questionMark")
-    private WebElement numberMultiplicationGuideButton;
-    @FindBy(xpath = "//a[@id='videoLink']")
-    private WebElement videoGuideLink;
     //Scripted testing 'Number multiplication' test case section web elements
     @FindBy(xpath = "//div[@class='_challengePanelResultsHeading_1a4cy_60']/h2")
     private WebElement testCaseSectionTitle;
@@ -60,12 +56,8 @@ public class ScriptedTestingNumDivisionValidationChallengePage extends BasePage{
     @FindBy(xpath = "//div[@id='testForm']/p[1]")
     private WebElement challengeCalculationResult;
     //button web elements
-    @FindBy(xpath = "//button[@type='reset']")
-    private WebElement clearFormButton;
     @FindBy(xpath = "//div[@id='testForm']/form//button[@type='submit']")
     private WebElement calculateButton;
-    @FindBy(xpath = "//button[@class='_challengeButtons_1a4cy_115 btn btn-outline-danger']")
-    private WebElement startOverButton;
     //Scripted testing halfway there congratulation web element
     @FindBy(xpath = "//div[@id='root']/div[4]")
     private WebElement halfwayThereMessage;
@@ -144,6 +136,17 @@ public class ScriptedTestingNumDivisionValidationChallengePage extends BasePage{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(numberTwoInputField));
         numberTwoInputField.sendKeys("");
+    }
+    //number division input methods (for challenge 7) (invalid input - number 2 is 0)
+    public void inputTCValidationDivisionChallenge7Number1(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(numberOneInputField));
+        numberOneInputField.sendKeys(String.valueOf(10));
+    }
+    public void inputTCValidationDivisionChallenge7Number2(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(numberTwoInputField));
+        numberTwoInputField.sendKeys(String.valueOf(0));
     }
 
     //verify test case validation completion (tick icon) methods
@@ -253,6 +256,24 @@ public class ScriptedTestingNumDivisionValidationChallengePage extends BasePage{
             logger.info("Test case 6 has been verified successfully(tick icon)." + "\n");
         } else {
             logger.error("Test case 6 hasn't been verified. No tick icon detected." + "\n");
+        }
+    }
+    public void verifyTestCase7Validation(){
+        //assert the test case 7 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseSeven, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseSeven
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 7 has been verified successfully(tick icon)." + "\n");
+        } else {
+            logger.error("Test case 7 hasn't been verified. No tick icon detected." + "\n");
         }
     }
 
