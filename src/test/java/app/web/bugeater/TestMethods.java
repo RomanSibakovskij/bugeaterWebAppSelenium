@@ -1620,6 +1620,27 @@ public class TestMethods extends BaseTest {
         isScriptedTestingNumDivisionChallengePageWebElementDisplayed(scriptedTestingNumDivisionValidationChallengePage);
         //assert challenge counter has no challenges completed yet
         assertEquals("0 case(s) out of 7", scriptedTestingNumMultiplicationValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+
+        //assert the number multiplication test cases displayed in test case section list have correct text
+        assertEquals("Enter \"4\" and \"2\" into the input fields, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
+        assertEquals("Input \"-10\" and \"2\" into the input fields where one or both numbers are negative, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
+        assertEquals("Enter \"5\" and \"2\" into the input fields, then click on the \"Calculate\" button. Expected Result: correct division of the numbers with a decimal fraction.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
+        assertEquals("Input \"10000000000\" in the First Number input field and \"8\" in the Second Number input field, where one or both numbers are very big, then click on the \"Calculate\" button. Expected Result: correct division of the numbers.", scriptedTestingNumDivisionValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
+        assertEquals("Enter \"abc\" in the First Number input field and \"1\" in the Second Number input field, where one or both values are not a number, then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
+        assertEquals("Leave one or both input fields blank and then click on the \"Calculate\" button. Expected Result: \"User input error\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
+        assertEquals("Input \"10\" into the first input field and \"0\" into the second input field, then click on the \"Calculate\" button. Expected Result: \"Division by zero is not allowed\".", scriptedTestingNumDivisionValidationChallengePage.getTestCaseSeven(), "The test case seven challenge description doesn't match expected result");
+
+        //logger before challenge completion
+        logPreChallenge1Result(learnModeNumAddDivisionChallengePage);
+        //input numbers provided by test case into input fields
+        scriptedTestingNumDivisionValidationChallengePage.inputTCValidationDivisionChallenge1Number1();
+        scriptedTestingNumDivisionValidationChallengePage.inputTCValidationDivisionChallenge1Number2();
+        //click 'calculate' button
+        scriptedTestingNumDivisionValidationChallengePage.clickCalculateButton();
+        //assert the test case validation has been completed (tc 1)
+        assertEquals("Entered Values: First Number: 4, Second Number: 2", scriptedTestingNumMultiplicationValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
+        //verify the test case has been validated
+        scriptedTestingNumDivisionValidationChallengePage.verifyTestCase1Validation();
     }
 
         //general page web element assert (repeating web elements on all app pages)
