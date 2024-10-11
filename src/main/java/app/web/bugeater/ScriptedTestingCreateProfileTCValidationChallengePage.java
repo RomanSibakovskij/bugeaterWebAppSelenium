@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.*;
 
 import java.time.Duration;
 
-public class ScriptedTestingChangeProfileTCValidationChallengePage extends BasePage{
+public class ScriptedTestingCreateProfileTCValidationChallengePage extends BasePage{
 
     //tutorial modal web elements
     @FindBy(xpath = "(//div[.='This description explains the challenge and what you need to do. Read it carefully before starting the challenge.'])[1]")
@@ -21,7 +21,7 @@ public class ScriptedTestingChangeProfileTCValidationChallengePage extends BaseP
     private WebElement currentChallengeText;
     //Scripted testing 'Number Division' challenge page web elements
     @FindBy(xpath = "//div[@class='_challengeHeadingBlock_1a4cy_184']/h1")
-    private WebElement numberDivisionChallengeTitle;
+    private WebElement createProfileChallengeTitle;
     //Scripted testing 'Number Division' test case section web elements
     @FindBy(xpath = "//div[@class='_challengePanelResultsHeading_1a4cy_60']/h2")
     private WebElement testCaseSectionTitle;
@@ -40,32 +40,35 @@ public class ScriptedTestingChangeProfileTCValidationChallengePage extends BaseP
     private WebElement testCaseFive;
     @FindBy(xpath = "//ol[@class='_challengeList_1a4cy_164']/li[6]")
     private WebElement testCaseSix;
-    //Scripted testing 'Number Division' input form web elements
+    //Scripted testing 'Create Profile' input form web elements
     @FindBy(xpath = "//div[@id='testForm']/h2")
     private WebElement inputFormTitle;
     @FindBy(xpath = "//div[@id='testForm']/p[2]")
     private WebElement enteredValuesText;
     @FindBy(xpath = "//input[@id='first']")
-    private WebElement numberOneInputField;
+    private WebElement nicknameInputField;
     @FindBy(xpath = "//input[@id='second']")
-    private WebElement numberTwoInputField;
+    private WebElement lastNameInputField;
+    //'Scripted Testing' birth year dropdown menu web element
+    @FindBy(xpath = "//div[@class='_challengeListItem_1a4cy_169']//div")
+    private WebElement birthYearDropdownMenu;
     @FindBy(xpath = "//p[@class='_challengeListHint_1a4cy_179']")
     private WebElement challengeHintText;
     @FindBy(xpath = "//div[@id='testForm']/p[1]")
-    private WebElement challengeChangeProfileResult;
+    private WebElement challengeCreateProfileResult;
     //button web elements
     @FindBy(xpath = "//div[@id='testForm']/form//button[@type='submit']")
     private WebElement submitButton;
     //Scripted testing halfway there congratulation web element
     @FindBy(xpath = "//div[@id='root']/div[4]")
     private WebElement halfwayThereMessage;
-    //Scripted testing 'Number Division' challenge completion modal web elements
+    //Scripted testing 'Create Profile' challenge completion modal web elements
     @FindBy(xpath = "//div[@class='modal-header']/div[.='You did it!']")
     private WebElement challengeCompletionModalTitle;
     @FindBy(xpath = "//button[@class='btn-close']")
     private WebElement closeModalButton;
 
-    public ScriptedTestingChangeProfileTCValidationChallengePage(WebDriver driver) {
+    public ScriptedTestingCreateProfileTCValidationChallengePage(WebDriver driver) {
         super(driver);
     }
 
@@ -90,12 +93,10 @@ public class ScriptedTestingChangeProfileTCValidationChallengePage extends BaseP
     public String getTutorialDescriptionText() {return tutorialDescriptionText.getText();}
     //Scripted testing current challenge text getter
     public String getCurrentChallengeText() {return currentChallengeText.getText();}
-    //Scripted testing test cases validation section title getter
-    public String getScriptedTestingIndividualPageInstructionsChallengeTitle(){return testCaseSectionTitle.getText();}
     //Scripted testing test cases input form title getter
     public String getInputFormTitle(){return inputFormTitle.getText();}
     //Scripted testing change profile challenge page title getter
-    public String getNumberDivisionChallengeTitle() {return numberDivisionChallengeTitle.getText();}
+    public String getCreateProfileChallengeTitle() {return createProfileChallengeTitle.getText();}
     //Scripted testing challenges counter getter
     public String getChallengesCounterText() {return challengesCompletedCounter.getText();}
     //challenge one text getter
@@ -115,18 +116,22 @@ public class ScriptedTestingChangeProfileTCValidationChallengePage extends BaseP
     //challenge hint text getter
     public String getChallengeHintText() {return challengeHintText.getText();}
     //Scripted testing calculation result getter
-    public String getChangeProfileResult() {return challengeChangeProfileResult.getText();}
+    public String getCreateProfileResult() {return challengeCreateProfileResult.getText();}
     //'halfway there' message getter
     public String getHalfwayThereMessage(){return halfwayThereMessage.getText();}
     //Scripted testing challenge completion modal title getter
     public String getChallengeCompletionModalTitle() {return challengeCompletionModalTitle.getText();}
 
-    //'Number division challenge' web element assert methods
+    //'Change profile challenge' web element assert methods
     //test case web element assert methods
-    public boolean isNumberDivisionTestCaseOneDisplayed(){return testCaseOne.isDisplayed();}
-    public boolean isNumberDivisionTestCaseTwoDisplayed(){return testCaseTwo.isDisplayed();}
-    public boolean isNumberDivisionTestCaseThreeDisplayed(){return testCaseThree.isDisplayed();}
-    public boolean isNumberDivisionTestCaseFourDisplayed(){return testCaseFour.isDisplayed();}
-    public boolean isNumberDivisionTestCaseFiveDisplayed(){return testCaseFive.isDisplayed();}
-    public boolean isNumberDivisionTestCaseSixDisplayed(){return testCaseSix.isDisplayed();}
+    public boolean isChangeProfileTestCaseOneDisplayed(){return testCaseOne.isDisplayed();}
+    public boolean isChangeProfileTestCaseTwoDisplayed(){return testCaseTwo.isDisplayed();}
+    public boolean isChangeProfileTestCaseThreeDisplayed(){return testCaseThree.isDisplayed();}
+    public boolean isChangeProfileTestCaseFourDisplayed(){return testCaseFour.isDisplayed();}
+    public boolean isChangeProfileTestCaseFiveDisplayed(){return testCaseFive.isDisplayed();}
+    public boolean isChangeProfileTestCaseSixDisplayed(){return testCaseSix.isDisplayed();}
+    public boolean isInputFormEnteredValuesDisplayed(){return enteredValuesText.isDisplayed();}
+    public boolean isNicknameInputFieldDisplayed(){return nicknameInputField.isDisplayed();}
+    public boolean isLastNameInputFieldDisplayed(){return lastNameInputField.isDisplayed();}
+    public boolean isBirthYearDropdownMenuDisplayed(){return birthYearDropdownMenu.isDisplayed();}
 }

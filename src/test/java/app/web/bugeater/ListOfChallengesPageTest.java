@@ -200,7 +200,8 @@ public class ListOfChallengesPageTest extends TestMethods{
     @Tag("Scripted_Testing_Challenge_Test")
     void scriptedTestingChangeProfileTCValidationChallengeTest(){
         navigateToChangeProfileTCValidationPageTest();
-        ScriptedTestingChangeProfileTCValidationChallengePage scriptedTestingChangeProfileTCValidationChallengePage = new ScriptedTestingChangeProfileTCValidationChallengePage(driver);
-
+        ScriptedTestingCreateProfileTCValidationChallengePage scriptedTestingChangeProfileTCValidationChallengePage = new ScriptedTestingCreateProfileTCValidationChallengePage(driver);
+        //test case validation challenge 1 test (valid tc validation)
+        solveCreateProfileTCValidationChallenge1Test(scriptedTestingChangeProfileTCValidationChallengePage);
     }
 }

@@ -1329,6 +1329,8 @@ public class TestMethods extends BaseTest {
         isScriptedTestingChallengePageWebElementDisplayed(scriptedTestingNumMultiplicationValidationChallengePage);
         //scripted testing number multiplication challenge page web element assert
         isScriptedTestingNumMultiplicationChallengePageWebElementDisplayed(scriptedTestingNumMultiplicationValidationChallengePage);
+        //assert the test case validation has been completed (before first test case validation)
+        assertEquals("Entered Values: ", scriptedTestingNumMultiplicationValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
         //assert challenge counter has no challenges completed yet
         assertEquals("0 case(s) out of 6", scriptedTestingNumMultiplicationValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
         //assert the number multiplication test cases displayed in test case section list has correct text
@@ -1576,6 +1578,8 @@ public class TestMethods extends BaseTest {
         isScriptedTestingChallengePageWebElementDisplayed(scriptedTestingNumMultiplicationValidationChallengePage);
         //scripted testing number division challenge page web element assert
         isScriptedTestingNumDivisionChallengePageWebElementDisplayed(scriptedTestingNumDivisionValidationChallengePage);
+        //assert the test case validation has been completed (before first test case validation)
+        assertEquals("Entered Values: ", scriptedTestingNumDivisionValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
         //assert challenge counter has no challenges completed yet
         assertEquals("0 case(s) out of 7", scriptedTestingNumMultiplicationValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
         //assert the number division test cases displayed in test case section list has correct text
@@ -1861,8 +1865,10 @@ public class TestMethods extends BaseTest {
         isScriptedTestingPassValidationChallengePageWebElementDisplayed(scriptedTestingPasswordTCValidationChallengePage);
         //assert challenge counter has no challenges completed yet
         assertEquals("0 case(s) out of 11", scriptedTestingPasswordTCValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
-        //assert the number multiplication test cases displayed in test case section list has correct text
+        //assert the password validation test cases displayed in test case section list has correct text
         isScriptedTestingPasswordValidationTestCaseAsExpected(scriptedTestingPasswordTCValidationChallengePage);
+        //assert the test case validation has been completed (before first test case validation)
+        assertEquals("Entered Value: ", scriptedTestingPasswordTCValidationChallengePage.getEnteredValueText(), "The entered value after completion don't match expected result");
         //assert password validation has the expected result (before operation)
         assertEquals("Result:", scriptedTestingPasswordTCValidationChallengePage.getPasswordValidationResult() , "The calculation result doesn't match expected result");
         //assert challenge hint has the expected text
@@ -1901,7 +1907,7 @@ public class TestMethods extends BaseTest {
         assertEquals("Entered Value: PASSWORD", scriptedTestingPasswordTCValidationChallengePage.getEnteredValueText(), "The entered values after completion don't match expected result");
         //assert password validation has the expected result (after first test case validation)
         assertEquals("Result: Invalid Password", scriptedTestingPasswordTCValidationChallengePage.getPasswordValidationResult() , "The calculation result doesn't match expected result");
-        //assert the number multiplication test cases displayed in test case section list has correct text
+        //assert the password validation test cases displayed in test case section list has correct text
         isScriptedTestingPasswordValidationTestCaseAsExpected(scriptedTestingPasswordTCValidationChallengePage);
         //assert challenge hint has the expected text
         assertEquals("From 5 to 15 characters, at least one small Latin letter, one capital Latin letter, one symbol, and one number. Not matching the previous password.", scriptedTestingPasswordTCValidationChallengePage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
@@ -1937,7 +1943,7 @@ public class TestMethods extends BaseTest {
         assertEquals("Entered Value: 123456", scriptedTestingPasswordTCValidationChallengePage.getEnteredValueText(), "The entered values after completion don't match expected result");
         //assert password validation has the expected result (after second test case validation)
         assertEquals("Result: Invalid Password", scriptedTestingPasswordTCValidationChallengePage.getPasswordValidationResult() , "The calculation result doesn't match expected result");
-        //assert the number multiplication test cases displayed in test case section list has correct text
+        //assert the password validation test cases displayed in test case section list has correct text
         isScriptedTestingPasswordValidationTestCaseAsExpected(scriptedTestingPasswordTCValidationChallengePage);
         //assert challenge hint has the expected text
         assertEquals("From 5 to 15 characters, at least one small Latin letter, one capital Latin letter, one symbol, and one number. Not matching the previous password.", scriptedTestingPasswordTCValidationChallengePage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
@@ -1973,7 +1979,7 @@ public class TestMethods extends BaseTest {
         assertEquals("Entered Value: !@#$%", scriptedTestingPasswordTCValidationChallengePage.getEnteredValueText(), "The entered values after completion don't match expected result");
         //assert password validation has the expected result (after third test case validation)
         assertEquals("Result: Invalid Password", scriptedTestingPasswordTCValidationChallengePage.getPasswordValidationResult() , "The calculation result doesn't match expected result");
-        //assert the number multiplication test cases displayed in test case section list has correct text
+        //assert the password validation test cases displayed in test case section list has correct text
         isScriptedTestingPasswordValidationTestCaseAsExpected(scriptedTestingPasswordTCValidationChallengePage);
         //assert challenge hint has the expected text
         assertEquals("From 5 to 15 characters, at least one small Latin letter, one capital Latin letter, one symbol, and one number. Not matching the previous password.", scriptedTestingPasswordTCValidationChallengePage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
@@ -2009,7 +2015,7 @@ public class TestMethods extends BaseTest {
         assertEquals("Entered Value: Password1@23", scriptedTestingPasswordTCValidationChallengePage.getEnteredValueText(), "The entered values after completion don't match expected result");
         //assert password validation has the expected result (after fourth test case validation)
         assertEquals("Result: Invalid Password", scriptedTestingPasswordTCValidationChallengePage.getPasswordValidationResult() , "The calculation result doesn't match expected result");
-        //assert the number multiplication test cases displayed in test case section list has correct text
+        //assert the password validation test cases displayed in test case section list has correct text
         isScriptedTestingPasswordValidationTestCaseAsExpected(scriptedTestingPasswordTCValidationChallengePage);
         //assert challenge hint has the expected text
         assertEquals("From 5 to 15 characters, at least one small Latin letter, one capital Latin letter, one symbol, and one number. Not matching the previous password.", scriptedTestingPasswordTCValidationChallengePage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
@@ -2045,7 +2051,7 @@ public class TestMethods extends BaseTest {
         assertEquals("Entered Value: Empty", scriptedTestingPasswordTCValidationChallengePage.getEnteredValueText(), "The entered values after completion don't match expected result");
         //assert password validation has the expected result (after fifth test case validation)
         assertEquals("Result: Invalid Password", scriptedTestingPasswordTCValidationChallengePage.getPasswordValidationResult() , "The calculation result doesn't match expected result");
-        //assert the number multiplication test cases displayed in test case section list has correct text
+        //assert the password validation test cases displayed in test case section list has correct text
         isScriptedTestingPasswordValidationTestCaseAsExpected(scriptedTestingPasswordTCValidationChallengePage);
         //assert challenge hint has the expected text
         assertEquals("From 5 to 15 characters, at least one small Latin letter, one capital Latin letter, one symbol, and one number. Not matching the previous password.", scriptedTestingPasswordTCValidationChallengePage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
@@ -2082,7 +2088,7 @@ public class TestMethods extends BaseTest {
         assertEquals("Entered Value: abc", scriptedTestingPasswordTCValidationChallengePage.getEnteredValueText(), "The entered values after completion don't match expected result");
         //assert password validation has the expected result (after sixth test case validation)
         assertEquals("Result: Invalid Password", scriptedTestingPasswordTCValidationChallengePage.getPasswordValidationResult() , "The calculation result doesn't match expected result");
-        //assert the number multiplication test cases displayed in test case section list has correct text
+        //assert the password validation test cases displayed in test case section list has correct text
         isScriptedTestingPasswordValidationTestCaseAsExpected(scriptedTestingPasswordTCValidationChallengePage);
         //assert challenge hint has the expected text
         assertEquals("From 5 to 15 characters, at least one small Latin letter, one capital Latin letter, one symbol, and one number. Not matching the previous password.", scriptedTestingPasswordTCValidationChallengePage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
@@ -2118,7 +2124,7 @@ public class TestMethods extends BaseTest {
         assertEquals("Entered Value: qwertyuiopasdfghjklzxcvbnm", scriptedTestingPasswordTCValidationChallengePage.getEnteredValueText(), "The entered values after completion don't match expected result");
         //assert password validation has the expected result (after seventh test case validation)
         assertEquals("Result: Invalid Password", scriptedTestingPasswordTCValidationChallengePage.getPasswordValidationResult() , "The calculation result doesn't match expected result");
-        //assert the number multiplication test cases displayed in test case section list has correct text
+        //assert the password validation test cases displayed in test case section list has correct text
         isScriptedTestingPasswordValidationTestCaseAsExpected(scriptedTestingPasswordTCValidationChallengePage);
         //assert challenge hint has the expected text
         assertEquals("From 5 to 15 characters, at least one small Latin letter, one capital Latin letter, one symbol, and one number. Not matching the previous password.", scriptedTestingPasswordTCValidationChallengePage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
@@ -2154,7 +2160,7 @@ public class TestMethods extends BaseTest {
         assertEquals("Entered Value: P@ssword_1", scriptedTestingPasswordTCValidationChallengePage.getEnteredValueText(), "The entered values after completion don't match expected result");
         //assert password validation has the expected result (after eighth test case validation)
         assertEquals("Result: Valid Password", scriptedTestingPasswordTCValidationChallengePage.getPasswordValidationResult() , "The calculation result doesn't match expected result");
-        //assert the number multiplication test cases displayed in test case section list has correct text
+        //assert the password validation test cases displayed in test case section list has correct text
         isScriptedTestingPasswordValidationTestCaseAsExpected(scriptedTestingPasswordTCValidationChallengePage);
         //assert challenge hint has the expected text
         assertEquals("From 5 to 15 characters, at least one small Latin letter, one capital Latin letter, one symbol, and one number. Not matching the previous password.", scriptedTestingPasswordTCValidationChallengePage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
@@ -2190,7 +2196,7 @@ public class TestMethods extends BaseTest {
         assertEquals("Entered Value: Слово", scriptedTestingPasswordTCValidationChallengePage.getEnteredValueText(), "The entered values after completion don't match expected result");
         //assert password validation has the expected result (after ninth test case validation)
         assertEquals("Result: Invalid Password", scriptedTestingPasswordTCValidationChallengePage.getPasswordValidationResult() , "The calculation result doesn't match expected result");
-        //assert the number multiplication test cases displayed in test case section list has correct text
+        //assert the password validation test cases displayed in test case section list has correct text
         isScriptedTestingPasswordValidationTestCaseAsExpected(scriptedTestingPasswordTCValidationChallengePage);
         //assert challenge hint has the expected text
         assertEquals("From 5 to 15 characters, at least one small Latin letter, one capital Latin letter, one symbol, and one number. Not matching the previous password.", scriptedTestingPasswordTCValidationChallengePage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
@@ -2226,7 +2232,7 @@ public class TestMethods extends BaseTest {
         assertEquals("Entered Value: password", scriptedTestingPasswordTCValidationChallengePage.getEnteredValueText(), "The entered values after completion don't match expected result");
         //assert password validation has the expected result (after tenth test case validation)
         assertEquals("Result: Invalid Password", scriptedTestingPasswordTCValidationChallengePage.getPasswordValidationResult() , "The calculation result doesn't match expected result");
-        //assert the number multiplication test cases displayed in test case section list has correct text
+        //assert the password validation test cases displayed in test case section list has correct text
         isScriptedTestingPasswordValidationTestCaseAsExpected(scriptedTestingPasswordTCValidationChallengePage);
         //assert challenge hint has the expected text
         assertEquals("From 5 to 15 characters, at least one small Latin letter, one capital Latin letter, one symbol, and one number. Not matching the previous password.", scriptedTestingPasswordTCValidationChallengePage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
@@ -2589,6 +2595,34 @@ public class TestMethods extends BaseTest {
         assertEquals("Enter \"Слово\" as the password, which contains the not-allowed symbol, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseNine(), "The test case nine challenge description doesn't match expected result");
         assertEquals("Enter \"password\" as the password containing only lowercase letters and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseTen(), "The test case ten challenge description doesn't match expected result");
         assertEquals("Enter \"P@ssw_rd\" as the password, which does not meet all the requirements, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseEleven(), "The test case eleven challenge description doesn't match expected result");
+    }
+    //'Scripted testing' change profile challenge page specific web element assert
+    protected void isScriptedTestingChangeProfileChallengePageWebElementDisplayed(ScriptedTestingCreateProfileTCValidationChallengePage scriptedTestingChangeProfileTCValidationChallengePage){
+        //assert 'number multiplication' test case list is displayed
+        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isChangeProfileTestCaseOneDisplayed(), "The 'Change Profile' test case one is not displayed");
+        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isChangeProfileTestCaseTwoDisplayed(), "The 'Change Profile' test case two is not displayed");
+        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isChangeProfileTestCaseThreeDisplayed(), "The 'Change Profile' test case three is not displayed");
+        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isChangeProfileTestCaseFourDisplayed(), "The 'Change Profile' test case four is not displayed");
+        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isChangeProfileTestCaseFiveDisplayed(), "The 'Change Profile' test case five is not displayed");
+        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isChangeProfileTestCaseSixDisplayed(), "The 'Change Profile' test case six is not displayed");
+        //assert scripted testing (change profile) challenge input form 'entered values' are displayed
+        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isInputFormEnteredValuesDisplayed(), "The 'Change Profile' challenge input form entered values are not displayed");
+        //assert scripted testing (change profile) challenge nickname input field is displayed
+        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isNicknameInputFieldDisplayed(), "The 'Change Profile' challenge nickname input field is not displayed");
+        //assert scripted testing (change profile) challenge last name input field is displayed
+        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isLastNameInputFieldDisplayed(), "The 'Change Profile' challenge last name input field is not displayed");
+        //assert scripted testing (change profile) challenge birth year dropdown menu is displayed
+        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isBirthYearDropdownMenuDisplayed(), "The 'Change Profile' challenge birth year dropdown menu is not displayed");
+    }
+    //'Scripted Testing' change profile test cases list assert
+    protected void isScriptedTestingChangeProfileTestCaseAsExpected(ScriptedTestingCreateProfileTCValidationChallengePage scriptedTestingChangeProfileTCValidationChallengePage){
+        //assert the number division test cases displayed in test case section list has correct text
+        assertEquals("Enter Nickname: \"tech_go1\", Last Name: \"Anderson\", Birth Year: \"2000\", and press \"Submit\". Expected Result: \"Your profile created\". All entered values meet the requirements.", scriptedTestingChangeProfileTCValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
+        assertEquals("Enter Nickname: \"c_99\", Last Name: \"Harrison\", Birth Year: \"2001\", and press \"Submit\". Expected Result: \"User input error\". One or several of the entered values don't meet the min length requirement.", scriptedTestingChangeProfileTCValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
+        assertEquals("Enter Nickname \"superlongnickname_2024\", Last Name: \"Nguyen\", Birth Year: \"2004\", and press \"Submit\". Expected Result: \"User input error\". One or several of the entered values don't meet the max length requirement.", scriptedTestingChangeProfileTCValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
+        assertEquals("Leave Nickname and/or Last Name fields empty, then enter any Birth Year and press \"Submit\". Expected Result: \"User input error\".", scriptedTestingChangeProfileTCValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
+        assertEquals("Enter Nickname: \"@@@@@\" Last Name: \"O'Reilly\", choose a valid Birth Year, and press \"Submit\". Expected Result: \"User input error\". Nickname field contains not allowed characters.", scriptedTestingChangeProfileTCValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
+        assertEquals("Enter Nickname: \"galaxy_42\", Last Name: \"Newman\", Birth Year: \"1998\", and press \"Submit\". Expected Result: \"User input error\". Birth Year is not within specified period 2000-2005.", scriptedTestingChangeProfileTCValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
     }
 
     //pre-challenges loggers (for debug validation)
