@@ -151,5 +151,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveNumberDivisionTCValidationChallenge1Test(scriptedTestingNumDivisionValidationChallengePage);
         //test case validation challenge 2 test (valid tc validation)
         solveNumberDivisionTCValidationChallenge2Test(scriptedTestingNumDivisionValidationChallengePage);
+        //test case validation challenge 3 test (valid tc validation)
+        solveNumberDivisionTCValidationChallenge3Test(scriptedTestingNumDivisionValidationChallengePage);
     }
 }

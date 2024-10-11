@@ -101,6 +101,17 @@ public class ScriptedTestingNumDivisionValidationChallengePage extends BasePage{
         wait.until(ExpectedConditions.visibilityOf(numberTwoInputField));
         numberTwoInputField.sendKeys(String.valueOf(2));
     }
+    //number division input methods (for challenge 3) (valid input)
+    public void inputTCValidationDivisionChallenge3Number1(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(numberOneInputField));
+        numberOneInputField.sendKeys(String.valueOf(5));
+    }
+    public void inputTCValidationDivisionChallenge3Number2(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(numberTwoInputField));
+        numberTwoInputField.sendKeys(String.valueOf(2));
+    }
 
     //verify test case validation completion (tick icon) methods
     public void verifyTestCase1Validation(){
@@ -137,6 +148,24 @@ public class ScriptedTestingNumDivisionValidationChallengePage extends BasePage{
             logger.info("Test case 2 has been verified successfully(tick icon)." + "\n");
         } else {
             logger.error("Test case 2 hasn't been verified. No tick icon detected." + "\n");
+        }
+    }
+    public void verifyTestCase3Validation(){
+        //assert the test case 3 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseThree, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseThree
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 3 has been verified successfully(tick icon)." + "\n");
+        } else {
+            logger.error("Test case 3 hasn't been verified. No tick icon detected." + "\n");
         }
     }
 
