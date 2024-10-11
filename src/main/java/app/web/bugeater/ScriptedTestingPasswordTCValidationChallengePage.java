@@ -60,7 +60,7 @@ public class ScriptedTestingPasswordTCValidationChallengePage extends BasePage {
     private WebElement challengePasswordValidationResult;
     //button web elements
     @FindBy(xpath = "//div[@id='testForm']/form//button[@type='submit']")
-    private WebElement calculateButton;
+    private WebElement submitButton;
     //Scripted testing 'Password Validation' halfway there congratulation web element
     @FindBy(xpath = "//div[@id='root']/div[4]")
     private WebElement halfwayThereMessage;
@@ -132,5 +132,7 @@ public class ScriptedTestingPasswordTCValidationChallengePage extends BasePage {
     public boolean isPasswordValidationTestCaseNineDisplayed(){return testCaseNine.isDisplayed();}
     public boolean isPasswordValidationTestCaseTenDisplayed(){return testCaseTen.isDisplayed();}
     public boolean isPasswordValidationTestCaseElevenDisplayed(){return testCaseEleven.isDisplayed();}
+    public boolean isPasswordValidationEnteredValueDisplayed(){return enteredValueText.isDisplayed();}
     public boolean isPasswordValidationInputFieldDisplayed(){return passwordInputField.isDisplayed();}
+    public boolean isPasswordSubmitButtonDisplayed(){return submitButton.isDisplayed();}
 }

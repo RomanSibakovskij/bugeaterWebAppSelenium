@@ -162,4 +162,14 @@ public class ListOfChallengesPageTest extends TestMethods{
         //test case validation challenge 7 test (invalid tc validation - division by zero)
         solveNumberDivisionTCValidationChallenge7Test(scriptedTestingNumDivisionValidationChallengePage);
     }
+
+    //Test 008 -> scripted testing password test case validation test (as a guest)
+    @Test
+    @DisplayName("Password Test Case Validation Challenge Test (as a guest)")
+    @Tag("Scripted_Testing_Challenge_Test")
+    void scriptedTestingPasswordTCValidationChallengeTest(){
+        navigateToPasswordTCValidationPageTest();
+        ScriptedTestingPasswordTCValidationChallengePage scriptedTestingPasswordTCValidationChallengePage = new ScriptedTestingPasswordTCValidationChallengePage(driver);
+
+    }
 }

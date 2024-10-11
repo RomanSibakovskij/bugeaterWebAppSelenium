@@ -1920,6 +1920,23 @@ public class TestMethods extends BaseTest {
         assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
     }
 
+    //navigate to password test case validation challenge test method
+    protected void navigateToPasswordTCValidationPageTest(){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        //click 'accept' cookies modal button
+        listOfChallengesPage.clickAcceptCookiesButton();
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //'List of Challenges' page web element assert
+        isListOfChallengesWebElementDisplayed(listOfChallengesPage);
+        //assert the 'list of challenges' page title is as expected
+        assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
+        //assert the learn mode section title is as expected
+        assertEquals("Scripted Testing", listOfChallengesPage.getScriptedTestingSectionTitle(), "The scripted testing section title doesn't match expectations");
+        //click 'number division' challenge link
+        listOfChallengesPage.clickScriptedTestingChallengeLink3();
+    }
+
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){
         //assert 'list of challenges' navbar dropdown menu is displayed
@@ -2117,32 +2134,28 @@ public class TestMethods extends BaseTest {
     }
     //'Scripted testing' challenge page specific general web element assert  (number multiplication / division)
     protected void isScriptedTestingChallengePageWebElementDisplayed(ScriptedTestingNumMultiplicationValidationChallengePage scriptedTestingNumMultiplicationValidationChallengePage){
-        //assert scripted testing (number multiplication / division) challenge page title is displayed
-        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isNumberMultiplicationPageTitleDisplayed(), "The 'Number Multiplication / Division' challenge page title is not displayed");
-        //assert scripted testing (number multiplication / division) challenge guide icon is displayed
-        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isNumberMultiplicationGuideIconDisplayed(), "The 'Number Multiplication / Division' challenge guide icon is not displayed");
-        //assert scripted testing (number multiplication / division) test case section title is displayed
-        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isTestCaseSectionTitleDisplayed(), "The 'Number Multiplication / Division' test case section title is not displayed");
-        //assert scripted testing (number multiplication / division) challenges completed counter is displayed
-        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isChallengesCompletedCounterDisplayed(), "The 'Number Multiplication / Division' challenges completed counter is not displayed");
-        //assert scripted testing (number multiplication / division) challenge input form title is displayed
-        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isInputFormTitleDisplayed(), "The 'Number Multiplication / Division' challenge input form title is not displayed");
-        //assert scripted testing (number multiplication / division) challenge input form 'entered values' are displayed
-        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isInputFormEnteredValuesDisplayed(), "The 'Number Multiplication / Division' challenge input form entered values are not displayed");
-        //assert scripted testing (number multiplication / division) challenge number 1 input field is displayed
-        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isNumber1InputFieldDisplayed(), "The 'Number Multiplication / Division' challenge number 1 input field is not displayed");
-        //assert scripted testing (number multiplication / division) challenge hint is displayed
-        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isChallengeHintDisplayed(), "The 'Number Multiplication / Division' challenge hint is not displayed");
-        //assert scripted testing (number multiplication / division) challenge number 2 input field is displayed
-        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isNumber2InputFieldDisplayed(), "The 'Number Multiplication / Division' challenge number 2 input field is not displayed");
-        //assert scripted testing (number multiplication / division) challenge calculation result is displayed
-        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isCalculationResultDisplayed(), "The 'Number Multiplication / Division' challenge calculation result is not displayed");
-        //assert scripted testing (number multiplication / division) challenge start over button is displayed
-        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isStartOverButtonDisplayed(), "The 'Number Multiplication / Division' challenge start over button is not displayed");
-        //assert scripted testing (number multiplication / division) challenge clear form button is displayed
-        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isClearFormButtonDisplayed(), "The 'Number Multiplication / Division' challenge calculate button is not displayed");
-        //assert scripted testing (number multiplication / division) challenge calculate button is displayed
-        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isCalculateButtonDisplayed(), "The 'Number Multiplication / Division' challenge calculate button is not displayed");
+        //assert scripted testing page challenge page title is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isNumberMultiplicationPageTitleDisplayed(), "The 'Scripted Testing' challenge page title is not displayed");
+        //assert scripted testing page challenge guide icon is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isNumberMultiplicationGuideIconDisplayed(), "The 'Scripted Testing' challenge guide icon is not displayed");
+        //assert scripted testing page test case section title is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isTestCaseSectionTitleDisplayed(), "The 'Scripted Testing' test case section title is not displayed");
+        //assert scripted testing page challenges completed counter is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isChallengesCompletedCounterDisplayed(), "The 'Scripted Testing' challenges completed counter is not displayed");
+        //assert scripted testing page challenge input form title is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isInputFormTitleDisplayed(), "The 'Scripted Testing' challenge input form title is not displayed");
+        //assert scripted testing page challenge input form 'entered values' are displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isInputFormEnteredValuesDisplayed(), "Scripted Testing' challenge input form entered values are not displayed");
+        //assert scripted testing page challenge hint is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isChallengeHintDisplayed(), "The 'Scripted Testing' challenge hint is not displayed");
+        //assert scripted testing page challenge calculation result is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isCalculationResultDisplayed(), "The 'Scripted Testing' challenge calculation result is not displayed");
+        //assert scripted testing page challenge start over button is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isStartOverButtonDisplayed(), "The 'Scripted Testing' challenge start over button is not displayed");
+        //assert scripted testing page challenge clear form button is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isClearFormButtonDisplayed(), "The 'Scripted Testing' challenge clear form button is not displayed");
+        //assert scripted testing page challenge calculate button is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isCalculateButtonDisplayed(), "The 'Scripted Testing' challenge calculate button is not displayed");
     }
     //'Scripted testing' number multiplication challenge page specific web element assert
     protected void isScriptedTestingNumMultiplicationChallengePageWebElementDisplayed(ScriptedTestingNumMultiplicationValidationChallengePage scriptedTestingNumMultiplicationValidationChallengePage){
@@ -2155,6 +2168,12 @@ public class TestMethods extends BaseTest {
         assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isNumberMultiplicationTestCaseFourDisplayed(), "The 'Number Multiplication' test case four is not displayed");
         assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isNumberMultiplicationTestCaseFiveDisplayed(), "The 'Number Multiplication' test case five is not displayed");
         assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isNumberMultiplicationTestCaseSixDisplayed(), "The 'Number Multiplication' test case six is not displayed");
+        //assert scripted testing (number multiplication / division) challenge input form 'entered values' are displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isInputFormEnteredValuesDisplayed(), "The 'Number Multiplication / Division' challenge input form entered values are not displayed");
+        //assert scripted testing (number multiplication / division) challenge number 1 input field is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isNumber1InputFieldDisplayed(), "The 'Number Multiplication / Division' challenge number 1 input field is not displayed");
+        //assert scripted testing (number multiplication / division) challenge number 2 input field is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isNumber2InputFieldDisplayed(), "The 'Number Multiplication / Division' challenge number 2 input field is not displayed");
     }
     //'Scripted testing' number division challenge page specific web element assert
     protected void isScriptedTestingNumDivisionChallengePageWebElementDisplayed(ScriptedTestingNumDivisionValidationChallengePage scriptedTestingNumDivisionValidationChallengePage){
@@ -2165,7 +2184,37 @@ public class TestMethods extends BaseTest {
         assertTrue(scriptedTestingNumDivisionValidationChallengePage.isNumberDivisionTestCaseFourDisplayed(), "The 'Number Multiplication' test case four is not displayed");
         assertTrue(scriptedTestingNumDivisionValidationChallengePage.isNumberDivisionTestCaseFiveDisplayed(), "The 'Number Multiplication' test case five is not displayed");
         assertTrue(scriptedTestingNumDivisionValidationChallengePage.isNumberDivisionTestCaseSixDisplayed(), "The 'Number Multiplication' test case six is not displayed");
-        assertTrue(scriptedTestingNumDivisionValidationChallengePage.isNumberDivisionTestCaseSevenDisplayed(), "The 'Number Multiplication' test case six is not displayed");
+        assertTrue(scriptedTestingNumDivisionValidationChallengePage.isNumberDivisionTestCaseSevenDisplayed(), "The 'Number Multiplication' test case seven is not displayed");
+        ScriptedTestingNumMultiplicationValidationChallengePage scriptedTestingNumMultiplicationValidationChallengePage = new ScriptedTestingNumMultiplicationValidationChallengePage(driver);
+        //assert scripted testing (number multiplication / division) challenge input form 'entered values' are displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isInputFormEnteredValuesDisplayed(), "The 'Number Multiplication / Division' challenge input form entered values are not displayed");
+        //assert scripted testing (number multiplication / division) challenge number 1 input field is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isNumber1InputFieldDisplayed(), "The 'Number Multiplication / Division' challenge number 1 input field is not displayed");
+        //assert scripted testing (number multiplication / division) challenge number 2 input field is displayed
+        assertTrue(scriptedTestingNumMultiplicationValidationChallengePage.isNumber2InputFieldDisplayed(), "The 'Number Multiplication / Division' challenge number 2 input field is not displayed");
+    }
+
+    //'Scripted testing' password validation challenge page web element assert
+    protected void isScriptedTestingPassValidationChallengePageWebElementDisplayed(ScriptedTestingPasswordTCValidationChallengePage scriptedTestingPasswordTCValidationChallengePage){
+        //assert 'password validation' test case list is displayed
+        assertTrue(scriptedTestingPasswordTCValidationChallengePage.isPasswordValidationTestCaseOneDisplayed(), "The 'Password Validation' test case one is not displayed");
+        assertTrue(scriptedTestingPasswordTCValidationChallengePage.isPasswordValidationTestCaseTwoDisplayed(), "The 'Password Validation' test case two is not displayed");
+        assertTrue(scriptedTestingPasswordTCValidationChallengePage.isPasswordValidationTestCaseThreeDisplayed(), "The 'Password Validation' test case three is not displayed");
+        assertTrue(scriptedTestingPasswordTCValidationChallengePage.isPasswordValidationTestCaseFourDisplayed(), "The 'Password Validation' test case four is not displayed");
+        assertTrue(scriptedTestingPasswordTCValidationChallengePage.isPasswordValidationTestCaseFiveDisplayed(), "The 'Password Validation' test case five is not displayed");
+        assertTrue(scriptedTestingPasswordTCValidationChallengePage.isPasswordValidationTestCaseSixDisplayed(), "The 'Password Validation' test case six is not displayed");
+        assertTrue(scriptedTestingPasswordTCValidationChallengePage.isPasswordValidationTestCaseSevenDisplayed(), "The 'Password Validation' test case seven is not displayed");
+        assertTrue(scriptedTestingPasswordTCValidationChallengePage.isPasswordValidationTestCaseEightDisplayed(), "The 'Password Validation' test case eight is not displayed");
+        assertTrue(scriptedTestingPasswordTCValidationChallengePage.isPasswordValidationTestCaseNineDisplayed(), "The 'Password Validation' test case nine is not displayed");
+        assertTrue(scriptedTestingPasswordTCValidationChallengePage.isPasswordValidationTestCaseTenDisplayed(), "The 'Password Validation' test case ten is not displayed");
+        assertTrue(scriptedTestingPasswordTCValidationChallengePage.isPasswordValidationTestCaseElevenDisplayed(), "The 'Password Validation' test case eleven is not displayed");
+
+        //assert scripted testing password validation challenge input form 'entered value' is displayed
+        assertTrue(scriptedTestingPasswordTCValidationChallengePage.isPasswordValidationEnteredValueDisplayed(), "The 'Password Validation' challenge input form entered values are not displayed");
+        //assert scripted testing password validation challenge password input field is displayed
+        assertTrue(scriptedTestingPasswordTCValidationChallengePage.isPasswordValidationInputFieldDisplayed(), "The 'Password Validation' challenge number 1 input field is not displayed");
+        //assert scripted testing password validation challenge submit button is displayed
+        assertTrue(scriptedTestingPasswordTCValidationChallengePage.isPasswordSubmitButtonDisplayed(), "The 'Password Validation' challenge calculate button is not displayed");
     }
 
     //pre-challenges loggers (for debug validation)
@@ -2223,6 +2272,11 @@ public class TestMethods extends BaseTest {
         logger.info("Displayed character counter(before challenge 11): " + learnModePasswordChallengePage.getChallengesCounterText());
         logger.info("Displayed entered values(before challenge 11): " + learnModePasswordChallengePage.getEnteredValueText());
         logger.info("Displayed result(before challenge 11): " + learnModePasswordChallengePage.getPasswordRestoreResult() +"\n");
+    }
+    protected void logPreChallenge12Result(LearnModePasswordChallengePage learnModePasswordChallengePage){
+        logger.info("Displayed character counter(after challenge 12): " + learnModePasswordChallengePage.getChallengesCounterText());
+        logger.info("Displayed entered values(after challenge 12): " + learnModePasswordChallengePage.getEnteredValueText());
+        logger.info("Displayed result(after challenge 12): " + learnModePasswordChallengePage.getPasswordRestoreResult() +"\n");
     }
 
 }
