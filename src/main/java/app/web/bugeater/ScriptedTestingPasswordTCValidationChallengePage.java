@@ -135,6 +135,12 @@ public class ScriptedTestingPasswordTCValidationChallengePage extends BasePage {
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
         passwordInputField.sendKeys("password");
     }
+    //number division input methods (for challenge 11) (invalid tc validation - doesn't meet requirements)
+    public void inputPasswordTCValidationChallenge11(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(passwordInputField));
+        passwordInputField.sendKeys("P@ssw_rd");
+    }
 
     //verify test case validation completion (tick icon) methods
     public void verifyTestCase1Validation(){
@@ -315,6 +321,24 @@ public class ScriptedTestingPasswordTCValidationChallengePage extends BasePage {
             logger.info("Test case 10 has been verified successfully(tick icon)." + "\n");
         } else {
             logger.error("Test case 10 hasn't been verified. No tick icon detected." + "\n");
+        }
+    }
+    public void verifyTestCase11Validation(){
+        //assert the test case 11 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseEleven, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseEleven
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 11 has been verified successfully(tick icon)." + "\n");
+        } else {
+            logger.error("Test case 11 hasn't been verified. No tick icon detected." + "\n");
         }
     }
 

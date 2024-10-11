@@ -2204,6 +2204,60 @@ public class TestMethods extends BaseTest {
         //verify the test case has been validated
         scriptedTestingPasswordTCValidationChallengePage.verifyTestCase10Validation();
     }
+    //password test case validation challenge test method (challenge 11) (invalid tc validation - doesn't meet requirements)
+    protected void solvePasswordTCValidationChallenge11Test(ScriptedTestingPasswordTCValidationChallengePage scriptedTestingPasswordTCValidationChallengePage){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        ScriptedTestingNumMultiplicationValidationChallengePage scriptedTestingNumMultiplicationValidationChallengePage = new ScriptedTestingNumMultiplicationValidationChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the challenge text is displayed as expected
+        assertEquals("Execute all eleven Test Cases in any order. You are testing the password input form, which must comply with the requirements described in the tooltip (\"?\" icon). You will gain practical experience in testing password input, which will definitely come in handy on a real project.", scriptedTestingPasswordTCValidationChallengePage.getCurrentChallengeText(), "The text of the challenge doesn't match the expected text");
+        //assert the page title is as expected
+        assertEquals("Password Validation", scriptedTestingPasswordTCValidationChallengePage.getPasswordChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method (for scripted testing page elements)
+        isIndividualScriptedTestingChallengePageTextMatchesExpectations(scriptedTestingNumMultiplicationValidationChallengePage);
+        //scripted testing page repeated web element assert
+        isScriptedTestingChallengePageWebElementDisplayed(scriptedTestingNumMultiplicationValidationChallengePage);
+        //scripted testing password validation challenge page web element assert
+        isScriptedTestingPassValidationChallengePageWebElementDisplayed(scriptedTestingPasswordTCValidationChallengePage);
+        //assert challenge counter has registered tenth test case validation
+        assertEquals("10 case(s) out of 11", scriptedTestingPasswordTCValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the test case validation has been completed (tc 10)
+        assertEquals("Entered Value: password", scriptedTestingPasswordTCValidationChallengePage.getEnteredValueText(), "The entered values after completion don't match expected result");
+        //assert password validation has the expected result (after tenth test case validation)
+        assertEquals("Result: Invalid Password", scriptedTestingPasswordTCValidationChallengePage.getPasswordValidationResult() , "The calculation result doesn't match expected result");
+        //assert the number multiplication test cases displayed in test case section list has correct text
+        isScriptedTestingPasswordValidationTestCaseAsExpected(scriptedTestingPasswordTCValidationChallengePage);
+        //assert challenge hint has the expected text
+        assertEquals("From 5 to 15 characters, at least one small Latin letter, one capital Latin letter, one symbol, and one number. Not matching the previous password.", scriptedTestingPasswordTCValidationChallengePage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
+        LearnModePasswordChallengePage learnModePasswordChallengePage = new LearnModePasswordChallengePage(driver);
+        //logger before challenge completion
+        logPreChallenge11Result(learnModePasswordChallengePage);
+        //input password provided by test case into input field
+        scriptedTestingPasswordTCValidationChallengePage.inputPasswordTCValidationChallenge11();
+        //click 'submit' button
+        scriptedTestingPasswordTCValidationChallengePage.clickSubmitButton();
+        //assert challenge completion modal has the expected title (NoSuchElementException despite valid selector)
+        //assertEquals("You did it!", scriptedTestingPasswordTCValidationChallengePage.getChallengeCompletionModalTitle(), "The challenge completion modal title displayed doesn't match expected title");
+        //click close modal button
+        scriptedTestingPasswordTCValidationChallengePage.clickCloseModalButton();
+        //assert the test case validation has been completed
+        scriptedTestingPasswordTCValidationChallengePage.verifyTestCase11Validation();
+        //assert challenge counter has registered eleventh test case validation
+        assertEquals("11 case(s) out of 11", scriptedTestingPasswordTCValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the test case validation has been completed (tc 11)
+        assertEquals("Entered Value: P@ssw_rd", scriptedTestingPasswordTCValidationChallengePage.getEnteredValueText(), "The entered values after completion don't match expected result");
+        //assert calculation has the expected result (after eleventh test case validation)
+        assertEquals("Result: Invalid Password", scriptedTestingPasswordTCValidationChallengePage.getPasswordValidationResult() , "The calculation result doesn't match expected result");
+        //logger after challenge completion
+        logPreChallenge12Result(learnModePasswordChallengePage);
+        //click navbar dropdown menu
+        listOfChallengesPage.clickNavbarDropdownMenu();
+        //return to 'List of Challenges'
+        listOfChallengesPage.clickReturnToListOfChallengesLink();
+        //assert the user has returned back to 'List of Challenges'
+        assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
+    }
 
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){

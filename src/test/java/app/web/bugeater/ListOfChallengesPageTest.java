@@ -190,5 +190,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solvePasswordTCValidationChallenge9Test(scriptedTestingPasswordTCValidationChallengePage);
         //test case validation challenge 10 test (invalid tc validation - lowercase only)
         solvePasswordTCValidationChallenge10Test(scriptedTestingPasswordTCValidationChallengePage);
+        //test case validation challenge 11 test (invalid tc validation - password doesn't meet requirements)
+        solvePasswordTCValidationChallenge11Test(scriptedTestingPasswordTCValidationChallengePage);
     }
 }
