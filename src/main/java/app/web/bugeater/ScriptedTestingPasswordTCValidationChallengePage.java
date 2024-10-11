@@ -75,35 +75,41 @@ public class ScriptedTestingPasswordTCValidationChallengePage extends BasePage {
         super(driver);
     }
 
-    //number division input methods (for challenge 1) (invalid input -  uppercase only)
+    //number division input methods (for challenge 1) (invalid tc validation -  uppercase only)
     public void inputPasswordTCValidationChallenge1(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
         passwordInputField.sendKeys("PASSWORD");
     }
-    //number division input methods (for challenge 2) (invalid input -  numbers only)
+    //number division input methods (for challenge 2) (invalid tc validation -  numbers only)
     public void inputPasswordTCValidationChallenge2(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
         passwordInputField.sendKeys(String.valueOf(123456));
     }
-    //number division input methods (for challenge 3) (invalid input -  special chars only)
+    //number division input methods (for challenge 3) (invalid tc validation -  special chars only)
     public void inputPasswordTCValidationChallenge3(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
         passwordInputField.sendKeys("!@#$%");
     }
-    //number division input methods (for challenge 4) (invalid input -  existing password)
+    //number division input methods (for challenge 4) (invalid tc validation -  existing password)
     public void inputPasswordTCValidationChallenge4(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
         passwordInputField.sendKeys("Password1@23");
     }
-    //number division input methods (for challenge 5) (invalid input -  empty input)
+    //number division input methods (for challenge 5) (invalid tc validation -  empty input)
     public void inputPasswordTCValidationChallenge5(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
         passwordInputField.sendKeys("");
+    }
+    //number division input methods (for challenge 6) (invalid tc validation -  too short password)
+    public void inputPasswordTCValidationChallenge6(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(passwordInputField));
+        passwordInputField.sendKeys("abc");
     }
 
     //verify test case validation completion (tick icon) methods
@@ -195,6 +201,24 @@ public class ScriptedTestingPasswordTCValidationChallengePage extends BasePage {
             logger.info("Test case 5 has been verified successfully(tick icon)." + "\n");
         } else {
             logger.error("Test case 5 hasn't been verified. No tick icon detected." + "\n");
+        }
+    }
+    public void verifyTestCase6Validation(){
+        //assert the test case 6 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseSix, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseSix
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 6 has been verified successfully(tick icon)." + "\n");
+        } else {
+            logger.error("Test case 6 hasn't been verified. No tick icon detected." + "\n");
         }
     }
 
