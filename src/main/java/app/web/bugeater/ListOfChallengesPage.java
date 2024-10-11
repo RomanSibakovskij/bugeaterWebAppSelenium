@@ -120,6 +120,8 @@ public class ListOfChallengesPage extends BasePage{
     public void clickScriptedTestingChallengeLink1(){clickListOfChallengesScriptedTestingChallengeLink(0);}
     //click number division test case validation challenge link method
     public void clickScriptedTestingChallengeLink2(){clickListOfChallengesScriptedTestingChallengeLink(1);}
+    //click password validation test case validation challenge link method
+    public void clickScriptedTestingChallengeLink3(){clickListOfChallengesScriptedTestingChallengeLink(2);}
 
     //list of challenges page title getter
     public String getListOfChallengesPageTitle(){return listOfChallengesTitle.getText();}

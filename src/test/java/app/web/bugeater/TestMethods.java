@@ -2159,13 +2159,13 @@ public class TestMethods extends BaseTest {
     //'Scripted testing' number division challenge page specific web element assert
     protected void isScriptedTestingNumDivisionChallengePageWebElementDisplayed(ScriptedTestingNumDivisionValidationChallengePage scriptedTestingNumDivisionValidationChallengePage){
         //assert 'number division' test case list is displayed
-        assertTrue(scriptedTestingNumDivisionValidationChallengePage.isNumberMultiplicationTestCaseOneDisplayed(), "The 'Number Multiplication' test case one is not displayed");
-        assertTrue(scriptedTestingNumDivisionValidationChallengePage.isNumberMultiplicationTestCaseTwoDisplayed(), "The 'Number Multiplication' test case two is not displayed");
-        assertTrue(scriptedTestingNumDivisionValidationChallengePage.isNumberMultiplicationTestCaseThreeDisplayed(), "The 'Number Multiplication' test case three is not displayed");
-        assertTrue(scriptedTestingNumDivisionValidationChallengePage.isNumberMultiplicationTestCaseFourDisplayed(), "The 'Number Multiplication' test case four is not displayed");
-        assertTrue(scriptedTestingNumDivisionValidationChallengePage.isNumberMultiplicationTestCaseFiveDisplayed(), "The 'Number Multiplication' test case five is not displayed");
-        assertTrue(scriptedTestingNumDivisionValidationChallengePage.isNumberMultiplicationTestCaseSixDisplayed(), "The 'Number Multiplication' test case six is not displayed");
-        assertTrue(scriptedTestingNumDivisionValidationChallengePage.isNumberMultiplicationTestCaseSevenDisplayed(), "The 'Number Multiplication' test case six is not displayed");
+        assertTrue(scriptedTestingNumDivisionValidationChallengePage.isNumberDivisionTestCaseOneDisplayed(), "The 'Number Multiplication' test case one is not displayed");
+        assertTrue(scriptedTestingNumDivisionValidationChallengePage.isNumberDivisionTestCaseTwoDisplayed(), "The 'Number Multiplication' test case two is not displayed");
+        assertTrue(scriptedTestingNumDivisionValidationChallengePage.isNumberDivisionTestCaseThreeDisplayed(), "The 'Number Multiplication' test case three is not displayed");
+        assertTrue(scriptedTestingNumDivisionValidationChallengePage.isNumberDivisionTestCaseFourDisplayed(), "The 'Number Multiplication' test case four is not displayed");
+        assertTrue(scriptedTestingNumDivisionValidationChallengePage.isNumberDivisionTestCaseFiveDisplayed(), "The 'Number Multiplication' test case five is not displayed");
+        assertTrue(scriptedTestingNumDivisionValidationChallengePage.isNumberDivisionTestCaseSixDisplayed(), "The 'Number Multiplication' test case six is not displayed");
+        assertTrue(scriptedTestingNumDivisionValidationChallengePage.isNumberDivisionTestCaseSevenDisplayed(), "The 'Number Multiplication' test case six is not displayed");
     }
 
     //pre-challenges loggers (for debug validation)

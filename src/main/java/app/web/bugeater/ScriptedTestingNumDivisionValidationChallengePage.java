@@ -19,10 +19,10 @@ public class ScriptedTestingNumDivisionValidationChallengePage extends BasePage{
     //Scripted testing current challenge text web element
     @FindBy(xpath = "//div[@class='container']/p[@id='challengeDescription']")
     private WebElement currentChallengeText;
-    //Scripted testing 'Number multiplication' challenge page web elements
+    //Scripted testing 'Number Division' challenge page web elements
     @FindBy(xpath = "//div[@class='_challengeHeadingBlock_1a4cy_184']/h1")
     private WebElement numberDivisionChallengeTitle;
-    //Scripted testing 'Number multiplication' test case section web elements
+    //Scripted testing 'Number Division' test case section web elements
     @FindBy(xpath = "//div[@class='_challengePanelResultsHeading_1a4cy_60']/h2")
     private WebElement testCaseSectionTitle;
     @FindBy(xpath = "//div[@class='_challengePanelResultsHeading_1a4cy_60']/p[@class='_challengePanelResultsCaption_1a4cy_71']")
@@ -333,12 +333,11 @@ public class ScriptedTestingNumDivisionValidationChallengePage extends BasePage{
 
     //'Number division challenge' web element assert methods
     //test case web element assert methods
-    public boolean isNumberMultiplicationTestCaseOneDisplayed(){return testCaseOne.isDisplayed();}
-    public boolean isNumberMultiplicationTestCaseTwoDisplayed(){return testCaseTwo.isDisplayed();}
-    public boolean isNumberMultiplicationTestCaseThreeDisplayed(){return testCaseThree.isDisplayed();}
-    public boolean isNumberMultiplicationTestCaseFourDisplayed(){return testCaseFour.isDisplayed();}
-    public boolean isNumberMultiplicationTestCaseFiveDisplayed(){return testCaseFive.isDisplayed();}
-    public boolean isNumberMultiplicationTestCaseSixDisplayed(){return testCaseSix.isDisplayed();}
-    public boolean isNumberMultiplicationTestCaseSevenDisplayed(){return testCaseSix.isDisplayed();}
-
+    public boolean isNumberDivisionTestCaseOneDisplayed(){return testCaseOne.isDisplayed();}
+    public boolean isNumberDivisionTestCaseTwoDisplayed(){return testCaseTwo.isDisplayed();}
+    public boolean isNumberDivisionTestCaseThreeDisplayed(){return testCaseThree.isDisplayed();}
+    public boolean isNumberDivisionTestCaseFourDisplayed(){return testCaseFour.isDisplayed();}
+    public boolean isNumberDivisionTestCaseFiveDisplayed(){return testCaseFive.isDisplayed();}
+    public boolean isNumberDivisionTestCaseSixDisplayed(){return testCaseSix.isDisplayed();}
+    public boolean isNumberDivisionTestCaseSevenDisplayed(){return testCaseSeven.isDisplayed();}
 }
