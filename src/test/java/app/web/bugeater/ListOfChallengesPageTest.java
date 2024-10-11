@@ -178,5 +178,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solvePasswordTCValidationChallenge3Test(scriptedTestingPasswordTCValidationChallengePage);
         //test case validation challenge 4 test (invalid tc validation - existing password)
         solvePasswordTCValidationChallenge4Test(scriptedTestingPasswordTCValidationChallengePage);
+        //test case validation challenge 5 test (invalid tc validation - empty input)
+        solvePasswordTCValidationChallenge5Test(scriptedTestingPasswordTCValidationChallengePage);
     }
 }

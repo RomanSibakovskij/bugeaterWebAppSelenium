@@ -23,9 +23,6 @@ public class ScriptedTestingPasswordTCValidationChallengePage extends BasePage {
     //Scripted testing 'Password Validation' challenge page web elements
     @FindBy(xpath = "//div[@class='_challengeHeadingBlock_1a4cy_184']/h1")
     private WebElement passwordValidationChallengeTitle;
-    //Scripted testing 'Password Validation' test case section web elements
-    @FindBy(xpath = "//div[@class='_challengePanelResultsHeading_1a4cy_60']/h2")
-    private WebElement testCaseSectionTitle;
     @FindBy(xpath = "//div[@class='_challengePanelResultsHeading_1a4cy_60']/p[@class='_challengePanelResultsCaption_1a4cy_71']")
     private WebElement challengesCompletedCounter;
     //Scripted testing 'Password Validation' test cases for validation web elements
@@ -102,6 +99,12 @@ public class ScriptedTestingPasswordTCValidationChallengePage extends BasePage {
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
         passwordInputField.sendKeys("Password1@23");
     }
+    //number division input methods (for challenge 5) (invalid input -  empty input)
+    public void inputPasswordTCValidationChallenge5(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(passwordInputField));
+        passwordInputField.sendKeys("");
+    }
 
     //verify test case validation completion (tick icon) methods
     public void verifyTestCase1Validation(){
@@ -176,6 +179,24 @@ public class ScriptedTestingPasswordTCValidationChallengePage extends BasePage {
             logger.error("Test case 4 hasn't been verified. No tick icon detected." + "\n");
         }
     }
+    public void verifyTestCase5Validation(){
+        //assert the test case 5 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseFive, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseFive
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 5 has been verified successfully(tick icon)." + "\n");
+        } else {
+            logger.error("Test case 5 hasn't been verified. No tick icon detected." + "\n");
+        }
+    }
 
     //click 'submit' button method
     public void clickSubmitButton(){
@@ -198,10 +219,6 @@ public class ScriptedTestingPasswordTCValidationChallengePage extends BasePage {
     public String getTutorialDescriptionText() {return tutorialDescriptionText.getText();}
     //Scripted testing current challenge text getter
     public String getCurrentChallengeText() {return currentChallengeText.getText();}
-    //Scripted testing test cases validation section title getter
-    public String getScriptedTestingIndividualPageInstructionsChallengeTitle(){return testCaseSectionTitle.getText();}
-    //Scripted testing test cases input form title getter
-    public String getInputFormTitle(){return inputFormTitle.getText();}
     //Scripted testing password validation challenge page title getter
     public String getPasswordChallengeTitle() {return passwordValidationChallengeTitle.getText();}
     //Scripted testing challenges counter getter
