@@ -149,5 +149,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         ScriptedTestingNumDivisionValidationChallengePage scriptedTestingNumDivisionValidationChallengePage = new ScriptedTestingNumDivisionValidationChallengePage(driver);
         //test case validation challenge 1 test (valid tc validation)
         solveNumberDivisionTCValidationChallenge1Test(scriptedTestingNumDivisionValidationChallengePage);
+        //test case validation challenge 2 test (valid tc validation)
+        solveNumberDivisionTCValidationChallenge2Test(scriptedTestingNumDivisionValidationChallengePage);
     }
 }

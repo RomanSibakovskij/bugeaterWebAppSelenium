@@ -79,13 +79,24 @@ public class ScriptedTestingNumDivisionValidationChallengePage extends BasePage{
         super(driver);
     }
 
-    //number division input methods (for challenge 1) (valid)
+    //number division input methods (for challenge 1) (valid input)
     public void inputTCValidationDivisionChallenge1Number1(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(numberOneInputField));
         numberOneInputField.sendKeys(String.valueOf(4));
     }
     public void inputTCValidationDivisionChallenge1Number2(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(numberTwoInputField));
+        numberTwoInputField.sendKeys(String.valueOf(2));
+    }
+    //number division input methods (for challenge 2) (valid input)
+    public void inputTCValidationDivisionChallenge2Number1(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(numberOneInputField));
+        numberOneInputField.sendKeys(String.valueOf(-10));
+    }
+    public void inputTCValidationDivisionChallenge2Number2(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(numberTwoInputField));
         numberTwoInputField.sendKeys(String.valueOf(2));
@@ -108,6 +119,24 @@ public class ScriptedTestingNumDivisionValidationChallengePage extends BasePage{
             logger.info("Test case 1 has been verified successfully(tick icon)." + "\n");
         } else {
             logger.error("Test case 1 hasn't been verified. No tick icon detected." + "\n");
+        }
+    }
+    public void verifyTestCase2Validation(){
+        //assert the test case 2 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseTwo, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseTwo
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 2 has been verified successfully(tick icon)." + "\n");
+        } else {
+            logger.error("Test case 2 hasn't been verified. No tick icon detected." + "\n");
         }
     }
 
