@@ -84,6 +84,12 @@ public class ScriptedTestingPasswordTCValidationChallengePage extends BasePage {
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
         passwordInputField.sendKeys("PASSWORD");
     }
+    //number division input methods (for challenge 2) (invalid input -  numbers only)
+    public void inputPasswordTCValidationChallenge2(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(passwordInputField));
+        passwordInputField.sendKeys(String.valueOf(123456));
+    }
 
     //verify test case validation completion (tick icon) methods
     public void verifyTestCase1Validation(){
@@ -102,6 +108,24 @@ public class ScriptedTestingPasswordTCValidationChallengePage extends BasePage {
             logger.info("Test case 1 has been verified successfully(tick icon)." + "\n");
         } else {
             logger.error("Test case 1 hasn't been verified. No tick icon detected." + "\n");
+        }
+    }
+    public void verifyTestCase2Validation(){
+        //assert the test case 2 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseTwo, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseTwo
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 2 has been verified successfully(tick icon)." + "\n");
+        } else {
+            logger.error("Test case 2 hasn't been verified. No tick icon detected." + "\n");
         }
     }
 
