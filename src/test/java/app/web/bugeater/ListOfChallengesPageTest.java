@@ -157,5 +157,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveNumberDivisionTCValidationChallenge4Test(scriptedTestingNumDivisionValidationChallengePage);
         //test case validation challenge 5 test (invalid tc validation - number 1 as String)
         solveNumberDivisionTCValidationChallenge5Test(scriptedTestingNumDivisionValidationChallengePage);
+        //test case validation challenge 6 test (invalid tc validation - both inputs are blank)
+        solveNumberDivisionTCValidationChallenge6Test(scriptedTestingNumDivisionValidationChallengePage);
     }
 }
