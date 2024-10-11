@@ -2266,7 +2266,7 @@ public class TestMethods extends BaseTest {
     }
 
     //navigate to change profile test case validation challenge test method
-    protected void navigateToChangeProfileTCValidationPageTest(){
+    protected void navigateToCreateProfileTCValidationPageTest(){
         ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
         //click 'accept' cookies modal button
         listOfChallengesPage.clickAcceptCookiesButton();
@@ -2596,26 +2596,26 @@ public class TestMethods extends BaseTest {
         assertEquals("Enter \"password\" as the password containing only lowercase letters and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseTen(), "The test case ten challenge description doesn't match expected result");
         assertEquals("Enter \"P@ssw_rd\" as the password, which does not meet all the requirements, and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseEleven(), "The test case eleven challenge description doesn't match expected result");
     }
-    //'Scripted testing' change profile challenge page specific web element assert
-    protected void isScriptedTestingChangeProfileChallengePageWebElementDisplayed(ScriptedTestingCreateProfileTCValidationChallengePage scriptedTestingChangeProfileTCValidationChallengePage){
+    //'Scripted testing' create profile challenge page specific web element assert
+    protected void isScriptedTestingCreateProfileChallengePageWebElementDisplayed(ScriptedTestingCreateProfileTCValidationChallengePage scriptedTestingChangeProfileTCValidationChallengePage){
         //assert 'number multiplication' test case list is displayed
-        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isChangeProfileTestCaseOneDisplayed(), "The 'Change Profile' test case one is not displayed");
-        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isChangeProfileTestCaseTwoDisplayed(), "The 'Change Profile' test case two is not displayed");
-        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isChangeProfileTestCaseThreeDisplayed(), "The 'Change Profile' test case three is not displayed");
-        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isChangeProfileTestCaseFourDisplayed(), "The 'Change Profile' test case four is not displayed");
-        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isChangeProfileTestCaseFiveDisplayed(), "The 'Change Profile' test case five is not displayed");
-        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isChangeProfileTestCaseSixDisplayed(), "The 'Change Profile' test case six is not displayed");
+        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isChangeProfileTestCaseOneDisplayed(), "The 'Create Profile' test case one is not displayed");
+        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isChangeProfileTestCaseTwoDisplayed(), "The 'Create Profile' test case two is not displayed");
+        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isChangeProfileTestCaseThreeDisplayed(), "The 'Create Profile' test case three is not displayed");
+        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isChangeProfileTestCaseFourDisplayed(), "The 'Create Profile' test case four is not displayed");
+        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isChangeProfileTestCaseFiveDisplayed(), "The 'Create Profile' test case five is not displayed");
+        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isChangeProfileTestCaseSixDisplayed(), "The 'Create Profile' test case six is not displayed");
         //assert scripted testing (change profile) challenge input form 'entered values' are displayed
-        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isInputFormEnteredValuesDisplayed(), "The 'Change Profile' challenge input form entered values are not displayed");
+        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isInputFormEnteredValuesDisplayed(), "The 'Create Profile' challenge input form entered values are not displayed");
         //assert scripted testing (change profile) challenge nickname input field is displayed
-        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isNicknameInputFieldDisplayed(), "The 'Change Profile' challenge nickname input field is not displayed");
+        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isNicknameInputFieldDisplayed(), "The 'Create Profile' challenge nickname input field is not displayed");
         //assert scripted testing (change profile) challenge last name input field is displayed
-        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isLastNameInputFieldDisplayed(), "The 'Change Profile' challenge last name input field is not displayed");
+        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isLastNameInputFieldDisplayed(), "The 'Create Profile' challenge last name input field is not displayed");
         //assert scripted testing (change profile) challenge birth year dropdown menu is displayed
-        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isBirthYearDropdownMenuDisplayed(), "The 'Change Profile' challenge birth year dropdown menu is not displayed");
+        assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isBirthYearDropdownMenuDisplayed(), "The 'Create Profile' challenge birth year dropdown menu is not displayed");
     }
-    //'Scripted Testing' change profile test cases list assert
-    protected void isScriptedTestingChangeProfileTestCaseAsExpected(ScriptedTestingCreateProfileTCValidationChallengePage scriptedTestingChangeProfileTCValidationChallengePage){
+    //'Scripted Testing' create profile test cases list assert
+    protected void isScriptedTestingCreateProfileTestCaseAsExpected(ScriptedTestingCreateProfileTCValidationChallengePage scriptedTestingChangeProfileTCValidationChallengePage){
         //assert the number division test cases displayed in test case section list has correct text
         assertEquals("Enter Nickname: \"tech_go1\", Last Name: \"Anderson\", Birth Year: \"2000\", and press \"Submit\". Expected Result: \"Your profile created\". All entered values meet the requirements.", scriptedTestingChangeProfileTCValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
         assertEquals("Enter Nickname: \"c_99\", Last Name: \"Harrison\", Birth Year: \"2001\", and press \"Submit\". Expected Result: \"User input error\". One or several of the entered values don't meet the min length requirement.", scriptedTestingChangeProfileTCValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");

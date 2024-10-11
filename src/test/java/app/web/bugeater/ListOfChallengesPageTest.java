@@ -194,12 +194,12 @@ public class ListOfChallengesPageTest extends TestMethods{
         solvePasswordTCValidationChallenge11Test(scriptedTestingPasswordTCValidationChallengePage);
     }
 
-    //Test 009 -> scripted testing change profile test case validation test (as a guest)
+    //Test 009 -> scripted testing create profile test case validation test (as a guest)
     @Test
-    @DisplayName("Change Profile Test Case Validation Challenge Test (as a guest)")
+    @DisplayName("Create Profile Test Case Validation Challenge Test (as a guest)")
     @Tag("Scripted_Testing_Challenge_Test")
-    void scriptedTestingChangeProfileTCValidationChallengeTest(){
-        navigateToChangeProfileTCValidationPageTest();
+    void scriptedTestingCreateProfileTCValidationChallengeTest(){
+        navigateToCreateProfileTCValidationPageTest();
         ScriptedTestingCreateProfileTCValidationChallengePage scriptedTestingChangeProfileTCValidationChallengePage = new ScriptedTestingCreateProfileTCValidationChallengePage(driver);
         //test case validation challenge 1 test (valid tc validation)
         solveCreateProfileTCValidationChallenge1Test(scriptedTestingChangeProfileTCValidationChallengePage);
