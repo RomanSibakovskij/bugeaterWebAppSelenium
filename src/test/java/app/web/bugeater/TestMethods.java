@@ -2063,7 +2063,6 @@ public class TestMethods extends BaseTest {
     //password test case validation challenge test method (challenge 7) (invalid tc validation - too long)
     protected void solvePasswordTCValidationChallenge7Test(ScriptedTestingPasswordTCValidationChallengePage scriptedTestingPasswordTCValidationChallengePage){
         ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
-        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
         ScriptedTestingNumMultiplicationValidationChallengePage scriptedTestingNumMultiplicationValidationChallengePage = new ScriptedTestingNumMultiplicationValidationChallengePage(driver);
         //general page web element assert (elements that all pages have)
         isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
@@ -2100,7 +2099,6 @@ public class TestMethods extends BaseTest {
     //password test case validation challenge test method (challenge 8) (valid tc validation)
     protected void solvePasswordTCValidationChallenge8Test(ScriptedTestingPasswordTCValidationChallengePage scriptedTestingPasswordTCValidationChallengePage){
         ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
-        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
         ScriptedTestingNumMultiplicationValidationChallengePage scriptedTestingNumMultiplicationValidationChallengePage = new ScriptedTestingNumMultiplicationValidationChallengePage(driver);
         //general page web element assert (elements that all pages have)
         isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
@@ -2126,13 +2124,49 @@ public class TestMethods extends BaseTest {
         assertEquals("From 5 to 15 characters, at least one small Latin letter, one capital Latin letter, one symbol, and one number. Not matching the previous password.", scriptedTestingPasswordTCValidationChallengePage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
         LearnModePasswordChallengePage learnModePasswordChallengePage = new LearnModePasswordChallengePage(driver);
         //logger before challenge completion
-        logPreChallenge7Result(learnModePasswordChallengePage);
+        logPreChallenge8Result(learnModePasswordChallengePage);
         //input password provided by test case into input field
         scriptedTestingPasswordTCValidationChallengePage.inputPasswordTCValidationChallenge8();
         //click 'submit' button
         scriptedTestingPasswordTCValidationChallengePage.clickSubmitButton();
         //verify the test case has been validated
         scriptedTestingPasswordTCValidationChallengePage.verifyTestCase8Validation();
+    }
+    //password test case validation challenge test method (challenge 9) (invalid tc validation - non-allowed symbols)
+    protected void solvePasswordTCValidationChallenge9Test(ScriptedTestingPasswordTCValidationChallengePage scriptedTestingPasswordTCValidationChallengePage){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        ScriptedTestingNumMultiplicationValidationChallengePage scriptedTestingNumMultiplicationValidationChallengePage = new ScriptedTestingNumMultiplicationValidationChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the challenge text is displayed as expected
+        assertEquals("Execute all eleven Test Cases in any order. You are testing the password input form, which must comply with the requirements described in the tooltip (\"?\" icon). You will gain practical experience in testing password input, which will definitely come in handy on a real project.", scriptedTestingPasswordTCValidationChallengePage.getCurrentChallengeText(), "The text of the challenge doesn't match the expected text");
+        //assert the page title is as expected
+        assertEquals("Password Validation", scriptedTestingPasswordTCValidationChallengePage.getPasswordChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method (for scripted testing page elements)
+        isIndividualScriptedTestingChallengePageTextMatchesExpectations(scriptedTestingNumMultiplicationValidationChallengePage);
+        //scripted testing page repeated web element assert
+        isScriptedTestingChallengePageWebElementDisplayed(scriptedTestingNumMultiplicationValidationChallengePage);
+        //scripted testing password validation challenge page web element assert
+        isScriptedTestingPassValidationChallengePageWebElementDisplayed(scriptedTestingPasswordTCValidationChallengePage);
+        //assert challenge counter has registered eighth test case validation
+        assertEquals("8 case(s) out of 11", scriptedTestingPasswordTCValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the test case validation has been completed (tc 8)
+        assertEquals("Entered Value: P@ssword_1", scriptedTestingPasswordTCValidationChallengePage.getEnteredValueText(), "The entered values after completion don't match expected result");
+        //assert password validation has the expected result (after eighth test case validation)
+        assertEquals("Result: Valid Password", scriptedTestingPasswordTCValidationChallengePage.getPasswordValidationResult() , "The calculation result doesn't match expected result");
+        //assert the number multiplication test cases displayed in test case section list has correct text
+        isScriptedTestingPasswordValidationTestCaseAsExpected(scriptedTestingPasswordTCValidationChallengePage);
+        //assert challenge hint has the expected text
+        assertEquals("From 5 to 15 characters, at least one small Latin letter, one capital Latin letter, one symbol, and one number. Not matching the previous password.", scriptedTestingPasswordTCValidationChallengePage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
+        LearnModePasswordChallengePage learnModePasswordChallengePage = new LearnModePasswordChallengePage(driver);
+        //logger before challenge completion
+        logPreChallenge9Result(learnModePasswordChallengePage);
+        //input password provided by test case into input field
+        scriptedTestingPasswordTCValidationChallengePage.inputPasswordTCValidationChallenge9();
+        //click 'submit' button
+        scriptedTestingPasswordTCValidationChallengePage.clickSubmitButton();
+        //verify the test case has been validated
+        scriptedTestingPasswordTCValidationChallengePage.verifyTestCase9Validation();
     }
 
     //general page web element assert (repeating web elements on all app pages)
