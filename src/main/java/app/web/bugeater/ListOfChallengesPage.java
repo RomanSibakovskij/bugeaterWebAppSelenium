@@ -122,6 +122,8 @@ public class ListOfChallengesPage extends BasePage{
     public void clickScriptedTestingChallengeLink2(){clickListOfChallengesScriptedTestingChallengeLink(1);}
     //click password validation test case validation challenge link method
     public void clickScriptedTestingChallengeLink3(){clickListOfChallengesScriptedTestingChallengeLink(2);}
+    //click change profile test case validation challenge link method
+    public void clickScriptedTestingChallengeLink4(){clickListOfChallengesScriptedTestingChallengeLink(3);}
 
     //list of challenges page title getter
     public String getListOfChallengesPageTitle(){return listOfChallengesTitle.getText();}

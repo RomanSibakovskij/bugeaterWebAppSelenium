@@ -193,4 +193,14 @@ public class ListOfChallengesPageTest extends TestMethods{
         //test case validation challenge 11 test (invalid tc validation - password doesn't meet requirements)
         solvePasswordTCValidationChallenge11Test(scriptedTestingPasswordTCValidationChallengePage);
     }
+
+    //Test 009 -> scripted testing change profile test case validation test (as a guest)
+    @Test
+    @DisplayName("Change Profile Test Case Validation Challenge Test (as a guest)")
+    @Tag("Scripted_Testing_Challenge_Test")
+    void scriptedTestingChangeProfileTCValidationChallengeTest(){
+        navigateToChangeProfileTCValidationPageTest();
+        ScriptedTestingChangeProfileTCValidationChallengePage scriptedTestingChangeProfileTCValidationChallengePage = new ScriptedTestingChangeProfileTCValidationChallengePage(driver);
+
+    }
 }
