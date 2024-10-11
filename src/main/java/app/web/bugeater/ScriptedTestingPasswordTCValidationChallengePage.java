@@ -111,6 +111,12 @@ public class ScriptedTestingPasswordTCValidationChallengePage extends BasePage {
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
         passwordInputField.sendKeys("abc");
     }
+    //number division input methods (for challenge 7) (invalid tc validation -  too long password)
+    public void inputPasswordTCValidationChallenge7(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(passwordInputField));
+        passwordInputField.sendKeys("qwertyuiopasdfghjklzxcvbnm");
+    }
 
     //verify test case validation completion (tick icon) methods
     public void verifyTestCase1Validation(){
@@ -219,6 +225,24 @@ public class ScriptedTestingPasswordTCValidationChallengePage extends BasePage {
             logger.info("Test case 6 has been verified successfully(tick icon)." + "\n");
         } else {
             logger.error("Test case 6 hasn't been verified. No tick icon detected." + "\n");
+        }
+    }
+    public void verifyTestCase7Validation(){
+        //assert the test case 7 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseSeven, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseSeven
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 7 has been verified successfully(tick icon)." + "\n");
+        } else {
+            logger.error("Test case 7 hasn't been verified. No tick icon detected." + "\n");
         }
     }
 

@@ -182,5 +182,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solvePasswordTCValidationChallenge5Test(scriptedTestingPasswordTCValidationChallengePage);
         //test case validation challenge 6 test (invalid tc validation - too short password)
         solvePasswordTCValidationChallenge6Test(scriptedTestingPasswordTCValidationChallengePage);
+        //test case validation challenge 7 test (invalid tc validation - too long password)
+        solvePasswordTCValidationChallenge7Test(scriptedTestingPasswordTCValidationChallengePage);
     }
 }
