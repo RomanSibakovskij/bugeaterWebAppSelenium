@@ -2929,7 +2929,7 @@ public class TestMethods extends BaseTest {
     }
 
     //navigate to number summation (test case generator) test case validation challenge test method
-    protected void navigateToNumberSummationTCValidationPageTest(){
+    protected void navigateToNumberSummationTCBuildPageTest(){
         ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
         //click 'accept' cookies modal button
         listOfChallengesPage.clickAcceptCookiesButton();

@@ -244,7 +244,7 @@ public class ListOfChallengesPageTest extends TestMethods{
     @Test
     @DisplayName("Number Summation Test Case Validation Challenge Test (as a guest)")
     @Tag("Test_Case_Generator_Challenge_Test")
-    void tcgNumberSummationTCValidationChallengeTest(){
-        navigateToNumberSummationTCValidationPageTest();
+    void tcgNumberSummationTCBuildChallengeTest(){
+        navigateToNumberSummationTCBuildPageTest();
     }
 }
