@@ -146,6 +146,18 @@ public class ScriptedTestingCurrencyConverterValidationChallengePage extends Bas
         wait.until(ExpectedConditions.visibilityOf(conversionAmountInputField));
         conversionAmountInputField.sendKeys("");
     }
+    //currency converter input method (for challenge 7) (invalid input - from USD to EUR (-500 as value))
+    public void inputCurrencyConverterTCValidationChallenge7Value(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(conversionAmountInputField));
+        conversionAmountInputField.sendKeys(String.valueOf(-500));
+    }
+    //currency converter input method (for challenge 8) (invalid input - from USD to EUR ("abc" as value))
+    public void inputCurrencyConverterTCValidationChallenge8Value(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(conversionAmountInputField));
+        conversionAmountInputField.sendKeys("abc");
+    }
 
     //verify test case validation completion (tick icon) methods
     public void verifyTestCase1Validation(){
@@ -242,18 +254,54 @@ public class ScriptedTestingCurrencyConverterValidationChallengePage extends Bas
         //assert the test case 6 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
         //wait for the element to be captured
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
-        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseFive, "class"));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseSix, "class"));
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         String beforeContent = (String) js.executeScript(
                 "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
-                testCaseFive
+                testCaseSix
         );
         //validate if the ::before content (tick icon) is present
         if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
             logger.info("Test case 6 has been verified successfully(tick icon)." + "\n");
         } else {
             logger.error("Test case 6 hasn't been verified. No tick icon detected." + "\n");
+        }
+    }
+    public void verifyTestCase7Validation(){
+        //assert the test case 7 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseSeven, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseSeven
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 7 has been verified successfully(tick icon)." + "\n");
+        } else {
+            logger.error("Test case 7 hasn't been verified. No tick icon detected." + "\n");
+        }
+    }
+    public void verifyTestCase8Validation(){
+        //assert the test case 8 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseEight, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseEight
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 8 has been verified successfully(tick icon)." + "\n");
+        } else {
+            logger.error("Test case 8 hasn't been verified. No tick icon detected." + "\n");
         }
     }
 

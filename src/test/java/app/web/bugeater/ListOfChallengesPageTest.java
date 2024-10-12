@@ -234,5 +234,9 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveCurrencyConverterTCValidationChallenge5Test(scriptedTestingCurrencyConverterValidationChallengePage);
         //test case validation challenge 6 test (invalid tc validation - from USD to EUR (empty input))
         solveCurrencyConverterTCValidationChallenge6Test(scriptedTestingCurrencyConverterValidationChallengePage);
+        //test case validation challenge 7 test (invalid tc validation - from USD to EUR (-500 as value input))
+        solveCurrencyConverterTCValidationChallenge7Test(scriptedTestingCurrencyConverterValidationChallengePage);
+        //test case validation challenge 8 test (invalid tc validation - from USD to EUR ("abc" as value input))
+        solveCurrencyConverterTCValidationChallenge8Test(scriptedTestingCurrencyConverterValidationChallengePage);
     }
 }

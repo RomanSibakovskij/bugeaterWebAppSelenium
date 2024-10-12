@@ -2825,6 +2825,109 @@ public class TestMethods extends BaseTest {
         //assert the test case validation has been completed
         scriptedTestingCurrencyConverterValidationChallengePage.verifyTestCase6Validation();
     }
+    //currency converter test case validation challenge test method (challenge 7) (invalid tc validation - from USD to EUR (-500 as value input))
+    protected void solveCurrencyConverterTCValidationChallenge7Test(ScriptedTestingCurrencyConverterValidationChallengePage scriptedTestingCurrencyConverterValidationChallengePage) {
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        ScriptedTestingNumMultiplicationValidationChallengePage scriptedTestingNumMultiplicationValidationChallengePage = new ScriptedTestingNumMultiplicationValidationChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the challenge text is displayed as expected
+        assertEquals("Check these Test Cases in any order, entering corresponding values into the form for converting currency. In this case, you perform Scripted Testing of the form's functionality, training your basic testing skills. Exchange Rate: GBP:EUR 1:1.2, EUR:USD 1:1.1, GBP:USD 1:1.3.", scriptedTestingCurrencyConverterValidationChallengePage.getCurrencyConverterInstructionsText(), "The text of the challenge doesn't match the expected text");
+        //assert the page title is as expected
+        assertEquals("Currency Converter", scriptedTestingCurrencyConverterValidationChallengePage.getCurrencyConverterChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method (for scripted testing page elements)
+        isIndividualScriptedTestingChallengePageTextMatchesExpectations(scriptedTestingNumMultiplicationValidationChallengePage);
+        //scripted testing page web element assert
+        isScriptedTestingChallengePageWebElementDisplayed(scriptedTestingNumMultiplicationValidationChallengePage);
+        //scripted testing number multiplication challenge page web element assert
+        isScriptedTestingCurrencyConversionChallengePageWebElementDisplayed(scriptedTestingCurrencyConverterValidationChallengePage);
+        //assert the test case validation has been completed (after sixth test case validation)
+        assertEquals("Entered Values: Amount: Empty, Currency From: USD, Currency To: EUR", scriptedTestingCurrencyConverterValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
+        //assert challenge counter has registered sixth test case validation
+        assertEquals("6 case(s) out of 8", scriptedTestingCurrencyConverterValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the currency converter test cases displayed in test case section list has correct text
+        isScriptedTestingCurrencyConverterTestCaseAsExpected(scriptedTestingCurrencyConverterValidationChallengePage);
+        //assert calculation has the expected result (after sixth test case validation)
+        assertEquals("Result: User input error", scriptedTestingCurrencyConverterValidationChallengePage.getConversionResult() , "The conversion result doesn't match expected result");
+        LearnModePasswordChallengePage learnModePasswordChallengePage = new LearnModePasswordChallengePage(driver);
+        //logger before challenge completion
+        logPreChallenge7Result(learnModePasswordChallengePage);
+        //input conversion amount into input field
+        scriptedTestingCurrencyConverterValidationChallengePage.inputCurrencyConverterTCValidationChallenge7Value();
+        //click 'conversion from' dropdown menu
+        scriptedTestingCurrencyConverterValidationChallengePage.clickCurrencyFromDropdownMenu();
+        //select 'USD' option
+        scriptedTestingCurrencyConverterValidationChallengePage.selectUSDConversionFromOption();
+        //click 'conversion to' dropdown menu
+        scriptedTestingCurrencyConverterValidationChallengePage.clickCurrencyToDropdownMenu();
+        //select 'EUR' option
+        scriptedTestingCurrencyConverterValidationChallengePage.selectEURConversionToOption();
+        //click 'convert' button
+        scriptedTestingCurrencyConverterValidationChallengePage.clickConvertButton();
+        //assert the test case validation has been completed
+        scriptedTestingCurrencyConverterValidationChallengePage.verifyTestCase7Validation();
+    }
+    //currency converter test case validation challenge test method (challenge 8) (invalid tc validation - from USD to EUR ("abc" as value input))
+    protected void solveCurrencyConverterTCValidationChallenge8Test(ScriptedTestingCurrencyConverterValidationChallengePage scriptedTestingCurrencyConverterValidationChallengePage) {
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        ScriptedTestingNumMultiplicationValidationChallengePage scriptedTestingNumMultiplicationValidationChallengePage = new ScriptedTestingNumMultiplicationValidationChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the challenge text is displayed as expected
+        assertEquals("Check these Test Cases in any order, entering corresponding values into the form for converting currency. In this case, you perform Scripted Testing of the form's functionality, training your basic testing skills. Exchange Rate: GBP:EUR 1:1.2, EUR:USD 1:1.1, GBP:USD 1:1.3.", scriptedTestingCurrencyConverterValidationChallengePage.getCurrencyConverterInstructionsText(), "The text of the challenge doesn't match the expected text");
+        //assert the page title is as expected
+        assertEquals("Currency Converter", scriptedTestingCurrencyConverterValidationChallengePage.getCurrencyConverterChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method (for scripted testing page elements)
+        isIndividualScriptedTestingChallengePageTextMatchesExpectations(scriptedTestingNumMultiplicationValidationChallengePage);
+        //scripted testing page web element assert
+        isScriptedTestingChallengePageWebElementDisplayed(scriptedTestingNumMultiplicationValidationChallengePage);
+        //scripted testing number multiplication challenge page web element assert
+        isScriptedTestingCurrencyConversionChallengePageWebElementDisplayed(scriptedTestingCurrencyConverterValidationChallengePage);
+        //assert the test case validation has been completed (after seventh test case validation)
+        assertEquals("Entered Values: Amount: -500, Currency From: USD, Currency To: EUR", scriptedTestingCurrencyConverterValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
+        //assert challenge counter has registered seventh test case validation
+        assertEquals("7 case(s) out of 8", scriptedTestingCurrencyConverterValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the currency converter test cases displayed in test case section list has correct text
+        isScriptedTestingCurrencyConverterTestCaseAsExpected(scriptedTestingCurrencyConverterValidationChallengePage);
+        //assert calculation has the expected result (after seventh test case validation)
+        assertEquals("Result: User input error", scriptedTestingCurrencyConverterValidationChallengePage.getConversionResult() , "The conversion result doesn't match expected result");
+        LearnModePasswordChallengePage learnModePasswordChallengePage = new LearnModePasswordChallengePage(driver);
+        //logger before challenge completion
+        logPreChallenge8Result(learnModePasswordChallengePage);
+        //input conversion amount into input field
+        scriptedTestingCurrencyConverterValidationChallengePage.inputCurrencyConverterTCValidationChallenge8Value();
+        //click 'conversion from' dropdown menu
+        scriptedTestingCurrencyConverterValidationChallengePage.clickCurrencyFromDropdownMenu();
+        //select 'USD' option
+        scriptedTestingCurrencyConverterValidationChallengePage.selectUSDConversionFromOption();
+        //click 'conversion to' dropdown menu
+        scriptedTestingCurrencyConverterValidationChallengePage.clickCurrencyToDropdownMenu();
+        //select 'EUR' option
+        scriptedTestingCurrencyConverterValidationChallengePage.selectEURConversionToOption();
+        //click 'convert' button
+        scriptedTestingCurrencyConverterValidationChallengePage.clickConvertButton();
+        //assert challenge completion modal has the expected title (NoSuchElementException despite valid selector)
+        //assertEquals("You did it!", scriptedTestingCurrencyConverterValidationChallengePage.getChallengeCompletionModalTitle(), "The challenge completion modal title displayed doesn't match expected title");
+        //click close modal button
+        scriptedTestingCurrencyConverterValidationChallengePage.clickCloseModalButton();
+        //assert the test case validation has been completed
+        scriptedTestingCurrencyConverterValidationChallengePage.verifyTestCase8Validation();
+        //logger after challenge completion
+        logPreChallenge9Result(learnModePasswordChallengePage);
+        //assert the test case validation has been completed (after eighth test case validation)
+        assertEquals("Entered Values: Amount: abc, Currency From: USD, Currency To: EUR", scriptedTestingCurrencyConverterValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
+        //assert challenge counter has registered eighth test case validation
+        assertEquals("8 case(s) out of 8", scriptedTestingCurrencyConverterValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert calculation has the expected result (after eighth test case validation)
+        assertEquals("Result: User input error", scriptedTestingCurrencyConverterValidationChallengePage.getConversionResult() , "The conversion result doesn't match expected result");
+        //click navbar dropdown menu
+        listOfChallengesPage.clickNavbarDropdownMenu();
+        //return to 'List of Challenges'
+        listOfChallengesPage.clickReturnToListOfChallengesLink();
+        //assert the user has returned back to 'List of Challenges'
+        assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
+
+    }
 
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){
