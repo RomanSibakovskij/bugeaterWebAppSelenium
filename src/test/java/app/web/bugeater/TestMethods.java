@@ -2312,6 +2312,20 @@ public class TestMethods extends BaseTest {
         assertEquals("Result:", scriptedTestingCreateProfileTCValidationChallengePage.getCreateProfileResult() , "The calculation result doesn't match expected result");
         //logger before challenge completion
         logPreChallenge1Result(learnModeNumAddDivisionChallengePage);
+        //input nickname provided by test case into input field
+        scriptedTestingCreateProfileTCValidationChallengePage.inputCreateProfileTCValidationChallenge1Nickname();
+        //input last name provided by test case into input field
+        scriptedTestingCreateProfileTCValidationChallengePage.inputCreateProfileTCValidationChallenge1LastName();
+        //click birth year dropdown menu
+        scriptedTestingCreateProfileTCValidationChallengePage.clickBirthYearDropdownMenu();
+        //select '2000' from birth year option
+        scriptedTestingCreateProfileTCValidationChallengePage.select2000();
+        //click 'submit' button
+        scriptedTestingCreateProfileTCValidationChallengePage.clickSubmitButton();
+        //assert the test case validation has been completed (after first test case validation)
+        assertEquals("Entered Values: Nickname: tech_go1, Last Name: Anderson, Birth Year: 2000", scriptedTestingCreateProfileTCValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
+        //assert the test case validation has been completed
+        scriptedTestingCreateProfileTCValidationChallengePage.verifyTestCase1Validation();
     }
 
     //general page web element assert (repeating web elements on all app pages)

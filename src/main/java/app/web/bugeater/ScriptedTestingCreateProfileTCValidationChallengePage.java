@@ -48,6 +48,10 @@ public class ScriptedTestingCreateProfileTCValidationChallengePage extends BaseP
     //'Scripted Testing' birth year dropdown menu web element
     @FindBy(xpath = "//div[@class='_challengeListItem_1a4cy_169']//div")
     private WebElement birthYearDropdownMenu;
+    //'Scripted Testing' birth year dropdown menu option web elements
+    @FindBy(xpath = "//div[@class='_challengeListItem_1a4cy_169']/div//a[3]")
+    private WebElement birthYear2000Option;
+
     @FindBy(xpath = "//div[@id='testForm']/p[1]")
     private WebElement challengeCreateProfileResult;
     //button web elements
@@ -64,6 +68,47 @@ public class ScriptedTestingCreateProfileTCValidationChallengePage extends BaseP
 
     public ScriptedTestingCreateProfileTCValidationChallengePage(WebDriver driver) {
         super(driver);
+    }
+
+    //click birth year dropdown menu method
+    public void clickBirthYearDropdownMenu() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.elementToBeClickable(birthYearDropdownMenu));
+        birthYearDropdownMenu.click();
+    }
+    //select '2000' from birth year dropdown menu
+    public void select2000(){birthYear2000Option.click();}
+
+    //create profile input methods (for challenge 1) (valid input)
+    public void inputCreateProfileTCValidationChallenge1Nickname(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(nicknameInputField));
+        nicknameInputField.sendKeys("tech_go1");
+    }
+    public void inputCreateProfileTCValidationChallenge1LastName(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(lastNameInputField));
+        lastNameInputField.sendKeys("Anderson");
+    }
+
+    //verify test case validation completion (tick icon) methods
+    public void verifyTestCase1Validation(){
+        //assert the test case 1 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseOne, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseOne
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 1 has been verified successfully(tick icon)." + "\n");
+        } else {
+            logger.error("Test case 1 hasn't been verified. No tick icon detected." + "\n");
+        }
     }
 
     //click 'submit' button method
