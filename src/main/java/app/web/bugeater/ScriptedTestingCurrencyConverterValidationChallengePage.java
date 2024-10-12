@@ -45,7 +45,7 @@ public class ScriptedTestingCurrencyConverterValidationChallengePage extends Bas
     private WebElement testCaseSeven;
     @FindBy(xpath = "//ol[@class='_challengeList_1a4cy_164']/li[8]")
     private WebElement testCaseEight;
-    //Scripted testing 'Create Profile' input form web elements
+    //Scripted testing 'Currency Converter' input form web elements
     @FindBy(xpath = "//div[@id='testForm']/p[2]")
     private WebElement enteredValuesText;
     @FindBy(xpath = "//input[@id='first']")

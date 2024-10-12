@@ -246,5 +246,8 @@ public class ListOfChallengesPageTest extends TestMethods{
     @Tag("Test_Case_Generator_Challenge_Test")
     void tcgNumberSummationTCBuildChallengeTest(){
         navigateToNumberSummationTCBuildPageTest();
+        TCGNumSummationTCValidationChallengePage tcgNumSummationTCValidationChallengePage = new TCGNumSummationTCValidationChallengePage(driver);
+        //number summation test case build challenge 1
+        solveNumberSummationTCFoundChallenge1Test(tcgNumSummationTCValidationChallengePage);
     }
 }

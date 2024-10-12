@@ -2944,7 +2944,40 @@ public class TestMethods extends BaseTest {
         //click 'test case generator - number summation' challenge link
         listOfChallengesPage.clickListOfChallengesTCGChallengeLink();
     }
-
+    //currency converter test case validation challenge test method (challenge 1)
+    protected void solveNumberSummationTCFoundChallenge1Test(TCGNumSummationTCValidationChallengePage tcgNumSummationTCValidationChallengePage) {
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        ScriptedTestingNumMultiplicationValidationChallengePage scriptedTestingNumMultiplicationValidationChallengePage = new ScriptedTestingNumMultiplicationValidationChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the challenge text is displayed as expected
+        assertEquals("By selecting values from three dropdowns, you create a Test Case to check the correctness of the form of adding two numbers. Pay attention not all combinations of values compose a correct Test Case. By trying out different sets of values, you will find all six Test Cases that appear in the Case(s) list. This way, you will learn to write your own Test scenarios.", tcgNumSummationTCValidationChallengePage.getNumberSummationInstructionsText(), "The text of the challenge doesn't match the expected text");
+        //assert tutorial description text is displayed as expected
+        assertEquals("This description explains the challenge and what you need to do. Read it carefully before starting the challenge.", tcgNumSummationTCValidationChallengePage.getTutorialDescriptionText(), "The tutorial text doesn't match the expected text");
+        //click tutorial 'skip' button
+        tcgNumSummationTCValidationChallengePage.clickSkipTutorialButton();
+        //number summation page web element assert method
+        isNumberSummationChallengePageWebElementDisplayed(tcgNumSummationTCValidationChallengePage);
+        //assert the page title is as expected
+        assertEquals("Number Summation", tcgNumSummationTCValidationChallengePage.getNumberSummationChallengePageTitle(), "The challenge page title doesn't match the expected title");
+        //assert the test case build title is as expected
+        assertEquals("Test Case(s) You Build", tcgNumSummationTCValidationChallengePage.getTestCasesBuildTitle(), "The number summation test case build section title doesn't match the expected title");
+        //assert the test case found title is as expected
+        assertEquals("Test Case(s) You Found", tcgNumSummationTCValidationChallengePage.getTestCasesFoundTitle(), "The number summation test case found section title doesn't match the expected title");
+        //assert input form has the correct title
+        assertEquals("Form You Test", learnModeNumAddDivisionChallengePage.getInputFormTitle(), "The input form title doesn't match expected result");
+        //assert challenge counter has no challenges completed yet
+        assertEquals("0 case(s) out of 6", tcgNumSummationTCValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert calculation has the expected result (before operation)
+        assertEquals("Result:", tcgNumSummationTCValidationChallengePage.getCalculationResult(), "The calculation result doesn't match expected result");
+        //logger before challenge completion (ignore entered values not being displayed - this test uses same general logger as for other tests)
+        logPreChallenge1Result(learnModeNumAddDivisionChallengePage);
+        //assert the number summation test case one displayed in test case found section list has correct text
+        //assertEquals("Leave both input fields blank and then click on the \"Calculate\" button. Expected Result: \"User input error\".", tcgNumSummationTCValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
+        //assert 'number summation' challenge test case one is displayed (others will be displayed too) after test case has been found
+        //assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationTestCaseOneDisplayed(), "The 'Number Summation' challenge test case is not displayed");
+    }
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){
         //assert 'list of challenges' navbar dropdown menu is displayed
@@ -3320,6 +3353,38 @@ public class TestMethods extends BaseTest {
         assertEquals("Leave \"Amount\" field empty, \"USD\" as \"Currency From\", and \"EUR\" as \"Currency To\", click \"Convert\". Expected Result: \"User input error\".", scriptedTestingCurrencyConverterValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
         assertEquals("Input \"-500\" (negative value) as the \"Amount\", \"USD\" as \"Currency From\", and \"EUR\" as \"Currency To\", click \"Convert\". Expected Result: \"User input error\".", scriptedTestingCurrencyConverterValidationChallengePage.getTestCaseSeven(), "The test case seven challenge description doesn't match expected result");
         assertEquals("Input \"abc\" (not a value) as the \"Amount\", \"USD\" as \"Currency From\", and \"EUR\" as \"Currency To\", click \"Convert\". Expected Result: \"User input error\".", scriptedTestingCurrencyConverterValidationChallengePage.getTestCaseEight(), "The test case eight challenge description doesn't match expected result");
+    }
+
+    //Test case generator number summation challenge page web element assert
+    protected void isNumberSummationChallengePageWebElementDisplayed(TCGNumSummationTCValidationChallengePage tcgNumSummationTCValidationChallengePage){
+        //assert 'number summation' challenge page title is displayed
+        assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationChallengePageTitleDisplayed(), "The 'Number Summation' challenge page title is not displayed");
+        //assert 'number summation' challenge guide icon is displayed
+        assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationGuideIconDisplayed(), "The 'Number Summation' challenge video guide icon is not displayed");
+        //assert 'number summation' challenge video guide link is displayed
+        assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationVideoGuideLinkDisplayed(), "The 'Number Summation' challenge video guide link is not displayed");
+        //assert 'number summation' challenge instructions text is displayed
+        assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationChallengeInstructionsTextDisplayed(), "The 'Number Summation' challenge instructions text is not displayed");
+        //assert 'number summation' challenge test case build option one dropdown menu is displayed
+        assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationOptionOneDropdownMenuDisplayed(), "The 'Number Summation' challenge test case build option one dropdown menu is not displayed");
+        //assert 'number summation' challenge test case build option two dropdown menu is displayed
+        assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationOptionTwoDropdownMenuDisplayed(), "The 'Number Summation' challenge test case build option two dropdown menu is not displayed");
+        //assert 'number summation' challenge test case build result dropdown menu is displayed
+        assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationResultDropdownMenuDisplayed(), "The 'Number Summation' challenge test case build result dropdown menu is not displayed");
+        //assert 'number summation' challenge test case build validation button is displayed
+        assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationTestCaseValidationButtonDisplayed(), "The 'Number Summation' challenge test case build validation button is not displayed");
+        //assert 'number summation' challenge start over button is displayed
+        assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationStartOverButtonDisplayed(), "The 'Number Summation' challenge start over button is not displayed");
+        //assert 'number summation' challenge test case calculation result is displayed
+        assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationCalculationResultDisplayed(), "The 'Number Summation' challenge test case calculation result is not displayed");
+        //assert 'number summation' challenge number one input field is displayed
+        assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationNumberOneInputFieldDisplayed(), "The 'Number Summation' challenge number one input field is not displayed");
+        //assert 'number summation' challenge number two input field is displayed
+        assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationNumberTwoInputFieldDisplayed(), "The 'Number Summation' challenge number two input field is not displayed");
+        //assert 'number summation' challenge hint is displayed
+        assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationChallengeHintDisplayed(), "The 'Number Summation' challenge hint is not displayed");
+        //assert 'number summation' challenge calculate button is displayed
+        assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationCalculateButtonDisplayed(), "The 'Number Summation' challenge calculate button is not displayed");
     }
 
     //pre-challenges loggers (for debug validation)
