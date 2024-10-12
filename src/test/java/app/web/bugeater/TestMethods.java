@@ -2926,7 +2926,23 @@ public class TestMethods extends BaseTest {
         listOfChallengesPage.clickReturnToListOfChallengesLink();
         //assert the user has returned back to 'List of Challenges'
         assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
+    }
 
+    //navigate to number summation (test case generator) test case validation challenge test method
+    protected void navigateToNumberSummationTCValidationPageTest(){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        //click 'accept' cookies modal button
+        listOfChallengesPage.clickAcceptCookiesButton();
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //'List of Challenges' page web element assert
+        isListOfChallengesWebElementDisplayed(listOfChallengesPage);
+        //assert the 'list of challenges' page title is as expected
+        assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
+        //assert the learn mode section title is as expected
+        assertEquals("Test Case Generator", listOfChallengesPage.getTestCaseGeneratorSectionTitle(), "The scripted testing section title doesn't match expectations");
+        //click 'test case generator - number summation' challenge link
+        listOfChallengesPage.clickListOfChallengesTCGChallengeLink();
     }
 
     //general page web element assert (repeating web elements on all app pages)

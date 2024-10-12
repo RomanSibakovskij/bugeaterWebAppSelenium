@@ -127,12 +127,21 @@ public class ListOfChallengesPage extends BasePage{
     //click change profile test case validation challenge link method
     public void clickScriptedTestingChallengeLink5(){clickListOfChallengesScriptedTestingChallengeLink(4);}
 
+    //click challenge link list method (test case generator)
+    public void clickListOfChallengesTCGChallengeLink(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(600));
+        wait.until(ExpectedConditions.elementToBeClickable(listOfChallengesTestCaseGenChallengeLink));
+        listOfChallengesTestCaseGenChallengeLink.click();
+    }
+
     //list of challenges page title getter
     public String getListOfChallengesPageTitle(){return listOfChallengesTitle.getText();}
     //learn mode section title getter
     public String getLearnModeSectionTitle(){return listOfChallengesLearnModeTitle.getText();}
     //scripted testing section title getter
     public String getScriptedTestingSectionTitle(){return listOfChallengesScriptedTestingTitle.getText();}
+    //test case generator section title getter
+    public String getTestCaseGeneratorSectionTitle(){return listOfChallengesTestCaseGenTitle.getText();}
 
     //'List of Challenges' page web element assert methods
     public boolean isListOfChallengesDropdownMenuDisplayed(){return listOfChallengesDropdownMenu.isDisplayed();}

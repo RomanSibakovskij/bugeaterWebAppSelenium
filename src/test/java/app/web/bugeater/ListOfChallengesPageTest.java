@@ -239,4 +239,12 @@ public class ListOfChallengesPageTest extends TestMethods{
         //test case validation challenge 8 test (invalid tc validation - from USD to EUR ("abc" as value input))
         solveCurrencyConverterTCValidationChallenge8Test(scriptedTestingCurrencyConverterValidationChallengePage);
     }
+
+    //Test 011 -> test case generator number summation test case validation test (as a guest)
+    @Test
+    @DisplayName("Number Summation Test Case Validation Challenge Test (as a guest)")
+    @Tag("Test_Case_Generator_Challenge_Test")
+    void tcgNumberSummationTCValidationChallengeTest(){
+        navigateToNumberSummationTCValidationPageTest();
+    }
 }
