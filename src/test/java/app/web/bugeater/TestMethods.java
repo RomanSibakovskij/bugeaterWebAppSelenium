@@ -2489,6 +2489,66 @@ public class TestMethods extends BaseTest {
         //assert the test case validation has been completed
         scriptedTestingCreateProfileTCValidationChallengePage.verifyTestCase5Validation();
     }
+    //create profile test case validation challenge test method (challenge 6) (invalid tc validation - birth year outside of requirements)
+    protected void solveCreateProfileTCValidationChallenge6Test(ScriptedTestingCreateProfileTCValidationChallengePage scriptedTestingCreateProfileTCValidationChallengePage){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        ScriptedTestingNumMultiplicationValidationChallengePage scriptedTestingNumMultiplicationValidationChallengePage = new ScriptedTestingNumMultiplicationValidationChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the challenge text is displayed as expected
+        assertEquals("Check these Test Cases in any order, entering corresponding values into the form for creating a profile. In this case, you perform Scripted Testing of the form's functionality, training your basic testing skills.", scriptedTestingCreateProfileTCValidationChallengePage.getCurrentChallengeText(), "The text of the challenge doesn't match the expected text");
+        //assert the page title is as expected
+        assertEquals("Create Profile", scriptedTestingCreateProfileTCValidationChallengePage.getCreateProfileChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method (for scripted testing page elements)
+        isIndividualScriptedTestingChallengePageTextMatchesExpectations(scriptedTestingNumMultiplicationValidationChallengePage);
+        //scripted testing page repeated web element assert
+        isScriptedTestingChallengePageWebElementDisplayed(scriptedTestingNumMultiplicationValidationChallengePage);
+        //scripted testing create profile challenge page web element assert
+        isScriptedTestingCreateProfileChallengePageWebElementDisplayed(scriptedTestingCreateProfileTCValidationChallengePage);
+        //assert challenge counter has registered fifth test case validation
+        assertEquals("5 case(s) out of 6", scriptedTestingCreateProfileTCValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the change profile test cases displayed in test case section list has correct text
+        isScriptedTestingCreateProfileTestCaseAsExpected(scriptedTestingCreateProfileTCValidationChallengePage);
+        //assert the fifth create profile test case validation has been completed
+        assertEquals("Entered Values: Nickname: @@@@@, Last Name: O'Reilly, Birth Year: 2007", scriptedTestingCreateProfileTCValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
+        //assert password validation has the expected result (after fifth test case)
+        assertEquals("Result: User input error", scriptedTestingCreateProfileTCValidationChallengePage.getCreateProfileResult() , "The calculation result doesn't match expected result");
+        //logger before challenge completion
+        logPreChallenge5Result(learnModeNumAddDivisionChallengePage);
+        //input nickname provided by test case into input field
+        scriptedTestingCreateProfileTCValidationChallengePage.inputCreateProfileTCValidationChallenge6Nickname();
+        //input last name provided by test case into input field
+        scriptedTestingCreateProfileTCValidationChallengePage.inputCreateProfileTCValidationChallenge6LastName();
+        //click birth year dropdown menu
+        scriptedTestingCreateProfileTCValidationChallengePage.clickBirthYearDropdownMenu();
+        //select '1998' from birth year option
+        scriptedTestingCreateProfileTCValidationChallengePage.select1998();
+        //click 'submit' button
+        scriptedTestingCreateProfileTCValidationChallengePage.clickSubmitButton();
+        //assert challenge completion modal has the expected title (NoSuchElementException despite valid selector)
+        //assertEquals("You did it!", scriptedTestingCreateProfileTCValidationChallengePage.getChallengeCompletionModalTitle(), "The challenge completion modal title displayed doesn't match expected title");
+        //click close modal button
+        scriptedTestingCreateProfileTCValidationChallengePage.clickCloseModalButton();
+        //assert the test case validation has been completed
+        scriptedTestingCreateProfileTCValidationChallengePage.verifyTestCase6Validation();
+        //assert challenge counter has registered sixth test case validation
+        assertEquals("6 case(s) out of 6", scriptedTestingCreateProfileTCValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the sixth create profile test case validation has been completed
+        assertEquals("Entered Values: Nickname: galaxy_42, Last Name: Newman, Birth Year: 1998", scriptedTestingCreateProfileTCValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
+        //assert password validation has the expected result (after sixth test case)
+        assertEquals("Result: User input error", scriptedTestingCreateProfileTCValidationChallengePage.getCreateProfileResult() , "The calculation result doesn't match expected result");
+        LearnModePasswordChallengePage learnModePasswordChallengePage = new LearnModePasswordChallengePage(driver);
+        //logger after challenge completion
+        logPreChallenge7Result(learnModePasswordChallengePage);
+        //click navbar dropdown menu
+        listOfChallengesPage.clickNavbarDropdownMenu();
+        //return to 'List of Challenges'
+        listOfChallengesPage.clickReturnToListOfChallengesLink();
+        //assert the user has returned back to 'List of Challenges'
+        assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
+
+    }
 
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){

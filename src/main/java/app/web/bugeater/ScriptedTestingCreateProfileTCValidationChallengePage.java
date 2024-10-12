@@ -49,6 +49,8 @@ public class ScriptedTestingCreateProfileTCValidationChallengePage extends BaseP
     @FindBy(xpath = "//div[@class='_challengeListItem_1a4cy_169']//div")
     private WebElement birthYearDropdownMenu;
     //'Scripted Testing' birth year dropdown menu option web elements
+    @FindBy(xpath = "//div[@class='_challengeListItem_1a4cy_169']/div//a[1]")
+    private WebElement birthYear1998Option;
     @FindBy(xpath = "//div[@class='_challengeListItem_1a4cy_169']/div//a[3]")
     private WebElement birthYear2000Option;
     @FindBy(xpath = "//div[@class='_challengeListItem_1a4cy_169']/div//a[4]")
@@ -84,6 +86,8 @@ public class ScriptedTestingCreateProfileTCValidationChallengePage extends BaseP
         wait.until(ExpectedConditions.elementToBeClickable(birthYearDropdownMenu));
         birthYearDropdownMenu.click();
     }
+    //select '1998' from birth year dropdown menu
+    public void select1998(){birthYear1998Option.click();}
     //select '2000' from birth year dropdown menu
     public void select2000(){birthYear2000Option.click();}
     //select '2001' from birth year dropdown menu
@@ -149,6 +153,17 @@ public class ScriptedTestingCreateProfileTCValidationChallengePage extends BaseP
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(lastNameInputField));
         lastNameInputField.sendKeys("O'Reilly");
+    }
+    //create profile input methods (for challenge 6) (valid input)
+    public void inputCreateProfileTCValidationChallenge6Nickname(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(nicknameInputField));
+        nicknameInputField.sendKeys("galaxy_42");
+    }
+    public void inputCreateProfileTCValidationChallenge6LastName(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(lastNameInputField));
+        lastNameInputField.sendKeys("Newman");
     }
 
     //verify test case validation completion (tick icon) methods
@@ -240,6 +255,24 @@ public class ScriptedTestingCreateProfileTCValidationChallengePage extends BaseP
             logger.info("Test case 5 has been verified successfully(tick icon)." + "\n");
         } else {
             logger.error("Test case 5 hasn't been verified. No tick icon detected." + "\n");
+        }
+    }
+    public void verifyTestCase6Validation(){
+        //assert the test case 6 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseSix, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseSix
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 6 has been verified successfully(tick icon)." + "\n");
+        } else {
+            logger.error("Test case 6 hasn't been verified. No tick icon detected." + "\n");
         }
     }
 

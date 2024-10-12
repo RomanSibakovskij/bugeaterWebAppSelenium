@@ -211,5 +211,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveCreateProfileTCValidationChallenge4Test(scriptedTestingChangeProfileTCValidationChallengePage);
         //test case validation challenge 5 test (invalid tc validation - nickname contains special symbols only)
         solveCreateProfileTCValidationChallenge5Test(scriptedTestingChangeProfileTCValidationChallengePage);
+        //test case validation challenge 6 test (invalid tc validation - birth year outside of test case requirements)
+        solveCreateProfileTCValidationChallenge6Test(scriptedTestingChangeProfileTCValidationChallengePage);
     }
 }
