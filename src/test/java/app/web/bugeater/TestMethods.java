@@ -2449,6 +2449,46 @@ public class TestMethods extends BaseTest {
         //assert the test case validation has been completed
         scriptedTestingCreateProfileTCValidationChallengePage.verifyTestCase4Validation();
     }
+    //create profile test case validation challenge test method (challenge 5) (invalid tc validation - nickname contains special symbols only)
+    protected void solveCreateProfileTCValidationChallenge5Test(ScriptedTestingCreateProfileTCValidationChallengePage scriptedTestingCreateProfileTCValidationChallengePage){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        ScriptedTestingNumMultiplicationValidationChallengePage scriptedTestingNumMultiplicationValidationChallengePage = new ScriptedTestingNumMultiplicationValidationChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the challenge text is displayed as expected
+        assertEquals("Check these Test Cases in any order, entering corresponding values into the form for creating a profile. In this case, you perform Scripted Testing of the form's functionality, training your basic testing skills.", scriptedTestingCreateProfileTCValidationChallengePage.getCurrentChallengeText(), "The text of the challenge doesn't match the expected text");
+        //assert the page title is as expected
+        assertEquals("Create Profile", scriptedTestingCreateProfileTCValidationChallengePage.getCreateProfileChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method (for scripted testing page elements)
+        isIndividualScriptedTestingChallengePageTextMatchesExpectations(scriptedTestingNumMultiplicationValidationChallengePage);
+        //scripted testing page repeated web element assert
+        isScriptedTestingChallengePageWebElementDisplayed(scriptedTestingNumMultiplicationValidationChallengePage);
+        //scripted testing create profile challenge page web element assert
+        isScriptedTestingCreateProfileChallengePageWebElementDisplayed(scriptedTestingCreateProfileTCValidationChallengePage);
+        //assert challenge counter has registered fourth test case validation
+        assertEquals("4 case(s) out of 6", scriptedTestingCreateProfileTCValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the change profile test cases displayed in test case section list has correct text
+        isScriptedTestingCreateProfileTestCaseAsExpected(scriptedTestingCreateProfileTCValidationChallengePage);
+        //assert the fourth create profile test case validation has been completed
+        assertEquals("Entered Values: Nickname: Empty, Last Name: Empty, Birth Year: 2005", scriptedTestingCreateProfileTCValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
+        //assert password validation has the expected result (after fourth test case)
+        assertEquals("Result: User input error", scriptedTestingCreateProfileTCValidationChallengePage.getCreateProfileResult() , "The calculation result doesn't match expected result");
+        //logger before challenge completion
+        logPreChallenge5Result(learnModeNumAddDivisionChallengePage);
+        //input nickname provided by test case into input field
+        scriptedTestingCreateProfileTCValidationChallengePage.inputCreateProfileTCValidationChallenge5Nickname();
+        //input last name provided by test case into input field
+        scriptedTestingCreateProfileTCValidationChallengePage.inputCreateProfileTCValidationChallenge5LastName();
+        //click birth year dropdown menu
+        scriptedTestingCreateProfileTCValidationChallengePage.clickBirthYearDropdownMenu();
+        //select '2007' from birth year option
+        scriptedTestingCreateProfileTCValidationChallengePage.select2007();
+        //click 'submit' button
+        scriptedTestingCreateProfileTCValidationChallengePage.clickSubmitButton();
+        //assert the test case validation has been completed
+        scriptedTestingCreateProfileTCValidationChallengePage.verifyTestCase5Validation();
+    }
 
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){

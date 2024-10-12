@@ -209,5 +209,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveCreateProfileTCValidationChallenge3Test(scriptedTestingChangeProfileTCValidationChallengePage);
         //test case validation challenge 4 test (invalid tc validation - empty nickname/last name input)
         solveCreateProfileTCValidationChallenge4Test(scriptedTestingChangeProfileTCValidationChallengePage);
+        //test case validation challenge 5 test (invalid tc validation - nickname contains special symbols only)
+        solveCreateProfileTCValidationChallenge5Test(scriptedTestingChangeProfileTCValidationChallengePage);
     }
 }

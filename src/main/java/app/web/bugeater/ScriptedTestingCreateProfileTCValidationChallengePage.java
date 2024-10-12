@@ -57,6 +57,8 @@ public class ScriptedTestingCreateProfileTCValidationChallengePage extends BaseP
     private WebElement birthYear2004Option;
     @FindBy(xpath = "//div[@class='_challengeListItem_1a4cy_169']/div//a[8]")
     private WebElement birthYear2005Option;
+    @FindBy(xpath = "//div[@class='_challengeListItem_1a4cy_169']/div//a[10]")
+    private WebElement birthYear2007Option;
 
     @FindBy(xpath = "//div[@id='testForm']/p[1]")
     private WebElement challengeCreateProfileResult;
@@ -90,6 +92,8 @@ public class ScriptedTestingCreateProfileTCValidationChallengePage extends BaseP
     public void select2004(){birthYear2004Option.click();}
     //select '2005' from birth year dropdown menu
     public void select2005(){birthYear2005Option.click();}
+    //select '2007' from birth year dropdown menu
+    public void select2007(){birthYear2007Option.click();}
 
     //create profile input methods (for challenge 1) (valid input)
     public void inputCreateProfileTCValidationChallenge1Nickname(){
@@ -134,6 +138,17 @@ public class ScriptedTestingCreateProfileTCValidationChallengePage extends BaseP
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(lastNameInputField));
         lastNameInputField.sendKeys("");
+    }
+    //create profile input methods (for challenge 5) (invalid input - nickname contains special symbols only)
+    public void inputCreateProfileTCValidationChallenge5Nickname(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(nicknameInputField));
+        nicknameInputField.sendKeys("@@@@@");
+    }
+    public void inputCreateProfileTCValidationChallenge5LastName(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(lastNameInputField));
+        lastNameInputField.sendKeys("O'Reilly");
     }
 
     //verify test case validation completion (tick icon) methods
@@ -207,6 +222,24 @@ public class ScriptedTestingCreateProfileTCValidationChallengePage extends BaseP
             logger.info("Test case 4 has been verified successfully(tick icon)." + "\n");
         } else {
             logger.error("Test case 4 hasn't been verified. No tick icon detected." + "\n");
+        }
+    }
+    public void verifyTestCase5Validation(){
+        //assert the test case 5 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseFive, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseFive
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 5 has been verified successfully(tick icon)." + "\n");
+        } else {
+            logger.error("Test case 5 hasn't been verified. No tick icon detected." + "\n");
         }
     }
 
