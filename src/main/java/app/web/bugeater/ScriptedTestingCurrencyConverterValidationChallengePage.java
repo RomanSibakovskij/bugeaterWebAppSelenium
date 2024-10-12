@@ -11,5 +11,5 @@ public class ScriptedTestingCurrencyConverterValidationChallengePage extends Bas
     public ScriptedTestingCurrencyConverterValidationChallengePage(WebDriver driver) {
         super(driver);
     }
-    
+
 }

@@ -214,4 +214,12 @@ public class ListOfChallengesPageTest extends TestMethods{
         //test case validation challenge 6 test (invalid tc validation - birth year outside of test case requirements)
         solveCreateProfileTCValidationChallenge6Test(scriptedTestingChangeProfileTCValidationChallengePage);
     }
+
+    //Test 010 -> scripted testing currency converter test case validation test (as a guest)
+    @Test
+    @DisplayName("Currency Converter Test Case Validation Challenge Test (as a guest)")
+    @Tag("Scripted_Testing_Challenge_Test")
+    void scriptedTestingCurrencyConverterTCValidationChallengeTest(){
+        navigateToCurrencyConverterTCValidationPageTest();
+    }
 }
