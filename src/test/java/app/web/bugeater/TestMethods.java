@@ -2565,6 +2565,38 @@ public class TestMethods extends BaseTest {
         //click 'currency converter' challenge link
         listOfChallengesPage.clickScriptedTestingChallengeLink5();
     }
+    //currency converter test case validation challenge test method (challenge 1) (valid tc validation)
+    protected void solveCurrencyConverterTCValidationChallenge1Test(ScriptedTestingCurrencyConverterValidationChallengePage scriptedTestingCurrencyConverterValidationChallengePage) {
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        ScriptedTestingNumMultiplicationValidationChallengePage scriptedTestingNumMultiplicationValidationChallengePage = new ScriptedTestingNumMultiplicationValidationChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the challenge text is displayed as expected
+        assertEquals("Check these Test Cases in any order, entering corresponding values into the form for converting currency. In this case, you perform Scripted Testing of the form's functionality, training your basic testing skills. Exchange Rate: GBP:EUR 1:1.2, EUR:USD 1:1.1, GBP:USD 1:1.3.", scriptedTestingCurrencyConverterValidationChallengePage.getCurrencyConverterInstructionsText(), "The text of the challenge doesn't match the expected text");
+        //assert tutorial description text is displayed as expected
+        assertEquals("This description explains the challenge and what you need to do. Read it carefully before starting the challenge.", scriptedTestingCurrencyConverterValidationChallengePage.getTutorialDescriptionText(), "The tutorial text doesn't match the expected text");
+        //click tutorial 'skip' button
+        scriptedTestingCurrencyConverterValidationChallengePage.clickSkipTutorialButton();
+        //assert the page title is as expected
+        assertEquals("Currency Converter", scriptedTestingCurrencyConverterValidationChallengePage.getCurrencyConverterChallengeTitle(), "The challenge page title doesn't match the expected title");
+        //repeatable assert method (for scripted testing page elements)
+        isIndividualScriptedTestingChallengePageTextMatchesExpectations(scriptedTestingNumMultiplicationValidationChallengePage);
+        //scripted testing page web element assert
+        isScriptedTestingChallengePageWebElementDisplayed(scriptedTestingNumMultiplicationValidationChallengePage);
+        //scripted testing number multiplication challenge page web element assert
+        isScriptedTestingCurrencyConversionChallengePageWebElementDisplayed(scriptedTestingCurrencyConverterValidationChallengePage);
+        //assert the test case validation has been completed (before first test case validation)
+        assertEquals("Entered Values:", scriptedTestingCurrencyConverterValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
+        //assert challenge counter has no challenges completed yet
+        assertEquals("0 case(s) out of 8", scriptedTestingCurrencyConverterValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert the currency converter test cases displayed in test case section list has correct text
+        isScriptedTestingCurrencyConverterTestCaseAsExpected(scriptedTestingCurrencyConverterValidationChallengePage);
+        //assert calculation has the expected result (before operation)
+        assertEquals("Result:", scriptedTestingCurrencyConverterValidationChallengePage.getConversionResult() , "The conversion result doesn't match expected result");
+        //logger before challenge completion
+        logPreChallenge1Result(learnModeNumAddDivisionChallengePage);
+    }
 
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){

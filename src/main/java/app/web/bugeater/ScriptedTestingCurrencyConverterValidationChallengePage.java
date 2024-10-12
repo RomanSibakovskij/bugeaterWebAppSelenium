@@ -2,7 +2,8 @@ package app.web.bugeater;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
@@ -18,7 +19,7 @@ public class ScriptedTestingCurrencyConverterValidationChallengePage extends Bas
 
     //Scripted testing current challenge text web element
     @FindBy(xpath = "//div[@class='container']/p[@id='challengeDescription']")
-    private WebElement currentChallengeText;
+    private WebElement currencyConverterInstructionsText;
     //guide button web element
     @FindBy(css = "svg#questionMark")
     private WebElement currencyConverterGuideButton;
@@ -75,12 +76,29 @@ public class ScriptedTestingCurrencyConverterValidationChallengePage extends Bas
         super(driver);
     }
 
+    //click 'convert' button method
+    public void clickConvertButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.elementToBeClickable(convertButton));
+        convertButton.click();
+    }
+
+    //tutorial modal 'skip' button click method
+    public void clickSkipTutorialButton(){tutorialSkipButton.click();}
+
+    //click 'close' button method
+    public void clickCloseModalButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.elementToBeClickable(closeModalButton));
+        closeModalButton.click();
+    }
+
     //tutorial modal description text getter
     public String getTutorialDescriptionText() {return tutorialDescriptionText.getText();}
-    //Scripted testing current challenge text getter
-    public String getCurrentChallengeText() {return currentChallengeText.getText();}
+    //Scripted testing current challenge instructions text getter
+    public String getCurrencyConverterInstructionsText() {return currencyConverterInstructionsText.getText();}
     //Scripted testing currency converter challenge page title getter
-    public String getCreateProfileChallengeTitle() {return currencyConverterChallengeTitle.getText();}
+    public String getCurrencyConverterChallengeTitle() {return currencyConverterChallengeTitle.getText();}
     //Scripted testing challenges counter getter
     public String getChallengesCounterText() {return challengesCompletedCounter.getText();}
     //challenge one text getter
