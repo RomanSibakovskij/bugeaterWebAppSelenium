@@ -226,5 +226,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveCurrencyConverterTCValidationChallenge1Test(scriptedTestingCurrencyConverterValidationChallengePage);
         //test case validation challenge 2 test (valid tc validation - from USD to EUR)
         solveCurrencyConverterTCValidationChallenge2Test(scriptedTestingCurrencyConverterValidationChallengePage);
+        //test case validation challenge 3 test (valid tc validation - from GBP to GBP)
+        solveCurrencyConverterTCValidationChallenge3Test(scriptedTestingCurrencyConverterValidationChallengePage);
     }
 }

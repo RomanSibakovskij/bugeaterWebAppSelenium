@@ -57,11 +57,15 @@ public class ScriptedTestingCurrencyConverterValidationChallengePage extends Bas
     //'Scripted Testing' currency from option web elements
     @FindBy(xpath = "//div[@class='_challengeListItem_1a4cy_169'][1]/div//a[1]")
     private WebElement currencyFromUSDOption;
+    @FindBy(xpath = "//div[@class='_challengeListItem_1a4cy_169'][1]/div//a[2]")
+    private WebElement currencyFromGBPOption;
 
     //'Scripted Testing' currency to dropdown menu web element
     @FindBy(xpath = "//div[@class='_challengeListItem_1a4cy_169'][2]/div")
     private WebElement currencyToDropdownMenu;
     //'Scripted Testing' currency to option web elements
+    @FindBy(xpath = "//div[@class='_challengeListItem_1a4cy_169'][2]/div//a[2]")
+    private WebElement currencyToGBPOption;
     @FindBy(xpath = "//div[@class='_challengeListItem_1a4cy_169'][2]/div//a[3]")
     private WebElement currencyToEUROption;
 
@@ -92,6 +96,8 @@ public class ScriptedTestingCurrencyConverterValidationChallengePage extends Bas
     }
     //select 'USD' from conversion from dropdown menu method
     public void selectUSDConversionFromOption(){currencyFromUSDOption.click();}
+    //select 'GBP' from conversion from dropdown menu method
+    public void selectGBPConversionFromOption(){currencyFromGBPOption.click();}
 
     //click currency to dropdown menu method
     public void clickCurrencyToDropdownMenu() {
@@ -101,6 +107,8 @@ public class ScriptedTestingCurrencyConverterValidationChallengePage extends Bas
     }
     //select 'EUR' from conversion from dropdown menu method
     public void selectEURConversionToOption(){currencyToEUROption.click();}
+    //select 'GBP' from conversion from dropdown menu method
+    public void selectGBPConversionToOption(){currencyToGBPOption.click();}
 
     //currency converter input method (for challenge 1) (valid input)
     public void inputCurrencyConverterTCValidationChallenge1Value(){
@@ -113,6 +121,12 @@ public class ScriptedTestingCurrencyConverterValidationChallengePage extends Bas
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(conversionAmountInputField));
         conversionAmountInputField.sendKeys(String.valueOf(1500.567));
+    }
+    //currency converter input method (for challenge 3) (valid input - from GBP to GBP)
+    public void inputCurrencyConverterTCValidationChallenge3Value(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(conversionAmountInputField));
+        conversionAmountInputField.sendKeys(String.valueOf(350));
     }
 
     //verify test case validation completion (tick icon) methods
@@ -150,6 +164,24 @@ public class ScriptedTestingCurrencyConverterValidationChallengePage extends Bas
             logger.info("Test case 2 has been verified successfully(tick icon)." + "\n");
         } else {
             logger.error("Test case 2 hasn't been verified. No tick icon detected." + "\n");
+        }
+    }
+    public void verifyTestCase3Validation(){
+        //assert the test case 3 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseThree, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseThree
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 3 has been verified successfully(tick icon)." + "\n");
+        } else {
+            logger.error("Test case 3 hasn't been verified. No tick icon detected." + "\n");
         }
     }
 
