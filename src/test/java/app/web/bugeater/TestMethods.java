@@ -2596,6 +2596,23 @@ public class TestMethods extends BaseTest {
         assertEquals("Result:", scriptedTestingCurrencyConverterValidationChallengePage.getConversionResult() , "The conversion result doesn't match expected result");
         //logger before challenge completion
         logPreChallenge1Result(learnModeNumAddDivisionChallengePage);
+        //input conversion amount into input field
+        scriptedTestingCurrencyConverterValidationChallengePage.inputCurrencyConverterTCValidationChallenge1Value();
+        //click 'conversion from' dropdown menu
+        scriptedTestingCurrencyConverterValidationChallengePage.clickCurrencyFromDropdownMenu();
+        //select 'USD' option
+        scriptedTestingCurrencyConverterValidationChallengePage.selectUSDConversionFromOption();
+        //click 'conversion to' dropdown menu
+        scriptedTestingCurrencyConverterValidationChallengePage.clickCurrencyToDropdownMenu();
+        //select 'EUR' option
+        scriptedTestingCurrencyConverterValidationChallengePage.selectEURConversionToOption();
+        //click 'convert' button
+        scriptedTestingCurrencyConverterValidationChallengePage.clickConvertButton();
+        //assert the test case validation has been completed
+        scriptedTestingCurrencyConverterValidationChallengePage.verifyTestCase1Validation();
+        //assert the test case validation has been completed (after first test case validation)
+        assertEquals("Entered Values: Amount: 1000, Currency From: USD, Currency To: EUR", scriptedTestingCurrencyConverterValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
+
     }
 
     //general page web element assert (repeating web elements on all app pages)

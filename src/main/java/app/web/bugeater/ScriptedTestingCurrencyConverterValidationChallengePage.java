@@ -52,15 +52,23 @@ public class ScriptedTestingCurrencyConverterValidationChallengePage extends Bas
     @FindBy(xpath = "//input[@id='first']")
     private WebElement conversionAmountInputField;
     //'Scripted Testing' currency from dropdown menu web element
-    @FindBy(xpath = "//div[@class='_challengeListItem_1a4cy_169']//div")
+    @FindBy(xpath = "//div[@class='_challengeListItem_1a4cy_169'][1]/div")
     private WebElement currencyFromDropdownMenu;
+    //'Scripted Testing' currency from option web elements
+    @FindBy(xpath = "//div[@class='_challengeListItem_1a4cy_169'][1]/div//a[1]")
+    private WebElement currencyFromUSDOption;
+
     //'Scripted Testing' currency to dropdown menu web element
-    @FindBy(xpath = "//div[@class='_challengeListItem_1a4cy_169']//div")
+    @FindBy(xpath = "//div[@class='_challengeListItem_1a4cy_169'][2]/div")
     private WebElement currencyToDropdownMenu;
+    //'Scripted Testing' currency to option web elements
+    @FindBy(xpath = "//div[@class='_challengeListItem_1a4cy_169'][2]/div//a[3]")
+    private WebElement currencyToEUROption;
+
 
     @FindBy(xpath = "//div[@id='testForm']/p[1]")
     private WebElement challengeConversionResult;
-    //button web elements
+    //button web element
     @FindBy(xpath = "//div[@id='testForm']/form//button[@type='submit']")
     private WebElement convertButton;
     //Scripted testing halfway there congratulation web element
@@ -74,6 +82,51 @@ public class ScriptedTestingCurrencyConverterValidationChallengePage extends Bas
 
     public ScriptedTestingCurrencyConverterValidationChallengePage(WebDriver driver) {
         super(driver);
+    }
+
+    //click currency from dropdown menu method
+    public void clickCurrencyFromDropdownMenu() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.elementToBeClickable(currencyFromDropdownMenu));
+        currencyFromDropdownMenu.click();
+    }
+    //select 'USD' from conversion from dropdown menu method
+    public void selectUSDConversionFromOption(){currencyFromUSDOption.click();}
+
+    //click currency to dropdown menu method
+    public void clickCurrencyToDropdownMenu() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.elementToBeClickable(currencyToDropdownMenu));
+        currencyToDropdownMenu.click();
+    }
+    //select 'EUR' from conversion from dropdown menu method
+    public void selectEURConversionToOption(){currencyToEUROption.click();}
+
+    //currency converter input method (for challenge 1) (valid input)
+    public void inputCurrencyConverterTCValidationChallenge1Value(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(conversionAmountInputField));
+        conversionAmountInputField.sendKeys(String.valueOf(1000));
+    }
+
+    //verify test case validation completion (tick icon) methods
+    public void verifyTestCase1Validation(){
+        //assert the test case 1 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseOne, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseOne
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 1 has been verified successfully(tick icon)." + "\n");
+        } else {
+            logger.error("Test case 1 hasn't been verified. No tick icon detected." + "\n");
+        }
     }
 
     //click 'convert' button method
