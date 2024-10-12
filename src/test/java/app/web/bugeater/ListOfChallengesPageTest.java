@@ -205,5 +205,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveCreateProfileTCValidationChallenge1Test(scriptedTestingChangeProfileTCValidationChallengePage);
         //test case validation challenge 2 test (invalid tc validation - nickname too short)
         solveCreateProfileTCValidationChallenge2Test(scriptedTestingChangeProfileTCValidationChallengePage);
+        //test case validation challenge 3 test (invalid tc validation - nickname too long)
+        solveCreateProfileTCValidationChallenge3Test(scriptedTestingChangeProfileTCValidationChallengePage);
     }
 }
