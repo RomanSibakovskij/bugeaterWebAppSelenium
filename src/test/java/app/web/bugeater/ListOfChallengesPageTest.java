@@ -222,7 +222,9 @@ public class ListOfChallengesPageTest extends TestMethods{
     void scriptedTestingCurrencyConverterTCValidationChallengeTest(){
         navigateToCurrencyConverterTCValidationPageTest();
         ScriptedTestingCurrencyConverterValidationChallengePage scriptedTestingCurrencyConverterValidationChallengePage = new ScriptedTestingCurrencyConverterValidationChallengePage(driver);
-        //test case validation challenge 1 test (valid tc validation)
+        //test case validation challenge 1 test (valid tc validation - from USD to EUR)
         solveCurrencyConverterTCValidationChallenge1Test(scriptedTestingCurrencyConverterValidationChallengePage);
+        //test case validation challenge 2 test (valid tc validation - from USD to EUR)
+        solveCurrencyConverterTCValidationChallenge2Test(scriptedTestingCurrencyConverterValidationChallengePage);
     }
 }
