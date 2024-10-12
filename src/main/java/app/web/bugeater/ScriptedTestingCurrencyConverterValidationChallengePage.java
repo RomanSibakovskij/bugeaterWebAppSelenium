@@ -134,6 +134,12 @@ public class ScriptedTestingCurrencyConverterValidationChallengePage extends Bas
         wait.until(ExpectedConditions.visibilityOf(conversionAmountInputField));
         conversionAmountInputField.sendKeys("1000000000000");
     }
+    //currency converter input method (for challenge 5) (valid input - from USD to EUR (0))
+    public void inputCurrencyConverterTCValidationChallenge5Value(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(conversionAmountInputField));
+        conversionAmountInputField.sendKeys(String.valueOf(0));
+    }
 
     //verify test case validation completion (tick icon) methods
     public void verifyTestCase1Validation(){
@@ -206,6 +212,24 @@ public class ScriptedTestingCurrencyConverterValidationChallengePage extends Bas
             logger.info("Test case 4 has been verified successfully(tick icon)." + "\n");
         } else {
             logger.error("Test case 4 hasn't been verified. No tick icon detected." + "\n");
+        }
+    }
+    public void verifyTestCase5Validation(){
+        //assert the test case 5 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseFive, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseFive
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 5 has been verified successfully(tick icon)." + "\n");
+        } else {
+            logger.error("Test case 5 hasn't been verified. No tick icon detected." + "\n");
         }
     }
 
