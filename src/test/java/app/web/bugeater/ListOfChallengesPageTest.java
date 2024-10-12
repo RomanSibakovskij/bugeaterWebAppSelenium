@@ -203,5 +203,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         ScriptedTestingCreateProfileTCValidationChallengePage scriptedTestingChangeProfileTCValidationChallengePage = new ScriptedTestingCreateProfileTCValidationChallengePage(driver);
         //test case validation challenge 1 test (valid tc validation)
         solveCreateProfileTCValidationChallenge1Test(scriptedTestingChangeProfileTCValidationChallengePage);
+        //test case validation challenge 2 test (invalid tc validation - nickname too short)
+        solveCreateProfileTCValidationChallenge2Test(scriptedTestingChangeProfileTCValidationChallengePage);
     }
 }
