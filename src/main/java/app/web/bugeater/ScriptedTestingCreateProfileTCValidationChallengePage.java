@@ -19,13 +19,13 @@ public class ScriptedTestingCreateProfileTCValidationChallengePage extends BaseP
     //Scripted testing current challenge text web element
     @FindBy(xpath = "//div[@class='container']/p[@id='challengeDescription']")
     private WebElement currentChallengeText;
-    //Scripted testing 'Number Division' challenge page web elements
+    //Scripted testing 'Create Profile' challenge page web elements
     @FindBy(xpath = "//div[@class='_challengeHeadingBlock_1a4cy_184']/h1")
     private WebElement createProfileChallengeTitle;
-    //Scripted testing 'Number Division' test case section web element
+    //Scripted testing 'Create Profile' test case section web element
     @FindBy(xpath = "//div[@class='_challengePanelResultsHeading_1a4cy_60']/p[@class='_challengePanelResultsCaption_1a4cy_71']")
     private WebElement challengesCompletedCounter;
-    //Scripted testing 'Number Division' test cases for validation web elements
+    //Scripted testing 'Create Profile' test cases for validation web elements
     @FindBy(xpath = "//ol[@class='_challengeList_1a4cy_164']/li")
     private WebElement testCaseOne;
     @FindBy(xpath = "//ol[@class='_challengeList_1a4cy_164']/li[2]")
@@ -315,7 +315,7 @@ public class ScriptedTestingCreateProfileTCValidationChallengePage extends BaseP
     public String getTestCaseSix(){return testCaseSix.getText();}
     //Scripted testing input form 'entered values' text getter
     public String getEnteredValuesText() {return enteredValuesText.getText();}
-    //Scripted testing calculation result getter
+    //Scripted testing create profile result getter
     public String getCreateProfileResult() {return challengeCreateProfileResult.getText();}
     //'halfway there' message getter
     public String getHalfwayThereMessage(){return halfwayThereMessage.getText();}

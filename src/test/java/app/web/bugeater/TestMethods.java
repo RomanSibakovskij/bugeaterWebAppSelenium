@@ -2873,7 +2873,7 @@ public class TestMethods extends BaseTest {
     }
     //'Scripted testing' password validation test case web element assert
     protected void isScriptedTestingPasswordValidationTestCaseAsExpected(ScriptedTestingPasswordTCValidationChallengePage scriptedTestingPasswordTCValidationChallengePage){
-        //assert the number multiplication test cases displayed in test case section list has correct text
+        //assert the password validation test cases displayed in test case section list has correct text
         assertEquals("Enter \"PASSWORD\" as the password containing only uppercase letters and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
         assertEquals("Enter \"123456\" as the password containing only digits and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
         assertEquals("Enter \"!@#$%\" as the password containing only special characters and click the \"Submit\" button. Expected Result: \"Invalid Password\".", scriptedTestingPasswordTCValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
@@ -2888,7 +2888,7 @@ public class TestMethods extends BaseTest {
     }
     //'Scripted testing' create profile challenge page specific web element assert
     protected void isScriptedTestingCreateProfileChallengePageWebElementDisplayed(ScriptedTestingCreateProfileTCValidationChallengePage scriptedTestingChangeProfileTCValidationChallengePage){
-        //assert 'number multiplication' test case list is displayed
+        //assert 'create profile' test case list is displayed
         assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isChangeProfileTestCaseOneDisplayed(), "The 'Create Profile' test case one is not displayed");
         assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isChangeProfileTestCaseTwoDisplayed(), "The 'Create Profile' test case two is not displayed");
         assertTrue(scriptedTestingChangeProfileTCValidationChallengePage.isChangeProfileTestCaseThreeDisplayed(), "The 'Create Profile' test case three is not displayed");
@@ -2902,13 +2902,45 @@ public class TestMethods extends BaseTest {
     }
     //'Scripted Testing' create profile test cases list assert
     protected void isScriptedTestingCreateProfileTestCaseAsExpected(ScriptedTestingCreateProfileTCValidationChallengePage scriptedTestingChangeProfileTCValidationChallengePage){
-        //assert the number division test cases displayed in test case section list has correct text
+        //assert the create profile test cases displayed in test case section list has correct text
         assertEquals("Enter Nickname: \"tech_go1\", Last Name: \"Anderson\", Birth Year: \"2000\", and press \"Submit\". Expected Result: \"Your profile created\". All entered values meet the requirements.", scriptedTestingChangeProfileTCValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
         assertEquals("Enter Nickname: \"c_99\", Last Name: \"Harrison\", Birth Year: \"2001\", and press \"Submit\". Expected Result: \"User input error\". One or several of the entered values don't meet the min length requirement.", scriptedTestingChangeProfileTCValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
         assertEquals("Enter Nickname \"superlongnickname_2024\", Last Name: \"Nguyen\", Birth Year: \"2004\", and press \"Submit\". Expected Result: \"User input error\". One or several of the entered values don't meet the max length requirement.", scriptedTestingChangeProfileTCValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
         assertEquals("Leave Nickname and/or Last Name fields empty, then enter any Birth Year and press \"Submit\". Expected Result: \"User input error\".", scriptedTestingChangeProfileTCValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
         assertEquals("Enter Nickname: \"@@@@@\" Last Name: \"O'Reilly\", choose a valid Birth Year, and press \"Submit\". Expected Result: \"User input error\". Nickname field contains not allowed characters.", scriptedTestingChangeProfileTCValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
         assertEquals("Enter Nickname: \"galaxy_42\", Last Name: \"Newman\", Birth Year: \"1998\", and press \"Submit\". Expected Result: \"User input error\". Birth Year is not within specified period 2000-2005.", scriptedTestingChangeProfileTCValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
+    }
+    //'Scripted testing' currency converter challenge page specific web element assert
+    protected void isScriptedTestingCurrencyConversionChallengePageWebElementDisplayed(ScriptedTestingCurrencyConverterValidationChallengePage scriptedTestingCurrencyConverterValidationChallengePage){
+        //assert scripted testing (currency converter) challenge guide button is displayed
+        assertTrue(scriptedTestingCurrencyConverterValidationChallengePage.isCurrencyConverterGuideIconDisplayed(), "The 'Currency Converter' challenge guide button is not displayed");
+        //assert 'currency converter' test case list is displayed
+        assertTrue(scriptedTestingCurrencyConverterValidationChallengePage.isChangeProfileTestCaseOneDisplayed(), "The 'Currency Converter' test case one is not displayed");
+        assertTrue(scriptedTestingCurrencyConverterValidationChallengePage.isChangeProfileTestCaseTwoDisplayed(), "The 'Currency Converter' test case two is not displayed");
+        assertTrue(scriptedTestingCurrencyConverterValidationChallengePage.isChangeProfileTestCaseThreeDisplayed(), "The 'Currency Converter' test case three is not displayed");
+        assertTrue(scriptedTestingCurrencyConverterValidationChallengePage.isChangeProfileTestCaseFourDisplayed(), "The 'Currency Converter' test case four is not displayed");
+        assertTrue(scriptedTestingCurrencyConverterValidationChallengePage.isChangeProfileTestCaseFiveDisplayed(), "The 'Currency Converter' test case five is not displayed");
+        assertTrue(scriptedTestingCurrencyConverterValidationChallengePage.isChangeProfileTestCaseSixDisplayed(), "The 'Currency Converter' test case six is not displayed");
+        assertTrue(scriptedTestingCurrencyConverterValidationChallengePage.isChangeProfileTestCaseSevenDisplayed(), "The 'Currency Converter' test case seven is not displayed");
+        assertTrue(scriptedTestingCurrencyConverterValidationChallengePage.isChangeProfileTestCaseEightDisplayed(), "The 'Currency Converter' test case eight is not displayed");
+        //assert scripted testing (currency converter) challenge input form 'entered values' are displayed
+        assertTrue(scriptedTestingCurrencyConverterValidationChallengePage.isInputFormEnteredValuesDisplayed(), "The 'Currency Converter' challenge input form entered values are not displayed");
+        //assert scripted testing (currency converter) challenge currency from dropdown menu is displayed
+        assertTrue(scriptedTestingCurrencyConverterValidationChallengePage.isCurrencyFromDropdownMenuDisplayed(), "The 'Currency Converter' challenge currency from dropdown menu is not displayed");
+        //assert scripted testing (currency converter) challenge currency to dropdown menu is displayed
+        assertTrue(scriptedTestingCurrencyConverterValidationChallengePage.isCurrencyToDropdownMenuDisplayed(), "The 'Currency Converter' challenge currency to dropdown menu is not displayed");
+    }
+    //'Scripted Testing' currency converter test cases list assert
+    protected void isScriptedTestingCurrencyConverterTestCaseAsExpected(ScriptedTestingCurrencyConverterValidationChallengePage scriptedTestingCurrencyConverterValidationChallengePage){
+        //assert the currency converter test cases displayed in test case section list has correct text
+        assertEquals("Enter \"1000\" as the \"Amount\", \"USD\" as \"Currency From\", and \"EUR\" as \"Currency To\", click \"Convert\". Expected Result: Accurate conversion result.", scriptedTestingCurrencyConverterValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
+        assertEquals("Input \"1500.567\" (decimal fraction) as the \"Amount\", \"USD\" as \"Currency From\", and \"EUR\" as \"Currency To\", click \"Convert\". Expected Result: Accurate conversion result rounded to two decimal places.", scriptedTestingCurrencyConverterValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
+        assertEquals("Enter \"350\" as the \"Amount\", \"GBP\" as \"Currency From\", and \"GBP\" as \"Currency To\", click \"Convert\". Expected Result: Accurate conversion result with 1:1 ratio.", scriptedTestingCurrencyConverterValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
+        assertEquals("Input \"1000000000000\" (which is too large) as the \"Amount\", \"USD\" as \"Currency From\", and \"EUR\" as \"Currency To\", click \"Convert\". Expected Result: Accurate conversion result without any rounding errors.", scriptedTestingCurrencyConverterValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
+        assertEquals("Input \"0\" as the \"Amount\", \"USD\" as \"Currency From\", and \"EUR\" as \"Currency To\", click \"Convert\". Expected Result: Zero.", scriptedTestingCurrencyConverterValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
+        assertEquals("Leave \"Amount\" field empty, \"USD\" as \"Currency From\", and \"EUR\" as \"Currency To\", click \"Convert\". Expected Result: \"User input error\".", scriptedTestingCurrencyConverterValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
+        assertEquals("Input \"-500\" (negative value) as the \"Amount\", \"USD\" as \"Currency From\", and \"EUR\" as \"Currency To\", click \"Convert\". Expected Result: \"User input error\".", scriptedTestingCurrencyConverterValidationChallengePage.getTestCaseSeven(), "The test case seven challenge description doesn't match expected result");
+        assertEquals("Input \"abc\" (not a value) as the \"Amount\", \"USD\" as \"Currency From\", and \"EUR\" as \"Currency To\", click \"Convert\". Expected Result: \"User input error\".", scriptedTestingCurrencyConverterValidationChallengePage.getTestCaseEight(), "The test case eight challenge description doesn't match expected result");
     }
 
     //pre-challenges loggers (for debug validation)

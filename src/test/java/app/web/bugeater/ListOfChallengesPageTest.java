@@ -221,5 +221,7 @@ public class ListOfChallengesPageTest extends TestMethods{
     @Tag("Scripted_Testing_Challenge_Test")
     void scriptedTestingCurrencyConverterTCValidationChallengeTest(){
         navigateToCurrencyConverterTCValidationPageTest();
+        ScriptedTestingCurrencyConverterValidationChallengePage scriptedTestingCurrencyConverterValidationChallengePage = new ScriptedTestingCurrencyConverterValidationChallengePage(driver);
+
     }
 }
