@@ -288,5 +288,8 @@ public class ListOfChallengesPageTest extends TestMethods{
     @Tag("Exploratory_Testing_Challenge_Test")
     void exploratoryTestingRestorePasswordTCValidationChallengeTest(){
         navigateToExploratoryTestingRestorePasswordTCValidationPageTest();
+        ExploratoryTestingRestorePasswordChallengePage exploratoryTestingRestorePasswordChallengePage = new ExploratoryTestingRestorePasswordChallengePage(driver);
+        //restore password test case validation challenge 1
+        solveRestorePasswordTCValidationChallenge1Test(exploratoryTestingRestorePasswordChallengePage);
     }
 }

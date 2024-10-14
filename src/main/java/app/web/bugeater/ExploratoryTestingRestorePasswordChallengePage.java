@@ -76,8 +76,6 @@ public class ExploratoryTestingRestorePasswordChallengePage extends BasePage{
     public String getTutorialDescriptionText() {return tutorialDescriptionText.getText();}
     //Restore password input form 'entered values' text getter
     public String getEnteredValueText() {return enteredValueText.getText();}
-    //Exploratory testing challenge page title getter
-    public String getExploratoryTestingChallengeTitle() {return exploratoryTestingChallengeTitle.getText();}
     //Exploratory testing 'Calculator' counter getter
     public String getChallengesCounterText() {return challengesCompletedCounter.getText();}
     //challenge hint text getter
