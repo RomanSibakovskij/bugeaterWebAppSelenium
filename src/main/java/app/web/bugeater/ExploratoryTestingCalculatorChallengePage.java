@@ -38,6 +38,8 @@ public class ExploratoryTestingCalculatorChallengePage extends BasePage {
     private WebElement testCaseTwo;
     @FindBy(xpath = "//ol[@class='_challengeList_1a4cy_164']/li[3]")
     private WebElement testCaseThree;
+    @FindBy(xpath = "//ol[@class='_challengeList_1a4cy_164']/li[4]")
+    private WebElement testCaseFour;
 
     //Exploratory testing 'Calculator' input form web elements
     @FindBy(xpath = "//div[@id='testForm']/h2")
@@ -105,6 +107,17 @@ public class ExploratoryTestingCalculatorChallengePage extends BasePage {
         wait.until(ExpectedConditions.visibilityOf(numberTwoInputField));
         numberTwoInputField.sendKeys(String.valueOf(2));
     }
+    //calculator input methods (for challenge 4) (number 1 exceeds max input limit)
+    public void inputTCValidationCalculatorChallenge4Number1(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(numberOneInputField));
+        numberOneInputField.sendKeys("100000000000");
+    }
+    public void inputTCValidationCalculatorChallenge4Number2(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(numberTwoInputField));
+        numberTwoInputField.sendKeys(String.valueOf(7));
+    }
 
     //verify test case validation completion (tick icon) methods
     public void verifyTestCase1Validation(){
@@ -161,6 +174,24 @@ public class ExploratoryTestingCalculatorChallengePage extends BasePage {
             logger.error("Test case 3 hasn't been verified. No tick icon detected." + "\n");
         }
     }
+    public void verifyTestCase4Validation(){
+        //assert the test case 4 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseFour, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseFour
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 4 has been verified successfully(tick icon)." + "\n");
+        } else {
+            logger.error("Test case 4 hasn't been verified. No tick icon detected." + "\n");
+        }
+    }
 
     //click 'calculate' button method
     public void clickCalculateButton(){
@@ -199,6 +230,8 @@ public class ExploratoryTestingCalculatorChallengePage extends BasePage {
     public String getTestCaseTwo(){return testCaseTwo.getText();}
     //test case three text getter
     public String getTestCaseThree(){return testCaseThree.getText();}
+    //test case four text getter
+    public String getTestCaseFour(){return testCaseFour.getText();}
     //challenge hint text getter
     public String getChallengeHintText() {return challengeHintText.getText();}
     //Exploratory testing test calculation result getter
@@ -217,6 +250,7 @@ public class ExploratoryTestingCalculatorChallengePage extends BasePage {
     public boolean isCalculatorTestCaseOneDisplayed(){return testCaseOne.isDisplayed();}
     public boolean isCalculatorTestCaseTwoDisplayed(){return testCaseTwo.isDisplayed();}
     public boolean isCalculatorTestCaseThreeDisplayed(){return testCaseThree.isDisplayed();}
+    public boolean isCalculatorTestCaseFourDisplayed(){return testCaseThree.isDisplayed();}
     public boolean isExploratoryTestingInputFormTitleDisplayed() {return exploratoryTestingInputFormTitle.isDisplayed();}
     public boolean isExploratoryTestingInputFormEnteredValuesDisplayed() {return enteredValuesText.isDisplayed();}
     public boolean isChallengeHintDisplayed() {return challengeHintText.isDisplayed();}

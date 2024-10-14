@@ -261,7 +261,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveNumberSummationTCBuildAndFoundChallenge6Test(tcgNumSummationTCValidationChallengePage);
     }
 
-    //Test 011 -> exploratory testing calculator test case validation challenge test (as a guest)
+    //Test 012 -> exploratory testing calculator test case validation challenge test (as a guest)
     @Test
     @DisplayName("Calculator Test Case Validation Challenge Test (as a guest)")
     @Tag("Exploratory_Testing_Challenge_Test")
@@ -274,5 +274,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveCalculatorTCValidationChallenge2Test(exploratoryTestingCalculatorChallengePage);
         //calculator test case validation challenge 3 (valid tc validation)
         solveCalculatorTCValidationChallenge3Test(exploratoryTestingCalculatorChallengePage);
+        //calculator test case validation challenge 4 (invalid tc validation - number 1 exceeds max input limit)
+        solveCalculatorTCValidationChallenge4Test(exploratoryTestingCalculatorChallengePage);
     }
 }
