@@ -142,6 +142,8 @@ public class ListOfChallengesPage extends BasePage{
     }
     //click calculator test case validation challenge link method
     public void clickExploratoryTestingChallengeLink1(){clickListOfChallengesExploratoryTestingChallengeLink(0);}
+    //click restore password test case validation challenge link method
+    public void clickExploratoryTestingChallengeLink2(){clickListOfChallengesExploratoryTestingChallengeLink(1);}
 
     //list of challenges page title getter
     public String getListOfChallengesPageTitle(){return listOfChallengesTitle.getText();}

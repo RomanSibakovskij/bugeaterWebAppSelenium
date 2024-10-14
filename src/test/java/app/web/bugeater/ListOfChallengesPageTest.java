@@ -281,4 +281,12 @@ public class ListOfChallengesPageTest extends TestMethods{
         //calculator test case validation challenge 6 (valid tc validation)
         solveCalculatorTCValidationChallenge6Test(exploratoryTestingCalculatorChallengePage);
     }
+
+    //Test 013 -> exploratory testing restore password test case validation challenge test (as a guest)
+    @Test
+    @DisplayName("Restore Password Test Case Validation Challenge Test (as a guest)")
+    @Tag("Exploratory_Testing_Challenge_Test")
+    void exploratoryTestingRestorePasswordTCValidationChallengeTest(){
+        navigateToExploratoryTestingRestorePasswordTCValidationPageTest();
+    }
 }

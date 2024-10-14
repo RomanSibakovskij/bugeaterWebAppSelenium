@@ -11,5 +11,5 @@ public class ExploratoryTestingRestorePasswordChallengePage extends BasePage{
     public ExploratoryTestingRestorePasswordChallengePage(WebDriver driver) {
         super(driver);
     }
-    
+
 }
