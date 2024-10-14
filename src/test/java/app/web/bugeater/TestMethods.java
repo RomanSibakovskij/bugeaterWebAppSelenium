@@ -3266,7 +3266,7 @@ public class TestMethods extends BaseTest {
         //click 'exploratory testing - calculator' challenge link
         listOfChallengesPage.clickExploratoryTestingChallengeLink1();
     }
-    //Exploratory testing calculator test case validation challenge test method (challenge 1) (valid tc validation)
+    //Exploratory testing calculator test case validation challenge test method (challenge 1) (invalid tc validation - both inputs are empty)
     protected void solveCalculatorTCValidationChallenge1Test(ExploratoryTestingCalculatorChallengePage exploratoryTestingCalculatorChallengePage) {
         ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
         LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
@@ -3288,10 +3288,23 @@ public class TestMethods extends BaseTest {
         assertEquals("Add two numbers", exploratoryTestingCalculatorChallengePage.getChallengeHintText(), "The Exploratory Testing calculator challenge hint text doesn't match expected result");
         //assert challenge counter has no challenges completed yet
         assertEquals("0 case(s) out of 6", exploratoryTestingCalculatorChallengePage.getChallengesCounterText(), "The Exploratory Testing calculator challenge counter display doesn't match expected result");
-        //assert calculation has the expected result (before operation)
+        //assert entered values has expected display (before first test case validation)
+        assertEquals("Entered Values:", exploratoryTestingCalculatorChallengePage.getEnteredValuesText(), "The Exploratory Testing calculator entered values display doesn't match expected result");
+        //assert calculation has the expected result (before first test case validation)
         assertEquals("Result:", exploratoryTestingCalculatorChallengePage.getExploratoryTestingResult(), "The Exploratory Testing calculator calculation result doesn't match expected result");
         //logger before challenge completion
         logPreChallenge1Result(learnModeNumAddDivisionChallengePage);
+        //input numbers into number input fields (both inputs are blank)
+        exploratoryTestingCalculatorChallengePage.inputTCValidationCalculatorChallenge1Number1();
+        exploratoryTestingCalculatorChallengePage.inputTCValidationCalculatorChallenge1Number2();
+        //click 'calculate' button
+        exploratoryTestingCalculatorChallengePage.clickCalculateButton();
+        //assert entered values has expected display (after first test case validation)
+        assertEquals("Entered Values: First Number: Empty, Second Number: Empty", exploratoryTestingCalculatorChallengePage.getEnteredValuesText(), "The Exploratory Testing calculator entered values display doesn't match expected result");
+        //verify first test case validation
+        exploratoryTestingCalculatorChallengePage.verifyTestCase1Validation();
+        //assert first test case has expected display
+        assertEquals("Not all fields are filled.", exploratoryTestingCalculatorChallengePage.getTestCaseOne(), "The Exploratory Testing calculator test case one doesn't match expected result");
     }
 
     //general page web element assert (repeating web elements on all app pages)

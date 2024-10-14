@@ -31,6 +31,10 @@ public class ExploratoryTestingCalculatorChallengePage extends BasePage {
     @FindBy(xpath = "//div[@class='_challengePanelResultsHeading_1a4cy_60']/p[@class='_challengePanelResultsCaption_1a4cy_71']")
     private WebElement challengesCompletedCounter;
 
+    //Exploratory testing 'Calculator' test cases for validation web element
+    @FindBy(xpath = "//ol[@class='_challengeList_1a4cy_164']/li")
+    private WebElement testCaseOne;
+
     //Exploratory testing 'Calculator' input form web elements
     @FindBy(xpath = "//div[@id='testForm']/h2")
     private WebElement exploratoryTestingInputFormTitle;
@@ -64,6 +68,45 @@ public class ExploratoryTestingCalculatorChallengePage extends BasePage {
         super(driver);
     }
 
+    //calculator input methods (for challenge 1) (both inputs are blank)
+    public void inputTCValidationCalculatorChallenge1Number1(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(numberOneInputField));
+        numberOneInputField.sendKeys("");
+    }
+    public void inputTCValidationCalculatorChallenge1Number2(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(numberTwoInputField));
+        numberTwoInputField.sendKeys("");
+    }
+
+    //verify test case validation completion (tick icon) methods
+    public void verifyTestCase1Validation(){
+        //assert the test case 1 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseOne, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseOne
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 1 has been verified successfully(tick icon)." + "\n");
+        } else {
+            logger.error("Test case 1 hasn't been verified. No tick icon detected." + "\n");
+        }
+    }
+
+    //click 'calculate' button method
+    public void clickCalculateButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.elementToBeClickable(calculateButton));
+        calculateButton.click();
+    }
+
     //tutorial modal 'skip' button click method
     public void clickSkipTutorialButton(){tutorialSkipButton.click();}
 
@@ -82,10 +125,14 @@ public class ExploratoryTestingCalculatorChallengePage extends BasePage {
     public String getExploratoryTestingTestCaseSectionTitle(){return exploratoryTestingTestCaseSectionTitle.getText();}
     //Exploratory testing test cases input form title getter
     public String getExploratoryTestingInputFormTitle(){return exploratoryTestingInputFormTitle.getText();}
+    //Calculator input form 'entered values' text getter
+    public String getEnteredValuesText() {return enteredValuesText.getText();}
     //Exploratory testing challenge page title getter
     public String getExploratoryTestingChallengeTitle() {return exploratoryTestingChallengeTitle.getText();}
     //Exploratory testing 'Calculator' counter getter
     public String getChallengesCounterText() {return challengesCompletedCounter.getText();}
+    //challenge one text getter
+    public String getTestCaseOne(){return testCaseOne.getText();}
     //challenge hint text getter
     public String getChallengeHintText() {return challengeHintText.getText();}
     //Exploratory testing test calculation result getter
@@ -101,6 +148,7 @@ public class ExploratoryTestingCalculatorChallengePage extends BasePage {
     public boolean isExploratoryTestingTestCaseSectionTitleDisplayed(){return exploratoryTestingTestCaseSectionTitle.isDisplayed();}
     public boolean isExploratoryTestingChallengesCompletedCounterDisplayed() {return challengesCompletedCounter.isDisplayed();}
     public boolean isExploratoryTestingChallengeInstructionsTextDisplayed(){return exploratoryTestingInstructionsText.isDisplayed();}
+    public boolean isCalculatorTestCaseOneDisplayed(){return testCaseOne.isDisplayed();}
     public boolean isExploratoryTestingInputFormTitleDisplayed() {return exploratoryTestingInputFormTitle.isDisplayed();}
     public boolean isExploratoryTestingInputFormEnteredValuesDisplayed() {return enteredValuesText.isDisplayed();}
     public boolean isChallengeHintDisplayed() {return challengeHintText.isDisplayed();}
