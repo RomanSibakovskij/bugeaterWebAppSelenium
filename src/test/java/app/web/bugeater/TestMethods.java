@@ -3344,6 +3344,44 @@ public class TestMethods extends BaseTest {
         //assert second test case has expected display
         assertEquals("Either one or both of the values are not numbers.", exploratoryTestingCalculatorChallengePage.getTestCaseTwo(), "The Exploratory Testing calculator test case two doesn't match expected result");
     }
+    //Exploratory testing calculator test case validation challenge test method (challenge 3) (invalid tc validation - number 1 is a string)
+    protected void solveCalculatorTCValidationChallenge3Test(ExploratoryTestingCalculatorChallengePage exploratoryTestingCalculatorChallengePage) {
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the challenge text is displayed as expected
+        assertEquals("Six hidden Test Cases you need to find by inputting various values into the form. With each newly found scenario, the corresponding line appears in the list of Cases. You learn how to find all valid Test Cases with the minimum number of checks.", exploratoryTestingCalculatorChallengePage.getExploratoryTestingInstructionsText(), "The text of the challenge doesn't match the expected text");
+        //Exploratory testing page web element assert method
+        isExploratoryTestingChallengePageWebElementDisplayed(exploratoryTestingCalculatorChallengePage);
+        //calculator page title web element text assert
+        isIndividualExploratoryTestingChallengePageTextMatchesExpectations(exploratoryTestingCalculatorChallengePage);
+        //assert the page title is as expected
+        assertEquals("Calculator", exploratoryTestingCalculatorChallengePage.getExploratoryTestingChallengeTitle(), "The Exploratory Testing calculator challenge page title doesn't match the expected title");
+        //assert challenge hint has the correct title
+        assertEquals("Add two numbers", exploratoryTestingCalculatorChallengePage.getChallengeHintText(), "The Exploratory Testing calculator challenge hint text doesn't match expected result");
+        //assert challenge counter has registered second test case validation
+        assertEquals("2 case(s) out of 6", exploratoryTestingCalculatorChallengePage.getChallengesCounterText(), "The Exploratory Testing calculator challenge counter display doesn't match expected result");
+        //assert entered values has expected display (before third test case validation)
+        assertEquals("Entered Values: First Number: Kt, Second Number: 2", exploratoryTestingCalculatorChallengePage.getEnteredValuesText(), "The Exploratory Testing calculator entered values display doesn't match expected result");
+        //assert calculation has the expected result (before third test case validation)
+        assertEquals("Result: User input error", exploratoryTestingCalculatorChallengePage.getExploratoryTestingResult(), "The Exploratory Testing calculator calculation result doesn't match expected result");
+        //logger before challenge completion
+        logPreChallenge3Result(learnModeNumAddDivisionChallengePage);
+        //input numbers into number input fields (both numbers are valid)
+        exploratoryTestingCalculatorChallengePage.inputTCValidationCalculatorChallenge3Number1();
+        exploratoryTestingCalculatorChallengePage.inputTCValidationCalculatorChallenge3Number2();
+        //click 'calculate' button
+        exploratoryTestingCalculatorChallengePage.clickCalculateButton();
+        //verify third test case validation
+        exploratoryTestingCalculatorChallengePage.verifyTestCase3Validation();
+        //assert third test case is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isCalculatorTestCaseThreeDisplayed(), "The calculator test case three isn't displayed");
+        //assert third test case has expected display
+        assertEquals("Both numbers are natural numbers. The addition performed correctly.", exploratoryTestingCalculatorChallengePage.getTestCaseThree(), "The Exploratory Testing calculator test case threeo doesn't match expected result");
+        //assert 'halfway there' message is displayed
+        //assertEquals("Halfway there!", exploratoryTestingCalculatorChallengePage.getHalfwayThereMessage(), "The 'halfway there' message isn't displayed"); //NoSuchElementException with valid selector
+    }
 
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){

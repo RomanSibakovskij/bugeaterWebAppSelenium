@@ -272,5 +272,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveCalculatorTCValidationChallenge1Test(exploratoryTestingCalculatorChallengePage);
         //calculator test case validation challenge 2 (invalid tc validation - number 1 is a string)
         solveCalculatorTCValidationChallenge2Test(exploratoryTestingCalculatorChallengePage);
+        //calculator test case validation challenge 3 (valid tc validation)
+        solveCalculatorTCValidationChallenge3Test(exploratoryTestingCalculatorChallengePage);
     }
 }
