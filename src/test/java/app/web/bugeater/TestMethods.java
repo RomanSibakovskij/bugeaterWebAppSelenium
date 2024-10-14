@@ -3382,7 +3382,7 @@ public class TestMethods extends BaseTest {
         //assert 'halfway there' message is displayed
         //assertEquals("Halfway there!", exploratoryTestingCalculatorChallengePage.getHalfwayThereMessage(), "The 'halfway there' message isn't displayed"); //NoSuchElementException with valid selector
     }
-    //Exploratory testing calculator test case validation challenge test method (challenge 4) (invalid tc validation - number 1 is a string)
+    //Exploratory testing calculator test case validation challenge test method (challenge 4) (invalid tc validation - number 1 exceeds max input value)
     protected void solveCalculatorTCValidationChallenge4Test(ExploratoryTestingCalculatorChallengePage exploratoryTestingCalculatorChallengePage) {
         ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
         LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
@@ -3417,7 +3417,43 @@ public class TestMethods extends BaseTest {
         assertTrue(exploratoryTestingCalculatorChallengePage.isCalculatorTestCaseFourDisplayed(), "The calculator test case four isn't displayed");
         //assert fourth test case has expected display
         assertEquals("Either one or both of the values exceed the maximum length limit for inputted values.", exploratoryTestingCalculatorChallengePage.getTestCaseFour(), "The Exploratory Testing calculator test case four doesn't match expected result");
-        }
+    }
+    //Exploratory testing calculator test case validation challenge test method (challenge 5) (valid tc validation)
+    protected void solveCalculatorTCValidationChallenge5Test(ExploratoryTestingCalculatorChallengePage exploratoryTestingCalculatorChallengePage) {
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the challenge text is displayed as expected
+        assertEquals("Six hidden Test Cases you need to find by inputting various values into the form. With each newly found scenario, the corresponding line appears in the list of Cases. You learn how to find all valid Test Cases with the minimum number of checks.", exploratoryTestingCalculatorChallengePage.getExploratoryTestingInstructionsText(), "The text of the challenge doesn't match the expected text");
+        //Exploratory testing page web element assert method
+        isExploratoryTestingChallengePageWebElementDisplayed(exploratoryTestingCalculatorChallengePage);
+        //calculator page title web element text assert
+        isIndividualExploratoryTestingChallengePageTextMatchesExpectations(exploratoryTestingCalculatorChallengePage);
+        //assert the page title is as expected
+        assertEquals("Calculator", exploratoryTestingCalculatorChallengePage.getExploratoryTestingChallengeTitle(), "The Exploratory Testing calculator challenge page title doesn't match the expected title");
+        //assert challenge hint has the correct title
+        assertEquals("Add two numbers", exploratoryTestingCalculatorChallengePage.getChallengeHintText(), "The Exploratory Testing calculator challenge hint text doesn't match expected result");
+        //assert challenge counter has registered fourth test case validation
+        assertEquals("4 case(s) out of 6", exploratoryTestingCalculatorChallengePage.getChallengesCounterText(), "The Exploratory Testing calculator challenge counter display doesn't match expected result");
+        //assert entered values has expected display (before fifth test case validation)
+        assertEquals("Entered Values: First Number: 100000000000, Second Number: 7", exploratoryTestingCalculatorChallengePage.getEnteredValuesText(), "The Exploratory Testing calculator entered values display doesn't match expected result");
+        //assert calculation has the expected result (before fifth test case validation)
+        assertEquals("Result: Application error", exploratoryTestingCalculatorChallengePage.getExploratoryTestingResult(), "The Exploratory Testing calculator calculation result doesn't match expected result");
+        //logger before challenge completion
+        logPreChallenge4Result(learnModeNumAddDivisionChallengePage);
+        //input numbers into number input fields (both numbers are decimals)
+        exploratoryTestingCalculatorChallengePage.inputTCValidationCalculatorChallenge5Number1();
+        exploratoryTestingCalculatorChallengePage.inputTCValidationCalculatorChallenge5Number2();
+        //click 'calculate' button
+        exploratoryTestingCalculatorChallengePage.clickCalculateButton();
+        //verify fifth test case validation
+        exploratoryTestingCalculatorChallengePage.verifyTestCase5Validation();
+        //assert fifth test case is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isCalculatorTestCaseFiveDisplayed(), "The calculator test case five isn't displayed");
+        //assert fifth test case has expected display
+        assertEquals("One or both numbers are decimal fractions. The addition performed correctly.", exploratoryTestingCalculatorChallengePage.getTestCaseFive(), "The Exploratory Testing calculator test case fiver doesn't match expected result");
+    }
 
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){

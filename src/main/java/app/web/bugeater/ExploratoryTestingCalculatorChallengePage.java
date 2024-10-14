@@ -40,6 +40,8 @@ public class ExploratoryTestingCalculatorChallengePage extends BasePage {
     private WebElement testCaseThree;
     @FindBy(xpath = "//ol[@class='_challengeList_1a4cy_164']/li[4]")
     private WebElement testCaseFour;
+    @FindBy(xpath = "//ol[@class='_challengeList_1a4cy_164']/li[5]")
+    private WebElement testCaseFive;
 
     //Exploratory testing 'Calculator' input form web elements
     @FindBy(xpath = "//div[@id='testForm']/h2")
@@ -118,6 +120,17 @@ public class ExploratoryTestingCalculatorChallengePage extends BasePage {
         wait.until(ExpectedConditions.visibilityOf(numberTwoInputField));
         numberTwoInputField.sendKeys(String.valueOf(7));
     }
+    //calculator input methods (for challenge 5) (both numbers are valid - decimals)
+    public void inputTCValidationCalculatorChallenge5Number1(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(numberOneInputField));
+        numberOneInputField.sendKeys(String.valueOf(7.5));
+    }
+    public void inputTCValidationCalculatorChallenge5Number2(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(numberTwoInputField));
+        numberTwoInputField.sendKeys(String.valueOf(13.5));
+    }
 
     //verify test case validation completion (tick icon) methods
     public void verifyTestCase1Validation(){
@@ -192,6 +205,24 @@ public class ExploratoryTestingCalculatorChallengePage extends BasePage {
             logger.error("Test case 4 hasn't been verified. No tick icon detected." + "\n");
         }
     }
+    public void verifyTestCase5Validation(){
+        //assert the test case 5 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseFive, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseFive
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 5 has been verified successfully(tick icon)." + "\n");
+        } else {
+            logger.error("Test case 5 hasn't been verified. No tick icon detected." + "\n");
+        }
+    }
 
     //click 'calculate' button method
     public void clickCalculateButton(){
@@ -232,6 +263,8 @@ public class ExploratoryTestingCalculatorChallengePage extends BasePage {
     public String getTestCaseThree(){return testCaseThree.getText();}
     //test case four text getter
     public String getTestCaseFour(){return testCaseFour.getText();}
+    //test case five text getter
+    public String getTestCaseFive(){return testCaseFive.getText();}
     //challenge hint text getter
     public String getChallengeHintText() {return challengeHintText.getText();}
     //Exploratory testing test calculation result getter
@@ -250,7 +283,8 @@ public class ExploratoryTestingCalculatorChallengePage extends BasePage {
     public boolean isCalculatorTestCaseOneDisplayed(){return testCaseOne.isDisplayed();}
     public boolean isCalculatorTestCaseTwoDisplayed(){return testCaseTwo.isDisplayed();}
     public boolean isCalculatorTestCaseThreeDisplayed(){return testCaseThree.isDisplayed();}
-    public boolean isCalculatorTestCaseFourDisplayed(){return testCaseThree.isDisplayed();}
+    public boolean isCalculatorTestCaseFourDisplayed(){return testCaseFour.isDisplayed();}
+    public boolean isCalculatorTestCaseFiveDisplayed(){return testCaseFive.isDisplayed();}
     public boolean isExploratoryTestingInputFormTitleDisplayed() {return exploratoryTestingInputFormTitle.isDisplayed();}
     public boolean isExploratoryTestingInputFormEnteredValuesDisplayed() {return enteredValuesText.isDisplayed();}
     public boolean isChallengeHintDisplayed() {return challengeHintText.isDisplayed();}

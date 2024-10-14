@@ -276,5 +276,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveCalculatorTCValidationChallenge3Test(exploratoryTestingCalculatorChallengePage);
         //calculator test case validation challenge 4 (invalid tc validation - number 1 exceeds max input limit)
         solveCalculatorTCValidationChallenge4Test(exploratoryTestingCalculatorChallengePage);
+        //calculator test case validation challenge 5 (valid tc validation)
+        solveCalculatorTCValidationChallenge5Test(exploratoryTestingCalculatorChallengePage);
     }
 }
