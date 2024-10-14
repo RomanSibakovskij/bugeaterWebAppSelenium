@@ -268,7 +268,9 @@ public class ListOfChallengesPageTest extends TestMethods{
     void exploratoryTestingCalculatorTCValidationChallengeTest(){
         navigateToExploratoryTestingCalculatorTCValidationPageTest();
         ExploratoryTestingCalculatorChallengePage exploratoryTestingCalculatorChallengePage = new ExploratoryTestingCalculatorChallengePage(driver);
-        //calculator test case validation challenge 1 (valid tc validation)
+        //calculator test case validation challenge 1 (invalid tc validation - both inputs are blank)
         solveCalculatorTCValidationChallenge1Test(exploratoryTestingCalculatorChallengePage);
+        //calculator test case validation challenge 2 (invalid tc validation - number 1 is a string)
+        solveCalculatorTCValidationChallenge2Test(exploratoryTestingCalculatorChallengePage);
     }
 }
