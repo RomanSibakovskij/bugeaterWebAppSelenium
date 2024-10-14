@@ -260,4 +260,12 @@ public class ListOfChallengesPageTest extends TestMethods{
         //number summation test case build challenge 6 (invalid tc validation - number 1 as '10000000000')
         solveNumberSummationTCBuildAndFoundChallenge6Test(tcgNumSummationTCValidationChallengePage);
     }
+
+    //Test 011 -> exploratory testing calculator test case validation challenge test (as a guest)
+    @Test
+    @DisplayName("Calculator Test Case Validation Challenge Test (as a guest)")
+    @Tag("Exploratory_Testing_Challenge_Test")
+    void exploratoryTestingCalculatorTCValidationChallengeTest(){
+        navigateToExploratoryTestingCalculatorTCValidationPageTest();
+    }
 }

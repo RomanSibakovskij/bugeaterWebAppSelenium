@@ -3250,6 +3250,23 @@ public class TestMethods extends BaseTest {
         assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
     }
 
+    //navigate to calculator (exploratory testing) test case validation challenge test method
+    protected void navigateToExploratoryTestingCalculatorTCValidationPageTest(){
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        //click 'accept' cookies modal button
+        listOfChallengesPage.clickAcceptCookiesButton();
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //'List of Challenges' page web element assert
+        isListOfChallengesWebElementDisplayed(listOfChallengesPage);
+        //assert the 'list of challenges' page title is as expected
+        assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
+        //assert the learn mode section title is as expected
+        assertEquals("Exploratory Testing", listOfChallengesPage.getExploratoryTestingSectionTitle(), "The scripted testing section title doesn't match expectations");
+        //click 'exploratory testing - calculator' challenge link
+        listOfChallengesPage.clickExploratoryTestingChallengeLink1();
+    }
+
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){
         //assert 'list of challenges' navbar dropdown menu is displayed

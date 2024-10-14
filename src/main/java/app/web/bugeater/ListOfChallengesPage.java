@@ -134,6 +134,15 @@ public class ListOfChallengesPage extends BasePage{
         listOfChallengesTestCaseGenChallengeLink.click();
     }
 
+    //click challenge link list method (exploratory testing)
+    public void clickListOfChallengesExploratoryTestingChallengeLink(int linkIndex){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(600));
+        wait.until(ExpectedConditions.elementToBeClickable(listOfChallengesExploratoryTestingChallengeLinkElements.get(linkIndex)));
+        listOfChallengesExploratoryTestingChallengeLinkElements.get(linkIndex).click();
+    }
+    //click calculator test case validation challenge link method
+    public void clickExploratoryTestingChallengeLink1(){clickListOfChallengesExploratoryTestingChallengeLink(0);}
+
     //list of challenges page title getter
     public String getListOfChallengesPageTitle(){return listOfChallengesTitle.getText();}
     //learn mode section title getter
@@ -142,6 +151,8 @@ public class ListOfChallengesPage extends BasePage{
     public String getScriptedTestingSectionTitle(){return listOfChallengesScriptedTestingTitle.getText();}
     //test case generator section title getter
     public String getTestCaseGeneratorSectionTitle(){return listOfChallengesTestCaseGenTitle.getText();}
+    //exploratory testing section title getter
+    public String getExploratoryTestingSectionTitle(){return listOfChallengesExploratoryTestingTitle.getText();}
 
     //'List of Challenges' page web element assert methods
     public boolean isListOfChallengesDropdownMenuDisplayed(){return listOfChallengesDropdownMenu.isDisplayed();}
