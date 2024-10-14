@@ -3441,7 +3441,7 @@ public class TestMethods extends BaseTest {
         //assert calculation has the expected result (before fifth test case validation)
         assertEquals("Result: Application error", exploratoryTestingCalculatorChallengePage.getExploratoryTestingResult(), "The Exploratory Testing calculator calculation result doesn't match expected result");
         //logger before challenge completion
-        logPreChallenge4Result(learnModeNumAddDivisionChallengePage);
+        logPreChallenge5Result(learnModeNumAddDivisionChallengePage);
         //input numbers into number input fields (both numbers are decimals)
         exploratoryTestingCalculatorChallengePage.inputTCValidationCalculatorChallenge5Number1();
         exploratoryTestingCalculatorChallengePage.inputTCValidationCalculatorChallenge5Number2();
@@ -3453,6 +3453,61 @@ public class TestMethods extends BaseTest {
         assertTrue(exploratoryTestingCalculatorChallengePage.isCalculatorTestCaseFiveDisplayed(), "The calculator test case five isn't displayed");
         //assert fifth test case has expected display
         assertEquals("One or both numbers are decimal fractions. The addition performed correctly.", exploratoryTestingCalculatorChallengePage.getTestCaseFive(), "The Exploratory Testing calculator test case fiver doesn't match expected result");
+    }
+    //Exploratory testing calculator test case validation challenge test method (challenge 6) (valid tc validation - negative numbers)
+    protected void solveCalculatorTCValidationChallenge6Test(ExploratoryTestingCalculatorChallengePage exploratoryTestingCalculatorChallengePage) {
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the challenge text is displayed as expected
+        assertEquals("Six hidden Test Cases you need to find by inputting various values into the form. With each newly found scenario, the corresponding line appears in the list of Cases. You learn how to find all valid Test Cases with the minimum number of checks.", exploratoryTestingCalculatorChallengePage.getExploratoryTestingInstructionsText(), "The text of the challenge doesn't match the expected text");
+        //Exploratory testing page web element assert method
+        isExploratoryTestingChallengePageWebElementDisplayed(exploratoryTestingCalculatorChallengePage);
+        //calculator page title web element text assert
+        isIndividualExploratoryTestingChallengePageTextMatchesExpectations(exploratoryTestingCalculatorChallengePage);
+        //assert the page title is as expected
+        assertEquals("Calculator", exploratoryTestingCalculatorChallengePage.getExploratoryTestingChallengeTitle(), "The Exploratory Testing calculator challenge page title doesn't match the expected title");
+        //assert challenge hint has the correct title
+        assertEquals("Add two numbers", exploratoryTestingCalculatorChallengePage.getChallengeHintText(), "The Exploratory Testing calculator challenge hint text doesn't match expected result");
+        //assert challenge counter has registered fifth test case validation
+        assertEquals("5 case(s) out of 6", exploratoryTestingCalculatorChallengePage.getChallengesCounterText(), "The Exploratory Testing calculator challenge counter display doesn't match expected result");
+        //assert entered values has expected display (before sixth test case validation)
+        assertEquals("Entered Values: First Number: 7.5, Second Number: 13.5", exploratoryTestingCalculatorChallengePage.getEnteredValuesText(), "The Exploratory Testing calculator entered values display doesn't match expected result");
+        //assert calculation has the expected result (before sixth test case validation)
+        assertEquals("Result: 21.0", exploratoryTestingCalculatorChallengePage.getExploratoryTestingResult(), "The Exploratory Testing calculator calculation result doesn't match expected result");
+        //logger before challenge completion
+        logPreChallenge6Result(learnModeNumAddDivisionChallengePage);
+        //input numbers into number input fields (both numbers are negative numbers)
+        exploratoryTestingCalculatorChallengePage.inputTCValidationCalculatorChallenge6Number1();
+        exploratoryTestingCalculatorChallengePage.inputTCValidationCalculatorChallenge6Number2();
+        //click 'calculate' button
+        exploratoryTestingCalculatorChallengePage.clickCalculateButton();
+        //assert challenge completion modal has the expected title (NoSuchElementException despite valid selector)
+        //assertEquals("You did it!", exploratoryTestingCalculatorChallengePage.getChallengeCompletionModalTitle(), "The challenge completion modal title displayed doesn't match expected title");
+        //click close modal button
+        learnModeNumAddDivisionChallengePage.clickCloseModalButton();
+        LearnModePasswordChallengePage learnModePasswordChallengePage = new LearnModePasswordChallengePage(driver);
+        //logger after challenge six completion
+        logPreChallenge7Result(learnModePasswordChallengePage);
+        //verify sixth test case validation
+        exploratoryTestingCalculatorChallengePage.verifyTestCase6Validation();
+        //assert sixth test case is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isCalculatorTestCaseSixDisplayed(), "The calculator test case six isn't displayed");
+        //assert sixth test case has expected display
+        assertEquals("One or both numbers are negative. The addition performed correctly.", exploratoryTestingCalculatorChallengePage.getTestCaseSix(), "The Exploratory Testing calculator test case six doesn't match expected result");
+        //assert challenge counter has registered sixth test case validation
+        assertEquals("6 case(s) out of 6", exploratoryTestingCalculatorChallengePage.getChallengesCounterText(), "The Exploratory Testing calculator challenge counter display doesn't match expected result");
+        //assert entered values has expected display (after sixth test case validation)
+        assertEquals("Entered Values: First Number: -20, Second Number: -3", exploratoryTestingCalculatorChallengePage.getEnteredValuesText(), "The Exploratory Testing calculator entered values display doesn't match expected result");
+        //assert calculation has the expected result (after sixth test case validation)
+        assertEquals("Result: -23", exploratoryTestingCalculatorChallengePage.getExploratoryTestingResult(), "The Exploratory Testing calculator calculation result doesn't match expected result");
+        //click navbar dropdown menu
+        listOfChallengesPage.clickNavbarDropdownMenu();
+        //return to 'List of Challenges'
+        listOfChallengesPage.clickReturnToListOfChallengesLink();
+        //assert the user has returned back to 'List of Challenges'
+        assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
     }
 
     //general page web element assert (repeating web elements on all app pages)

@@ -42,6 +42,8 @@ public class ExploratoryTestingCalculatorChallengePage extends BasePage {
     private WebElement testCaseFour;
     @FindBy(xpath = "//ol[@class='_challengeList_1a4cy_164']/li[5]")
     private WebElement testCaseFive;
+    @FindBy(xpath = "//ol[@class='_challengeList_1a4cy_164']/li[6]")
+    private WebElement testCaseSix;
 
     //Exploratory testing 'Calculator' input form web elements
     @FindBy(xpath = "//div[@id='testForm']/h2")
@@ -130,6 +132,17 @@ public class ExploratoryTestingCalculatorChallengePage extends BasePage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(numberTwoInputField));
         numberTwoInputField.sendKeys(String.valueOf(13.5));
+    }
+    //calculator input methods (for challenge 6) (both numbers are valid - negative numbers)
+    public void inputTCValidationCalculatorChallenge6Number1(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(numberOneInputField));
+        numberOneInputField.sendKeys(String.valueOf(-20));
+    }
+    public void inputTCValidationCalculatorChallenge6Number2(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(numberTwoInputField));
+        numberTwoInputField.sendKeys(String.valueOf(-3));
     }
 
     //verify test case validation completion (tick icon) methods
@@ -223,6 +236,24 @@ public class ExploratoryTestingCalculatorChallengePage extends BasePage {
             logger.error("Test case 5 hasn't been verified. No tick icon detected." + "\n");
         }
     }
+    public void verifyTestCase6Validation(){
+        //assert the test case 6 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseSix, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseSix
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 6 has been verified successfully(tick icon)." + "\n");
+        } else {
+            logger.error("Test case 6 hasn't been verified. No tick icon detected." + "\n");
+        }
+    }
 
     //click 'calculate' button method
     public void clickCalculateButton(){
@@ -265,6 +296,8 @@ public class ExploratoryTestingCalculatorChallengePage extends BasePage {
     public String getTestCaseFour(){return testCaseFour.getText();}
     //test case five text getter
     public String getTestCaseFive(){return testCaseFive.getText();}
+    //test case six text getter
+    public String getTestCaseSix(){return testCaseSix.getText();}
     //challenge hint text getter
     public String getChallengeHintText() {return challengeHintText.getText();}
     //Exploratory testing test calculation result getter
@@ -280,11 +313,14 @@ public class ExploratoryTestingCalculatorChallengePage extends BasePage {
     public boolean isExploratoryTestingTestCaseSectionTitleDisplayed(){return exploratoryTestingTestCaseSectionTitle.isDisplayed();}
     public boolean isExploratoryTestingChallengesCompletedCounterDisplayed() {return challengesCompletedCounter.isDisplayed();}
     public boolean isExploratoryTestingChallengeInstructionsTextDisplayed(){return exploratoryTestingInstructionsText.isDisplayed();}
+    //'Exploratory testing' test cases web element assert methods
     public boolean isCalculatorTestCaseOneDisplayed(){return testCaseOne.isDisplayed();}
     public boolean isCalculatorTestCaseTwoDisplayed(){return testCaseTwo.isDisplayed();}
     public boolean isCalculatorTestCaseThreeDisplayed(){return testCaseThree.isDisplayed();}
     public boolean isCalculatorTestCaseFourDisplayed(){return testCaseFour.isDisplayed();}
     public boolean isCalculatorTestCaseFiveDisplayed(){return testCaseFive.isDisplayed();}
+    public boolean isCalculatorTestCaseSixDisplayed(){return testCaseSix.isDisplayed();}
+
     public boolean isExploratoryTestingInputFormTitleDisplayed() {return exploratoryTestingInputFormTitle.isDisplayed();}
     public boolean isExploratoryTestingInputFormEnteredValuesDisplayed() {return enteredValuesText.isDisplayed();}
     public boolean isChallengeHintDisplayed() {return challengeHintText.isDisplayed();}

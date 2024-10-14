@@ -278,5 +278,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveCalculatorTCValidationChallenge4Test(exploratoryTestingCalculatorChallengePage);
         //calculator test case validation challenge 5 (valid tc validation)
         solveCalculatorTCValidationChallenge5Test(exploratoryTestingCalculatorChallengePage);
+        //calculator test case validation challenge 6 (valid tc validation)
+        solveCalculatorTCValidationChallenge6Test(exploratoryTestingCalculatorChallengePage);
     }
 }
