@@ -253,5 +253,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveNumberSummationTCBuildAndFoundChallenge2Test(tcgNumSummationTCValidationChallengePage);
         //number summation test case build challenge 3 (valid tc validation)
         solveNumberSummationTCBuildAndFoundChallenge3Test(tcgNumSummationTCValidationChallengePage);
+        //number summation test case build challenge 4 (invalid tc validation - both inputs as strings)
+        solveNumberSummationTCBuildAndFoundChallenge4Test(tcgNumSummationTCValidationChallengePage);
     }
 }
