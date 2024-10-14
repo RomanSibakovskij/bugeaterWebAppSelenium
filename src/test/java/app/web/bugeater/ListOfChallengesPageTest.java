@@ -249,5 +249,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         TCGNumSummationTCValidationChallengePage tcgNumSummationTCValidationChallengePage = new TCGNumSummationTCValidationChallengePage(driver);
         //number summation test case build challenge 1 (valid tc validation)
         solveNumberSummationTCBuildAndFoundChallenge1Test(tcgNumSummationTCValidationChallengePage);
+        //number summation test case build challenge 2 (valid tc validation)
+        solveNumberSummationTCBuildAndFoundChallenge2Test(tcgNumSummationTCValidationChallengePage);
     }
 }
