@@ -325,7 +325,7 @@ public class ExploratoryTestingCalculatorChallengePage extends BasePage {
     public boolean isChallengeHintDisplayed() {return challengeHintText.isDisplayed();}
     public boolean isNumber1InputFieldDisplayed() {return numberOneInputField.isDisplayed();}
     public boolean isNumber2InputFieldDisplayed() {return numberTwoInputField.isDisplayed();}
-    public boolean isCalculationResultDisplayed() {return exploratoryTestingResult.isDisplayed();}
+    public boolean isExploratoryTestingResultDisplayed() {return exploratoryTestingResult.isDisplayed();}
     public boolean isExploratoryTestingStartOverButtonDisplayed() {return exploratoryTestingStartOverButton.isDisplayed();}
     public boolean isExploratoryTestingClearFormButtonDisplayed(){return exploratoryTestingClearFormButton.isDisplayed();}
     public boolean isCalculateButtonDisplayed() {return calculateButton.isDisplayed();}

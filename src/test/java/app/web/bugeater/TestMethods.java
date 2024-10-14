@@ -3526,7 +3526,7 @@ public class TestMethods extends BaseTest {
         //click 'exploratory testing - restore password' challenge link
         listOfChallengesPage.clickExploratoryTestingChallengeLink2();
     }
-
+    
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){
         //assert 'list of challenges' navbar dropdown menu is displayed
@@ -3967,7 +3967,7 @@ public class TestMethods extends BaseTest {
         //assert 'Exploratory Testing' challenge number 2 input field is displayed
         assertTrue(exploratoryTestingCalculatorChallengePage.isNumber2InputFieldDisplayed(), "The 'Exploratory Testing' challenge number 2 input field is not displayed");
         //assert 'Exploratory Testing' challenge calculation result is displayed
-        assertTrue(exploratoryTestingCalculatorChallengePage.isCalculationResultDisplayed(), "The 'Exploratory Testing' challenge calculation result is not displayed");
+        assertTrue(exploratoryTestingCalculatorChallengePage.isExploratoryTestingResultDisplayed(), "The 'Exploratory Testing' challenge calculation result is not displayed");
         //assert 'Exploratory Testing' challenge start over button is displayed
         assertTrue(exploratoryTestingCalculatorChallengePage.isExploratoryTestingStartOverButtonDisplayed(), "The 'Exploratory Testing' challenge start over button is not displayed");
         //assert 'Exploratory Testing' challenge clear form button is displayed
