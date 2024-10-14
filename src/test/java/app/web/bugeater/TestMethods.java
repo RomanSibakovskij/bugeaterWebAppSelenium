@@ -3424,23 +3424,23 @@ public class TestMethods extends BaseTest {
     //'Learn mode' number multiplication challenge page specific web element assert
     protected void isLearnModeNumMultiplicationChallengePageWebElementDisplayed(LearnModeNumMultiplicationPage learnModeNumMultiplicationPage){
         //assert 'number multiplication' challenge page title is displayed
-        assertTrue(learnModeNumMultiplicationPage.isNumberMultiplicationPageTitleDisplayed(), "The 'Number Addition' challenge page title is not displayed");
+        assertTrue(learnModeNumMultiplicationPage.isNumberMultiplicationPageTitleDisplayed(), "The 'Number Multiplication' challenge page title is not displayed");
         //assert 'number multiplication' challenge guide icon is displayed
-        assertTrue(learnModeNumMultiplicationPage.isNumberMultiplicationGuideIconDisplayed(), "The 'Number Addition' challenge guide icon is not displayed");
+        assertTrue(learnModeNumMultiplicationPage.isNumberMultiplicationGuideIconDisplayed(), "The 'Number Multiplication' challenge guide icon is not displayed");
         //assert 'number multiplication' test case section title is displayed
-        assertTrue(learnModeNumMultiplicationPage.isTestCaseSectionTitleDisplayed(), "The 'Number Addition' test case section title is not displayed");
+        assertTrue(learnModeNumMultiplicationPage.isTestCaseSectionTitleDisplayed(), "The 'Number Multiplication' test case section title is not displayed");
         //assert 'number multiplication' test case dropdown value 1 menu is displayed
-        assertTrue(learnModeNumMultiplicationPage.isTestCaseDropdownValue1MenuDisplayed(), "The 'Number Addition' test case dropdown value1 menu is not displayed");
+        assertTrue(learnModeNumMultiplicationPage.isTestCaseDropdownValue1MenuDisplayed(), "The 'Number Multiplication' test case dropdown value1 menu is not displayed");
         //assert 'number multiplication' test case dropdown value 2 menu is displayed
-        assertTrue(learnModeNumMultiplicationPage.isTestCaseDropdownValue2MenuDisplayed(), "The 'Number Addition' test case dropdown value2 menu is not displayed");
+        assertTrue(learnModeNumMultiplicationPage.isTestCaseDropdownValue2MenuDisplayed(), "The 'Number Multiplication' test case dropdown value2 menu is not displayed");
         //assert 'number multiplication' test case dropdown result menu is displayed
-        assertTrue(learnModeNumMultiplicationPage.isTestCaseDropdownResultMenuDisplayed(), "The 'Number Addition' test case dropdown result menu is not displayed");
+        assertTrue(learnModeNumMultiplicationPage.isTestCaseDropdownResultMenuDisplayed(), "The 'Number Multiplication' test case dropdown result menu is not displayed");
         //assert 'number multiplication' test case section title is displayed
-        assertTrue(learnModeNumMultiplicationPage.isTestCaseValidationButtonDisplayed(), "The 'Number Addition' test case validation button is not displayed");
+        assertTrue(learnModeNumMultiplicationPage.isTestCaseValidationButtonDisplayed(), "The 'Number Multiplication' test case validation button is not displayed");
         //assert 'number multiplication' challenge video guide link is displayed
-        assertTrue(learnModeNumMultiplicationPage.isVideoGuideLinkDisplayed(), "The 'Number Addition' challenge video guide link is not displayed");
+        assertTrue(learnModeNumMultiplicationPage.isVideoGuideLinkDisplayed(), "The 'Number Multiplication' challenge video guide link is not displayed");
         //assert 'number multiplication' challenge instructions title is displayed
-        assertTrue(learnModeNumMultiplicationPage.isInstructionsTitleDisplayed(), "The 'Number Addition' challenge instructions title is not displayed");
+        assertTrue(learnModeNumMultiplicationPage.isInstructionsTitleDisplayed(), "The 'Number Multiplication' challenge instructions title is not displayed");
         //assert 'number multiplication' challenges completed counter is displayed
         assertTrue(learnModeNumMultiplicationPage.isChallengesCompletedCounterDisplayed(), "The 'Number Multiplication' challenges completed counter is not displayed");
         //assert 'number multiplication' challenge list is displayed
