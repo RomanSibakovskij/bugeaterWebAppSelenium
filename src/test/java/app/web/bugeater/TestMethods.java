@@ -3266,6 +3266,33 @@ public class TestMethods extends BaseTest {
         //click 'exploratory testing - calculator' challenge link
         listOfChallengesPage.clickExploratoryTestingChallengeLink1();
     }
+    //Exploratory testing calculator test case validation challenge test method (challenge 1) (valid tc validation)
+    protected void solveCalculatorTCValidationChallenge1Test(ExploratoryTestingCalculatorChallengePage exploratoryTestingCalculatorChallengePage) {
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the challenge text is displayed as expected
+        assertEquals("Six hidden Test Cases you need to find by inputting various values into the form. With each newly found scenario, the corresponding line appears in the list of Cases. You learn how to find all valid Test Cases with the minimum number of checks.", exploratoryTestingCalculatorChallengePage.getExploratoryTestingInstructionsText(), "The text of the challenge doesn't match the expected text");
+        //assert tutorial description text is displayed as expected
+        assertEquals("This description explains the challenge and what you need to do. Read it carefully before starting the challenge.", exploratoryTestingCalculatorChallengePage.getTutorialDescriptionText(), "The tutorial text doesn't match the expected text");
+        //click tutorial 'skip' button
+        exploratoryTestingCalculatorChallengePage.clickSkipTutorialButton();
+        //Exploratory testing page web element assert method
+        isExploratoryTestingChallengePageWebElementDisplayed(exploratoryTestingCalculatorChallengePage);
+        //calculator page title web element text assert
+        isIndividualExploratoryTestingChallengePageTextMatchesExpectations(exploratoryTestingCalculatorChallengePage);
+        //assert the page title is as expected
+        assertEquals("Calculator", exploratoryTestingCalculatorChallengePage.getExploratoryTestingChallengeTitle(), "The Exploratory Testing calculator challenge page title doesn't match the expected title");
+        //assert challenge hint has the correct title
+        assertEquals("Add two numbers", exploratoryTestingCalculatorChallengePage.getChallengeHintText(), "The Exploratory Testing calculator challenge hint text doesn't match expected result");
+        //assert challenge counter has no challenges completed yet
+        assertEquals("0 case(s) out of 6", exploratoryTestingCalculatorChallengePage.getChallengesCounterText(), "The Exploratory Testing calculator challenge counter display doesn't match expected result");
+        //assert calculation has the expected result (before operation)
+        assertEquals("Result:", exploratoryTestingCalculatorChallengePage.getExploratoryTestingResult(), "The Exploratory Testing calculator calculation result doesn't match expected result");
+        //logger before challenge completion
+        logPreChallenge1Result(learnModeNumAddDivisionChallengePage);
+    }
 
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){
@@ -3361,6 +3388,14 @@ public class TestMethods extends BaseTest {
         assertEquals("Test Case(s) You Validated", scriptedTestingNumMultiplicationValidationChallengePage.getScriptedTestingIndividualPageInstructionsChallengeTitle(), "The instructions title doesn't match the expected title");
         //assert input form has the correct title
         assertEquals("Form You Test", scriptedTestingNumMultiplicationValidationChallengePage.getInputFormTitle(), "The input form title doesn't match expected result");
+    }
+
+    //individual exploratory testing challenge page assert (for repeatable asserts)
+    protected void isIndividualExploratoryTestingChallengePageTextMatchesExpectations(ExploratoryTestingCalculatorChallengePage exploratoryTestingCalculatorChallengePage){
+        //assert the test case validation section title is as expected
+        assertEquals("Test Case(s) You Validated", exploratoryTestingCalculatorChallengePage.getExploratoryTestingTestCaseSectionTitle(), "The Exploratory testing test case validation section title doesn't match the expected title");
+        //assert input form has the correct title
+        assertEquals("Form You Test", exploratoryTestingCalculatorChallengePage.getExploratoryTestingInputFormTitle(), "The Exploratory testing input form title doesn't match expected result");
     }
 
     //'Learn mode' password restore challenge page specific web element assert
@@ -3674,6 +3709,38 @@ public class TestMethods extends BaseTest {
         assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationChallengeHintDisplayed(), "The 'Number Summation' challenge hint is not displayed");
         //assert 'number summation' challenge calculate button is displayed
         assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationCalculateButtonDisplayed(), "The 'Number Summation' challenge calculate button is not displayed");
+    }
+
+    //'Exploratory Testing' challenge page general web element assert
+    protected void isExploratoryTestingChallengePageWebElementDisplayed(ExploratoryTestingCalculatorChallengePage exploratoryTestingCalculatorChallengePage){
+        //assert 'Exploratory Testing' challenge page title is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isExploratoryTestingPageTitleDisplayed(), "The 'Exploratory Testing' challenge page title is not displayed");
+        //assert 'Exploratory Testing' challenge guide icon is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isExploratoryTestingGuideIconDisplayed(), "The 'Exploratory Testing' challenge guide icon is not displayed");
+        //assert 'Exploratory Testing' test case section title is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isExploratoryTestingTestCaseSectionTitleDisplayed(), "The 'Exploratory Testing' test case section title is not displayed");
+        //assert 'Exploratory Testing' challenge instructions text is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isExploratoryTestingChallengeInstructionsTextDisplayed(), "The 'Exploratory Testing' challenge instructions text is not displayed");
+        //assert 'Exploratory Testing' challenges completed counter is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isExploratoryTestingChallengesCompletedCounterDisplayed(), "The 'Exploratory Testing' challenges completed counter is not displayed");
+        //assert 'Exploratory Testing' challenge input form title is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isExploratoryTestingInputFormTitleDisplayed(), "The 'Exploratory Testing' challenge input form title is not displayed");
+        //assert 'Exploratory Testing' challenge input form 'entered values' are displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isExploratoryTestingInputFormEnteredValuesDisplayed(), "The 'Exploratory Testing' challenge input form entered values are not displayed");
+        //assert 'Exploratory Testing' challenge number 1 input field is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isNumber1InputFieldDisplayed(), "The 'Exploratory Testing' challenge number 1 input field is not displayed");
+        //assert 'Exploratory Testing' challenge hint is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isChallengeHintDisplayed(), "The 'Exploratory Testing' challenge hint is not displayed");
+        //assert 'Exploratory Testing' challenge number 2 input field is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isNumber2InputFieldDisplayed(), "The 'Exploratory Testing' challenge number 2 input field is not displayed");
+        //assert 'Exploratory Testing' challenge calculation result is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isCalculationResultDisplayed(), "The 'Exploratory Testing' challenge calculation result is not displayed");
+        //assert 'Exploratory Testing' challenge start over button is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isExploratoryTestingStartOverButtonDisplayed(), "The 'Exploratory Testing' challenge start over button is not displayed");
+        //assert 'Exploratory Testing' challenge clear form button is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isExploratoryTestingClearFormButtonDisplayed(), "The 'Exploratory Testing' challenge clear form button is not displayed");
+        //assert 'Exploratory Testing' challenge calculate button is displayed (in different challenges it's called differently but the element is the same)
+        assertTrue(exploratoryTestingCalculatorChallengePage.isCalculateButtonDisplayed(), "The 'Exploratory Testing' challenge calculate button is not displayed");
     }
 
     //pre-challenges loggers (for debug validation)

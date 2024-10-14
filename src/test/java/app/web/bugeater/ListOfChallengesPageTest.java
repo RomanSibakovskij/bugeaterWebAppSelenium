@@ -267,5 +267,8 @@ public class ListOfChallengesPageTest extends TestMethods{
     @Tag("Exploratory_Testing_Challenge_Test")
     void exploratoryTestingCalculatorTCValidationChallengeTest(){
         navigateToExploratoryTestingCalculatorTCValidationPageTest();
+        ExploratoryTestingCalculatorChallengePage exploratoryTestingCalculatorChallengePage = new ExploratoryTestingCalculatorChallengePage(driver);
+        //calculator test case validation challenge 1 (valid tc validation)
+        solveCalculatorTCValidationChallenge1Test(exploratoryTestingCalculatorChallengePage);
     }
 }
