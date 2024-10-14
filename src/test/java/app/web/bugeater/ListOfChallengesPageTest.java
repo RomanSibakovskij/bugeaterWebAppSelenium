@@ -244,10 +244,10 @@ public class ListOfChallengesPageTest extends TestMethods{
     @Test
     @DisplayName("Number Summation Test Case Validation Challenge Test (as a guest)")
     @Tag("Test_Case_Generator_Challenge_Test")
-    void tcgNumberSummationTCBuildChallengeTest(){
+    void tcgNumberSummationTCBuildAndFoundChallengeTest(){
         navigateToNumberSummationTCBuildPageTest();
         TCGNumSummationTCValidationChallengePage tcgNumSummationTCValidationChallengePage = new TCGNumSummationTCValidationChallengePage(driver);
-        //number summation test case build challenge 1
-        solveNumberSummationTCFoundChallenge1Test(tcgNumSummationTCValidationChallengePage);
+        //number summation test case build challenge 1 (valid tc validation)
+        solveNumberSummationTCBuildAndFoundChallenge1Test(tcgNumSummationTCValidationChallengePage);
     }
 }

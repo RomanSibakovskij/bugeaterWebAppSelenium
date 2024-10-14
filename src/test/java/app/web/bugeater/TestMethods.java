@@ -2944,8 +2944,8 @@ public class TestMethods extends BaseTest {
         //click 'test case generator - number summation' challenge link
         listOfChallengesPage.clickListOfChallengesTCGChallengeLink();
     }
-    //currency converter test case validation challenge test method (challenge 1)
-    protected void solveNumberSummationTCFoundChallenge1Test(TCGNumSummationTCValidationChallengePage tcgNumSummationTCValidationChallengePage) {
+    //number summation test case validation challenge test method (challenge 1) (valid tc validation)
+    protected void solveNumberSummationTCBuildAndFoundChallenge1Test(TCGNumSummationTCValidationChallengePage tcgNumSummationTCValidationChallengePage) {
         ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
         LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
         ScriptedTestingNumMultiplicationValidationChallengePage scriptedTestingNumMultiplicationValidationChallengePage = new ScriptedTestingNumMultiplicationValidationChallengePage(driver);
