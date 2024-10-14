@@ -65,6 +65,9 @@ public class TCGNumSummationTCValidationChallengePage extends BasePage{
     //test case four option two web element
     @FindBy(xpath = "//div[@id='generatorForm']//div[@class='dropdown-menu show']/a[4]")
     private WebElement testCaseStringAbcOptionTwo;
+    //test case five option two web element
+    @FindBy(xpath = "//div[@id='generatorForm']//div[@class='dropdown-menu show']/a[6]")
+    private WebElement testCaseEmptyValueOptionTwo;
 
     //'Number Summation' test case result dropdown menu web element
     @FindBy(xpath = "//div[@id='generatorForm']/div[1]")
@@ -89,6 +92,8 @@ public class TCGNumSummationTCValidationChallengePage extends BasePage{
     private WebElement testCaseThree;
     @FindBy(xpath = "//ol[@class='_challengeList_1a4cy_164']/li[4]")
     private WebElement testCaseFour;
+    @FindBy(xpath = "//ol[@class='_challengeList_1a4cy_164']/li[5]")
+    private WebElement testCaseFive;
 
     //'Number Summation' start over web element
     @FindBy(xpath = "//div[@id='testCases']/button[@type='reset']")
@@ -149,6 +154,8 @@ public class TCGNumSummationTCValidationChallengePage extends BasePage{
     public void selectThreeAndHalfInOptionTwoDropdown(){testCaseNumberThreeAndHalfOptionTwo.click();}
     //select 'abc' in option 2 dropdown menu
     public void selectStringAbcInOptionTwoDropdown(){testCaseStringAbcOptionTwo.click();}
+    //select 'Empty Value' in option 2 dropdown menu
+    public void selectEmptyValueInOptionTwoDropdown(){testCaseEmptyValueOptionTwo.click();}
 
     //click 'result' dropdown menu method
     public void clickResultDropdownMenu(){
@@ -242,6 +249,24 @@ public class TCGNumSummationTCValidationChallengePage extends BasePage{
             logger.error("Test case 4 hasn't been verified. No tick icon detected." + "\n");
         }
     }
+    public void verifyTestCase5Validation(){
+        //assert the test case 5 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseFive, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseFive
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 5 has been verified successfully(tick icon)." + "\n");
+        } else {
+            logger.error("Test case 5 hasn't been verified. No tick icon detected." + "\n");
+        }
+    }
 
     //tutorial modal 'skip' button click method
     public void clickSkipTutorialButton(){tutorialSkipButton.click();}
@@ -273,6 +298,8 @@ public class TCGNumSummationTCValidationChallengePage extends BasePage{
     public String getTestCaseThree(){return testCaseThree.getText();}
     //challenge four text getter
     public String getTestCaseFour(){return testCaseFour.getText();}
+    //challenge five text getter
+    public String getTestCaseFive(){return testCaseFive.getText();}
     //Number summation calculation result getter
     public String getCalculationResult() {return challengeCalculationResult.getText();}
     //challenge hint text getter
@@ -291,6 +318,7 @@ public class TCGNumSummationTCValidationChallengePage extends BasePage{
     public boolean isNumberSummationTestCaseTwoDisplayed(){return testCaseTwo.isDisplayed();}
     public boolean isNumberSummationTestCaseThreeDisplayed(){return testCaseThree.isDisplayed();}
     public boolean isNumberSummationTestCaseFourDisplayed(){return testCaseFour.isDisplayed();}
+    public boolean isNumberSummationTestCaseFiveDisplayed(){return testCaseFive.isDisplayed();}
     public boolean isNumberSummationOptionOneDropdownMenuDisplayed(){return testCaseOptionOneDropdownMenu.isDisplayed();}
     public boolean isNumberSummationOptionTwoDropdownMenuDisplayed(){return testCaseOptionTwoDropdownMenu.isDisplayed();}
     public boolean isNumberSummationResultDropdownMenuDisplayed(){return testCaseOptionResultDropdownMenu.isDisplayed();}
