@@ -255,7 +255,9 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveNumberSummationTCBuildAndFoundChallenge3Test(tcgNumSummationTCValidationChallengePage);
         //number summation test case build challenge 4 (invalid tc validation - both inputs as strings)
         solveNumberSummationTCBuildAndFoundChallenge4Test(tcgNumSummationTCValidationChallengePage);
-        //number summation test case build challenge 5 (invalid tc validation - number 2 as 'Empty value)
+        //number summation test case build challenge 5 (invalid tc validation - number 2 as 'Empty value')
         solveNumberSummationTCBuildAndFoundChallenge5Test(tcgNumSummationTCValidationChallengePage);
+        //number summation test case build challenge 6 (invalid tc validation - number 1 as '10000000000')
+        solveNumberSummationTCBuildAndFoundChallenge6Test(tcgNumSummationTCValidationChallengePage);
     }
 }

@@ -52,6 +52,9 @@ public class TCGNumSummationTCValidationChallengePage extends BasePage{
     //test case four option one web element
     @FindBy(xpath = "//div[@id='generatorForm']//div[@class='dropdown-menu show']/a[4]")
     private WebElement testCaseStringAbcOptionOne;
+    //test case six option one web element
+    @FindBy(xpath = "//div[@id='generatorForm']//div[@class='dropdown-menu show']/a[5]")
+    private WebElement testCaseTenBillionOptionOne;
 
     //'Number Summation' test case option two dropdown menu web element
     @FindBy(xpath = "//div[@id='generatorForm']/span[2]/div[@class='dropdown']")
@@ -77,6 +80,8 @@ public class TCGNumSummationTCValidationChallengePage extends BasePage{
     private WebElement testCaseOptionResultNumberOption;
     @FindBy(xpath = "//div[@id='generatorForm']//div[@class='dropdown-menu show']/a[3]")
     private WebElement testCaseOptionResultUserInputErrorOption;
+    @FindBy(xpath = "//div[@id='generatorForm']//div[@class='dropdown-menu show']/a[2]")
+    private WebElement testCaseOptionResultApplicationErrorOption;
 
 
     //'Number Summation' test case validation button web element
@@ -94,6 +99,8 @@ public class TCGNumSummationTCValidationChallengePage extends BasePage{
     private WebElement testCaseFour;
     @FindBy(xpath = "//ol[@class='_challengeList_1a4cy_164']/li[5]")
     private WebElement testCaseFive;
+    @FindBy(xpath = "//ol[@class='_challengeList_1a4cy_164']/li[6]")
+    private WebElement testCaseSix;
 
     //'Number Summation' start over web element
     @FindBy(xpath = "//div[@id='testCases']/button[@type='reset']")
@@ -141,6 +148,8 @@ public class TCGNumSummationTCValidationChallengePage extends BasePage{
     public void selectThreeAndHalfInOptionOneDropdown(){testCaseNumberThreeAndHalfOptionOne.click();}
     //select 'abc' in option 1 dropdown menu
     public void selectStringAbcInOptionOneDropdown(){testCaseStringAbcOptionOne.click();}
+    //select '10000000000' in option 1 dropdown menu
+    public void selectTenBillionInOptionOneDropdown(){testCaseTenBillionOptionOne.click();}
 
     //click 'option 2' dropdown menu method
     public void clickOptionTwoDropdownMenu(){
@@ -167,7 +176,8 @@ public class TCGNumSummationTCValidationChallengePage extends BasePage{
     public void selectNumberInResultDropdown(){testCaseOptionResultNumberOption.click();}
     //select 'User input error' in result dropdown menu
     public void selectUserInputErrorInResultDropdown(){testCaseOptionResultUserInputErrorOption.click();}
-
+    //select 'Application error' in result dropdown menu
+    public void selectApplicationErrorInResultDropdown(){testCaseOptionResultApplicationErrorOption.click();}
 
     //click 'validate test case' button method
     public void clickValidateTestCaseButton(){
@@ -267,6 +277,24 @@ public class TCGNumSummationTCValidationChallengePage extends BasePage{
             logger.error("Test case 5 hasn't been verified. No tick icon detected." + "\n");
         }
     }
+    public void verifyTestCase6Validation(){
+        //assert the test case 6 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseSix, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseSix
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 6 has been verified successfully(tick icon)." + "\n");
+        } else {
+            logger.error("Test case 6 hasn't been verified. No tick icon detected." + "\n");
+        }
+    }
 
     //tutorial modal 'skip' button click method
     public void clickSkipTutorialButton(){tutorialSkipButton.click();}
@@ -300,6 +328,8 @@ public class TCGNumSummationTCValidationChallengePage extends BasePage{
     public String getTestCaseFour(){return testCaseFour.getText();}
     //challenge five text getter
     public String getTestCaseFive(){return testCaseFive.getText();}
+    //challenge six text getter
+    public String getTestCaseSix(){return testCaseSix.getText();}
     //Number summation calculation result getter
     public String getCalculationResult() {return challengeCalculationResult.getText();}
     //challenge hint text getter
@@ -319,6 +349,7 @@ public class TCGNumSummationTCValidationChallengePage extends BasePage{
     public boolean isNumberSummationTestCaseThreeDisplayed(){return testCaseThree.isDisplayed();}
     public boolean isNumberSummationTestCaseFourDisplayed(){return testCaseFour.isDisplayed();}
     public boolean isNumberSummationTestCaseFiveDisplayed(){return testCaseFive.isDisplayed();}
+    public boolean isNumberSummationTestCaseSixDisplayed(){return testCaseSix.isDisplayed();}
     public boolean isNumberSummationOptionOneDropdownMenuDisplayed(){return testCaseOptionOneDropdownMenu.isDisplayed();}
     public boolean isNumberSummationOptionTwoDropdownMenuDisplayed(){return testCaseOptionTwoDropdownMenu.isDisplayed();}
     public boolean isNumberSummationResultDropdownMenuDisplayed(){return testCaseOptionResultDropdownMenu.isDisplayed();}

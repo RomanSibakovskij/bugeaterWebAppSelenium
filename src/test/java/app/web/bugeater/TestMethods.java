@@ -3038,7 +3038,7 @@ public class TestMethods extends BaseTest {
         //verify test case two validation
         tcgNumSummationTCValidationChallengePage.verifyTestCase2Validation();
         //assert the number summation test case one displayed in test case found section list has correct text
-        assertEquals("Enter \"-2\" in the First Number input field and \"1\" in the Second Number input field, then click on the \"Calculate\" button. Expected Result: \"-1\".", tcgNumSummationTCValidationChallengePage.getTestCaseTwo(), "The test case one challenge description doesn't match expected result");
+        assertEquals("Enter \"-2\" in the First Number input field and \"1\" in the Second Number input field, then click on the \"Calculate\" button. Expected Result: \"-1\".", tcgNumSummationTCValidationChallengePage.getTestCaseTwo(), "The test case two challenge description doesn't match expected result");
         //assert 'number summation' challenge test case two is displayed (others will be displayed too) after test case has been found
         assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationTestCaseTwoDisplayed(), "The 'Number Summation' challenge test case two is not displayed");
     }
@@ -3085,9 +3085,9 @@ public class TestMethods extends BaseTest {
         //verify test case three validation
         tcgNumSummationTCValidationChallengePage.verifyTestCase3Validation();
         //assert the number summation test case one displayed in test case found section list has correct text
-        assertEquals("Enter \"3.5\" in the First Number input field and \"3.5\" in the Second Number input field, then click on the \"Calculate\" button. Expected Result: \"7.0\".", tcgNumSummationTCValidationChallengePage.getTestCaseThree(), "The test case one challenge description doesn't match expected result");
+        assertEquals("Enter \"3.5\" in the First Number input field and \"3.5\" in the Second Number input field, then click on the \"Calculate\" button. Expected Result: \"7.0\".", tcgNumSummationTCValidationChallengePage.getTestCaseThree(), "The test case three challenge description doesn't match expected result");
         //assert 'number summation' challenge test case three is displayed (others will be displayed too) after test case has been found
-        assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationTestCaseThreeDisplayed(), "The 'Number Summation' challenge test case two is not displayed");
+        assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationTestCaseThreeDisplayed(), "The 'Number Summation' challenge test case three is not displayed");
         //assert 'halfway there' message is displayed
         //assertEquals("Halfway there!", tcgNumSummationTCValidationChallengePage.getHalfwayThereMessage(), "The 'halfway there' message isn't displayed"); //NoSuchElementException with valid selector
     }
@@ -3134,11 +3134,11 @@ public class TestMethods extends BaseTest {
         //verify test case four validation
         tcgNumSummationTCValidationChallengePage.verifyTestCase4Validation();
         //assert the number summation test case four displayed in test case found section list has correct text
-        assertEquals("Enter \"abc\" in the First Number input field and \"abc\" in the Second Number input field, then click on the \"Calculate\" button. Expected Result: \"User input error\".", tcgNumSummationTCValidationChallengePage.getTestCaseFour(), "The test case one challenge description doesn't match expected result");
+        assertEquals("Enter \"abc\" in the First Number input field and \"abc\" in the Second Number input field, then click on the \"Calculate\" button. Expected Result: \"User input error\".", tcgNumSummationTCValidationChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
         //assert 'number summation' challenge test case four is displayed (others will be displayed too) after test case has been found
-        assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationTestCaseFourDisplayed(), "The 'Number Summation' challenge test case two is not displayed");
+        assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationTestCaseFourDisplayed(), "The 'Number Summation' challenge test case four is not displayed");
     }
-    //number summation test case validation challenge test method (challenge 5) (invalid tc validation - number 2 as 'Empty value)
+    //number summation test case validation challenge test method (challenge 5) (invalid tc validation - number 2 as 'Empty value')
     protected void solveNumberSummationTCBuildAndFoundChallenge5Test(TCGNumSummationTCValidationChallengePage tcgNumSummationTCValidationChallengePage) {
         ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
         LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
@@ -3181,9 +3181,73 @@ public class TestMethods extends BaseTest {
         //verify test case five validation
         tcgNumSummationTCValidationChallengePage.verifyTestCase5Validation();
         //assert the number summation test case five displayed in test case found section list has correct text
-        assertEquals("Enter \"3.5\" in the First Number input field and \"Empty value\" in the Second Number input field, then click on the \"Calculate\" button. Expected Result: \"User input error\".", tcgNumSummationTCValidationChallengePage.getTestCaseFive(), "The test case one challenge description doesn't match expected result");
+        assertEquals("Enter \"3.5\" in the First Number input field and \"Empty value\" in the Second Number input field, then click on the \"Calculate\" button. Expected Result: \"User input error\".", tcgNumSummationTCValidationChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
         //assert 'number summation' challenge test case five is displayed (others will be displayed too) after test case has been found
-        assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationTestCaseFiveDisplayed(), "The 'Number Summation' challenge test case two is not displayed");
+        assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationTestCaseFiveDisplayed(), "The 'Number Summation' challenge test case five is not displayed");
+    }
+    //number summation test case validation challenge test method (challenge 6) (invalid tc validation - number 1 as '10000000000')
+    protected void solveNumberSummationTCBuildAndFoundChallenge6Test(TCGNumSummationTCValidationChallengePage tcgNumSummationTCValidationChallengePage) {
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the challenge text is displayed as expected
+        assertEquals("By selecting values from three dropdowns, you create a Test Case to check the correctness of the form of adding two numbers. Pay attention not all combinations of values compose a correct Test Case. By trying out different sets of values, you will find all six Test Cases that appear in the Case(s) list. This way, you will learn to write your own Test scenarios.", tcgNumSummationTCValidationChallengePage.getNumberSummationInstructionsText(), "The text of the challenge doesn't match the expected text");
+        //number summation page web element assert method
+        isNumberSummationChallengePageWebElementDisplayed(tcgNumSummationTCValidationChallengePage);
+        //assert the page title is as expected
+        assertEquals("Number Summation", tcgNumSummationTCValidationChallengePage.getNumberSummationChallengePageTitle(), "The challenge page title doesn't match the expected title");
+        //assert the test case build title is as expected
+        assertEquals("Test Case(s) You Build", tcgNumSummationTCValidationChallengePage.getTestCasesBuildTitle(), "The number summation test case build section title doesn't match the expected title");
+        //assert the test case found title is as expected
+        assertEquals("Test Case(s) You Found", tcgNumSummationTCValidationChallengePage.getTestCasesFoundTitle(), "The number summation test case found section title doesn't match the expected title");
+        //assert input form has the correct title
+        assertEquals("Form You Test", learnModeNumAddDivisionChallengePage.getInputFormTitle(), "The input form title doesn't match expected result");
+        //assert challenge hint has the correct title
+        assertEquals("Add two numbers", learnModeNumAddDivisionChallengePage.getChallengeHintText(), "The challenge hint text doesn't match expected result");
+        //assert challenge counter has registered fifth test case validation
+        assertEquals("5 case(s) out of 6", tcgNumSummationTCValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert calculation has the expected result (after fifth case)
+        assertEquals("Result: User input error", tcgNumSummationTCValidationChallengePage.getCalculationResult(), "The calculation result doesn't match expected result");
+        //logger before challenge completion (ignore entered values not being displayed - this test uses same general logger as for other tests)
+        logPreChallenge6Result(learnModeNumAddDivisionChallengePage);
+        //click 'option 1' dropdown  menu
+        tcgNumSummationTCValidationChallengePage.clickOptionOneDropdownMenu();
+        //select '10000000000' from option 1 dropdown menu
+        tcgNumSummationTCValidationChallengePage.selectTenBillionInOptionOneDropdown();
+        //click 'option 2' dropdown  menu
+        tcgNumSummationTCValidationChallengePage.clickOptionTwoDropdownMenu();
+        //select '3.5' from option 2 dropdown menu
+        tcgNumSummationTCValidationChallengePage.selectThreeAndHalfInOptionTwoDropdown();
+        //click 'result' dropdown  menu
+        tcgNumSummationTCValidationChallengePage.clickResultDropdownMenu();
+        //select 'Application error' from result dropdown menu
+        tcgNumSummationTCValidationChallengePage.selectApplicationErrorInResultDropdown();
+        //click 'Validate Test Case' button
+        tcgNumSummationTCValidationChallengePage.clickValidateTestCaseButton();
+        //assert challenge completion modal has the expected title (NoSuchElementException despite valid selector)
+        //assertEquals("You did it!", tcgNumSummationTCValidationChallengePage.getChallengeCompletionModalTitle(), "The challenge completion modal title displayed doesn't match expected title");
+        //click close modal button
+        tcgNumSummationTCValidationChallengePage.clickCloseModalButton();
+        //verify test case six validation
+        tcgNumSummationTCValidationChallengePage.verifyTestCase6Validation();
+        //assert the number summation test case six displayed in test case found section list has correct text
+        assertEquals("Enter \"10000000000\" in the First Number input field and \"3.5\" in the Second Number input field, then click on the \"Calculate\" button. Expected Result: \"Application error\".", tcgNumSummationTCValidationChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
+        //assert 'number summation' challenge test case six is displayed (others will be displayed too) after test case has been found
+        assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationTestCaseSixDisplayed(), "The 'Number Summation' challenge test case six is not displayed");
+        LearnModePasswordChallengePage learnModePasswordChallengePage = new LearnModePasswordChallengePage(driver);
+        //logger after challenge six completion
+        logPreChallenge7Result(learnModePasswordChallengePage);
+        //assert challenge counter has registered sixth test case validation
+        assertEquals("6 case(s) out of 6", tcgNumSummationTCValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
+        //assert calculation has the expected result (after sixth case)
+        assertEquals("Result: Application error", tcgNumSummationTCValidationChallengePage.getCalculationResult(), "The calculation result doesn't match expected result");
+        //click navbar dropdown menu
+        listOfChallengesPage.clickNavbarDropdownMenu();
+        //return to 'List of Challenges'
+        listOfChallengesPage.clickReturnToListOfChallengesLink();
+        //assert the user has returned back to 'List of Challenges'
+        assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
     }
 
     //general page web element assert (repeating web elements on all app pages)
