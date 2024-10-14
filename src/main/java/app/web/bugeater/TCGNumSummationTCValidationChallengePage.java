@@ -40,14 +40,24 @@ public class TCGNumSummationTCValidationChallengePage extends BasePage{
     //'Number Summation' test case option one dropdown menu web element
     @FindBy(xpath = "//div[@id='generatorForm']/span[1]/div[@class='dropdown']")
     private WebElement testCaseOptionOneDropdownMenu;
+    //test case one option one web element
+    @FindBy(xpath = "//div[@id='generatorForm']//div[@class='dropdown-menu show']/a[1]")
+    private WebElement testCaseNumberOneOptionOne;
 
     //'Number Summation' test case option two dropdown menu web element
     @FindBy(xpath = "//div[@id='generatorForm']/span[2]/div[@class='dropdown']")
     private WebElement testCaseOptionTwoDropdownMenu;
+    //test case one option two web element
+    @FindBy(xpath = "//div[@id='generatorForm']//div[@class='dropdown-menu show']/a[1]")
+    private WebElement testCaseNumberOneOptionTwo;
 
     //'Number Summation' test case result dropdown menu web element
-    @FindBy(xpath = "//div[@id='generatorForm']/div[@class='dropdown']")
+    @FindBy(xpath = "//div[@id='generatorForm']/div[1]")
     private WebElement testCaseOptionResultDropdownMenu;
+    //test case result dropdown menu options
+    @FindBy(xpath = "//div[@id='generatorForm']//div[@class='dropdown-menu show']/a[1]")
+    private WebElement testCaseOptionResultNumberOption;
+
 
     //'Number Summation' test case validation button web element
     @FindBy(xpath = "//div[@class='_challengeFormActions_1a4cy_109']/button[@type='button']")
@@ -89,11 +99,61 @@ public class TCGNumSummationTCValidationChallengePage extends BasePage{
         super(driver);
     }
 
-    //click 'calculate' button method
-    public void clickCalculateButton(){
+    //click 'option 1' dropdown menu method
+    public void clickOptionOneDropdownMenu(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
-        wait.until(ExpectedConditions.elementToBeClickable(calculateButton));
-        calculateButton.click();
+        wait.until(ExpectedConditions.elementToBeClickable(testCaseOptionOneDropdownMenu));
+        testCaseOptionOneDropdownMenu.click();
+    }
+    //select '1' in option 1 dropdown menu
+    public void selectOneInOptionOneDropdown(){testCaseNumberOneOptionOne.click();}
+
+
+    //click 'option 2' dropdown menu method
+    public void clickOptionTwoDropdownMenu(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.elementToBeClickable(testCaseOptionTwoDropdownMenu));
+        testCaseOptionTwoDropdownMenu.click();
+    }
+    //select '1' i option 2 dropdown menu
+    public void selectOneInOptionTwoDropdown(){testCaseNumberOneOptionTwo.click();}
+
+
+    //click 'result' dropdown menu method
+    public void clickResultDropdownMenu(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.elementToBeClickable(testCaseOptionResultDropdownMenu));
+        testCaseOptionResultDropdownMenu.click();
+    }
+    //select 'Number' in result dropdown menu
+    public void selectNumberInResultDropdown(){testCaseOptionResultNumberOption.click();}
+
+
+    //click 'validate test case' button method
+    public void clickValidateTestCaseButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.elementToBeClickable(testCaseValidateButton));
+        testCaseValidateButton.click();
+    }
+
+    //verify test case validation completion (tick icon) methods
+    public void verifyTestCase1Validation(){
+        //assert the test case 1 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseOne, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseOne
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 1 has been verified successfully(tick icon)." + "\n");
+        } else {
+            logger.error("Test case 1 hasn't been verified. No tick icon detected." + "\n");
+        }
     }
 
     //tutorial modal 'skip' button click method

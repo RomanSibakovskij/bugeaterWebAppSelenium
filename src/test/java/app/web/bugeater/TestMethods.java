@@ -2973,10 +2973,26 @@ public class TestMethods extends BaseTest {
         assertEquals("Result:", tcgNumSummationTCValidationChallengePage.getCalculationResult(), "The calculation result doesn't match expected result");
         //logger before challenge completion (ignore entered values not being displayed - this test uses same general logger as for other tests)
         logPreChallenge1Result(learnModeNumAddDivisionChallengePage);
+        //click 'option 1' dropdown  menu
+        tcgNumSummationTCValidationChallengePage.clickOptionOneDropdownMenu();
+        //select '1' from option 1 dropdown menu
+        tcgNumSummationTCValidationChallengePage.selectOneInOptionOneDropdown();
+        //click 'option 2' dropdown  menu
+        tcgNumSummationTCValidationChallengePage.clickOptionTwoDropdownMenu();
+        //select '1' from option 2 dropdown menu
+        tcgNumSummationTCValidationChallengePage.selectOneInOptionTwoDropdown();
+        //click 'result' dropdown  menu
+        tcgNumSummationTCValidationChallengePage.clickResultDropdownMenu();
+        //select 'Number' from option 1 dropdown menu
+        tcgNumSummationTCValidationChallengePage.selectNumberInResultDropdown();
+        //click 'Validate Test Case' button
+        tcgNumSummationTCValidationChallengePage.clickValidateTestCaseButton();
+        //verify test case one validation
+        tcgNumSummationTCValidationChallengePage.verifyTestCase1Validation();
         //assert the number summation test case one displayed in test case found section list has correct text
-        //assertEquals("Leave both input fields blank and then click on the \"Calculate\" button. Expected Result: \"User input error\".", tcgNumSummationTCValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
+        assertEquals("Enter \"1\" in the First Number input field and \"1\" in the Second Number input field, then click on the \"Calculate\" button. Expected Result: \"2\".", tcgNumSummationTCValidationChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
         //assert 'number summation' challenge test case one is displayed (others will be displayed too) after test case has been found
-        //assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationTestCaseOneDisplayed(), "The 'Number Summation' challenge test case is not displayed");
+        assertTrue(tcgNumSummationTCValidationChallengePage.isNumberSummationTestCaseOneDisplayed(), "The 'Number Summation' challenge test case is not displayed");
     }
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){
