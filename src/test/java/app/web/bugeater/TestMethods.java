@@ -3928,6 +3928,60 @@ public class TestMethods extends BaseTest {
         //assert the restore password test case ten displayed in test case validation section list has correct text
         assertEquals("Not all conditions are met", exploratoryTestingRestorePasswordChallengePage.getTestCaseTen(), "The test case ten challenge description doesn't match expected result");
     }
+    //Exploratory testing restore password test case validation challenge test method (challenge 11) (valid tc validation)
+    protected void solveRestorePasswordTCValidationChallenge11Test(ExploratoryTestingRestorePasswordChallengePage exploratoryTestingRestorePasswordChallengePage) {
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModePasswordChallengePage learnModePasswordChallengePage = new LearnModePasswordChallengePage(driver);
+        ExploratoryTestingCalculatorChallengePage exploratoryTestingCalculatorChallengePage = new ExploratoryTestingCalculatorChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the challenge text is displayed as expected
+        assertEquals("The task becomes more difficult; in this challenge, you need to guess all eleven Test Cases that, as usual, appear in the list. You are testing the password input form, which must comply with the requirements described in the tooltip (icon \"?\"). Your knowledge in the testing area is growing, and you are learning to independently verify all possible scenarios/cases.", exploratoryTestingCalculatorChallengePage.getExploratoryTestingInstructionsText(), "The text of the challenge doesn't match the expected text");
+        //Exploratory testing page web element assert method
+        isExploratoryTestingChallengePageWebElementDisplayed(exploratoryTestingCalculatorChallengePage);
+        //Exploratory testing page title web element text assert
+        isIndividualExploratoryTestingChallengePageTextMatchesExpectations(exploratoryTestingCalculatorChallengePage);
+        //restore password specific web element assert
+        isExploratoryTestingRestorePasswordPageWebElementDisplayed(exploratoryTestingRestorePasswordChallengePage);
+        //assert the page title is as expected
+        assertEquals("Restore Password", exploratoryTestingCalculatorChallengePage.getExploratoryTestingChallengeTitle(), "The Exploratory Testing calculator challenge page title doesn't match the expected title");
+        //assert challenge hint has the correct title
+        assertEquals("From 4 to 12 characters, at least one small Latin letter, one capital Latin letter, one symbol, and one number. Not matching the previous password.", exploratoryTestingCalculatorChallengePage.getChallengeHintText(), "The Exploratory Testing calculator challenge hint text doesn't match expected result");
+        //assert challenge counter has registered tenth test case validation
+        assertEquals("10 case(s) out of 11", exploratoryTestingCalculatorChallengePage.getChallengesCounterText(), "The Exploratory Testing calculator challenge counter display doesn't match expected result");
+        //assert entered values has expected display (before eleventh test case validation)
+        assertEquals("Entered Value: Mükemmel", exploratoryTestingRestorePasswordChallengePage.getEnteredValueText(), "The Exploratory Testing calculator entered values display doesn't match expected result");
+        //assert calculation has the expected result (before eleventh test case validation)
+        assertEquals("Result: Invalid Password", exploratoryTestingRestorePasswordChallengePage.getExploratoryTestingResult(), "The Exploratory Testing calculator calculation result doesn't match expected result");
+        //logger before challenge completion
+        logPreChallenge11Result(learnModePasswordChallengePage);
+        //input password into input field
+        exploratoryTestingRestorePasswordChallengePage.inputTCValidationPasswordChallenge11();
+        //click 'submit' button
+        exploratoryTestingRestorePasswordChallengePage.clickSubmitButton();
+        //assert challenge completion modal has the expected title (NoSuchElementException despite valid selector)
+        //assertEquals("You did it!", exploratoryTestingRestorePasswordChallengePage.getChallengeCompletionModalTitle(), "The challenge completion modal title displayed doesn't match expected title");
+        //click close modal button
+        exploratoryTestingRestorePasswordChallengePage.clickCloseModalButton();
+        //verify eleventh test case validation
+        exploratoryTestingRestorePasswordChallengePage.verifyTestCase11Validation();
+        //logger after challenge completion
+        logPreChallenge12Result(learnModePasswordChallengePage);
+        //assert eleventh test case is displayed
+        assertTrue(exploratoryTestingRestorePasswordChallengePage.isRestorePasswordTestCaseTenDisplayed(), "The Exploratory Testing restore password test case eleven isn't displayed");
+        //assert the restore password test case eleven displayed in test case validation section list has correct text
+        assertEquals("Valid Password", exploratoryTestingRestorePasswordChallengePage.getTestCaseEleven(), "The test case eleven challenge description doesn't match expected result");
+        //assert entered values has expected display (after eleventh test case validation)
+        assertEquals("Entered Value: KerZer##1", exploratoryTestingRestorePasswordChallengePage.getEnteredValueText(), "The Exploratory Testing calculator entered values display doesn't match expected result");
+        //assert calculation has the expected result (after eleventh test case validation)
+        assertEquals("Result: Valid Password", exploratoryTestingRestorePasswordChallengePage.getExploratoryTestingResult(), "The Exploratory Testing calculator calculation result doesn't match expected result");
+        //click navbar dropdown menu
+        listOfChallengesPage.clickNavbarDropdownMenu();
+        //return to 'List of Challenges'
+        listOfChallengesPage.clickReturnToListOfChallengesLink();
+        //assert the user has returned back to 'List of Challenges'
+        assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
+    }
 
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){

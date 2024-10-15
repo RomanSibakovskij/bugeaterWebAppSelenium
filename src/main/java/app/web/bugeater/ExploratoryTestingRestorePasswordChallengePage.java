@@ -51,6 +51,8 @@ public class ExploratoryTestingRestorePasswordChallengePage extends BasePage{
     private WebElement testCaseNine;
     @FindBy(xpath = "//ol[@class='_challengeList_1a4cy_164']/li[10]")
     private WebElement testCaseTen;
+    @FindBy(xpath = "//ol[@class='_challengeList_1a4cy_164']/li[11]")
+    private WebElement testCaseEleven;
 
     //Exploratory testing 'Restore Password' input form web elements
     @FindBy(xpath = "//div[@id='testForm']/p[2]")
@@ -136,6 +138,12 @@ public class ExploratoryTestingRestorePasswordChallengePage extends BasePage{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
         passwordInputField.sendKeys("Mükemmel");
+    }
+    //restore password input methods (for challenge 11) (validpassword)
+    public void inputTCValidationPasswordChallenge11(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.visibilityOf(passwordInputField));
+        passwordInputField.sendKeys("KerZer##1");
     }
 
     //tutorial modal 'skip' button click method
@@ -336,6 +344,24 @@ public class ExploratoryTestingRestorePasswordChallengePage extends BasePage{
             logger.error("Test case 10 hasn't been verified. No tick icon detected." + "\n");
         }
     }
+    public void verifyTestCase11Validation(){
+        //assert the test case 11 validation has been completed - JavaScript to retrieve the content of the ::before pseudo-element
+        //wait for the element to be captured
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(950));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(testCaseEleven, "class"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String beforeContent = (String) js.executeScript(
+                "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",
+                testCaseEleven
+        );
+        //validate if the ::before content (tick icon) is present
+        if (beforeContent != null && !beforeContent.isEmpty() && !beforeContent.equals("none")) {
+            logger.info("Test case 11 has been verified successfully(tick icon)." + "\n");
+        } else {
+            logger.error("Test case 11 hasn't been verified. No tick icon detected." + "\n");
+        }
+    }
 
     //tutorial modal description text getter
     public String getTutorialDescriptionText() {return tutorialDescriptionText.getText();}
@@ -363,6 +389,8 @@ public class ExploratoryTestingRestorePasswordChallengePage extends BasePage{
     public String getTestCaseNine(){return testCaseNine.getText();}
     //test case ten text getter
     public String getTestCaseTen(){return testCaseTen.getText();}
+    //test case eleven text getter
+    public String getTestCaseEleven(){return testCaseEleven.getText();}
     //challenge hint text getter
     public String getChallengeHintText() {return challengeHintText.getText();}
     //Exploratory testing test calculation result getter
@@ -386,4 +414,5 @@ public class ExploratoryTestingRestorePasswordChallengePage extends BasePage{
     public boolean isRestorePasswordTestCaseEightDisplayed(){return testCaseEight.isDisplayed();}
     public boolean isRestorePasswordTestCaseNineDisplayed(){return testCaseNine.isDisplayed();}
     public boolean isRestorePasswordTestCaseTenDisplayed(){return testCaseTen.isDisplayed();}
+    public boolean isRestorePasswordTestCaseElevenDisplayed(){return testCaseEleven.isDisplayed();}
 }
