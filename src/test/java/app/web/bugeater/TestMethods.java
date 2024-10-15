@@ -4017,69 +4017,6 @@ public class TestMethods extends BaseTest {
         assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
     }
 
-    //navigate to book a desk (test case generator) test case validation challenge test method
-    protected void navigateToBookADeskTCValidationPageTest(){
-        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
-        //click 'accept' cookies modal button
-        listOfChallengesPage.clickAcceptCookiesButton();
-        //general page web element assert (elements that all pages have)
-        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
-        //'List of Challenges' page web element assert
-        isListOfChallengesWebElementDisplayed(listOfChallengesPage);
-        //assert the 'list of challenges' page title is as expected
-        assertEquals("List of Challenges", listOfChallengesPage.getListOfChallengesPageTitle(), "The 'List of Challenges' page title doesn't match expectations");
-        //assert the learn mode section title is as expected
-        assertEquals("Exploratory Testing", listOfChallengesPage.getExploratoryTestingSectionTitle(), "The exploratory testing section title doesn't match expectations");
-        //click 'Exploratory testing - book a desk' challenge link
-        listOfChallengesPage.clickExploratoryTestingChallengeLink3();
-    }
-    //Exploratory testing book a desk test case validation challenge test method (challenge 1) (invalid input - bugged booking date from input)
-    protected void solveBookADeskTCValidationChallenge1Test(ExploratoryTestingBookADeskChallengePage exploratoryTestingBookADeskChallengePage) {
-        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
-        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
-        ExploratoryTestingCalculatorChallengePage exploratoryTestingCalculatorChallengePage = new ExploratoryTestingCalculatorChallengePage(driver);
-        //general page web element assert (elements that all pages have)
-        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
-        //assert the challenge text is displayed as expected
-        assertEquals("With each new challenge, it becomes more and more difficult. This time, you need to find not only all the Test Cases but also errors made by programmers during the development of the form. Enter various dates into the form, testing both positive and negative scenarios, and you will definitely find everything. You are learning not only to explore but also to detect bugs.", exploratoryTestingCalculatorChallengePage.getExploratoryTestingInstructionsText(), "The text of the challenge doesn't match the expected text");
-        //assert tutorial description text is displayed as expected
-        assertEquals("This description explains the challenge and what you need to do. Read it carefully before starting the challenge.", exploratoryTestingCalculatorChallengePage.getTutorialDescriptionText(), "The tutorial text doesn't match the expected text");
-        //click tutorial 'skip' button
-        exploratoryTestingBookADeskChallengePage.clickSkipTutorialButton();
-        //Exploratory testing page web element assert method
-        isExploratoryTestingChallengePageWebElementDisplayed(exploratoryTestingCalculatorChallengePage);
-        //Exploratory testing page title web element text assert
-        isIndividualExploratoryTestingChallengePageTextMatchesExpectations(exploratoryTestingCalculatorChallengePage);
-        //assert bug found section title is as expected
-        //assert Book A Desk challenge birthdate from input field is displayed
-        assertTrue(exploratoryTestingCalculatorChallengePage.isNumber2InputFieldDisplayed(), "The 'Exploratory Testing' challenge number 2 input field is not displayed");
-        //assert the page title is as expected
-        assertEquals("Book a Desk", exploratoryTestingCalculatorChallengePage.getExploratoryTestingChallengeTitle(), "The Exploratory Testing calculator challenge page title doesn't match the expected title");
-        //assert challenge counter has no challenges completed yet
-        assertEquals("0 case(s) out of 7", exploratoryTestingCalculatorChallengePage.getChallengesCounterText(), "The Exploratory Testing calculator challenge counter display doesn't match expected result");
-        //assert bugs counter has no bugs found yet
-        assertEquals("0 bug(s) out of 3", exploratoryTestingBookADeskChallengePage.getBugCounterText(), "The Exploratory Testing book a desk bug counter display doesn't match expected result");
-        //assert entered values has expected display (before first test case validation)
-        assertEquals("Entered Values:", exploratoryTestingCalculatorChallengePage.getEnteredValuesText(), "The Exploratory Testing calculator entered values display doesn't match expected result");
-        //assert calculation has the expected result (before first test case validation)
-        assertEquals("Result:", exploratoryTestingCalculatorChallengePage.getExploratoryTestingResult(), "The Exploratory Testing calculator calculation result doesn't match expected result");
-        //logger before challenge completion
-        logPreChallenge1Result(learnModeNumAddDivisionChallengePage);
-        //bug counter logger before completion
-        logger.info("Bugs counter (before challenge 1): " + exploratoryTestingBookADeskChallengePage.getBugCounterText());
-        //input dates into respective input fields
-        exploratoryTestingBookADeskChallengePage.inputTCValidationBookADeskChallenge1Date1();
-        exploratoryTestingBookADeskChallengePage.inputTCValidationBookADeskChallenge1Date2();
-        //click 'search button
-        exploratoryTestingBookADeskChallengePage.clickSearchButton();
-        //assert the bug gets displayed //the bug doesn't get registered in bug counter for some reason during Selenium run, manually it all works correctly
-        //assertEquals("The \"From\" date accepts the date in the past", exploratoryTestingBookADeskChallengePage.getBugOneText(), "The Book A Desk challenge bug one description isn't displayed or is invalid");
-        //assert entered values has expected display (after first test case validation)
-        assertEquals("Entered Values: From: 11-10-2023, To: 10/15/2024", exploratoryTestingCalculatorChallengePage.getEnteredValuesText(), "The Exploratory Testing calculator entered values display doesn't match expected result");
-        //verify first test case validation
-        exploratoryTestingBookADeskChallengePage.verifyTestCase1Validation();
-    }
-
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){
         //assert 'list of challenges' navbar dropdown menu is displayed

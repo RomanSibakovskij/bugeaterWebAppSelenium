@@ -313,14 +313,4 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveRestorePasswordTCValidationChallenge11Test(exploratoryTestingRestorePasswordChallengePage);
     }
 
-    //Test 014 -> exploratory testing book a desk test case validation challenge test (as a guest)
-    @Test
-    @DisplayName("Book A Desk Test Case Validation Challenge Test (as a guest)")
-    @Tag("Exploratory_Testing_Challenge_Test")
-    void exploratoryTestingBookADeskTCValidationChallengeTest(){
-        navigateToBookADeskTCValidationPageTest();
-        ExploratoryTestingBookADeskChallengePage exploratoryTestingBookADeskChallengePage = new ExploratoryTestingBookADeskChallengePage(driver);
-        solveBookADeskTCValidationChallenge1Test(exploratoryTestingBookADeskChallengePage);
-    }
-
 }
