@@ -319,6 +319,8 @@ public class ListOfChallengesPageTest extends TestMethods{
     @Tag("Exploratory_Testing_Challenge_Test")
     void exploratoryTestingBookADeskTCValidationChallengeTest(){
         navigateToBookADeskTCValidationPageTest();
+        ExploratoryTestingBookADeskChallengePage exploratoryTestingBookADeskChallengePage = new ExploratoryTestingBookADeskChallengePage(driver);
+        solveBookADeskTCValidationChallenge1Test(exploratoryTestingBookADeskChallengePage);
     }
 
 }

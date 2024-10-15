@@ -3282,6 +3282,8 @@ public class TestMethods extends BaseTest {
         isExploratoryTestingChallengePageWebElementDisplayed(exploratoryTestingCalculatorChallengePage);
         //Exploratory testing page title web element text assert
         isIndividualExploratoryTestingChallengePageTextMatchesExpectations(exploratoryTestingCalculatorChallengePage);
+        //assert 'Exploratory Testing' challenge hint is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isChallengeHintDisplayed(), "The 'Exploratory Testing' challenge hint is not displayed");
         //assert calculator challenge number 2 input field is displayed
         assertTrue(exploratoryTestingCalculatorChallengePage.isNumber2InputFieldDisplayed(), "The 'Exploratory Testing' challenge number 2 input field is not displayed");
         //assert the page title is as expected
@@ -3322,6 +3324,8 @@ public class TestMethods extends BaseTest {
         isExploratoryTestingChallengePageWebElementDisplayed(exploratoryTestingCalculatorChallengePage);
         //Exploratory testing page title web element text assert
         isIndividualExploratoryTestingChallengePageTextMatchesExpectations(exploratoryTestingCalculatorChallengePage);
+        //assert 'Exploratory Testing' challenge hint is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isChallengeHintDisplayed(), "The 'Exploratory Testing' challenge hint is not displayed");
         //assert calculator challenge number 2 input field is displayed
         assertTrue(exploratoryTestingCalculatorChallengePage.isNumber2InputFieldDisplayed(), "The 'Exploratory Testing' challenge number 2 input field is not displayed");
         //calculator page title web element text assert
@@ -3362,6 +3366,8 @@ public class TestMethods extends BaseTest {
         isExploratoryTestingChallengePageWebElementDisplayed(exploratoryTestingCalculatorChallengePage);
         //Exploratory testing page title web element text assert
         isIndividualExploratoryTestingChallengePageTextMatchesExpectations(exploratoryTestingCalculatorChallengePage);
+        //assert 'Exploratory Testing' challenge hint is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isChallengeHintDisplayed(), "The 'Exploratory Testing' challenge hint is not displayed");
         //assert calculator challenge number 2 input field is displayed
         assertTrue(exploratoryTestingCalculatorChallengePage.isNumber2InputFieldDisplayed(), "The 'Exploratory Testing' challenge number 2 input field is not displayed");
         //assert the page title is as expected
@@ -3402,6 +3408,8 @@ public class TestMethods extends BaseTest {
         isExploratoryTestingChallengePageWebElementDisplayed(exploratoryTestingCalculatorChallengePage);
         //Exploratory testing page title web element text assert
         isIndividualExploratoryTestingChallengePageTextMatchesExpectations(exploratoryTestingCalculatorChallengePage);
+        //assert 'Exploratory Testing' challenge hint is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isChallengeHintDisplayed(), "The 'Exploratory Testing' challenge hint is not displayed");
         //assert calculator challenge number 2 input field is displayed
         assertTrue(exploratoryTestingCalculatorChallengePage.isNumber2InputFieldDisplayed(), "The 'Exploratory Testing' challenge number 2 input field is not displayed");
         //assert the page title is as expected
@@ -3440,6 +3448,8 @@ public class TestMethods extends BaseTest {
         isExploratoryTestingChallengePageWebElementDisplayed(exploratoryTestingCalculatorChallengePage);
         //Exploratory Testing page title web element text assert
         isIndividualExploratoryTestingChallengePageTextMatchesExpectations(exploratoryTestingCalculatorChallengePage);
+        //assert 'Exploratory Testing' challenge hint is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isChallengeHintDisplayed(), "The 'Exploratory Testing' challenge hint is not displayed");
         //assert calculator challenge number 2 input field is displayed
         assertTrue(exploratoryTestingCalculatorChallengePage.isNumber2InputFieldDisplayed(), "The 'Exploratory Testing' challenge number 2 input field is not displayed");
         //assert the page title is as expected
@@ -3478,6 +3488,8 @@ public class TestMethods extends BaseTest {
         isExploratoryTestingChallengePageWebElementDisplayed(exploratoryTestingCalculatorChallengePage);
         //Exploratory Testing page title web element text assert
         isIndividualExploratoryTestingChallengePageTextMatchesExpectations(exploratoryTestingCalculatorChallengePage);
+        //assert 'Exploratory Testing' challenge hint is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isChallengeHintDisplayed(), "The 'Exploratory Testing' challenge hint is not displayed");
         //assert calculator challenge number 2 input field is displayed
         assertTrue(exploratoryTestingCalculatorChallengePage.isNumber2InputFieldDisplayed(), "The 'Exploratory Testing' challenge number 2 input field is not displayed");
         //assert the page title is as expected
@@ -3559,6 +3571,8 @@ public class TestMethods extends BaseTest {
         isIndividualExploratoryTestingChallengePageTextMatchesExpectations(exploratoryTestingCalculatorChallengePage);
         //restore password specific web element assert
         isExploratoryTestingRestorePasswordPageWebElementDisplayed(exploratoryTestingRestorePasswordChallengePage);
+        //assert 'Exploratory Testing' challenge hint is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isChallengeHintDisplayed(), "The 'Exploratory Testing' challenge hint is not displayed");
         //assert the page title is as expected
         assertEquals("Restore Password", exploratoryTestingCalculatorChallengePage.getExploratoryTestingChallengeTitle(), "The Exploratory Testing calculator challenge page title doesn't match the expected title");
         //assert challenge hint has the correct title
@@ -3599,6 +3613,8 @@ public class TestMethods extends BaseTest {
         isIndividualExploratoryTestingChallengePageTextMatchesExpectations(exploratoryTestingCalculatorChallengePage);
         //restore password specific web element assert
         isExploratoryTestingRestorePasswordPageWebElementDisplayed(exploratoryTestingRestorePasswordChallengePage);
+        //assert 'Exploratory Testing' challenge hint is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isChallengeHintDisplayed(), "The 'Exploratory Testing' challenge hint is not displayed");
         //assert the page title is as expected
         assertEquals("Restore Password", exploratoryTestingCalculatorChallengePage.getExploratoryTestingChallengeTitle(), "The Exploratory Testing calculator challenge page title doesn't match the expected title");
         //assert challenge hint has the correct title
@@ -3637,6 +3653,8 @@ public class TestMethods extends BaseTest {
         isIndividualExploratoryTestingChallengePageTextMatchesExpectations(exploratoryTestingCalculatorChallengePage);
         //restore password specific web element assert
         isExploratoryTestingRestorePasswordPageWebElementDisplayed(exploratoryTestingRestorePasswordChallengePage);
+        //assert 'Exploratory Testing' challenge hint is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isChallengeHintDisplayed(), "The 'Exploratory Testing' challenge hint is not displayed");
         //assert the page title is as expected
         assertEquals("Restore Password", exploratoryTestingCalculatorChallengePage.getExploratoryTestingChallengeTitle(), "The Exploratory Testing calculator challenge page title doesn't match the expected title");
         //assert challenge hint has the correct title
@@ -3675,6 +3693,8 @@ public class TestMethods extends BaseTest {
         isIndividualExploratoryTestingChallengePageTextMatchesExpectations(exploratoryTestingCalculatorChallengePage);
         //restore password specific web element assert
         isExploratoryTestingRestorePasswordPageWebElementDisplayed(exploratoryTestingRestorePasswordChallengePage);
+        //assert 'Exploratory Testing' challenge hint is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isChallengeHintDisplayed(), "The 'Exploratory Testing' challenge hint is not displayed");
         //assert the page title is as expected
         assertEquals("Restore Password", exploratoryTestingCalculatorChallengePage.getExploratoryTestingChallengeTitle(), "The Exploratory Testing calculator challenge page title doesn't match the expected title");
         //assert challenge hint has the correct title
@@ -3713,6 +3733,8 @@ public class TestMethods extends BaseTest {
         isIndividualExploratoryTestingChallengePageTextMatchesExpectations(exploratoryTestingCalculatorChallengePage);
         //restore password specific web element assert
         isExploratoryTestingRestorePasswordPageWebElementDisplayed(exploratoryTestingRestorePasswordChallengePage);
+        //assert 'Exploratory Testing' challenge hint is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isChallengeHintDisplayed(), "The 'Exploratory Testing' challenge hint is not displayed");
         //assert the page title is as expected
         assertEquals("Restore Password", exploratoryTestingCalculatorChallengePage.getExploratoryTestingChallengeTitle(), "The Exploratory Testing calculator challenge page title doesn't match the expected title");
         //assert challenge hint has the correct title
@@ -3751,6 +3773,8 @@ public class TestMethods extends BaseTest {
         isIndividualExploratoryTestingChallengePageTextMatchesExpectations(exploratoryTestingCalculatorChallengePage);
         //restore password specific web element assert
         isExploratoryTestingRestorePasswordPageWebElementDisplayed(exploratoryTestingRestorePasswordChallengePage);
+        //assert 'Exploratory Testing' challenge hint is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isChallengeHintDisplayed(), "The 'Exploratory Testing' challenge hint is not displayed");
         //assert the page title is as expected
         assertEquals("Restore Password", exploratoryTestingCalculatorChallengePage.getExploratoryTestingChallengeTitle(), "The Exploratory Testing calculator challenge page title doesn't match the expected title");
         //assert challenge hint has the correct title
@@ -3791,6 +3815,8 @@ public class TestMethods extends BaseTest {
         isIndividualExploratoryTestingChallengePageTextMatchesExpectations(exploratoryTestingCalculatorChallengePage);
         //restore password specific web element assert
         isExploratoryTestingRestorePasswordPageWebElementDisplayed(exploratoryTestingRestorePasswordChallengePage);
+        //assert 'Exploratory Testing' challenge hint is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isChallengeHintDisplayed(), "The 'Exploratory Testing' challenge hint is not displayed");
         //assert the page title is as expected
         assertEquals("Restore Password", exploratoryTestingCalculatorChallengePage.getExploratoryTestingChallengeTitle(), "The Exploratory Testing calculator challenge page title doesn't match the expected title");
         //assert challenge hint has the correct title
@@ -3829,6 +3855,8 @@ public class TestMethods extends BaseTest {
         isIndividualExploratoryTestingChallengePageTextMatchesExpectations(exploratoryTestingCalculatorChallengePage);
         //restore password specific web element assert
         isExploratoryTestingRestorePasswordPageWebElementDisplayed(exploratoryTestingRestorePasswordChallengePage);
+        //assert 'Exploratory Testing' challenge hint is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isChallengeHintDisplayed(), "The 'Exploratory Testing' challenge hint is not displayed");
         //assert the page title is as expected
         assertEquals("Restore Password", exploratoryTestingCalculatorChallengePage.getExploratoryTestingChallengeTitle(), "The Exploratory Testing calculator challenge page title doesn't match the expected title");
         //assert challenge hint has the correct title
@@ -3867,6 +3895,8 @@ public class TestMethods extends BaseTest {
         isIndividualExploratoryTestingChallengePageTextMatchesExpectations(exploratoryTestingCalculatorChallengePage);
         //restore password specific web element assert
         isExploratoryTestingRestorePasswordPageWebElementDisplayed(exploratoryTestingRestorePasswordChallengePage);
+        //assert 'Exploratory Testing' challenge hint is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isChallengeHintDisplayed(), "The 'Exploratory Testing' challenge hint is not displayed");
         //assert the page title is as expected
         assertEquals("Restore Password", exploratoryTestingCalculatorChallengePage.getExploratoryTestingChallengeTitle(), "The Exploratory Testing calculator challenge page title doesn't match the expected title");
         //assert challenge hint has the correct title
@@ -3905,6 +3935,8 @@ public class TestMethods extends BaseTest {
         isIndividualExploratoryTestingChallengePageTextMatchesExpectations(exploratoryTestingCalculatorChallengePage);
         //restore password specific web element assert
         isExploratoryTestingRestorePasswordPageWebElementDisplayed(exploratoryTestingRestorePasswordChallengePage);
+        //assert 'Exploratory Testing' challenge hint is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isChallengeHintDisplayed(), "The 'Exploratory Testing' challenge hint is not displayed");
         //assert the page title is as expected
         assertEquals("Restore Password", exploratoryTestingCalculatorChallengePage.getExploratoryTestingChallengeTitle(), "The Exploratory Testing calculator challenge page title doesn't match the expected title");
         //assert challenge hint has the correct title
@@ -3943,6 +3975,8 @@ public class TestMethods extends BaseTest {
         isIndividualExploratoryTestingChallengePageTextMatchesExpectations(exploratoryTestingCalculatorChallengePage);
         //restore password specific web element assert
         isExploratoryTestingRestorePasswordPageWebElementDisplayed(exploratoryTestingRestorePasswordChallengePage);
+        //assert 'Exploratory Testing' challenge hint is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isChallengeHintDisplayed(), "The 'Exploratory Testing' challenge hint is not displayed");
         //assert the page title is as expected
         assertEquals("Restore Password", exploratoryTestingCalculatorChallengePage.getExploratoryTestingChallengeTitle(), "The Exploratory Testing calculator challenge page title doesn't match the expected title");
         //assert challenge hint has the correct title
@@ -3998,6 +4032,41 @@ public class TestMethods extends BaseTest {
         assertEquals("Exploratory Testing", listOfChallengesPage.getExploratoryTestingSectionTitle(), "The exploratory testing section title doesn't match expectations");
         //click 'Exploratory testing - book a desk' challenge link
         listOfChallengesPage.clickExploratoryTestingChallengeLink3();
+    }
+    //Exploratory testing book a desk test case validation challenge test method (challenge 1)
+    protected void solveBookADeskTCValidationChallenge1Test(ExploratoryTestingBookADeskChallengePage exploratoryTestingBookADeskChallengePage) {
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        ExploratoryTestingCalculatorChallengePage exploratoryTestingCalculatorChallengePage = new ExploratoryTestingCalculatorChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the challenge text is displayed as expected
+        assertEquals("With each new challenge, it becomes more and more difficult. This time, you need to find not only all the Test Cases but also errors made by programmers during the development of the form. Enter various dates into the form, testing both positive and negative scenarios, and you will definitely find everything. You are learning not only to explore but also to detect bugs.", exploratoryTestingCalculatorChallengePage.getExploratoryTestingInstructionsText(), "The text of the challenge doesn't match the expected text");
+        //assert tutorial description text is displayed as expected
+        assertEquals("This description explains the challenge and what you need to do. Read it carefully before starting the challenge.", exploratoryTestingCalculatorChallengePage.getTutorialDescriptionText(), "The tutorial text doesn't match the expected text");
+        //click tutorial 'skip' button
+        exploratoryTestingBookADeskChallengePage.clickSkipTutorialButton();
+        //Exploratory testing page web element assert method
+        isExploratoryTestingChallengePageWebElementDisplayed(exploratoryTestingCalculatorChallengePage);
+        //Exploratory testing page title web element text assert
+        isIndividualExploratoryTestingChallengePageTextMatchesExpectations(exploratoryTestingCalculatorChallengePage);
+        //assert bug found section title is as expected
+        //assert Book A Desk challenge birthdate from input field is displayed
+        assertTrue(exploratoryTestingCalculatorChallengePage.isNumber2InputFieldDisplayed(), "The 'Exploratory Testing' challenge number 2 input field is not displayed");
+        //assert the page title is as expected
+        assertEquals("Book a Desk", exploratoryTestingCalculatorChallengePage.getExploratoryTestingChallengeTitle(), "The Exploratory Testing calculator challenge page title doesn't match the expected title");
+        //assert challenge counter has no challenges completed yet
+        assertEquals("0 case(s) out of 7", exploratoryTestingCalculatorChallengePage.getChallengesCounterText(), "The Exploratory Testing calculator challenge counter display doesn't match expected result");
+        //assert bugs counter has no bugs found yet
+        assertEquals("0 bug(s) out of 3", exploratoryTestingBookADeskChallengePage.getBugCounterText(), "The Exploratory Testing book a desk bug counter display doesn't match expected result");
+        //assert entered values has expected display (before first test case validation)
+        assertEquals("Entered Values:", exploratoryTestingCalculatorChallengePage.getEnteredValuesText(), "The Exploratory Testing calculator entered values display doesn't match expected result");
+        //assert calculation has the expected result (before first test case validation)
+        assertEquals("Result:", exploratoryTestingCalculatorChallengePage.getExploratoryTestingResult(), "The Exploratory Testing calculator calculation result doesn't match expected result");
+        //logger before challenge completion
+        logPreChallenge1Result(learnModeNumAddDivisionChallengePage);
+        //bug counter logger before completion
+        logger.info("Bugs counter (before challenge 1): " + exploratoryTestingBookADeskChallengePage.getBugCounterText());
     }
 
     //general page web element assert (repeating web elements on all app pages)
@@ -4435,8 +4504,6 @@ public class TestMethods extends BaseTest {
         assertTrue(exploratoryTestingCalculatorChallengePage.isExploratoryTestingInputFormEnteredValuesDisplayed(), "The 'Exploratory Testing' challenge input form entered values are not displayed");
         //assert 'Exploratory Testing' challenge number 1 input field is displayed (it's present on all pages even though it serves different purposes)
         assertTrue(exploratoryTestingCalculatorChallengePage.isNumber1InputFieldDisplayed(), "The 'Exploratory Testing' challenge number 1 input field is not displayed");
-        //assert 'Exploratory Testing' challenge hint is displayed
-        assertTrue(exploratoryTestingCalculatorChallengePage.isChallengeHintDisplayed(), "The 'Exploratory Testing' challenge hint is not displayed");
         //assert 'Exploratory Testing' challenge calculation result is displayed
         assertTrue(exploratoryTestingCalculatorChallengePage.isExploratoryTestingResultDisplayed(), "The 'Exploratory Testing' challenge calculation result is not displayed");
         //assert 'Exploratory Testing' challenge start over button is displayed
@@ -4453,7 +4520,7 @@ public class TestMethods extends BaseTest {
     }
 
 
-        //pre-challenges loggers (for debug validation)
+    //pre-challenges loggers (for debug validation)
     protected void logPreChallenge1Result(LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage){
         logger.info("Displayed character counter(before challenge 1): " + learnModeNumAddDivisionChallengePage.getChallengesCounterText());
         logger.info("Displayed entered values(before challenge 1): " + learnModeNumAddDivisionChallengePage.getEnteredValuesText());

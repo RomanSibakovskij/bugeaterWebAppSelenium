@@ -16,11 +16,14 @@ public class ExploratoryTestingBookADeskChallengePage extends BasePage{
     @FindBy(xpath = "//button[@data-test-id='button-primary']")
     private WebElement tutorialNextButton;
 
-    //Exploratory testing 'Restore Password' challenge text web element
-    @FindBy(xpath = "//div[@class='_challengePanelResultsHeading_1a4cy_60']/p[@class='_challengePanelResultsCaption_1a4cy_71']")
+    //Exploratory testing 'Book A Desk' challenge text web element
+    @FindBy(xpath = "//div[@id='testBugs']/div[@class='_challengePanelResultsHeading_1a4cy_60']/p[@class='_challengePanelResultsCaption_1a4cy_71']")
     private WebElement challengesCompletedCounter;
+    //Exploratory testing 'Book A Desk' challenge text web element
+    @FindBy(xpath = "//div[@id='testBugs']/div[@class='_challengePanelResultsHeading_1a4cy_60']/p[@class='_challengePanelResultsCaption_1a4cy_71']")
+    private WebElement bugsFoundCounter;
 
-    //Exploratory testing 'Restore Password' input form web elements
+    //Exploratory testing 'Book A Desk' input form web elements
     @FindBy(xpath = "//div[@id='testForm']/p[2]")
     private WebElement enteredValueText;
     @FindBy(xpath = "//input[@id='first']")
@@ -29,10 +32,10 @@ public class ExploratoryTestingBookADeskChallengePage extends BasePage{
     private WebElement birthdateToInputField;
     @FindBy(xpath = "//div[@id='testForm']/p[1]")
     private WebElement exploratoryTestingResult;
-    //Exploratory testing 'Restore Password' halfway there congratulation web element
+    //Exploratory testing 'Book A Desk' halfway there congratulation web element
     @FindBy(xpath = "//div[@id='root']/div[4]")
     private WebElement halfwayThereMessage;
-    //Exploratory testing 'Restore Password' challenge completion modal web elements
+    //Exploratory testing 'Book A Desk' challenge completion modal web elements
     @FindBy(xpath = "//div[@class='modal-header']/div[.='You did it!']")
     private WebElement challengeCompletionModalTitle;
     @FindBy(xpath = "//button[@class='btn-close']")
@@ -45,12 +48,24 @@ public class ExploratoryTestingBookADeskChallengePage extends BasePage{
         super(driver);
     }
 
+    //tutorial modal 'skip' button click method
+    public void clickSkipTutorialButton(){tutorialSkipButton.click();}
+
+    //click 'close' button method
+    public void clickCloseModalButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(450));
+        wait.until(ExpectedConditions.elementToBeClickable(closeModalButton));
+        closeModalButton.click();
+    }
+
     //tutorial modal description text getter
     public String getTutorialDescriptionText() {return tutorialDescriptionText.getText();}
     //Restore password input form 'entered values' text getter
     public String getEnteredValueText() {return enteredValueText.getText();}
     //Exploratory testing 'Calculator' counter getter
     public String getChallengesCounterText() {return challengesCompletedCounter.getText();}
+    //Exploratory testing 'Book A Desk' bug counter getter
+    public String getBugCounterText() {return bugsFoundCounter.getText();}
     //Exploratory testing test calculation result getter
     public String getExploratoryTestingResult() {return exploratoryTestingResult.getText();}
     //'halfway there' message getter
