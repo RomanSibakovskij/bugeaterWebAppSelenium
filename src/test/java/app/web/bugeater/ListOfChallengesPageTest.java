@@ -312,4 +312,13 @@ public class ListOfChallengesPageTest extends TestMethods{
         //restore password test case validation challenge 11 (valid tc validation - only valid tc in the list)
         solveRestorePasswordTCValidationChallenge11Test(exploratoryTestingRestorePasswordChallengePage);
     }
+
+    //Test 014 -> exploratory testing book a desk test case validation challenge test (as a guest)
+    @Test
+    @DisplayName("Book A Desk Test Case Validation Challenge Test (as a guest)")
+    @Tag("Exploratory_Testing_Challenge_Test")
+    void exploratoryTestingBookADeskTCValidationChallengeTest(){
+        navigateToBookADeskTCValidationPageTest();
+    }
+
 }
