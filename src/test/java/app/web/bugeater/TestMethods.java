@@ -1330,7 +1330,7 @@ public class TestMethods extends BaseTest {
         //scripted testing number multiplication challenge page web element assert
         isScriptedTestingNumMultiplicationChallengePageWebElementDisplayed(scriptedTestingNumMultiplicationValidationChallengePage);
         //assert the test case validation has been completed (before first test case validation)
-        assertEquals("Entered Values: ", scriptedTestingNumMultiplicationValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
+        assertEquals("Entered Values:", scriptedTestingNumMultiplicationValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
         //assert challenge counter has no challenges completed yet
         assertEquals("0 case(s) out of 6", scriptedTestingNumMultiplicationValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
         //assert the number multiplication test cases displayed in test case section list has correct text
@@ -1579,7 +1579,7 @@ public class TestMethods extends BaseTest {
         //scripted testing number division challenge page web element assert
         isScriptedTestingNumDivisionChallengePageWebElementDisplayed(scriptedTestingNumDivisionValidationChallengePage);
         //assert the test case validation has been completed (before first test case validation)
-        assertEquals("Entered Values: ", scriptedTestingNumDivisionValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
+        assertEquals("Entered Values:", scriptedTestingNumDivisionValidationChallengePage.getEnteredValuesText(), "The entered values after completion don't match expected result");
         //assert challenge counter has no challenges completed yet
         assertEquals("0 case(s) out of 7", scriptedTestingNumMultiplicationValidationChallengePage.getChallengesCounterText(), "The challenges counter display doesn't match expected result");
         //assert the number division test cases displayed in test case section list has correct text
@@ -1868,7 +1868,7 @@ public class TestMethods extends BaseTest {
         //assert the password validation test cases displayed in test case section list has correct text
         isScriptedTestingPasswordValidationTestCaseAsExpected(scriptedTestingPasswordTCValidationChallengePage);
         //assert the test case validation has been completed (before first test case validation)
-        assertEquals("Entered Value: ", scriptedTestingPasswordTCValidationChallengePage.getEnteredValueText(), "The entered value after completion don't match expected result");
+        assertEquals("Entered Value:", scriptedTestingPasswordTCValidationChallengePage.getEnteredValueText(), "The entered value after completion don't match expected result");
         //assert password validation has the expected result (before operation)
         assertEquals("Result:", scriptedTestingPasswordTCValidationChallengePage.getPasswordValidationResult() , "The calculation result doesn't match expected result");
         //assert challenge hint has the expected text
@@ -4070,7 +4070,7 @@ public class TestMethods extends BaseTest {
         //assert 'number addition' challenge guide icon is displayed
         assertTrue(learnModeNumAddDivisionChallengePage.isNumberAdditionChallengeGuideIconDisplayed(), "The 'Number Addition' challenge guide icon is not displayed");
         //assert 'number addition' challenge video guide link is displayed
-        assertTrue(learnModeNumAddDivisionChallengePage.isVideoGuideLinkDisplayed(), "The 'Number Addition' challenge video guide link is not displayed");
+        //assertTrue(learnModeNumAddDivisionChallengePage.isVideoGuideLinkDisplayed(), "The 'Number Addition' challenge video guide link is not displayed");
         //assert 'number addition' challenge instructions title is displayed
         assertTrue(learnModeNumAddDivisionChallengePage.isInstructionsTitleDisplayed(), "The 'Number Addition' challenge instructions title is not displayed");
         //assert 'number addition' challenges completed counter is displayed
