@@ -305,5 +305,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveRestorePasswordTCValidationChallenge7Test(exploratoryTestingRestorePasswordChallengePage);
         //restore password test case validation challenge 8 (invalid tc validation - special symbols password only)
         solveRestorePasswordTCValidationChallenge8Test(exploratoryTestingRestorePasswordChallengePage);
+        //restore password test case validation challenge 9 (invalid tc validation - non-allowed symbols password)
+        solveRestorePasswordTCValidationChallenge9Test(exploratoryTestingRestorePasswordChallengePage);
     }
 }
