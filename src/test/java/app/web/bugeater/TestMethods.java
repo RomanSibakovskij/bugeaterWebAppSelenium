@@ -3571,6 +3571,16 @@ public class TestMethods extends BaseTest {
         assertEquals("Result:", exploratoryTestingRestorePasswordChallengePage.getExploratoryTestingResult(), "The Exploratory Testing calculator calculation result doesn't match expected result");
         //logger before challenge completion
         logPreChallenge1Result(learnModeNumAddDivisionChallengePage);
+        //input password into input field
+        exploratoryTestingRestorePasswordChallengePage.inputTCValidationPasswordChallenge1();
+        //click 'submit' button
+        exploratoryTestingRestorePasswordChallengePage.clickSubmitButton();
+        //assert entered values has expected display (after first test case validation)
+        assertEquals("Entered Value: Empty", exploratoryTestingRestorePasswordChallengePage.getEnteredValueText(), "The Exploratory Testing restore password entered values display doesn't match expected result");
+        //verify first test case validation
+        exploratoryTestingRestorePasswordChallengePage.verifyTestCase1Validation();
+        //assert first test case is displayed
+        assertTrue(exploratoryTestingRestorePasswordChallengePage.isRestorePasswordTestCaseOneDisplayed(), "The Exploratory Testing restore password test case one isn't displayed");
     }
 
     //general page web element assert (repeating web elements on all app pages)
