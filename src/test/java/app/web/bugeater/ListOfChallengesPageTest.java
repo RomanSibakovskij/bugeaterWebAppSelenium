@@ -289,7 +289,9 @@ public class ListOfChallengesPageTest extends TestMethods{
     void exploratoryTestingRestorePasswordTCValidationChallengeTest(){
         navigateToExploratoryTestingRestorePasswordTCValidationPageTest();
         ExploratoryTestingRestorePasswordChallengePage exploratoryTestingRestorePasswordChallengePage = new ExploratoryTestingRestorePasswordChallengePage(driver);
-        //restore password test case validation challenge 1
+        //restore password test case validation challenge 1 (invalid tc validation - no password)
         solveRestorePasswordTCValidationChallenge1Test(exploratoryTestingRestorePasswordChallengePage);
+        //restore password test case validation challenge 2 (invalid tc validation - too short password)
+        solveRestorePasswordTCValidationChallenge2Test(exploratoryTestingRestorePasswordChallengePage);
     }
 }

@@ -3540,7 +3540,7 @@ public class TestMethods extends BaseTest {
         //click 'exploratory testing - restore password' challenge link
         listOfChallengesPage.clickExploratoryTestingChallengeLink2();
     }
-    //Exploratory testing restore password test case validation challenge test method (challenge 1)
+    //Exploratory testing restore password test case validation challenge test method (challenge 1) (invalid tc validation - no password)
     protected void solveRestorePasswordTCValidationChallenge1Test(ExploratoryTestingRestorePasswordChallengePage exploratoryTestingRestorePasswordChallengePage) {
         ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
         LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
@@ -3581,7 +3581,47 @@ public class TestMethods extends BaseTest {
         exploratoryTestingRestorePasswordChallengePage.verifyTestCase1Validation();
         //assert first test case is displayed
         assertTrue(exploratoryTestingRestorePasswordChallengePage.isRestorePasswordTestCaseOneDisplayed(), "The Exploratory Testing restore password test case one isn't displayed");
+        //assert the restore password test case one displayed in test case validation section list has correct text
+        assertEquals("Empty value", exploratoryTestingRestorePasswordChallengePage.getTestCaseOne(), "The test case one challenge description doesn't match expected result");
     }
+    //Exploratory testing restore password test case validation challenge test method (challenge 2) (invalid tc validation - too short password)
+    protected void solveRestorePasswordTCValidationChallenge2Test(ExploratoryTestingRestorePasswordChallengePage exploratoryTestingRestorePasswordChallengePage) {
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        ExploratoryTestingCalculatorChallengePage exploratoryTestingCalculatorChallengePage = new ExploratoryTestingCalculatorChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the challenge text is displayed as expected
+        assertEquals("The task becomes more difficult; in this challenge, you need to guess all eleven Test Cases that, as usual, appear in the list. You are testing the password input form, which must comply with the requirements described in the tooltip (icon \"?\"). Your knowledge in the testing area is growing, and you are learning to independently verify all possible scenarios/cases.", exploratoryTestingCalculatorChallengePage.getExploratoryTestingInstructionsText(), "The text of the challenge doesn't match the expected text");
+        //Exploratory testing page web element assert method
+        isExploratoryTestingChallengePageWebElementDisplayed(exploratoryTestingCalculatorChallengePage);
+        //Exploratory testing page title web element text assert
+        isIndividualExploratoryTestingChallengePageTextMatchesExpectations(exploratoryTestingCalculatorChallengePage);
+        //restore password specific web element assert
+        isExploratoryTestingRestorePasswordPageWebElementDisplayed(exploratoryTestingRestorePasswordChallengePage);
+        //assert the page title is as expected
+        assertEquals("Restore Password", exploratoryTestingCalculatorChallengePage.getExploratoryTestingChallengeTitle(), "The Exploratory Testing calculator challenge page title doesn't match the expected title");
+        //assert challenge hint has the correct title
+        assertEquals("From 4 to 12 characters, at least one small Latin letter, one capital Latin letter, one symbol, and one number. Not matching the previous password.", exploratoryTestingCalculatorChallengePage.getChallengeHintText(), "The Exploratory Testing calculator challenge hint text doesn't match expected result");
+        //assert challenge counter has registered first test case validation
+        assertEquals("1 case(s) out of 11", exploratoryTestingCalculatorChallengePage.getChallengesCounterText(), "The Exploratory Testing calculator challenge counter display doesn't match expected result");
+        //assert entered values has expected display (before second test case validation)
+        assertEquals("Entered Value: Empty", exploratoryTestingRestorePasswordChallengePage.getEnteredValueText(), "The Exploratory Testing calculator entered values display doesn't match expected result");
+        //assert calculation has the expected result (before second test case validation)
+        assertEquals("Result: Invalid Password", exploratoryTestingRestorePasswordChallengePage.getExploratoryTestingResult(), "The Exploratory Testing calculator calculation result doesn't match expected result");
+        //logger before challenge completion
+        logPreChallenge2Result(learnModeNumAddDivisionChallengePage);
+        //input password into input field
+        exploratoryTestingRestorePasswordChallengePage.inputTCValidationPasswordChallenge2();
+        //click 'submit' button
+        exploratoryTestingRestorePasswordChallengePage.clickSubmitButton();
+        //verify second test case validation
+        exploratoryTestingRestorePasswordChallengePage.verifyTestCase2Validation();
+        //assert second test case is displayed
+        assertTrue(exploratoryTestingRestorePasswordChallengePage.isRestorePasswordTestCaseTwoDisplayed(), "The Exploratory Testing restore password test case two isn't displayed");
+        //assert the restore password test case two displayed in test case validation section list has correct text
+        assertEquals("Less than minimum value", exploratoryTestingRestorePasswordChallengePage.getTestCaseTwo(), "The test case one challenge description doesn't match expected result");
+        }
 
     //general page web element assert (repeating web elements on all app pages)
     protected void isChallengeAppPageWebElementDisplayed(ListOfChallengesPage listOfChallengesPage){
