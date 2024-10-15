@@ -295,5 +295,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveRestorePasswordTCValidationChallenge2Test(exploratoryTestingRestorePasswordChallengePage);
         //restore password test case validation challenge 3 (invalid tc validation - too long password)
         solveRestorePasswordTCValidationChallenge3Test(exploratoryTestingRestorePasswordChallengePage);
+        //restore password test case validation challenge 4 (invalid tc validation - input saved beforehand password)
+        solveRestorePasswordTCValidationChallenge4Test(exploratoryTestingRestorePasswordChallengePage);
     }
 }
