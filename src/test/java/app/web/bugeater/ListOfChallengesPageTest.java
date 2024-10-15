@@ -299,5 +299,7 @@ public class ListOfChallengesPageTest extends TestMethods{
         solveRestorePasswordTCValidationChallenge4Test(exploratoryTestingRestorePasswordChallengePage);
         //restore password test case validation challenge 5 (invalid tc validation - lowercase only password)
         solveRestorePasswordTCValidationChallenge5Test(exploratoryTestingRestorePasswordChallengePage);
+        //restore password test case validation challenge 6 (invalid tc validation - uppercase only password)
+        solveRestorePasswordTCValidationChallenge6Test(exploratoryTestingRestorePasswordChallengePage);
     }
 }

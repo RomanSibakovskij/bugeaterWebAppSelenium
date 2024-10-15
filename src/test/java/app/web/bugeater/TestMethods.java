@@ -3698,7 +3698,7 @@ public class TestMethods extends BaseTest {
         //assert the restore password test case four displayed in test case validation section list has correct text
         assertEquals("Matches the earlier saved password", exploratoryTestingRestorePasswordChallengePage.getTestCaseFour(), "The test case four challenge description doesn't match expected result");
     }
-    //Exploratory testing restore password test case validation challenge test method (challenge 5) (invalid tc validation - input existing password in database)
+    //Exploratory testing restore password test case validation challenge test method (challenge 5) (invalid tc validation - lowercase password only)
     protected void solveRestorePasswordTCValidationChallenge5Test(ExploratoryTestingRestorePasswordChallengePage exploratoryTestingRestorePasswordChallengePage) {
         ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
         LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
@@ -3724,7 +3724,7 @@ public class TestMethods extends BaseTest {
         //assert calculation has the expected result (before fifth test case validation)
         assertEquals("Result: Invalid Password", exploratoryTestingRestorePasswordChallengePage.getExploratoryTestingResult(), "The Exploratory Testing calculator calculation result doesn't match expected result");
         //logger before challenge completion
-        logPreChallenge4Result(learnModeNumAddDivisionChallengePage);
+        logPreChallenge5Result(learnModeNumAddDivisionChallengePage);
         //input password into input field
         exploratoryTestingRestorePasswordChallengePage.inputTCValidationPasswordChallenge5();
         //click 'submit' button
@@ -3735,6 +3735,46 @@ public class TestMethods extends BaseTest {
         assertTrue(exploratoryTestingRestorePasswordChallengePage.isRestorePasswordTestCaseFiveDisplayed(), "The Exploratory Testing restore password test case five isn't displayed");
         //assert the restore password test case five displayed in test case validation section list has correct text
         assertEquals("Contains only lowercase letters", exploratoryTestingRestorePasswordChallengePage.getTestCaseFive(), "The test case five challenge description doesn't match expected result");
+    }
+    //Exploratory testing restore password test case validation challenge test method (challenge 6) (invalid tc validation - uppercase password only)
+    protected void solveRestorePasswordTCValidationChallenge6Test(ExploratoryTestingRestorePasswordChallengePage exploratoryTestingRestorePasswordChallengePage) {
+        ListOfChallengesPage listOfChallengesPage = new ListOfChallengesPage(driver);
+        LearnModeNumAddDivisionChallengePage learnModeNumAddDivisionChallengePage = new LearnModeNumAddDivisionChallengePage(driver);
+        ExploratoryTestingCalculatorChallengePage exploratoryTestingCalculatorChallengePage = new ExploratoryTestingCalculatorChallengePage(driver);
+        //general page web element assert (elements that all pages have)
+        isChallengeAppPageWebElementDisplayed(listOfChallengesPage);
+        //assert the challenge text is displayed as expected
+        assertEquals("The task becomes more difficult; in this challenge, you need to guess all eleven Test Cases that, as usual, appear in the list. You are testing the password input form, which must comply with the requirements described in the tooltip (icon \"?\"). Your knowledge in the testing area is growing, and you are learning to independently verify all possible scenarios/cases.", exploratoryTestingCalculatorChallengePage.getExploratoryTestingInstructionsText(), "The text of the challenge doesn't match the expected text");
+        //Exploratory testing page web element assert method
+        isExploratoryTestingChallengePageWebElementDisplayed(exploratoryTestingCalculatorChallengePage);
+        //Exploratory testing page title web element text assert
+        isIndividualExploratoryTestingChallengePageTextMatchesExpectations(exploratoryTestingCalculatorChallengePage);
+        //restore password specific web element assert
+        isExploratoryTestingRestorePasswordPageWebElementDisplayed(exploratoryTestingRestorePasswordChallengePage);
+        //assert the page title is as expected
+        assertEquals("Restore Password", exploratoryTestingCalculatorChallengePage.getExploratoryTestingChallengeTitle(), "The Exploratory Testing calculator challenge page title doesn't match the expected title");
+        //assert challenge hint has the correct title
+        assertEquals("From 4 to 12 characters, at least one small Latin letter, one capital Latin letter, one symbol, and one number. Not matching the previous password.", exploratoryTestingCalculatorChallengePage.getChallengeHintText(), "The Exploratory Testing calculator challenge hint text doesn't match expected result");
+        //assert challenge counter has registered fifth test case validation
+        assertEquals("5 case(s) out of 11", exploratoryTestingCalculatorChallengePage.getChallengesCounterText(), "The Exploratory Testing calculator challenge counter display doesn't match expected result");
+        //assert entered values has expected display (before sixth test case validation)
+        assertEquals("Entered Value: dfhgjjhkk", exploratoryTestingRestorePasswordChallengePage.getEnteredValueText(), "The Exploratory Testing calculator entered values display doesn't match expected result");
+        //assert calculation has the expected result (before sixth test case validation)
+        assertEquals("Result: Invalid Password", exploratoryTestingRestorePasswordChallengePage.getExploratoryTestingResult(), "The Exploratory Testing calculator calculation result doesn't match expected result");
+        //logger before challenge completion
+        logPreChallenge6Result(learnModeNumAddDivisionChallengePage);
+        //input password into input field
+        exploratoryTestingRestorePasswordChallengePage.inputTCValidationPasswordChallenge6();
+        //click 'submit' button
+        exploratoryTestingRestorePasswordChallengePage.clickSubmitButton();
+        //assert 'halfway there' message is displayed
+        //assertEquals("Halfway there!", exploratoryTestingRestorePasswordChallengePage.getHalfwayThereMessage(), "The 'halfway there' message isn't displayed"); //NoSuchElementException with valid selector
+        //verify sixth test case validation
+        exploratoryTestingRestorePasswordChallengePage.verifyTestCase6Validation();
+        //assert sixth test case is displayed
+        assertTrue(exploratoryTestingRestorePasswordChallengePage.isRestorePasswordTestCaseSixDisplayed(), "The Exploratory Testing restore password test case six isn't displayed");
+        //assert the restore password test case six displayed in test case validation section list has correct text
+        assertEquals("Contains only uppercase letters", exploratoryTestingRestorePasswordChallengePage.getTestCaseSix(), "The test case six challenge description doesn't match expected result");
     }
 
     //general page web element assert (repeating web elements on all app pages)
