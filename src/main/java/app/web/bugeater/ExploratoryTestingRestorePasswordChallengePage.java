@@ -16,17 +16,7 @@ public class ExploratoryTestingRestorePasswordChallengePage extends BasePage{
     @FindBy(xpath = "//button[@data-test-id='button-primary']")
     private WebElement tutorialNextButton;
 
-    //Exploratory testing 'Calculator' challenge text web elements
-    @FindBy(xpath = "//div[@class='_challengeHeadingBlock_1a4cy_184']/h1")
-    private WebElement exploratoryTestingChallengeTitle;
-    @FindBy(xpath = "//div[@class='container']/p[@id='challengeDescription']")
-    private WebElement exploratoryTestingInstructionsText;
-    //guide button web element
-    @FindBy(css = "svg#questionMark")
-    private WebElement exploratoryTestingGuideButton;
-    //Exploratory testing 'Calculator' test case section web elements
-    @FindBy(xpath = "//div[@class='_challengePanelResultsHeading_1a4cy_60']/h2")
-    private WebElement exploratoryTestingTestCaseSectionTitle;
+    //Exploratory testing 'Restore Password' challenge text web element
     @FindBy(xpath = "//div[@class='_challengePanelResultsHeading_1a4cy_60']/p[@class='_challengePanelResultsCaption_1a4cy_71']")
     private WebElement challengesCompletedCounter;
 

@@ -3968,7 +3968,7 @@ public class TestMethods extends BaseTest {
         //logger after challenge completion
         logPreChallenge12Result(learnModePasswordChallengePage);
         //assert eleventh test case is displayed
-        assertTrue(exploratoryTestingRestorePasswordChallengePage.isRestorePasswordTestCaseTenDisplayed(), "The Exploratory Testing restore password test case eleven isn't displayed");
+        assertTrue(exploratoryTestingRestorePasswordChallengePage.isRestorePasswordTestCaseElevenDisplayed(), "The Exploratory Testing restore password test case eleven isn't displayed");
         //assert the restore password test case eleven displayed in test case validation section list has correct text
         assertEquals("Valid Password", exploratoryTestingRestorePasswordChallengePage.getTestCaseEleven(), "The test case eleven challenge description doesn't match expected result");
         //assert entered values has expected display (after eleventh test case validation)
